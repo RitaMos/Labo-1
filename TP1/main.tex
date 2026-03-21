@@ -1,0 +1,135 @@
+\documentclass{article}
+
+%%%%%%%%%%%%%%% LIBRERIAS %%%%%%%%%%%%%%%%%%%%%
+\usepackage[thinc]{esdiff}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{physics}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{graphicx}
+\usepackage[spanish,es-tabla]{babel} % 'es-tabla' cambia Cuadro→Tabla
+\usepackage{hyperref}                % cargar después de babel
+\usepackage{float}
+\usepackage{circuitikz}
+\usepackage[left=3cm,right=3cm]{geometry} %para margenes
+\usepackage{subfiles} 
+\usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%%%% VARIABLES %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Facultad}{Instituto Tecnológico \\de\\ Buenos Aires} %constantes
+\newcommand{\TPn}{Trabajo Práctico N° 1}
+\newcommand{\TPtema}{Osciloscopios - Analizador de Impedancias}
+\renewcommand{\thesection}{\arabic{section}}          % 2
+\renewcommand{\thesubsection}{\quad \alph{subsection}}   % a
+\renewcommand{\thesubsubsection}{\quad \thesubsection.~\roman{subsubsection}} % a. i
+\graphicspath{{imagenes/}} %para que acceda a las fotos en la carpeta directamente
+
+
+%%%%%%%%%%%%%%%%%% FORMATO TÍTULO Y NUMERACIÓN %%%%%%%%%%%%%%%%%%%
+% Numeración de secciones
+\renewcommand{\thesection}{\arabic{section}.}          
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}}       
+\renewcommand{\thesubsubsection}{$\alph{subsubsection})$}
+
+% Numerar hasta subsubsecciones
+\setcounter{secnumdepth}{3}
+
+% Formato de títulos
+\titleformat{\section}{\Huge\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\LARGE\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{0.5em}{}
+
+
+
+%%%%%%%%%%%%%%%%%%% ARCHIVO %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%CARATULA%%%
+\begin{titlepage} %creo portada
+
+        \begin{flushleft}
+            \centering
+            \includegraphics[width=0.3\textwidth]{Logo_ITBA.png}
+        \end{flushleft}
+
+        \centering
+            
+        {\scshape\LARGE \Facultad \par} %\par sirve para indicar un final de parrafo
+        \vspace{1cm}                    %esto hace un espacio entre lineas de 1cm
+
+
+        {\huge\bfseries \TPn \par}
+        \vspace{1.5cm}
+        {\Large Laboratorio de Electrónica\\ 25.13 \par}
+        \vspace{0.5cm}
+        {\Large \TPtema \par}
+        \vfill                      %sirve para rellenar el espacio y quede simétrico.
+        {\Large \bfseries Grupo N° 2 \par}
+        \vspace{1cm}
+        {\large Juan Bautista Correa Uranga \hfill Legajo: 65016 \par} 
+        {\large Juan Ignacio Caorsi \hfill Legajo: 65532  \par}
+        {\large Rita Moschini \hfill Legajo: 67026 \par} 
+        {\large Lucas Solar Grillo \hfill Legajo: 63322\par}
+        \vfill
+        {\large \today\par}
+        \vfill
+
+\end{titlepage}
+
+{\centering \LARGE \bfseries Resumen \par} 
+\par 
+
+\newpage
+
+\tableofcontents 
+\newpage
+
+%%%%%%%%%%%%%%%%%%% CUERPO DEL INFORME %%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Pasabajos}
+    \subsection{Parte teórica}
+        % a) Transferencia y frecuencia de corte
+        % b) Frecuencia nominal y error
+        % c) Ángulo de fase y diagrama vectorial
+        % d) Diagrama de Bode teórico con tolerancias
+        % e) Ganancia y fase para fo/10, fo y 10fo
+        % f) Simulación con onda cuadrada
+        
+    \subsection{Parte práctica}
+        % a) Frecuencia de corte real y cálculo de C
+        % b) Ángulo de fase medido vs teórico
+        % c) Tabla de valores en frecuencia (10Hz a 1MHz)
+        % d) Diagrama de Bode superpuesto
+        % e) Diagrama de Bode con Network Analyzer
+        % f) Gráficos de onda cuadrada
+        % g) Cálculo de vr y gráfico
+        % h) Medición sin C (x1 y x10)
+        % i) Conclusiones de esta sección
+
+\section{Pasaaltos}
+    \subsection{Parte teórica}
+        % a) Transferencia y frecuencia de corte
+        % b) Frecuencia nominal y error
+        % c) Diagrama de Bode con tolerancias
+        % d) Ganancia y fase (fo/10, fo, 10fo)
+        % e) Simulación con onda triangular
+        
+    \subsection{Parte práctica}
+        % a) Bode con Network Analyzer vs teórico
+        % b) Salida con onda triangular variando frecuencia
+
+\section{Sincronización de instrumentos}
+    % a) Usando modo XY del osciloscopio
+    % b) Usando modo normal disparado
+
+\section{Respuesta en frecuencia}
+    % Medición con AC y BW limit vs datos del fabricante
+
+\section{Utilización del hold off}
+    % Señal compuesta y uso del hold off para ver parte triangular
+
+\section{Conclusiones Finales}
+    % Espacio para conclusiones generales del TP
+
+\end{document}
