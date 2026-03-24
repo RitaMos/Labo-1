@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774373600.54813 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" "main.pdf" "main" 1774373603.26447 0
+["pdflatex"] 1774374859.24488 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" "main.pdf" "main" 1774374861.93763 0
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1774318562 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1774318566 18748 7fe1025cfd8bec36139decdf052442d7 ""
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx2074.pk" 1774318567 28420 b197038010d7daa30dae45e7ba13a58b ""
@@ -221,11 +221,11 @@
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "Logo_ITBA.png" 1774318325 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" 1774373597 10164 fd744df983db9943747f29f349061483 ""
-  "main.aux" 1774373602 3352 d4f7a549048e15a39a997c4e7a033ad5 "pdflatex"
-  "main.out" 1774373602 2083 c92629d41c27f560bb7f916680c43c4b "pdflatex"
-  "main.tex" 1774373597 10164 fd744df983db9943747f29f349061483 ""
-  "main.toc" 1774373602 1217 5b98b1a96bfb495ed4bacaa3a468f2de "pdflatex"
+  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" 1774374855 11676 c7737b092d4bb1b9b90f75b35ca85866 ""
+  "main.aux" 1774374861 3501 a075074a3aadcc2e3892c383fea12aaf "pdflatex"
+  "main.out" 1774374861 2364 50f23ed4180b238e64bd6cd844db5cfa "pdflatex"
+  "main.tex" 1774374855 11676 c7737b092d4bb1b9b90f75b35ca85866 ""
+  "main.toc" 1774374861 1325 5df6957de8843c723e17c5bc8b79dd3c "pdflatex"
   (generated)
   "main.aux"
   "main.log"

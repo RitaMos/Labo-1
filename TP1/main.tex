@@ -258,6 +258,16 @@ En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente 
 \caption{Diagrama de fase de Bode pasaaltos.}
 \end{figure}
 
+\subsection{Osciloscopio digital y puntas de medición}
+
+El osciloscopio digital puede modelarse de forma aproximada como una impedancia de entrada compuesta por una resistencia de 1 M$\Omega$ en paralelo con una capacitancia parásita del orden de algunos pF (típicamente alrededor de 12 pF). Esta capacitancia no suele ser relevante a bajas frecuencias, pero empieza a afectar las mediciones cuando se trabaja en frecuencia más alta.
+
+Cuando se utiliza la punta en modo X1, la capacitancia total vista por el circuito aumenta bastante, llegando a valores del orden de 100 pF. Esto se debe principalmente al cable de la punta, que es coaxial, y por lo tanto se comporta como un capacitor distribuido (el conductor interno y la malla actúan como placas separadas por un dieléctrico). En este caso, el conjunto puede modelarse como una resistencia de 1 M$\Omega$ en paralelo con una capacitancia cercana a 100 pF, lo que puede modificar bastante la respuesta del circuito medido, como se muestra en la Fig.~\ref{fig:punta_x1}.
+
+Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un divisor resistivo-capacitivo que compensa este efecto. Esto hace que la capacitancia equivalente vista por el circuito sea mucho menor (del orden de 10–15 pF) y que la resistencia de entrada efectiva aumente a aproximadamente 10 M$\Omega$. De esta forma, se reduce el efecto de carga sobre el circuito y se obtiene una medición más fiel, como se muestra en la Fig.~\ref{fig:punta_x10}.
+
+
+
 \section{Pasabajos}
     \subsection{Parte teórica}
         % a) Transferencia y frecuencia de corte
