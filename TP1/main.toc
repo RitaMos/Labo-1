@@ -5,14 +5,14 @@
 \contentsline {subsection}{\numberline {3.1}Circuito RC pasabajos}{3}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Circuito RC pasaaltos}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Osciloscopio digital y puntas de medición}{6}{subsection.3.3}%
-\contentsline {section}{\numberline {4.}Pasabajos}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Parte teórica}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Parte práctica}{7}{subsection.4.2}%
-\contentsline {section}{\numberline {5.}Pasaaltos}{7}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Parte teórica}{7}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Parte práctica}{7}{subsection.5.2}%
-\contentsline {section}{\numberline {6.}Sincronización de instrumentos}{7}{section.6}%
-\contentsline {section}{\numberline {7.}Respuesta en frecuencia}{7}{section.7}%
-\contentsline {section}{\numberline {8.}Utilización del hold off}{7}{section.8}%
-\contentsline {section}{\numberline {9.}Conclusiones Finales}{7}{section.9}%
+\contentsline {section}{\numberline {4.}Pasabajos}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Parte teórica}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Parte práctica}{6}{subsection.4.2}%
+\contentsline {section}{\numberline {5.}Pasaaltos}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Parte teórica}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Parte práctica}{14}{subsection.5.2}%
+\contentsline {section}{\numberline {6.}Sincronización de instrumentos}{14}{section.6}%
+\contentsline {section}{\numberline {7.}Respuesta en frecuencia}{14}{section.7}%
+\contentsline {section}{\numberline {8.}Utilización del hold off}{14}{section.8}%
+\contentsline {section}{\numberline {9.}Conclusiones Finales}{14}{section.9}%
 \contentsfinish 

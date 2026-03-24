@@ -568,6 +568,109 @@ Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un di
 \section{Pasaaltos}
     \subsection{Parte teórica}
         % a) Transferencia y frecuencia de corte
+        Para el análisis teórico se consideró el circuito RC pasaaltos incluyendo únicamente la resistencia interna del generador, modelada como una resistencia en serie de $R_{gen} = 50\,\Omega$.
+
+Se decidió despreciar el efecto del osciloscopio (tanto su resistencia de entrada de 1 M$\Omega$ como la capacitancia parásita asociada a la punta), ya que para el rango de frecuencias de interés (menores a 500 kHz) su influencia resulta despreciable frente a las impedancias del circuito.
+
+Bajo estas condiciones, el circuito equivalente utilizado es el siguiente:
+
+\begin{figure}[H]
+\centering
+\shorthandoff{>}
+\begin{circuitikz}[american]
+\draw
+(0,0) to[sV, l=$v_{in}$] (0,3)
+to[R, l=$50\,\Omega$] (2,3)
+to[C, l=$3.4\,\text{nF}$] (4,3)
+to[R, l_=$4.6\,\text{k}\Omega$] (4,0)
+-- (0,0);
+
+% salida
+\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+
+% flecha vout (corrida un poco a la derecha)
+\draw[->, >=stealth] (5.3,0.5) -- (5.3,2.5)
+node[midway,right] {$v_{out}$};
+
+\end{circuitikz}
+\shorthandon{>}
+\caption{Circuito RC pasaaltos considerando la resistencia interna del generador}
+\label{fig:hp_rgen}
+\end{figure}
+
+A partir del circuito de la Fig.~\ref{fig:hp_rgen}, la función de transferencia puede obtenerse aplicando divisor de impedancias. Considerando la impedancia del capacitor como:
+
+\[
+Z_C = \frac{1}{sC}
+\]
+
+la salida se toma sobre la resistencia \(R\), por lo que:
+
+\begin{equation}
+H(s) = \frac{V_{out}}{V_{in}} = \frac{R}{R + R_{gen} + \frac{1}{sC}}
+\end{equation}
+
+Multiplicando numerador y denominador por \(sC\), se obtiene una expresión más conveniente:
+
+\begin{equation}
+H(s) = \frac{sRC}{1 + sC(R + R_{gen})}
+\end{equation}
+
+Reemplazando ahora \(s = j 2\pi f\) y los valores del circuito (\(R = 4.6\,\text{k}\Omega\), \(R_{gen} = 50\,\Omega\), \(C = 3.4\,\text{nF}\)), resulta:
+
+\begin{equation}
+H(f) = \frac{j 2\pi f \cdot (4.6\times10^3)\cdot(3.4\times10^{-9})}{1 + j 2\pi f \cdot (3.4\times10^{-9}) \cdot (4.6\times10^3 + 50)}
+\end{equation}
+
+A partir de la función de transferencia obtenida, la frecuencia de corte puede determinarse de distintas maneras.
+
+Por un lado, en el dominio de la frecuencia, la frecuencia de corte se define como aquella para la cual el módulo de la función de transferencia cae 3 dB respecto del valor máximo. En este caso, el módulo de la transferencia es:
+
+\[
+|H(j\omega)| = \left| \frac{j\omega RC}{1 + j\omega C(R + R_{gen})} \right|
+\]
+
+Calculando su módulo:
+
+\[
+|H(j\omega)| = \frac{\omega RC}{\sqrt{1 + \left[\omega C(R + R_{gen})\right]^2}}
+\]
+
+La frecuencia de corte se obtiene cuando:
+
+\[
+20\log_{10}(|H(j\omega)|) = -3\,\text{dB}
+\]
+
+lo cual equivale a que:
+
+\[
+|H(j\omega)| = \frac{1}{\sqrt{2}}
+\]
+
+Por otro lado, en el dominio del tiempo, esto mismo implica que la amplitud de la señal de salida es igual a la de entrada dividida por \(\sqrt{2}\). En nuestro caso, al excitar el circuito con una señal senoidal de entrada de \(10\,\text{V}_{pp}\), se espera que en la frecuencia de corte la salida sea aproximadamente:
+
+\[
+V_{out} \approx \frac{10}{\sqrt{2}} \approx 7.07\,\text{V}_{pp}
+\]
+
+Finalmente, despejando de la expresión del módulo, se obtiene que la frecuencia de corte está dada por:
+
+\begin{equation}
+f_0 = \frac{1}{2\pi C(R + R_{gen})}
+\end{equation}
+
+Reemplazando los valores del circuito (\(R = 4.6\,\text{k}\Omega\), \(R_{gen} = 50\,\Omega\), \(C = 3.4\,\text{nF}\)):
+
+\[
+f_0 = \frac{1}{2\pi \cdot 3.4\times10^{-9} \cdot (4.6\times10^3 + 50)}
+\]
+
+\[
+f_0 \approx 10.1\,\text{kHz}
+\]
+
         % b) Frecuencia nominal y error
         % c) Diagrama de Bode con tolerancias
         % d) Ganancia y fase (fo/10, fo, 10fo)
