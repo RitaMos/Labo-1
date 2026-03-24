@@ -1,0 +1,316 @@
+\documentclass{article}
+
+%%%%%%%%%%%%%%% LIBRERIAS %%%%%%%%%%%%%%%%%%%%%
+\usepackage[thinc]{esdiff}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{physics}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{graphicx}
+\usepackage[spanish,es-tabla]{babel} % 'es-tabla' cambia Cuadro→Tabla
+\usepackage{hyperref}                % cargar después de babel
+\usepackage{float}
+\usepackage{circuitikz}
+\usepackage[left=3cm,right=3cm]{geometry} %para margenes
+\usepackage{subfiles} 
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs} % Para tablas con tematica de paper cientifico
+\usepackage{siunitx}  % Para alinear números en las tablas d:
+
+%%%%%%%%%%%%%%%%%%% VARIABLES %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Facultad}{Instituto Tecnológico \\de\\ Buenos Aires} %constantes
+\newcommand{\TPn}{Trabajo Práctico N° 1}
+\newcommand{\TPtema}{Osciloscopios - Analizador de Impedancias}
+\renewcommand{\thesection}{\arabic{section}}          % 2
+\renewcommand{\thesubsection}{\quad \alph{subsection}}   % a
+\renewcommand{\thesubsubsection}{\quad \thesubsection.~\roman{subsubsection}} % a. i
+\graphicspath{{imagenes/}} %para que acceda a las fotos en la carpeta directamente
+
+
+%%%%%%%%%%%%%%%%%% FORMATO TÍTULO Y NUMERACIÓN %%%%%%%%%%%%%%%%%%%
+% Numeración de secciones
+\renewcommand{\thesection}{\arabic{section}.}          
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}}       
+\renewcommand{\thesubsubsection}{$\alph{subsubsection})$}
+
+% Numerar hasta subsubsecciones
+\setcounter{secnumdepth}{3}
+
+% Formato de títulos
+\titleformat{\section}{\Huge\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\LARGE\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{0.5em}{}
+
+
+
+%%%%%%%%%%%%%%%%%%% ARCHIVO %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%CARATULA%%%
+\begin{titlepage} %creo portada
+
+        \begin{flushleft}
+            \centering
+            \includegraphics[width=0.3\textwidth]{Logo_ITBA.png}
+        \end{flushleft}
+
+        \centering
+            
+        {\scshape\LARGE \Facultad \par} %\par sirve para indicar un final de parrafo
+        \vspace{1cm}                    %esto hace un espacio entre lineas de 1cm
+
+
+        {\huge\bfseries \TPn \par}
+        \vspace{1.5cm}
+        {\Large Laboratorio de Electrónica\\ 25.13 \par}
+        \vspace{0.5cm}
+        {\Large \TPtema \par}
+        \vfill                      %sirve para rellenar el espacio y quede simétrico.
+        {\Large \bfseries Grupo N° 2 \par}
+        \vspace{1cm}
+        {\large Juan Bautista Correa Uranga \hfill Legajo: 65016 \par} 
+        {\large Juan Ignacio Caorsi \hfill Legajo: 65532  \par}
+        {\large Rita Moschini \hfill Legajo: 67026 \par} 
+        {\large Lucas Solar Grillo \hfill Legajo: 63322\par}
+        \vfill
+        {\large \today\par}
+        \vfill
+
+\end{titlepage}
+
+{\centering \LARGE \bfseries Resumen \par} 
+\par 
+
+\newpage
+
+\tableofcontents 
+\newpage
+
+%%%%%%%%%%%%%%%%%%% CUERPO DEL INFORME %%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Objetivos}
+El objetivo de este trabajo práctico es utilizar circuitos RC de primer orden, en configuraciones pasabajos y pasaaltos, como base para analizar el uso del instrumental de laboratorio en condiciones reales. Dado que su comportamiento teórico es conocido, se los emplea como referencia para comparar con las mediciones experimentales e identificar las diferencias que aparecen en la práctica. En particular, se busca trabajar con herramientas como el generador de señales, el osciloscopio digital y la función de Network Analyzer, poniendo foco en cómo las condiciones de medición afectan los resultados, considerando efectos como la resistencia de salida del generador, la impedancia de entrada del osciloscopio y las capacitancias parásitas de las puntas. Finalmente, se pretende interpretar las diferencias entre los resultados teóricos y experimentales, teniendo en cuenta tanto las tolerancias de los componentes como las limitaciones del instrumental.
+
+\section{Instrumentos y equipo}
+\begin{itemize}
+    \item Protoboard de 830 puntos
+    \item Capacitor de 3,4 nF
+    \item Resistencia de 4,6 k$\Omega$
+    \item Osciloscopio digital Keysight DSOX1202G
+    \item Generador de señales Picotest G510
+    \item Generador de señales Keysight EDU33212A
+    \item Medidor RLC UNI-T UT812
+\end{itemize}
+
+\section{Marco Teórico}
+\subsection{Circuito RC pasabajos}
+
+El circuito RC pasabajos es un sistema de primer orden formado por una resistencia y un capacitor, cuya salida se toma sobre el capacitor. En el caso ideal, su función de transferencia es:
+
+\begin{equation}
+H(s) = \frac{1}{1 + sRC}
+\label{eq:pasabajos_tf}
+\end{equation}
+
+\begin{equation}
+f_0 = \frac{1}{2\pi RC}
+\label{eq:pasabajos_fc}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
+\begin{circuitikz}[american]
+\draw
+(0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
+      to[R, l=$R$, *-*] (4,3) 
+      to[C, l=$C$] (4,0)
+      to[short, -*] (0,0);
+
+% Salida
+\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+
+% Flecha
+\draw[->, >=stealth] (5,0.5) -- (5,2.5) 
+    node[midway, right] {$v_{\mathrm{out}}$};
+
+\end{circuitikz}
+\shorthandon{>} %Vuelvo a prender el babel español
+\caption{Circuito RC pasabajos.}
+\end{figure}
+
+En frecuencia, la ganancia es aproximadamente 0 dB a bajas frecuencias y luego cae con pendiente de -20 dB/década a partir de \(f_0\). La fase pasa de 0° a -90°.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Ganancia (dB)},
+]
+\addplot[thick] coordinates {
+    (0.01,-0.5) (0.1,-1) (1,-3) (10,-20) (100,-40)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\caption{Diagrama de modulo de Bode pasabajos.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Fase (°)},
+    ymin=-100, ymax=10,
+]
+\addplot[thick] coordinates {
+    (0.01,0) (0.1,-5) (1,-45) (10,-85) (100,-90)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\caption{Diagrama de fase de Bode pasabajos.}
+\end{figure}
+
+\subsection{Circuito RC pasaaltos}
+
+El circuito RC pasaaltos es también de primer orden, pero la salida se toma sobre la resistencia. Su función de transferencia ideal es:
+
+\begin{equation}
+H(s) = \frac{sRC}{1 + sRC}
+\label{eq:pasaaltos_tf}
+\end{equation}
+
+\begin{equation}
+f_0 = \frac{1}{2\pi RC}
+\label{eq:pasaaltos_fc}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
+\begin{circuitikz}[american]
+\draw
+(0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
+      to[C, l=$C$, *-*] (4,3)           
+      to[R, l=$R$] (4,0)                 
+      to[short, -*] (0,0);
+
+% La salida
+\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+
+% La flecha
+\draw[->, >=stealth, thick] (5,0.5) -- (5,2.5) 
+    node[midway, right] {$v_{\mathrm{out}}$};
+
+\end{circuitikz}
+\shorthandon{>}
+\caption{Circuito RC pasaaltos.}
+\end{figure}
+
+En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente de +20 dB/década hasta estabilizarse en 0 dB. La fase varía de 90° a 0°.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Ganancia (dB)},
+]
+\addplot[thick] coordinates {
+    (0.01,-40) (0.1,-20) (1,-3) (10,-1) (100,0)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\caption{Diagrama de modulo de Bode pasaaltos.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Fase (°)},
+    ymin=-10, ymax=100,
+]
+\addplot[thick] coordinates {
+    (0.01,90) (0.1,85) (1,45) (10,5) (100,0)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\caption{Diagrama de fase de Bode pasaaltos.}
+\end{figure}
+
+\subsection{Osciloscopio digital y puntas de medición}
+
+El osciloscopio digital puede modelarse de forma aproximada como una impedancia de entrada compuesta por una resistencia de 1 M$\Omega$ en paralelo con una capacitancia parásita del orden de algunos pF (típicamente alrededor de 12 pF). Esta capacitancia no suele ser relevante a bajas frecuencias, pero empieza a afectar las mediciones cuando se trabaja en frecuencia más alta.
+
+Cuando se utiliza la punta en modo X1, la capacitancia total vista por el circuito aumenta bastante, llegando a valores del orden de 100 pF. Esto se debe principalmente al cable de la punta, que es coaxial, y por lo tanto se comporta como un capacitor distribuido (el conductor interno y la malla actúan como placas separadas por un dieléctrico). En este caso, el conjunto puede modelarse como una resistencia de 1 M$\Omega$ en paralelo con una capacitancia cercana a 100 pF, lo que puede modificar bastante la respuesta del circuito medido, como se muestra en la Fig.~\ref{fig:punta_x1}.
+
+Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un divisor resistivo-capacitivo que compensa este efecto. Esto hace que la capacitancia equivalente vista por el circuito sea mucho menor (del orden de 10–15 pF) y que la resistencia de entrada efectiva aumente a aproximadamente 10 M$\Omega$. De esta forma, se reduce el efecto de carga sobre el circuito y se obtiene una medición más fiel, como se muestra en la Fig.~\ref{fig:punta_x10}.
+
+
+
+\section{Pasabajos}
+    \subsection{Parte teórica}
+        % a) Transferencia y frecuencia de corte
+        % b) Frecuencia nominal y error
+        % c) Ángulo de fase y diagrama vectorial
+        % d) Diagrama de Bode teórico con tolerancias
+        % e) Ganancia y fase para fo/10, fo y 10fo
+        % f) Simulación con onda cuadrada
+        
+    \subsection{Parte práctica}
+        % a) Frecuencia de corte real y cálculo de C
+        % b) Ángulo de fase medido vs teórico
+        % c) Tabla de valores en frecuencia (10Hz a 1MHz)
+        % d) Diagrama de Bode superpuesto
+        % e) Diagrama de Bode con Network Analyzer
+        % f) Gráficos de onda cuadrada
+        % g) Cálculo de vr y gráfico
+        % h) Medición sin C (x1 y x10)
+        % i) Conclusiones de esta sección
+
+\section{Pasaaltos}
+    \subsection{Parte teórica}
+        % a) Transferencia y frecuencia de corte
+        % b) Frecuencia nominal y error
+        % c) Diagrama de Bode con tolerancias
+        % d) Ganancia y fase (fo/10, fo, 10fo)
+        % e) Simulación con onda triangular
+        
+    \subsection{Parte práctica}
+        % a) Bode con Network Analyzer vs teórico
+        % b) Salida con onda triangular variando frecuencia
+
+\section{Sincronización de instrumentos}
+    % a) Usando modo XY del osciloscopio
+    % b) Usando modo normal disparado
+
+\section{Respuesta en frecuencia}
+    % Medición con AC y BW limit vs datos del fabricante
+
+\section{Utilización del hold off}
+    % Señal compuesta y uso del hold off para ver parte triangular
+
+\section{Conclusiones Finales}
+    % Espacio para conclusiones generales del TP
+
+\end{document}
