@@ -1,12 +1,14 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1.}Pasabajos}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Parte teórica}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Parte práctica}{3}{subsection.1.2}%
-\contentsline {section}{\numberline {2.}Pasaaltos}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Parte teórica}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Parte práctica}{3}{subsection.2.2}%
-\contentsline {section}{\numberline {3.}Sincronización de instrumentos}{3}{section.3}%
-\contentsline {section}{\numberline {4.}Respuesta en frecuencia}{3}{section.4}%
-\contentsline {section}{\numberline {5.}Utilización del hold off}{3}{section.5}%
-\contentsline {section}{\numberline {6.}Conclusiones Finales}{3}{section.6}%
+\contentsline {section}{\numberline {1.}Objetivos}{3}{section.1}%
+\contentsline {section}{\numberline {2.}Instrumentos y equipo}{4}{section.2}%
+\contentsline {section}{\numberline {3.}Pasabajos}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Parte teórica}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Parte práctica}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4.}Pasaaltos}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Parte teórica}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Parte práctica}{4}{subsection.4.2}%
+\contentsline {section}{\numberline {5.}Sincronización de instrumentos}{4}{section.5}%
+\contentsline {section}{\numberline {6.}Respuesta en frecuencia}{4}{section.6}%
+\contentsline {section}{\numberline {7.}Utilización del hold off}{4}{section.7}%
+\contentsline {section}{\numberline {8.}Conclusiones Finales}{4}{section.8}%
 \contentsfinish 
