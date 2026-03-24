@@ -110,28 +110,43 @@ El objetivo de este trabajo práctico es utilizar circuitos RC de primer orden, 
 
 El circuito RC pasabajos es un sistema de primer orden formado por una resistencia y un capacitor, cuya salida se toma sobre el capacitor. En el caso ideal, su función de transferencia es:
 
-\[
+\begin{equation}
 H(s) = \frac{1}{1 + sRC}
-\]
+\label{eq:pasabajos_tf}
+\end{equation}
 
-\[
+\begin{equation}
 f_0 = \frac{1}{2\pi RC}
-\]
+\label{eq:pasabajos_fc}
+\end{equation}
 
-\begin{center}
-\begin{circuitikz}
+\begin{figure}[H]
+\centering
+\shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
+\begin{circuitikz}[american]
 \draw
-(0,0) to[sV, l=$v_{in}$] (0,3)
-to[R, l=$R$] (3,3)
-to[C, l=$C$] (3,0)
--- (0,0);
-\draw (3,3) to[short] (4,3) node[right]{$v_{out}$};
+(0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
+      to[R, l=$R$, *-*] (4,3) 
+      to[C, l=$C$] (4,0)
+      to[short, -*] (0,0);
+
+% Salida
+\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+
+% Flecha
+\draw[->, >=stealth] (5,0.5) -- (5,2.5) 
+    node[midway, right] {$v_{\mathrm{out}}$};
+
 \end{circuitikz}
-\end{center}
+\shorthandon{>} %Vuelvo a prender el babel español
+\caption{Circuito RC pasabajos.}
+\end{figure}
 
 En frecuencia, la ganancia es aproximadamente 0 dB a bajas frecuencias y luego cae con pendiente de -20 dB/década a partir de \(f_0\). La fase pasa de 0° a -90°.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{semilogxaxis}[
     width=10cm,
@@ -145,34 +160,69 @@ En frecuencia, la ganancia es aproximadamente 0 dB a bajas frecuencias y luego c
 };
 \end{semilogxaxis}
 \end{tikzpicture}
-\end{center}
+\caption{Diagrama de modulo de Bode pasabajos.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Fase (°)},
+    ymin=-100, ymax=10,
+]
+\addplot[thick] coordinates {
+    (0.01,0) (0.1,-5) (1,-45) (10,-85) (100,-90)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\caption{Diagrama de fase de Bode pasabajos.}
+\end{figure}
 
 \subsection{Circuito RC pasaaltos}
 
 El circuito RC pasaaltos es también de primer orden, pero la salida se toma sobre la resistencia. Su función de transferencia ideal es:
 
-\[
+\begin{equation}
 H(s) = \frac{sRC}{1 + sRC}
-\]
+\label{eq:pasaaltos_tf}
+\end{equation}
 
-\[
+\begin{equation}
 f_0 = \frac{1}{2\pi RC}
-\]
+\label{eq:pasaaltos_fc}
+\end{equation}
 
-\begin{center}
-\begin{circuitikz}
+\begin{figure}[H]
+\centering
+\shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
+\begin{circuitikz}[american]
 \draw
-(0,0) to[sV, l=$v_{in}$] (0,3)
-to[C, l=$C$] (3,3)
-to[R, l=$R$] (3,0)
--- (0,0);
-\draw (3,0) to[short] (4,0) node[right]{$v_{out}$};
+(0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
+      to[C, l=$C$, *-*] (4,3)           
+      to[R, l=$R$] (4,0)                 
+      to[short, -*] (0,0);
+
+% La salida
+\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+
+% La flecha
+\draw[->, >=stealth, thick] (5,0.5) -- (5,2.5) 
+    node[midway, right] {$v_{\mathrm{out}}$};
+
 \end{circuitikz}
-\end{center}
+\shorthandon{>}
+\caption{Circuito RC pasaaltos.}
+\end{figure}
 
 En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente de +20 dB/década hasta estabilizarse en 0 dB. La fase varía de 90° a 0°.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{semilogxaxis}[
     width=10cm,
@@ -186,7 +236,27 @@ En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente 
 };
 \end{semilogxaxis}
 \end{tikzpicture}
-\end{center}
+\caption{Diagrama de modulo de Bode pasaaltos.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Fase (°)},
+    ymin=-10, ymax=100,
+]
+\addplot[thick] coordinates {
+    (0.01,90) (0.1,85) (1,45) (10,5) (100,0)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\caption{Diagrama de fase de Bode pasaaltos.}
+\end{figure}
 
 \section{Pasabajos}
     \subsection{Parte teórica}

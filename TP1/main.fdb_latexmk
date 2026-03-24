@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774369648.95876 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" "main.pdf" "main" 1774369651.38899 0
+["pdflatex"] 1774373600.54813 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" "main.pdf" "main" 1774373603.26447 0
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1774318562 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1774318566 18748 7fe1025cfd8bec36139decdf052442d7 ""
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx2074.pk" 1774318567 28420 b197038010d7daa30dae45e7ba13a58b ""
@@ -18,7 +18,6 @@
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1247596667 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
-  "C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1247596667 36281 c355509802a035cadc5f15869451dcee ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
@@ -222,11 +221,11 @@
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "Logo_ITBA.png" 1774318325 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" 1774369648 8120 ecce989158e2ba3a54ecacf8f3bdbb2b ""
-  "main.aux" 1774369651 2162 add97133ceb9817670e2651fe1352c61 "pdflatex"
-  "main.out" 1774369651 2083 c92629d41c27f560bb7f916680c43c4b "pdflatex"
-  "main.tex" 1774369648 8120 ecce989158e2ba3a54ecacf8f3bdbb2b ""
-  "main.toc" 1774369651 1217 d34dd27b274deb29a9016a3e91144934 "pdflatex"
+  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" 1774373597 10164 fd744df983db9943747f29f349061483 ""
+  "main.aux" 1774373602 3352 d4f7a549048e15a39a997c4e7a033ad5 "pdflatex"
+  "main.out" 1774373602 2083 c92629d41c27f560bb7f916680c43c4b "pdflatex"
+  "main.tex" 1774373597 10164 fd744df983db9943747f29f349061483 ""
+  "main.toc" 1774373602 1217 5b98b1a96bfb495ed4bacaa3a468f2de "pdflatex"
   (generated)
   "main.aux"
   "main.log"
