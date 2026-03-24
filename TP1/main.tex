@@ -93,7 +93,100 @@
 
 \section{Objetivos}
 El objetivo de este trabajo práctico es utilizar circuitos RC de primer orden, en configuraciones pasabajos y pasaaltos, como base para analizar el uso del instrumental de laboratorio en condiciones reales. Dado que su comportamiento teórico es conocido, se los emplea como referencia para comparar con las mediciones experimentales e identificar las diferencias que aparecen en la práctica. En particular, se busca trabajar con herramientas como el generador de señales, el osciloscopio digital y la función de Network Analyzer, poniendo foco en cómo las condiciones de medición afectan los resultados, considerando efectos como la resistencia de salida del generador, la impedancia de entrada del osciloscopio y las capacitancias parásitas de las puntas. Finalmente, se pretende interpretar las diferencias entre los resultados teóricos y experimentales, teniendo en cuenta tanto las tolerancias de los componentes como las limitaciones del instrumental.
+
 \section{Instrumentos y equipo}
+\begin{itemize}
+    \item Protoboard de 830 puntos
+    \item Capacitor de 3,4 nF
+    \item Resistencia de 4,6 k$\Omega$
+    \item Osciloscopio digital Keysight DSOX1202G
+    \item Generador de señales Picotest G510
+    \item Generador de señales Keysight EDU33212A
+    \item Medidor RLC UNI-T UT812
+\end{itemize}
+
+\section{Marco Teórico}
+\subsection{Circuito RC pasabajos}
+
+El circuito RC pasabajos es un sistema de primer orden formado por una resistencia y un capacitor, cuya salida se toma sobre el capacitor. En el caso ideal, su función de transferencia es:
+
+\[
+H(s) = \frac{1}{1 + sRC}
+\]
+
+\[
+f_0 = \frac{1}{2\pi RC}
+\]
+
+\begin{center}
+\begin{circuitikz}
+\draw
+(0,0) to[sV, l=$v_{in}$] (0,3)
+to[R, l=$R$] (3,3)
+to[C, l=$C$] (3,0)
+-- (0,0);
+\draw (3,3) to[short] (4,3) node[right]{$v_{out}$};
+\end{circuitikz}
+\end{center}
+
+En frecuencia, la ganancia es aproximadamente 0 dB a bajas frecuencias y luego cae con pendiente de -20 dB/década a partir de \(f_0\). La fase pasa de 0° a -90°.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Ganancia (dB)},
+]
+\addplot[thick] coordinates {
+    (0.01,-0.5) (0.1,-1) (1,-3) (10,-20) (100,-40)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\end{center}
+
+\subsection{Circuito RC pasaaltos}
+
+El circuito RC pasaaltos es también de primer orden, pero la salida se toma sobre la resistencia. Su función de transferencia ideal es:
+
+\[
+H(s) = \frac{sRC}{1 + sRC}
+\]
+
+\[
+f_0 = \frac{1}{2\pi RC}
+\]
+
+\begin{center}
+\begin{circuitikz}
+\draw
+(0,0) to[sV, l=$v_{in}$] (0,3)
+to[C, l=$C$] (3,3)
+to[R, l=$R$] (3,0)
+-- (0,0);
+\draw (3,0) to[short] (4,0) node[right]{$v_{out}$};
+\end{circuitikz}
+\end{center}
+
+En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente de +20 dB/década hasta estabilizarse en 0 dB. La fase varía de 90° a 0°.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=10cm,
+    height=5cm,
+    grid=both,
+    xlabel={Fo},
+    ylabel={Ganancia (dB)},
+]
+\addplot[thick] coordinates {
+    (0.01,-40) (0.1,-20) (1,-3) (10,-1) (100,0)
+};
+\end{semilogxaxis}
+\end{tikzpicture}
+\end{center}
 
 \section{Pasabajos}
     \subsection{Parte teórica}
