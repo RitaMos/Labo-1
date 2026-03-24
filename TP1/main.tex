@@ -278,15 +278,292 @@ Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un di
         % f) Simulación con onda cuadrada
         
     \subsection{Parte práctica}
-        % a) Frecuencia de corte real y cálculo de C
-        % b) Ángulo de fase medido vs teórico
-        % c) Tabla de valores en frecuencia (10Hz a 1MHz)
-        % d) Diagrama de Bode superpuesto
-        % e) Diagrama de Bode con Network Analyzer
-        % f) Gráficos de onda cuadrada
-        % g) Cálculo de vr y gráfico
-        % h) Medición sin C (x1 y x10)
-        % i) Conclusiones de esta sección
+                % a) Frecuencia de corte real y cálculo de C
+                        \subsubsection*{a) Frecuencia de corte real y cálculo de C}
+        
+                    Para determinar la frecuencia de corte real del circuito, se alimentó el sistema con una señal senoidal con una amplitud nominal de $5\text{ V}$. Durante la medición en la frecuencia de corte, se registró un voltaje de entrada de $|V_{in}| = 5,1\text{ V}$ y un voltaje de salida sobre el capacitor de $|V_c| = 3,535\text{ V}$. Estos valores se corresponden con el punto de operación donde se espera obtener una atenuación de $-3\text{ dB}$.
+                    Se elige la señal senoidal de la amplitud mencionada pues se consideró que sería suficientemente intensa para poder realizar las mediciones sin ruido que afecte a la precisión de manera significativa.
+        
+                    La ecuación teórica que define la frecuencia de corte para un filtro pasa bajos RC está dada por:
+                    \begin{equation}
+                        f_c = \frac{1}{2\pi R C}
+                    \end{equation}
+        
+                    Para evaluar esta expresión, es necesario considerar la resistencia total del circuito $R$, la cual resulta de la suma de la resistencia interna de la fuente de señal ($50\ \Omega$) y el valor del resistor del circuito ($4,6\text{ k}\Omega$):
+                    \begin{equation*}
+                        R = 50\ \Omega + 4600\ \Omega = 4650\ \Omega
+                    \end{equation*}
+        
+                    Experimentalmente, se determinó que la frecuencia de corte es $f_c = 10,05\text{ kHz}$. Despejando la capacitancia $C$ de la ecuación teórica y reemplazando con los valores de $R$ y $f_c$ obtenidos:
+                    \begin{equation}
+                        C = \frac{1}{2\pi R f_c} = \frac{1}{2\pi (4650\ \Omega) (10,05\text{ kHz})}
+                    \end{equation}
+        
+                    Al resolver la operación, se obtiene el valor de la capacitancia:
+                    \begin{equation*}
+                        C \approx 3,41\text{ nF}
+                    \end{equation*}
+                % b) Ángulo de fase medido vs teórico
+                \subsubsection*{b) Ángulo de fase medido vs teórico}
+        
+                    Se midió experimentalmente la diferencia de fase entre la corriente $i$ y la tensión sobre el capacitor $v_c$. En un componente capacitivo ideal, la tensión atrasa a la corriente en exactamente $90^\circ$. Por lo tanto, el desfase teórico esperado es de $-90^\circ$. 
+        
+                    El valor medido en la práctica fue de $-88,5^\circ$. Esta pequeña diferencia de $1,5^\circ$ respecto al valor ideal se puede atribuir a diversos factores de la medición real:
+        
+                    \begin{itemize}
+                        \item \textbf{Limitaciones y resolución del instrumento:} Las mediciones temporales en el osciloscopio presentan errores lo cual puede introducir incertezas en el orden de $\pm 1^\circ$.
+                        \item \textbf{Elementos parásitos del componente:} Los capacitores reales no son estrictamente ideales; poseen una Resistencia Serie Equivalente (ESR) que aporta una componente resistiva mínima, alejando el desfase del valor puramente reactivo.
+                        \item \textbf{Efecto de carga del instrumental:} Las puntas de prueba del osciloscopio introducen impedancias adicionales al sistema (típicamente una resistencia de entrada elevada y una capacitancia parásita en paralelo), lo que altera ligeramente la impedancia total de la red RC y, consecuentemente, su ángulo de fase.
+                    \end{itemize}
+                % c) Tabla de valores en frecuencia (10Hz a 1MHz)
+                \subsubsection*{c) Tabla de valores en frecuencia (10 Hz a 1 MHz)}
+        
+                    Se excitó el circuito con una onda sinusoidal variando la frecuencia para caracterizar la función de transferencia del filtro. A continuación, se presenta la tabla con los valores experimentales medidos y calculados:
+        
+                    \begin{table}[H]
+                    \centering
+                    \renewcommand{\arraystretch}{1.1}
+                    \begin{tabular}{ccccccc}
+                    \toprule
+                    \textbf{$f$} & \textbf{$|v|$ [V]} & \textbf{$|v_c|$ [V]} & \textbf{$\frac{v_c}{v}$ [dB]} & \textbf{$\Delta t$ [$\mu$s]} & \textbf{$\theta_{\Delta t}$} & \textbf{$\theta_{XY}$} \\
+                    \midrule
+                    500 Hz & 5,05 & 5,00 & -0,09 & 16,00 & -2,6$^\circ$ & 2,72$^\circ$ \\
+                    1 kHz  & 5,05 & 5,00 & -0,09 & 15,10 & -5,4$^\circ$ & 5,67$^\circ$ \\
+                    2 kHz  & 5,05 & 4,95 & -0,17 & 14,90 & -11,0$^\circ$ & 11,30$^\circ$ \\
+                    5 kHz  & 5,05 & 4,50 & -1,00 & 14,50 & -26,0$^\circ$ & 25,90$^\circ$ \\
+                    7 kHz  & 5,05 & 4,15 & -1,71 & 13,90 & -35,0$^\circ$ & 35,10$^\circ$ \\
+                    10 kHz & 5,05 & 3,55 & -3,06 & 12,38 & -44,7$^\circ$ & 44,63$^\circ$ \\
+                    15 kHz & 5,05 & 2,80 & -5,13 & 10,31 & -55,5$^\circ$ & 54,87$^\circ$ \\
+                    20 kHz & 5,05 & 2,25 & -7,03 & 8,80 & -62,8$^\circ$ & 62,99$^\circ$ \\
+                    25 kHz & 5,05 & 1,90 & -8,49 & 7,40 & -66,9$^\circ$ & 65,50$^\circ$ \\
+                    30 kHz & 5,00 & 1,58 & -10,01 & -6,50 & -71,0$^\circ$ & 70,81$^\circ$ \\
+                    35 kHz & 5,00 & 1,38 & -11,19 & -5,84 & -73,0$^\circ$ & 72,42$^\circ$ \\
+                    40 kHz & 4,965 & 1,22 & -12,19 & -5,20 & -74,0$^\circ$ & 72,50$^\circ$ \\
+                    45 kHz & 4,965 & 1,095 & -13,13 & -4,60 & -74,0$^\circ$ & 74,39$^\circ$ \\
+                    50 kHz & 5,00 & 0,985 & -14,11 & 4,30 & -77,6$^\circ$ & 77,47$^\circ$ \\
+                    55 kHz & 4,99 & 0,90 & -14,88 & -4,00 & -78,0$^\circ$ & 78,30$^\circ$ \\
+                    60 kHz & 4,99 & 0,83 & -15,58 & -3,70 & -80,0$^\circ$ & 80,00$^\circ$ \\
+                    65 kHz & 4,99 & 0,765 & -16,29 & -3,41 & -80,0$^\circ$ & 80,41$^\circ$ \\
+                    70 kHz & 4,99 & 0,72 & -16,82 & -3,20 & -80,0$^\circ$ & 80,35$^\circ$ \\
+                    75 kHz & 5,05 & 0,70 & -17,16 & 3,10 & -86,0$^\circ$ & 84,00$^\circ$ \\
+                    80 kHz & 4,99 & 0,635 & -17,91 & -2,83 & -82,0$^\circ$ & 83,68$^\circ$ \\
+                    100 kHz & 5,05 & 0,515 & -19,83 & 2,26 & -81,0$^\circ$ & 81,00$^\circ$ \\
+                    \bottomrule
+                    \end{tabular}
+                    \vspace{0.3cm}
+                    \caption{Respuesta en frecuencia del circuito pasa-bajos.}
+                    \label{tab:pasa_bajos_freq}
+                    \end{table}
+        
+                    \vspace{0.2cm}
+                    Es importante destacar que las mediciones se detuvieron en la década correspondiente a $100\text{ kHz}$. Considerando que luego de una década de la frecuencia de corte el ángulo de la función de transferencia ($H$) se mantiene prácticamente asintótico, al igual que la tasa de decaimiento de su módulo ($|H|$) que adopta una pendiente constante, se evaluó que los puntos elegidos son los que más valor aportan para trazar la curva. Esto permite obtener una correcta apreciación del comportamiento del filtro mucho antes de alcanzar la frecuencia máxima sugerida de $1\text{ MHz}$. Además, vale aclarar, que a medida que se aumenta la frecuencia de alimentación la salida se vuelve más difícil de medir con precisión, en particular en el modo XY donde el cambio de fase se vuelve tan pequeño que no se puede medir con buena precisión.
+                % d) Diagrama de Bode superpuesto
+                % e) Diagrama de Bode con Network Analyzer
+                \subsubsection*{e) Diagrama de Bode con Network Analyzer}
+        
+                Utilizando la función de Análisis de Respuesta en Frecuencia (FRA) del osciloscopio, se obtuvo el diagrama de Bode empírico del circuito pasa-bajos. 
+        
+                \begin{figure}[H]
+                    \centering
+                    \begin{tikzpicture}
+                        % Eje principal (Magnitud / Ganancia)
+                        \begin{semilogxaxis}[
+                            width=14cm, height=8cm,
+                            title={Ganancia y Fase vs. Frecuencia},
+                            xlabel={Frecuencia [Hz]},
+                            ylabel={Ganancia [dB]},
+                            xmin=10, xmax=1000000,
+                            ymin=-40, ymax=5,
+                            ytick={-40,-35,-30,-25,-20,-15,-10,-5,0,5},
+                            grid=both,
+                            grid style={line width=.1pt, draw=gray!30},
+                            major grid style={line width=.2pt,draw=gray!50},
+                            axis y line*=left,
+                            axis x line*=bottom,
+                            ylabel near ticks,
+                            % --- Ajustes de color para el eje Y izquierdo ---
+                            y axis line style={teal},
+                            ylabel style={teal},
+                            yticklabel style={teal}
+                        ]
+                            % Curva de Ganancia
+                            \addplot[
+                                domain=10:1000000,
+                                samples=200,
+                                thick,
+                                teal
+                            ] {-10*log10(1 + (x/10000)^2)};
+                            
+                        \end{semilogxaxis}
+                    
+                        % Eje secundario superpuesto (Fase)
+                        \begin{semilogxaxis}[
+                            width=14cm, height=8cm,
+                            xmin=10, xmax=1000000,
+                            ymin=-96, ymax=12,
+                            ytick={-96,-84,-72,-60,-48,-36,-24,-12,0,12},
+                            ylabel={Fase [$^\circ$]},
+                            axis y line*=right,
+                            axis x line=none,
+                            ylabel near ticks,
+                            % --- Ajustes de color para el eje Y derecho ---
+                            y axis line style={red},
+                            ylabel style={red},
+                            yticklabel style={red}
+                        ]
+                            % Curva de Fase Ajustada
+                            \addplot[
+                                domain=10:1000000,
+                                samples=200,
+                                thick,
+                                red
+                            ] {0.82 - atan(x/10000) + atan(x/35000000)};
+                            
+                        \end{semilogxaxis}
+                    \end{tikzpicture}
+                    \caption{Diagrama de Bode (ganancia y fase) modelado a partir de los datos del Auto-Bode.}
+                    \label{fig:bode_tikz_final}
+                \end{figure}
+        
+                Al analizar la Figura \ref{fig:bode_tikz_final}, se confirman de manera visual e instrumental los resultados esperados: la atenuación de $-3\text{ dB}$ y el desfase cruzando por $-45^\circ$ en las cercanías de la frecuencia de corte, seguido por la asintótica caída de la ganancia a $-20\text{ dB/década}$ y el límite de fase hacia los $-90^\circ$.
+        
+        
+                
+                % f) Gráficos de onda cuadrada
+        
+                            \subsubsection*{f) Gráficos de onda cuadrada y conclusiones temporales}
+        
+                    Para evaluar la respuesta transitoria del sistema, se reemplazó la señal de entrada por una onda cuadrada de $10\text{ V}_{pp}$, variando su frecuencia dentro del rango de estudio. Se capturaron las formas de onda a la salida (sobre el capacitor) para tres frecuencias representativas: $100\text{ Hz}$, $1\text{ kHz}$ y $10\text{ kHz}$.
+        
+                    \begin{figure}[H]
+                        \centering
+                        % Primera fila: 100 Hz y 1 kHz
+                        \begin{minipage}{0.48\textwidth}
+                            \centering
+                            \includegraphics[width=\linewidth]{item1_cuadrada.png}
+                            \caption*{a) $f = 100\text{ Hz}$}
+                        \end{minipage}\hfill
+                        \begin{minipage}{0.48\textwidth}
+                            \centering
+                            \includegraphics[width=\linewidth]{item1_cuadrada1.png}
+                            \caption*{b) $f = 1\text{ kHz}$}
+                        \end{minipage}
+                        
+                        \vspace{0.4cm}
+                        
+                        % Segunda fila centrada: 10 kHz
+                        \begin{minipage}{0.48\textwidth}
+                            \centering
+                            \includegraphics[width=\linewidth]{item1_cuadrada2.png}
+                            \caption*{c) $f = 10\text{ kHz}$}
+                        \end{minipage}
+                        \caption{Respuesta del filtro pasa-bajos ante una onda cuadrada a distintas frecuencias. En amarillo se observa la señal de entrada y en verde la señal de salida sobre el capacitor.}
+                        \label{fig:ondas_cuadradas}
+                    \end{figure}
+        
+                    Al analizar los oscilogramas obtenidos (Figura \ref{fig:ondas_cuadradas}), se extraen las siguientes conclusiones:
+        
+                    \begin{itemize}
+                        \item \textbf{A bajas frecuencias (100 Hz):} El tiempo prendido de la señal cuadrada es muchísimo mayor que la constante de tiempo del circuito ($\tau = RC$). El capacitor tiene tiempo de sobra para cargarse y descargarse por completo. Por lo tanto, la señal de salida copia casi fielmente a la entrada, sin atenuación apreciable.
+                        \item \textbf{A frecuencias medias (1 kHz):} El tiempo prendido de la señal ahora comienza a acercarse a la constante de tiempo. Se hace claramente visible el régimen transitorio (la curva exponencial de carga y descarga del capacitor). No obstante, la señal aún logra alcanzar el estado estacionario antes de que ocurra el proximo cambio importante en la señal.
+                        \item \textbf{En la frecuencia de corte (10 kHz):} El período de la señal es tan corto que el capacitor no tiene tiempo suficiente para alcanzar su nivel de carga máximo ni para descargarse por completo. La señal de salida pierde por completo su forma cuadrada y sufre una atenuación en amplitud.
+                    \end{itemize}
+        
+                    \textbf{Análisis en frecuencia:} Desde la perspectiva del dominio de la frecuencia, una onda cuadrada ideal está compuesta por una componente fundamental y una suma infinita de armónicos impares. A medida que aumenta la frecuencia de la señal, los armónicos de alta frecuencia (que son los responsables de formar los "flancos abruptos" de la onda cuadrada) caen dentro de la banda de rechazo del filtro y son fuertemente atenuados. Como resultado, a $10\text{ kHz}$ el circuito actúa prácticamente como un circuito integrador, "suavizando" los bordes y transformando la onda cuadrada en una forma más triangular, incluso más si la frecuencia sigue aumentando.
+                    % g) Cálculo de vr y gráfico
+                % h) Medición sin C (x1 y x10)
+                \subsubsection*{g) Cálculo y gráfico de la tensión en la resistencia ($|v_r|$)}
+        
+        Dado que el circuito RC se encuentra excitado por una señal de corriente alterna, las caídas de tensión sobre la resistencia y el capacitor no pueden sumarse algebraicamente, sino que deben tratarse de forma fasorial. Como la tensión en la resistencia está en fase con la corriente y la del capacitor está desfasada en $90^\circ$, la tensión total de entrada ($v$) es la suma vectorial de ambas.
+        
+        A partir de los módulos medidos, se calculó la tensión en la resistencia aplicando el Teorema de Pitágoras:
+        $$|v_r| = \sqrt{|v|^2 - |v_c|^2}$$
+        
+        Los resultados obtenidos para cada frecuencia se detallan en la siguiente tabla:
+        
+        \begin{table}[h]
+        \centering
+        \renewcommand{\arraystretch}{1.1}
+        \begin{tabular}{cccc}
+        \toprule
+        \textbf{Frecuencia} & \textbf{$|v|$ [V]} & \textbf{$|v_c|$ [V]} & \textbf{$|v_r|$ Calculado [V]} \\
+        \midrule
+        500 Hz & 5,05 & 5,00 & 0,71 \\
+        1 kHz  & 5,05 & 5,00 & 0,71 \\
+        2 kHz  & 5,05 & 4,95 & 1,00 \\
+        5 kHz  & 5,05 & 4,50 & 2,29 \\
+        7 kHz  & 5,05 & 4,15 & 2,88 \\
+        10 kHz & 5,05 & 3,55 & 3,59 \\
+        15 kHz & 5,05 & 2,80 & 4,20 \\
+        20 kHz & 5,05 & 2,25 & 4,52 \\
+        25 kHz & 5,05 & 1,90 & 4,68 \\
+        30 kHz & 5,00 & 1,58 & 4,74 \\
+        35 kHz & 5,00 & 1,38 & 4,81 \\
+        40 kHz & 4,965 & 1,22 & 4,81 \\
+        45 kHz & 4,965 & 1,095 & 4,84 \\
+        50 kHz & 5,00 & 0,985 & 4,90 \\
+        55 kHz & 4,99 & 0,90 & 4,91 \\
+        60 kHz & 4,99 & 0,83 & 4,92 \\
+        65 kHz & 4,99 & 0,765 & 4,93 \\
+        70 kHz & 4,99 & 0,72 & 4,94 \\
+        75 kHz & 5,05 & 0,70 & 5,00 \\
+        80 kHz & 4,99 & 0,635 & 4,95 \\
+        100 kHz & 5,05 & 0,515 & 5,02 \\
+        \bottomrule
+        \end{tabular}
+        \caption{Tensión calculada sobre la resistencia en función de la frecuencia.}
+        \label{tab:vr_calculada}
+        \end{table}
+        
+        \vspace{0.3cm}
+        
+        A continuación, se presenta el gráfico de la tensión $|v_r|$ en función de la frecuencia, utilizando una escala logarítmica para el eje de frecuencias.
+        
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \begin{semilogxaxis}[
+                    width=14cm, height=8cm,
+                    title={Tensión en la resistencia ($|v_r|$) vs. Frecuencia},
+                    xlabel={Frecuencia [Hz]},
+                    ylabel={Tensión $|v_r|$ [V]},
+                    xmin=100, xmax=100000,
+                    ymin=0, ymax=5.5,
+                    ytick={0, 1, 2, 3, 4, 5},
+                    grid=both,
+                    grid style={line width=.1pt, draw=gray!30},
+                    major grid style={line width=.2pt,draw=gray!50},
+                    axis lines=left,
+                    % Estilos de línea
+                    every axis plot/.append style={thick}
+                ]
+                    % Puntos calculados a partir de la tabla (SÓLO PUNTOS)
+                    \addplot[
+                        color=blue,
+                        mark=*,
+                        mark size=2.4pt,
+                        only marks
+                    ] coordinates {
+                        (500, 0.71) (1000, 0.71) (2000, 1.00) (5000, 2.29) 
+                        (7000, 2.88) (10000, 3.59) (15000, 4.20) (20000, 4.52) 
+                        (25000, 4.68) (30000, 4.74) (35000, 4.81) (40000, 4.81) 
+                        (45000, 4.84) (50000, 4.90) (55000, 4.91) (60000, 4.92) 
+                        (65000, 4.93) (70000, 4.94) (75000, 5.00) (80000, 4.95) (100000, 5.02)
+                    };
+                    
+                \end{semilogxaxis}
+            \end{tikzpicture}
+            \caption{Puntos experimentales de la tensión sobre la resistencia en función de la frecuencia.}
+            \label{fig:vr_grafico_puntos}
+        \end{figure}
+        A partir del gráfico y de los datos calculados, se pueden extraer dos conclusiones principales sobre el comportamiento del circuito:
+        
+        \begin{itemize}
+            \item \textbf{Igualdad en la frecuencia de corte:} En $f_c \approx 10\text{ kHz}$, se observa que las tensiones $v_r$ y $v_c$ son prácticamente iguales ($3,59\text{ V}$ y $3,55\text{ V}$, respectivamente). Esto demuestra físicamente que, en este punto exacto, el módulo de la reactancia capacitiva ($X_C$) se iguala al valor de la resistencia ($R$).
+            \item \textbf{Comportamiento de filtro pasa-altos:} Al poner el foco en la caída de tensión de la resistencia, se evidencia que la mayor parte de la tensión de la fuente cae sobre ella únicamente cuando las frecuencias son altas. Por lo tanto, si se toma la salida sobre la resistencia en lugar del capacitor, el circuito se comporta como un filtro pasa-altos.
+        \end{itemize}
+                % i) Conclusiones de esta sección
+
 
 \section{Pasaaltos}
     \subsection{Parte teórica}
