@@ -472,7 +472,7 @@ Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un di
                     \textbf{Análisis en frecuencia:} Desde la perspectiva del dominio de la frecuencia, una onda cuadrada ideal está compuesta por una componente fundamental y una suma infinita de armónicos impares. A medida que aumenta la frecuencia de la señal, los armónicos de alta frecuencia (que son los responsables de formar los "flancos abruptos" de la onda cuadrada) caen dentro de la banda de rechazo del filtro y son fuertemente atenuados. Como resultado, a $10\text{ kHz}$ el circuito actúa prácticamente como un circuito integrador, "suavizando" los bordes y transformando la onda cuadrada en una forma más triangular, incluso más si la frecuencia sigue aumentando.
                     % g) Cálculo de vr y gráfico
                 % h) Medición sin C (x1 y x10)
-                \subsubsection*{g) Cálculo y gráfico de la tensión en la resistencia ($|v_r|$)}
+                \subsubsection*{g) Cálculo y gráfico de la tensión en la resistencia ($|v_r|$)} \label{vr}
         
         Dado que el circuito RC se encuentra excitado por una señal de corriente alterna, las caídas de tensión sobre la resistencia y el capacitor no pueden sumarse algebraicamente, sino que deben tratarse de forma fasorial. Como la tensión en la resistencia está en fase con la corriente y la del capacitor está desfasada en $90^\circ$, la tensión total de entrada ($v$) es la suma vectorial de ambas.
         
@@ -677,8 +677,143 @@ f_0 \approx 10.1\,\text{kHz}
         % e) Simulación con onda triangular
         
     \subsection{Parte práctica}
-        % a) Bode con Network Analyzer vs teórico
-        % b) Salida con onda triangular variando frecuencia
+        \subsubsection*{a) Diagrama de Bode}
+            Una fuente de problemas común al momento de estudiar circuitos es la forma en que los instrumentos de medición afectan a las propias mediciones. En el caso del filtro pasaaltos, se pueden modelar las impedancias del osciloscopio y de las puntas en conjunto agregando en paralelo a la salida un capacitor de $ 100 pF $  y una resistencia de $1 M\Omega$, como se puede observar en la figura \ref{fig:pasaaltosNoIdeal}.
+
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    % Paths, nodes and wires:
+                    \draw (6, 3) to[capacitor] (8, 3);
+                    \draw (9, 3) to[american resistor] (9, -0);
+                    \draw (11, 3) to[capacitor] (11, -0);
+                    \draw (12.75, 3) to[american resistor] (12.75, -0);
+                    \draw (5, 3) to[sinusoidal voltage source] (5, 0);
+                    \draw (12.75, -0) |- (5, -0);
+                    \node[shape=rectangle, minimum width=1.465cm, minimum height=0.715cm] at (7.25, 3.625){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (6.5, 4){3,3n};
+                    \node[shape=rectangle, minimum width=1.465cm, minimum height=0.715cm] at (8.5, 1.375){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (7.75, 1.75){4,7k};
+                    \node[shape=rectangle, minimum width=1.465cm, minimum height=0.715cm] at (10.75, 1.875){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (10, 2.25){100p};
+                    \draw (5, 3) -- (6, 3);
+                    \draw (8, 3) -- (12.75, 3);
+                    \node[shape=rectangle, minimum width=1.465cm, minimum height=0.715cm] at (13.75, 1.5){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (13, 1.875){1M};
+                    \node[circ] at (12.75, 3){};
+                    \node[shape=rectangle, minimum width=1.465cm, minimum height=0.715cm] at (13.5, 3){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (12.75, 3.375){Vout};
+                \end{tikzpicture}
+                \caption{Modelo de  filtro pasaaltos considerando las impedancias del osciloscopio y de las puntas.}
+                \label{fig:pasaaltosNoIdeal}
+            \end{figure}
+
+            Sin embargo, como se puede observar en la figura \ref{fig:pasaaltosSimulado}, en este circuito esas no-idealidades afectan poco al comportamiento en frecuencia del mismo. Para las resistencias, es porque la resistencia de $1 M\Omega$ queda en paralelo a la de $4k7\Omega$, y se tiene que la resistencia equivalente vale
+            \begin{equation*}
+                \frac{1}{\frac{1}{4,7k}+\frac{1}{1M}}\approx\frac{1}{\frac{1}{4,7k}} = 4,7k
+            \end{equation*}
+            puesto que $4,7k \ll 1M$, por lo que la resistencia de $ 1 M\Omega$ resulta despreciable.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.5\linewidth]{2.2simulacion.png}
+                \caption{Simulación del pasaaltos: ideal vs real}
+                \label{fig:pasaaltosSimulado}
+            \end{figure}
+
+            Luego, para los capacitores, las impedancias de ambos para $0,1f_0$, $f_0$ y $10f_0$ quedan como en la tabla \ref{table:impedanciasCapacivas} a continuación, sabiendo que $|Z_C|=\frac{1}{\omega C}$.
+
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|c|}
+                    \hline     & $0,1f_0$    & $f_0$           & $10f_0$       \\ \hline
+                    $Z_{3,3n}$ & $47 k\Omega$ & $4,7 k\Omega$ & $470 k\Omega$ \\ \hline
+                    $Z_{100p}$ & $1,55 M\Omega = 1545 k\Omega$ & $154,5 k\Omega$ & $15,45 k\Omega$ \\ \hline
+                \end{tabular}
+                \caption{Impedancias capacitivas para frecuencias centradas en la frecuencia de corte}
+                \label{table:impedanciasCapacivas}
+            \end{table}
+
+            Se puede ver que para frecuencias bajas y para la frecuencia de corte, el capacitor parásito de 100 pF genera una impedancia significativamente más alta que la resistencia de $ 4,7 k\Omega $, resultando en que la corriente circule por la misma. Por otro lado, para frecuencias mayores a la de corte, la impedancia generada por el capacitor de 3,3 nF es significativamente mayor a la de $470 k\Omega$, es decir que el capacitor de 100 pF resulta prácticamente insignificante en comparación al de 3,3 nF.
+
+            \par Como se puede ver en las figuras \ref{fig:pasaaltosTeorico} y \ref{fig:pasaaltosMedido}, lo observado en el laboratorio coincide con lo esperado por las cuentas y la simulación.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.5\linewidth]{2.2bodeTeorico.png}
+                \caption{Diagrama de BODE teórico del filtro pasaaltos.}
+                \label{fig:pasaaltosTeorico}
+            \end{figure}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.5\linewidth]{2.2bodeMedido.png}
+                \caption{Diagrama de BODE medido}
+                \label{fig:pasaaltosMedido}
+            \end{figure}
+
+
+            Finalmente, se puede observar en la figura \ref{fig:Vr} que los valores obtenidos acorde a lo desarrollado en la sección \ref{vr} e ilustrados en la figura \ref{tab:vr_calculada} coinciden con la curva teórica del filtro pasa-altos.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.5\linewidth]{pasaaltosVSvr.png}
+                \caption{Pasa-altos teórico vs valores de Vr obtenidos acorde a lo desarrollado en el inciso 1.2.g}
+                \label{fig:Vr}
+            \end{figure}
+
+        \subsubsection*{b) Alimentación con Señal Triangular}
+
+        Como se puede ver en la figura \ref{fig:item2-triangular}, para frecuencias mucho menores a la
+        de corte (10k) el filtro pasa-altos se comporta como un derivador, puesto que la derivada de
+        una recta es una constante. 
+        \\ Para la frecuencia de corte, el capacitor de 3,3 nF no llega a cargarse completamente, dado
+        que para $\tau = RC = 15,51 \mu s $ el tiempo de carga del circuito es
+        $ 5\tau = 77,55 \mu s \approx 78 \mu s$, y un semiperíodo dura $ 50 \mu s $ (un tiempo menor al de carga).
+        Cabe aclarar que a partir de esta frecuencia, para todas las frecuencias mayores el capacitor nunca
+        va a llegar a cargarse completamente, ya que a mayor frecuencia menor período y menos van a durar los 
+        semiperíodos en los que el capacitor se carga y se descarga.
+        \\ Para f=50 kHz, el tiempo que tiene el capacitor para cargarse es aun menor, y dado que la
+        exponencial se parece a una recta para valores muy pequeños de la variable, que en este caso es el
+        tiempo, lo que se ve en el osciloscopio es una curva muy parecida a una recta .
+
+        \\ *********************** LO DEL SOBREPICO INICIAL CREO QUE ES UNA COSA DE LA SIMULACION, NO SE SI SE VERIA ASI EN EL OSCILOSCOPIO.
+        SIGO COMPLETANDO CUANDO TENGA LA MEDICION, Y AHI CAMBIO LAS FOTOS DE LA SIMULACION POR LAS DEL LABO.   
+
+            \begin{figure}[H]
+                \centering
+                % Primera fila: 1 kHz y 10 kHz
+                \begin{minipage}{0.48\textwidth}
+                    \centering
+                    \includegraphics[width=\linewidth]{item2_triangular1k.png}
+                    \caption*{f = 1 kHz}
+                \end{minipage}\hfill
+                \begin{minipage}{0.48\textwidth}
+                    \centering
+                    \includegraphics[width=\linewidth]{item2_triangular10k.png}
+                    \caption*{f = 10 kHz}
+                \end{minipage}
+                
+                \vspace{0.4cm}
+                
+                % Segunda fila: 50 kHz y 100 kHz
+                \begin{minipage}{0.48\textwidth}
+                    \centering
+                    \includegraphics[width=\linewidth]{item2_triangular50k.png}
+                    \caption*{f = 50 kHz}
+                \end{minipage}\hfill
+                \begin{minipage}{0.48\textwidth}
+                    \centering
+                    \includegraphics[width=\linewidth]{item2_triangular100k.png}
+                    \caption*{f = 100 kHz}
+                \end{minipage}
+                
+                \vspace{0.4cm}
+                
+                % Tercera fila: 300 kHz
+                \begin{minipage}{0.48\textwidth}
+                    \centering
+                    \includegraphics[width=\linewidth]{item2_triangular300k.png}
+                    \caption*{f = 300 kHz}
+                \end{minipage}
+
+                \caption{Respuesta del filtro pasa-altos ante una señal triangular a distintas frecuencias. En azul se observa la señal de entrada y en verde la señal de salida sobre la resistencia.}
+                \label{fig:item2-triangular}
+            \end{figure}
 
 \section{Sincronización de instrumentos}
     % a) Usando modo XY del osciloscopio
