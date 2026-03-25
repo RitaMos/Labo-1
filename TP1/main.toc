@@ -11,8 +11,8 @@
 \contentsline {section}{\numberline {5.}Pasaaltos}{12}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Parte teórica}{12}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Parte práctica}{14}{subsection.5.2}%
-\contentsline {section}{\numberline {6.}Sincronización de instrumentos}{14}{section.6}%
-\contentsline {section}{\numberline {7.}Respuesta en frecuencia}{14}{section.7}%
-\contentsline {section}{\numberline {8.}Utilización del hold off}{14}{section.8}%
-\contentsline {section}{\numberline {9.}Conclusiones Finales}{14}{section.9}%
+\contentsline {section}{\numberline {6.}Sincronización de instrumentos}{18}{section.6}%
+\contentsline {section}{\numberline {7.}Respuesta en frecuencia}{18}{section.7}%
+\contentsline {section}{\numberline {8.}Utilización del hold off}{18}{section.8}%
+\contentsline {section}{\numberline {9.}Conclusiones Finales}{18}{section.9}%
 \contentsfinish 
