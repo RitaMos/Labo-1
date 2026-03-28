@@ -276,7 +276,141 @@ Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un di
         % d) Diagrama de Bode teórico con tolerancias
         % e) Ganancia y fase para fo/10, fo y 10fo
         % f) Simulación con onda cuadrada
-        
+            \subsubsection{}%a
+    Para este circuito, se llega a la siguiente ecuación: 
+    \begin{equation}
+\frac{1}{\frac{S}{\frac{1}{R \cdot C}}+1}
+\label{eq:pasabajos}
+\end{equation}
+
+    (Observar deduccion \ref{subsec:decuccion filtros}).\\
+    De esta ecuación se obtiene la frecuencia de corte $ f_0 = \frac{1}{2 \cdot \pi \cdot R \cdot C} $. Finalmente, remplazando los valores de los componentes se obtiene la frecuencia de corte teorica: $f_0= 10261 Hz$. 
+    
+    \subsubsection {}%b
+	Para este circuito se utilizaron una $R = 4,7 k\Omega \pm 5 \%$ y un $C = 3,3 nF \pm 10\%$. \par
+	De esta manera la frecuencia de resonancia con su error sería $f_0 = 10261 Hz \pm 1147 Hz$. (Observar deducción \ref{subsec: Deducción del error de la frecuencia})
+\subsubsection {}%c
+	
+	Puesto a que el circuito es una malla, todos sus componentes poseen la misma $I$. Luego la la diferencia de fase está dada por $\angle V_c - \angle I = -90$. (Observar deducción \ref{subsec:desfase}). \par 
+	
+	Se calcularon los valores de la corriente y tensión teóricos usando los valores nominales y teniendo en cuenta los 50 ohms de la entrada del generador. $I=  0,75mA \angle 44,69$ y $V_c = 3,52 V \angle -45,30$. Observemos que se cumple el desfase de -90. (Observar figura \ref{fig:fasorial}).
+	{
+\shorthandoff{<>}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.5]
+
+    % Ejes
+    \draw[->] (-0.5,0) -- (4.5,0) node[right] {$\Re$};
+    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$\Im$};
+
+    % Corriente
+    \draw[->, thick] (0,0) -- (44.69:2.0)
+        node[above right] {$\vec{I}=0.75\,\mathrm{mA}\angle 44.69^\circ$};
+
+    % Tensión capacitor
+    \draw[->, thick] (0,0) -- (-45.3:3.0)
+        node[below right] {$\vec{V}_C=3.52\,\mathrm{V}\angle -45.3^\circ$};
+
+\end{tikzpicture}
+\caption{Diagrama fasorial representativo (no a escala entre magnitudes de distinta unidad).}
+\label{fig:dfasorial}
+\end{figure}
+
+}
+	
+	
+	En segundo lugar, se verificará la expresión $ \vec{V_R} + \vec{V_C} = \vec{V}$. Para realizar esto, se realizará de manera algebraica para todos los valores. $ V = I \cdot Z = I (R + \frac{1}{j \cdot \omega}) = I\cdot R + \frac{I}{j \cdot \omega} = V_R + V_C$.
+
+\subsubsection{}%d
+
+Para esta parte, se realizo el diagrama del bode del circuito, combinando todos los casos posibles, considerando los valores mínimos, nominales y máximos de los componentes. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{1.1d}
+    \caption{Diagrama de bode posibles tomando valor máximo, nominal y mínimo de los componentes}
+    \label{fig:bode1.1d}
+\end{figure}
+
+Como observación de la figura \ref{fig:bode1.1d}, la curva que baja primero es aquella en la cual el capacitor y la resistencia tienen el valor máximo, ya que consiguen un $f_{0min}=8884 Hz$. Luego la curva que más tarde baja es aquella que tiene los componentes con los valores mínimos, ya que consigue la frecuencia de corte más alta de todas, la cual es $f_{0max} = 12000 Hz$.
+
+
+\subsubsection{}%e
+
+De la ecuación \ref{eq:pasabajos}, se despejaron los siguientes valores:
+
+Para $\frac{f_0}{10}$, se observó una atenuación de 1,1 veces o lo mismo que $-0,04 dB \approx 0 db$. Luego $\angle H(\frac{f_0}{10}) = -5,71^\circ$.\\
+
+ Para $f_0$, se observó una atenuación de 2 veces la señal de entrada, o lo mismo que $-3 dB$. Luego se despejo $\angle H(f_0) = -45^\circ$.\\
+ 
+ Para $10 \cdot f_0$, se observó una atenuación de 10 veces la señal de entrada, o lo mismo que $-20 db$. Luego se despejó $\angle H(10 \cdot f_0) = -84,29 ^\circ$.\\
+ 
+\subsubsection{}%f
+
+Para esta parte, se simularon los tres casos (Observar imagenes \ref{fig:20f0}, \ref{fig:f0} y \ref{fig:f0sobre20}).
+
+\begin{figure}[h!]
+    \centering
+
+    %-------------------------
+    %   FIGURA 
+    %-------------------------
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{1.1f(f0.20)}
+    \caption{Gráfico con $f=20 \cdot f_0$.}
+    \label{fig:20f0}
+\end{figure}
+    \end{minipage}
+    \hfill
+    %-------------------------
+    %   FIGURA 
+    %-------------------------
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{1.1f(f0)}
+    \caption{Gráfico con $f=f_0$.}
+    \label{fig:f0}
+\end{figure}
+         \end{minipage}
+\end{figure}
+
+    %-------------------------
+    %   FIGURA 
+    %-------------------------
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{1.1f(f0sobre20)}
+    \caption{Gráfico con $f=\frac{f_0}{20}$.}
+    \label{fig:f0sobre20}
+\end{figure}
+
+Al observar los gráficos se puede observar que $v_{out}$ se termina comportando como una respuesta transitoria RC. Al inicio de la señal el circuito se carga de forma exponencial, y luego se descarga en forma exponencial. \par
+
+En el caso de $f=\frac{f_0}{20}$, el circuito tiene mucho tiempo prendido o apagado en comparación al tiempo de carga del capacitor, por lo que se puede apreciar perfectamente los pasos de carga y descarga de un RC. Luego en el caso de $f=f_0$, el circuito se sigue comportando como un sistema RC. Ahora cuando aumentamos la frecuencia a $f=20\cdot f_0$, el tiempo de carga y descarga es tan chicho en comparación a la señal de entrada que no se logra observar una forma exponencial de un RC. En este caso decimos que el sistema aproxima a un integrador, puesto a que se conforma casi de forma linean en la carga y en la descarga.
+
+De manera analitica:
+
+\begin{align*}
+    H(s) &= \frac{V_{out}}{V_{in}}\\
+    \implies V_{out}&= V_{in} \cdot \frac{1}{1+sCR}\\
+    Pero\ como &\ \frac{f}{f_0}>> 1\ ,desprecio +1\\
+    \implies V_{out}&= V_{in} \cdot \frac{1}{sCR}\\
+    Luego\ antitransfo&rmando\ y\ recordando\ la\ propiedad\\ y(t) &= h(t) * x(t)\\
+    y(t) &= \frac{1}{RC} \cdot \int_{}^{}x(t)\\
+\end{align*}
+
+
+
+
+
+
+
     \subsection{Parte práctica}
                 % a) Frecuencia de corte real y cálculo de C
                         \subsubsection*{a) Frecuencia de corte real y cálculo de C}
@@ -766,9 +900,9 @@ f_0 \approx 10.1\,\text{kHz}
             H(s)=\frac{sRC}{1+sRC}
         \end{equation*}
 
-        si $ sRC \ll 1 \Rightarrow H(s) \simeq sRC $ y multiplicar por s la transformada de una señal es equivalente a derivar la señal.
+        si $ sRC \ll 1 \Rightarrow H(s) \simeq sRC $ y multiplicar por s la transformada de una señal es equivalente a derivar la señal.\\
         
-        \\ Para la frecuencia de corte, el capacitor de 3,3 nF no llega a cargarse completamente, dado
+        Para la frecuencia de corte, el capacitor de 3,3 nF no llega a cargarse completamente, dado
         que para $\tau = RC = 15,51 \mu s $ el tiempo de carga del circuito es
         $ 5\tau = 77,55 \mu s \approx 78 \mu s$, y un semiperíodo dura $ 50 \mu s $ (un tiempo menor al de carga).
         Cabe aclarar que a partir de esta frecuencia, para todas las frecuencias mayores el capacitor nunca
@@ -852,5 +986,51 @@ f_0 \approx 10.1\,\text{kHz}
 
 \section{Utilización del hold off}
     % Señal compuesta y uso del hold off para ver parte triangular
+    
+\section{Anexo}
+
+\subsection{Deducción del los filtros}
+\label{subsec:decuccion filtros}
+Los filtros se pueden deducir usando un divisor resistivo. \par
+
+En el caso del pasabajos, la deducción es la siguiente:
+
+\begin{align*}
+    v_{out} &= v_{in} \cdot \frac{\frac{1}{sC}}{R+ \frac{1}{sC}} \\
+    \implies H(s) &= \frac{1}{SCR+1} \\
+    H(s)&= \frac{1}{\frac{s}{\frac{1}{RC}} +1} 
+\end{align*}
+
+En el caso del pasaltos, la deduccion es la siguiente:
+
+\begin{align*}
+    V_{out} &= V_{in} \cdot \frac{R}{\frac{1}{sC}+R}\\
+    H(s) &= \frac{sRC}{1+sRC}
+\end{align*}
+
+\subsection{Deducción del error de la frecuencia}
+\label{subsec: Deducción del error de la frecuencia}
+Para el error usaremos las derivadas parciales. \par
+
+Recordemos que la frecuencia de ambos circuitos viene dada por la misma formula $f_0 = \frac{1}{2\cdot \pi \cdot C \cdot R} $. \par
+
+Luego, la formula del error se deduce de la siguiente manera:
+
+\begin{align*}
+    \Delta f&= \sqrt{(\frac{\partial f }{\partial R} \cdot \Delta R)^{2} + (\frac{\partial f }{\partial C} \cdot \Delta C)^{2}}\\
+    &= \frac{1}{2\cdot \pi \cdot R \cdot C} \cdot \sqrt{(\frac{\Delta R}{R})^2 + (\frac{\Delta C}{C})^2}\\
+    & = f \cdot \sqrt{(\frac{\Delta R}{R})^2 + (\frac{\Delta C}{C})^2}
+\end{align*}
+
+\subsection{Deduccion desfase corriente y tensión del capacitor en el pasa bajos}
+\label{subsec:desfase}
+
+Primero es importante mencionar que como existe una malla, la corriente $I$ es la misma de todos los componentes. Luego:
+
+\begin{align*}
+    V_c&= I \cdot \frac{1}{j \cdot \omega \cdot C}\\
+ \implies \angle V_c &= \angle I - 90^\circ \\
+ \angle V_c - \angle I &= -90^\circ
+\end{align*}
 
 \end{document}
