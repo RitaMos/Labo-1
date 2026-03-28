@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.17)  25 MAR 2026 15:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.17)  28 MAR 2026 15:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1119,7 +1119,7 @@ nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
 or `spanish'. on input line 50.
-<Logo_ITBA.png, id=70, 557.08125pt x 220.825pt>
+<Logo_ITBA.png, id=66, 557.08125pt x 220.825pt>
 File: Logo_ITBA.png Graphic file (type png)
 <use Logo_ITBA.png>
 Package pdftex.def Info: Logo_ITBA.png  used on input line 57.
@@ -1164,14 +1164,6 @@ ode=log unsupported (yet).
 
 [5]
 
-LaTeX Warning: Reference `fig:punta_x1' on page 6 undefined on input line 265.
-
-
-LaTeX Warning: Reference `fig:punta_x10' on page 6 undefined on input line 267.
-
-
-
-
 [6]
 
 [7]
@@ -1182,17 +1174,17 @@ ode=log unsupported (yet).
 
 
 [8]
-<item1_cuadrada.png, id=154, 803.0pt x 504.88625pt>
+<item1_cuadrada.png, id=149, 803.0pt x 504.88625pt>
 File: item1_cuadrada.png Graphic file (type png)
 <use item1_cuadrada.png>
 Package pdftex.def Info: item1_cuadrada.png  used on input line 443.
 (pdftex.def)             Requested size: 212.91577pt x 133.87125pt.
-<item1_cuadrada1.png, id=155, 803.0pt x 504.88625pt>
+<item1_cuadrada1.png, id=150, 803.0pt x 504.88625pt>
 File: item1_cuadrada1.png Graphic file (type png)
 <use item1_cuadrada1.png>
 Package pdftex.def Info: item1_cuadrada1.png  used on input line 448.
 (pdftex.def)             Requested size: 212.91577pt x 133.87125pt.
-<item1_cuadrada2.png, id=156, 803.0pt x 504.88625pt>
+<item1_cuadrada2.png, id=151, 803.0pt x 504.88625pt>
 File: item1_cuadrada2.png Graphic file (type png)
 <use item1_cuadrada2.png>
 Package pdftex.def Info: item1_cuadrada2.png  used on input line 457.
@@ -1214,79 +1206,91 @@ ode=log unsupported (yet).
 [13]
 
 [14]
-<2.2simulacion.png, id=199, 1428.08531pt x 685.05937pt>
-File: 2.2simulacion.png Graphic file (type png)
-<use 2.2simulacion.png>
-Package pdftex.def Info: 2.2simulacion.png  used on input line 714.
+<item2_simulacion.png, id=194, 1428.08531pt x 685.05937pt>
+File: item2_simulacion.png Graphic file (type png)
+<use item2_simulacion.png>
+Package pdftex.def Info: item2_simulacion.png  used on input line 714.
 (pdftex.def)             Requested size: 221.78923pt x 106.39217pt.
 
 
-[15 <./2.2simulacion.png>]
-<2.2bodeTeorico.png, id=210, 897.3525pt x 657.95813pt>
-File: 2.2bodeTeorico.png Graphic file (type png)
-<use 2.2bodeTeorico.png>
-Package pdftex.def Info: 2.2bodeTeorico.png  used on input line 738.
-(pdftex.def)             Requested size: 221.78923pt x 162.62175pt.
-<2.2bodeMedido.png, id=211, 803.0pt x 504.88625pt>
-File: 2.2bodeMedido.png Graphic file (type png)
-<use 2.2bodeMedido.png>
-Package pdftex.def Info: 2.2bodeMedido.png  used on input line 745.
+[15 <./item2_simulacion.png>]
+<item2_bodeTeorico.png, id=205, 895.84688pt x 661.72218pt>
+File: item2_bodeTeorico.png Graphic file (type png)
+<use item2_bodeTeorico.png>
+Package pdftex.def Info: item2_bodeTeorico.png  used on input line 738.
+(pdftex.def)             Requested size: 221.78923pt x 163.8247pt.
+<item2_bodeMedido.png, id=206, 803.0pt x 504.88625pt>
+File: item2_bodeMedido.png Graphic file (type png)
+<use item2_bodeMedido.png>
+Package pdftex.def Info: item2_bodeMedido.png  used on input line 745.
 (pdftex.def)             Requested size: 221.78923pt x 139.4489pt.
-<pasaaltosVSvr.png, id=215, 894.34125pt x 319.94531pt>
+<pasaaltosVSvr.png, id=210, 894.34125pt x 319.94531pt>
 File: pasaaltosVSvr.png Graphic file (type png)
 <use pasaaltosVSvr.png>
 Package pdftex.def Info: pasaaltosVSvr.png  used on input line 754.
 (pdftex.def)             Requested size: 221.78923pt x 79.3417pt.
 
 
-[16 <./2.2bodeTeorico.png> <./2.2bodeMedido.png (PNG copy)> <./pasaaltosVSvr.pn
-g>]
+[16 <./item2_bodeTeorico.png> <./item2_bodeMedido.png (PNG copy)> <./pasaaltosV
+Svr.png>]
 
 c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo 1/Labo-1-1/TP1/main.tex:77
-4: LaTeX Error: There's no line here to end.
+1: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.774         \\ *
-                  ********************** LO DEL SOBREPICO INICIAL CREO QUE E...
+l.771         \\ P
+                  ara la frecuencia de corte, el capacitor de 3,3 nF no lleg...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<item2_triangular1k.png, id=226, 1416.79312pt x 304.13625pt>
+<item2_triangular1k.png, id=221, 803.0pt x 504.88625pt>
 File: item2_triangular1k.png Graphic file (type png)
 <use item2_triangular1k.png>
-Package pdftex.def Info: item2_triangular1k.png  used on input line 782.
-(pdftex.def)             Requested size: 212.91577pt x 45.702pt.
-<item2_triangular10k.png, id=227, 1428.08531pt x 337.26pt>
+Package pdftex.def Info: item2_triangular1k.png  used on input line 786.
+(pdftex.def)             Requested size: 212.91577pt x 133.87125pt.
+<item2_triangular10k.png, id=222, 803.0pt x 504.88625pt>
 File: item2_triangular10k.png Graphic file (type png)
 <use item2_triangular10k.png>
-Package pdftex.def Info: item2_triangular10k.png  used on input line 787.
-(pdftex.def)             Requested size: 212.91577pt x 50.27805pt.
-<item2_triangular50k.png, id=228, 1431.84938pt x 312.41719pt>
+Package pdftex.def Info: item2_triangular10k.png  used on input line 791.
+(pdftex.def)             Requested size: 212.91577pt x 133.87125pt.
+<item2_triangular50k.png, id=223, 803.0pt x 504.88625pt>
 File: item2_triangular50k.png Graphic file (type png)
 <use item2_triangular50k.png>
-Package pdftex.def Info: item2_triangular50k.png  used on input line 796.
-(pdftex.def)             Requested size: 212.91577pt x 46.45534pt.
-<item2_triangular100k.png, id=229, 1415.2875pt x 296.60812pt>
-File: item2_triangular100k.png Graphic file (type png)
-<use item2_triangular100k.png>
-Package pdftex.def Info: item2_triangular100k.png  used on input line 801.
-(pdftex.def)             Requested size: 212.91577pt x 44.62054pt.
-<item2_triangular300k.png, id=230, 1430.34375pt x 308.65312pt>
-File: item2_triangular300k.png Graphic file (type png)
-<use item2_triangular300k.png>
-Package pdftex.def Info: item2_triangular300k.png  used on input line 810.
-(pdftex.def)             Requested size: 212.91577pt x 45.94273pt.
+Package pdftex.def Info: item2_triangular50k.png  used on input line 800.
+(pdftex.def)             Requested size: 212.91577pt x 133.87125pt.
+<item2_triangular200k.png, id=224, 803.0pt x 504.88625pt>
+File: item2_triangular200k.png Graphic file (type png)
+<use item2_triangular200k.png>
+Package pdftex.def Info: item2_triangular200k.png  used on input line 805.
+(pdftex.def)             Requested size: 212.91577pt x 133.87125pt.
 
 
-[17 <./item2_triangular1k.png> <./item2_triangular10k.png> <./item2_triangular5
-0k.png> <./item2_triangular100k.png> <./item2_triangular300k.png>]
+[17]
+<item3_modoXY.png, id=230, 803.0pt x 504.88625pt>
+File: item3_modoXY.png Graphic file (type png)
+<use item3_modoXY.png>
+Package pdftex.def Info: item3_modoXY.png  used on input line 825.
+(pdftex.def)             Requested size: 443.57848pt x 278.9055pt.
 
-[18] (main.aux
+
+[18 <./item2_triangular1k.png (PNG copy)> <./item2_triangular10k.png (PNG copy)
+> <./item2_triangular50k.png (PNG copy)> <./item2_triangular200k.png (PNG copy)
+>]
+<item3_modoNormal.png, id=237, 803.0pt x 504.88625pt>
+File: item3_modoNormal.png Graphic file (type png)
+<use item3_modoNormal.png>
+Package pdftex.def Info: item3_modoNormal.png  used on input line 839.
+(pdftex.def)             Requested size: 443.57848pt x 278.9055pt.
+
+
+[19 <./item3_modoXY.png (PNG copy)>]
+
+[20 <./item3_modoNormal.png (PNG copy)>] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1296,19 +1300,16 @@ L3 programming layer <2025-07-20>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 50F23ED4180B238E64BD6CD844DB5CFA;2364.
+(rerunfilecheck)             Checksum: DD968E0211237A530933509F15293F9F;2217.
  ) 
 Here is how much of TeX's memory you used:
- 57497 strings out of 468134
- 1494838 string characters out of 5430740
- 2263890 words of memory out of 5000000
- 85460 multiletter control sequences out of 15000+600000
+ 57506 strings out of 468134
+ 1495074 string characters out of 5430740
+ 2264307 words of memory out of 5000000
+ 85466 multiletter control sequences out of 15000+600000
  635346 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,105p,1065b,2037s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1331,9 +1332,9 @@ ublic/amsfonts/cm/cmr10.pfb><C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts
 eX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/ritam/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ritam/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (19 pages, 622174 bytes).
+Output written on main.pdf (21 pages, 740064 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 500000)
- 206 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 

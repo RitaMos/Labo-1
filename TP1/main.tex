@@ -262,9 +262,9 @@ En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente 
 
 El osciloscopio digital puede modelarse de forma aproximada como una impedancia de entrada compuesta por una resistencia de 1 M$\Omega$ en paralelo con una capacitancia parásita del orden de algunos pF (típicamente alrededor de 12 pF). Esta capacitancia no suele ser relevante a bajas frecuencias, pero empieza a afectar las mediciones cuando se trabaja en frecuencia más alta.
 
-Cuando se utiliza la punta en modo X1, la capacitancia total vista por el circuito aumenta bastante, llegando a valores del orden de 100 pF. Esto se debe principalmente al cable de la punta, que es coaxial, y por lo tanto se comporta como un capacitor distribuido (el conductor interno y la malla actúan como placas separadas por un dieléctrico). En este caso, el conjunto puede modelarse como una resistencia de 1 M$\Omega$ en paralelo con una capacitancia cercana a 100 pF, lo que puede modificar bastante la respuesta del circuito medido, como se muestra en la Fig.~\ref{fig:punta_x1}.
+Cuando se utiliza la punta en modo X1, la capacitancia total vista por el circuito aumenta bastante, llegando a valores del orden de 100 pF. Esto se debe principalmente al cable de la punta, que es coaxial, y por lo tanto se comporta como un capacitor distribuido (el conductor interno y la malla actúan como placas separadas por un dieléctrico). En este caso, el conjunto puede modelarse como una resistencia de 1 M$\Omega$ en paralelo con una capacitancia cercana a 100 pF, lo que puede modificar bastante la respuesta del circuito medido. %, como se muestra en la Fig.~\ref{fig:punta_x1}.
 
-Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un divisor resistivo-capacitivo que compensa este efecto. Esto hace que la capacitancia equivalente vista por el circuito sea mucho menor (del orden de 10–15 pF) y que la resistencia de entrada efectiva aumente a aproximadamente 10 M$\Omega$. De esta forma, se reduce el efecto de carga sobre el circuito y se obtiene una medición más fiel, como se muestra en la Fig.~\ref{fig:punta_x10}.
+Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un divisor resistivo-capacitivo que compensa este efecto. Esto hace que la capacitancia equivalente vista por el circuito sea mucho menor (del orden de 10–15 pF) y que la resistencia de entrada efectiva aumente a aproximadamente 10 M$\Omega$. De esta forma, se reduce el efecto de carga sobre el circuito y se obtiene una medición más fiel. %, como se muestra en la Fig.~\ref{fig:punta_x10}.
 
 
 
@@ -711,7 +711,7 @@ f_0 \approx 10.1\,\text{kHz}
 
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.5\linewidth]{2.2simulacion.png}
+                \includegraphics[width=0.5\linewidth]{item2_simulacion.png}
                 \caption{Simulación del pasaaltos: ideal vs real}
                 \label{fig:pasaaltosSimulado}
             \end{figure}
@@ -735,14 +735,14 @@ f_0 \approx 10.1\,\text{kHz}
 
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.5\linewidth]{2.2bodeTeorico.png}
-                \caption{Diagrama de BODE teórico del filtro pasaaltos.}
+                \includegraphics[width=0.5\linewidth]{item2_bodeTeorico.png}
+                \caption{Diagrama de BODE teórico del filtro pasa-altos con puntos medidos del módulo.}
                 \label{fig:pasaaltosTeorico}
             \end{figure}
 
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.5\linewidth]{2.2bodeMedido.png}
+                \includegraphics[width=0.5\linewidth]{item2_bodeMedido.png}
                 \caption{Diagrama de BODE medido}
                 \label{fig:pasaaltosMedido}
             \end{figure}
@@ -760,19 +760,23 @@ f_0 \approx 10.1\,\text{kHz}
 
         Como se puede ver en la figura \ref{fig:item2-triangular}, para frecuencias mucho menores a la
         de corte (10k) el filtro pasa-altos se comporta como un derivador, puesto que la derivada de
-        una recta es una constante. 
+        una recta es una constante. Algebraicamente, esto se puede notar porque en su función transferencia
+        
+        \begin{equation*}
+            H(s)=\frac{sRC}{1+sRC}
+        \end{equation*}
+
+        si $ sRC \ll 1 \Rightarrow H(s) \simeq sRC $ y multiplicar por s la transformada de una señal es equivalente a derivar la señal.
+        
         \\ Para la frecuencia de corte, el capacitor de 3,3 nF no llega a cargarse completamente, dado
         que para $\tau = RC = 15,51 \mu s $ el tiempo de carga del circuito es
         $ 5\tau = 77,55 \mu s \approx 78 \mu s$, y un semiperíodo dura $ 50 \mu s $ (un tiempo menor al de carga).
         Cabe aclarar que a partir de esta frecuencia, para todas las frecuencias mayores el capacitor nunca
         va a llegar a cargarse completamente, ya que a mayor frecuencia menor período y menos van a durar los 
         semiperíodos en los que el capacitor se carga y se descarga.
-        \\ Para f=50 kHz, el tiempo que tiene el capacitor para cargarse es aun menor, y dado que la
+        \par Para f=50 kHz, el tiempo que tiene el capacitor para cargarse es aun menor, y dado que la
         exponencial se parece a una recta para valores muy pequeños de la variable, que en este caso es el
         tiempo, lo que se ve en el osciloscopio es una curva muy parecida a una recta .
-
-        \\ *********************** LO DEL SOBREPICO INICIAL CREO QUE ES UNA COSA DE LA SIMULACION, NO SE SI SE VERIA ASI EN EL OSCILOSCOPIO.
-        SIGO COMPLETANDO CUANDO TENGA LA MEDICION, Y AHI CAMBIO LAS FOTOS DE LA SIMULACION POR LAS DEL LABO.   
 
             \begin{figure}[H]
                 \centering
@@ -790,7 +794,7 @@ f_0 \approx 10.1\,\text{kHz}
                 
                 \vspace{0.4cm}
                 
-                % Segunda fila: 50 kHz y 100 kHz
+                % Segunda fila: 50 kHz y 200 kHz
                 \begin{minipage}{0.48\textwidth}
                     \centering
                     \includegraphics[width=\linewidth]{item2_triangular50k.png}
@@ -798,34 +802,55 @@ f_0 \approx 10.1\,\text{kHz}
                 \end{minipage}\hfill
                 \begin{minipage}{0.48\textwidth}
                     \centering
-                    \includegraphics[width=\linewidth]{item2_triangular100k.png}
-                    \caption*{f = 100 kHz}
-                \end{minipage}
-                
-                \vspace{0.4cm}
-                
-                % Tercera fila: 300 kHz
-                \begin{minipage}{0.48\textwidth}
-                    \centering
-                    \includegraphics[width=\linewidth]{item2_triangular300k.png}
-                    \caption*{f = 300 kHz}
+                    \includegraphics[width=\linewidth]{item2_triangular200k.png}
+                    \caption*{f = 200 kHz}
                 \end{minipage}
 
-                \caption{Respuesta del filtro pasa-altos ante una señal triangular a distintas frecuencias. En azul se observa la señal de entrada y en verde la señal de salida sobre la resistencia.}
+                \caption{Respuesta del filtro pasa-altos ante una señal triangular a distintas frecuencias.}
                 \label{fig:item2-triangular}
             \end{figure}
 
 \section{Sincronización de instrumentos}
-    % a) Usando modo XY del osciloscopio
-    % b) Usando modo normal disparado
+    \subsubsection*{a) Usando modo XY del osciloscopio}
+    Con el fin de estudiar el comportamiento en frecuencia del pasabajos previamente presentado
+    utilizando un barrido, se emplearon dos generadores: en uno se generó la señal senoidal con la que
+    se alimentó al circuito, y en el otro se generó una rampa. Ambas señales tenían igual período, y
+    se sincronizó el trigger del osciloscopio con el canal correspondiente a la rampa, de manera que 
+    cuando el trigger cruce cierto valor de la rampa se mostrara el barrido de ambas señales, 
+    asegurando que esto ocurra una vez por cada período. Para que las señales no estén defasadas,
+    se sincronizó el trigger de la señal senoidal con el de la rampa.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{item3_modoXY.png}
+        \caption{Barrido de la respuesta en frecuencia del filtro pasa-bajos en modo XY.}
+        \label{fig:barridoModoXY}
+    \end{figure}
+
+    Dado que la rampa está conectada al canal X, y su función es determinar la frecuencia de la señal
+    de barrido, en este caso de la senoidal. Se puede ver que en la figura \ref{fig:barridoModoXY} que
+    a mayor valor de la rampa, es decir mayor valor en el eje X, más grande es la frecuencia y más
+    atenuada se ve la amplitud de la salida del circuito, como se esperaría de un pasa-bajos.
+    
+    \subsubsection*{a) Usando modo normal}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{item3_modoNormal.png}
+        \caption{Barrido de la respuesta en frecuencia del filtro pasa-bajos en modo normal.}
+        \label{fig:barridoModoNormal}
+    \end{figure}
+
+    En la figura \ref{fig:barridoModoNormal} se puede observar el mismo efecto descripto que para el modo 
+    XY, pues al estar realizando un barrido cuanto mayor es la amgnitud de la rampa, mayor es la frecuencia
+    de la senoidal de entrada, y más atenuada se ve la salida del circuito.
+
+
 
 \section{Respuesta en frecuencia}
     % Medición con AC y BW limit vs datos del fabricante
 
 \section{Utilización del hold off}
     % Señal compuesta y uso del hold off para ver parte triangular
-
-\section{Conclusiones Finales}
-    % Espacio para conclusiones generales del TP
 
 \end{document}
