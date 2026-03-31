@@ -879,6 +879,156 @@ pues según el valor de los componentes dentro de cualquier circuito a estudiar,
                 \]
 
     \subsubsection{Simulacion de una netrada de onda triangular}
+
+        \begin{figure}[H]
+        \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    width=14cm,
+                    height=8cm,
+                    grid=both,
+                    xlabel={Tiempo [s]},
+                    ylabel={Tensión [V]},
+                    legend pos=north east,
+                    no marks
+                ]
+
+                \addplot table [x=time, y=V(n001), col sep=tab] {10fo.txt};
+                \addlegendentry{Entrada}
+
+                \addplot table [x=time, y=V(a), col sep=tab] {10fo.txt};
+                \addlegendentry{Salida}
+
+                \end{axis}
+            \end{tikzpicture}
+        \caption{Respuesta del filtro pasa-altos para $f = 10 f_0$.}
+        \end{figure}
+
+        \begin{figure}[H]
+        \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    width=14cm,
+                    height=8cm,
+                    grid=both,
+                    xlabel={Tiempo [s]},
+                    ylabel={Tensión [V]},
+                    legend pos=north east,
+                    no marks
+                ]
+
+                \addplot table [x=time, y=V(n001), col sep=tab] {fo.txt};
+                \addlegendentry{Entrada}
+
+                \addplot table [x=time, y=V(a), col sep=tab] {fo.txt};
+                \addlegendentry{Salida}
+
+                \end{axis}
+            \end{tikzpicture}
+        \caption{Respuesta del filtro pasa-altos para $f = f_0$.}
+        \end{figure}
+
+        \begin{figure}[H]
+        \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    width=14cm,
+                    height=8cm,
+                    grid=both,
+                    xlabel={Tiempo [s]},
+                    ylabel={Tensión [V]},
+                    legend pos=north east,
+                    no marks
+                ]
+
+                \addplot table [x=time, y=V(n001), col sep=tab] {fo_10.txt};
+                \addlegendentry{Entrada}
+
+                \addplot table [x=time, y=V(a), col sep=tab] {fo_10.txt};
+                \addlegendentry{Salida}
+                \end{axis}
+            \end{tikzpicture}
+        \caption{Respuesta del filtro pasa-altos para $f = \frac{f_0}{10}$.}
+        \end{figure}
+
+    \subsubsection{Análisis analítico para entrada triangular}
+
+
+        El circuito bajo análisis es un sistema lineal e invariante en el tiempo (LTI), por lo que su salida puede expresarse como la convolución entre la señal de entrada y la respuesta impulsiva del sistema:
+
+        \begin{equation}
+            v_{out}(t) = h(t) * v_{in}(t)
+        \end{equation}
+
+        donde $h(t)$ es la respuesta al impulso del sistema.
+
+        En el dominio de Laplace, esta relación se transforma en:
+
+        \begin{equation}
+            V_{out}(s) = H(s)\,V_{in}(s)
+        \end{equation}
+
+        donde $H(s)$ es la función de transferencia del circuito, definida en la ecuación \ref{eq: func. transf pasaaltos}.
+
+        \vspace{0.5cm}
+
+        Para analizar la respuesta frente a una señal triangular, se puede modelar dicha señal como una sucesión de tramos lineales. En un intervalo particular, la señal puede escribirse como:
+
+        \begin{equation}
+            v_{in}(t) = k t
+        \end{equation}
+
+        donde $k$ representa la pendiente del tramo.
+
+        Aplicando transformada de Laplace:
+
+        \begin{equation}
+            V_{in}(s) = \frac{k}{s^2}
+        \end{equation}
+
+        Por otro lado, en el régimen en el cual el circuito se comporta como derivador (bajas frecuencias), se cumple que:
+
+        \begin{equation}
+            H(s) \approx sRC
+        \end{equation}
+
+        Por lo tanto:
+
+        \begin{equation}
+            V_{out}(s) = H(s)\,V_{in}(s) \approx (sRC)\cdot \frac{k}{s^2}
+        \end{equation}
+
+        \begin{equation}
+            V_{out}(s) \approx \frac{kRC}{s}
+        \end{equation}
+
+        Aplicando transformada inversa de Laplace:
+
+        \begin{equation}
+            v_{out}(t) = kRC
+        \end{equation}
+
+        Es decir, la salida resulta constante en dicho intervalo.
+
+        \vspace{0.5cm}
+
+        Repitiendo el mismo análisis para el tramo decreciente de la señal triangular (pendiente negativa), se obtiene:
+
+        \begin{equation}
+            v_{out}(t) = -kRC
+        \end{equation}
+
+        Por lo tanto, la salida del sistema es una señal que alterna entre dos niveles constantes, lo que corresponde a una onda cuadrada.
+
+        \vspace{0.5cm}
+
+        En consecuencia, se verifica que:
+
+        \begin{equation}
+            v_{out}(t) \approx RC \frac{d}{dt} v_{in}(t)
+        \end{equation}
+
+            lo cual demuestra que, en el régimen considerado, el filtro pasa-altos actúa como un derivador.
     %
     %
     %
