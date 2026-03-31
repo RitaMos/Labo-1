@@ -16,12 +16,17 @@
 \contentsline {subsection}{\numberline {4.2}Parte práctica}{10}{subsection.4.2}%
 \contentsline {section}{\numberline {5.}Pasaaltos}{13}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Parte teórica}{13}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Parte práctica}{14}{subsection.5.2}%
-\contentsline {section}{\numberline {6.}Sincronización de instrumentos}{18}{section.6}%
-\contentsline {section}{\numberline {7.}Respuesta en frecuencia}{21}{section.7}%
-\contentsline {section}{\numberline {8.}Utilización del hold off}{21}{section.8}%
-\contentsline {section}{\numberline {9.}Anexo}{21}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Deducción del los filtros}{21}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Deducción del error de la frecuencia}{21}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Deduccion desfase corriente y tensión del capacitor en el pasa bajos}{22}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {$a)$}Transferencia y frecuencia de corte}{13}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {$b)$}Frecuencia nominal y error}{14}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {$c)$}Diagrama de Bode con tolerancias}{15}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {$d)$}Ganancia y fase en distintas frecuencias con una sinosoidal}{16}{subsubsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {$e)$}Simulacion de una netrada de onda triangular}{17}{subsubsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.2}Parte práctica}{17}{subsection.5.2}%
+\contentsline {section}{\numberline {6.}Sincronización de instrumentos}{20}{section.6}%
+\contentsline {section}{\numberline {7.}Respuesta en frecuencia}{23}{section.7}%
+\contentsline {section}{\numberline {8.}Utilización del hold off}{23}{section.8}%
+\contentsline {section}{\numberline {9.}Anexo}{23}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Deducción del los filtros}{23}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Deducción del error de la frecuencia}{23}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Deduccion desfase corriente y tensión del capacitor en el pasa bajos}{24}{subsection.9.3}%
 \contentsfinish 

@@ -95,176 +95,176 @@
 El objetivo de este trabajo práctico es utilizar circuitos RC de primer orden, en configuraciones pasabajos y pasaaltos, como base para analizar el uso del instrumental de laboratorio en condiciones reales. Dado que su comportamiento teórico es conocido, se los emplea como referencia para comparar con las mediciones experimentales e identificar las diferencias que aparecen en la práctica. En particular, se busca trabajar con herramientas como el generador de señales, el osciloscopio digital y la función de Network Analyzer, poniendo foco en cómo las condiciones de medición afectan los resultados, considerando efectos como la resistencia de salida del generador, la impedancia de entrada del osciloscopio y las capacitancias parásitas de las puntas. Finalmente, se pretende interpretar las diferencias entre los resultados teóricos y experimentales, teniendo en cuenta tanto las tolerancias de los componentes como las limitaciones del instrumental.
 
 \section{Instrumentos y equipo}
-\begin{itemize}
-    \item Protoboard de 830 puntos
-    \item Capacitor de 3,4 nF
-    \item Resistencia de 4,6 k$\Omega$
-    \item Osciloscopio digital Keysight DSOX1202G
-    \item Generador de señales Picotest G510
-    \item Generador de señales Keysight EDU33212A
-    \item Medidor RLC UNI-T UT812
-\end{itemize}
+    \begin{itemize}
+        \item Protoboard de 830 puntos
+        \item Capacitor de 3,4 nF
+        \item Resistencia de 4,6 k$\Omega$
+        \item Osciloscopio digital Keysight DSOX1202G
+        \item Generador de señales Picotest G510
+        \item Generador de señales Keysight EDU33212A
+        \item Medidor RLC UNI-T UT812
+    \end{itemize}
 
 \section{Marco Teórico}
-\subsection{Circuito RC pasabajos}
+    \subsection{Circuito RC pasabajos}
 
-El circuito RC pasabajos es un sistema de primer orden formado por una resistencia y un capacitor, cuya salida se toma sobre el capacitor. En el caso ideal, su función de transferencia es:
+        El circuito RC pasabajos es un sistema de primer orden formado por una resistencia y un capacitor, cuya salida se toma sobre el capacitor. En el caso ideal, su función de transferencia es:
 
-\begin{equation}
-H(s) = \frac{1}{1 + sRC}
-\label{eq:pasabajos_tf}
-\end{equation}
+        \begin{equation}
+            H(s) = \frac{1}{1 + sRC}
+        \label{eq:pasabajos_tf}
+        \end{equation}
 
-\begin{equation}
-f_0 = \frac{1}{2\pi RC}
-\label{eq:pasabajos_fc}
-\end{equation}
+        \begin{equation}
+            f_0 = \frac{1}{2\pi RC}
+        \label{eq:pasabajos_fc}
+        \end{equation}
 
-\begin{figure}[H]
-\centering
-\shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
-\begin{circuitikz}[american]
-\draw
-(0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
-      to[R, l=$R$, *-*] (4,3) 
-      to[C, l=$C$] (4,0)
-      to[short, -*] (0,0);
+        \begin{figure}[H]
+        \centering
+        \shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
+            \begin{circuitikz}[american]
+            \draw
+            (0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
+                to[R, l=$R$, *-*] (4,3) 
+                to[C, l=$C$] (4,0)
+                to[short, -*] (0,0);
 
-% Salida
-\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
-\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+            % Salida
+            \draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+            \draw (4,0) to[short, -o] (5,0) node[right] {$-$};
 
-% Flecha
-\draw[->, >=stealth] (5,0.5) -- (5,2.5) 
-    node[midway, right] {$v_{\mathrm{out}}$};
+            % Flecha
+            \draw[->, >=stealth] (5,0.5) -- (5,2.5) 
+                node[midway, right] {$v_{\mathrm{out}}$};
 
-\end{circuitikz}
-\shorthandon{>} %Vuelvo a prender el babel español
-\caption{Circuito RC pasabajos.}
-\end{figure}
+            \end{circuitikz}
+        \shorthandon{>} %Vuelvo a prender el babel español
+        \caption{Circuito RC pasabajos.}
+        \end{figure}
 
-En frecuencia, la ganancia es aproximadamente 0 dB a bajas frecuencias y luego cae con pendiente de -20 dB/década a partir de \(f_0\). La fase pasa de 0° a -90°.
+        En frecuencia, la ganancia es aproximadamente 0 dB a bajas frecuencias y luego cae con pendiente de -20 dB/década a partir de \(f_0\). La fase pasa de 0° a -90°.
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\begin{semilogxaxis}[
-    width=10cm,
-    height=5cm,
-    grid=both,
-    xlabel={Fo},
-    ylabel={Ganancia (dB)},
-]
-\addplot[thick] coordinates {
-    (0.01,-0.5) (0.1,-1) (1,-3) (10,-20) (100,-40)
-};
-\end{semilogxaxis}
-\end{tikzpicture}
-\caption{Diagrama de modulo de Bode pasabajos.}
-\end{figure}
+        \begin{figure}[H]
+        \centering
+            \begin{tikzpicture}
+                \begin{semilogxaxis}[
+                    width=10cm,
+                    height=5cm,
+                    grid=both,
+                    xlabel={Fo},
+                    ylabel={Ganancia (dB)},
+                ]
+                \addplot[thick] coordinates {
+                    (0.01,-0.5) (0.1,-1) (1,-3) (10,-20) (100,-40)
+                };
+                \end{semilogxaxis}
+            \end{tikzpicture}
+        \caption{Diagrama de modulo de Bode pasabajos.}
+        \end{figure}
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\begin{semilogxaxis}[
-    width=10cm,
-    height=5cm,
-    grid=both,
-    xlabel={Fo},
-    ylabel={Fase (°)},
-    ymin=-100, ymax=10,
-]
-\addplot[thick] coordinates {
-    (0.01,0) (0.1,-5) (1,-45) (10,-85) (100,-90)
-};
-\end{semilogxaxis}
-\end{tikzpicture}
-\caption{Diagrama de fase de Bode pasabajos.}
-\end{figure}
+        \begin{figure}[H]
+        \centering
+            \begin{tikzpicture}
+                \begin{semilogxaxis}[
+                    width=10cm,
+                    height=5cm,
+                    grid=both,
+                    xlabel={Fo},
+                    ylabel={Fase (°)},
+                    ymin=-100, ymax=10,
+                ]
+                \addplot[thick] coordinates {
+                    (0.01,0) (0.1,-5) (1,-45) (10,-85) (100,-90)
+                };
+                \end{semilogxaxis}
+            \end{tikzpicture}
+        \caption{Diagrama de fase de Bode pasabajos.}
+        \end{figure}
 
-\subsection{Circuito RC pasaaltos}
+    \subsection{Circuito RC pasaaltos}
 
-El circuito RC pasaaltos es también de primer orden, pero la salida se toma sobre la resistencia. Su función de transferencia ideal es:
+        El circuito RC pasaaltos es también de primer orden, pero la salida se toma sobre la resistencia. Su función de transferencia ideal es:
 
-\begin{equation}
-H(s) = \frac{sRC}{1 + sRC}
-\label{eq:pasaaltos_tf}
-\end{equation}
+        \begin{equation}
+            H(s) = \frac{sRC}{1 + sRC}
+        \label{eq:pasaaltos_tf}
+        \end{equation}
 
-\begin{equation}
-f_0 = \frac{1}{2\pi RC}
-\label{eq:pasaaltos_fc}
-\end{equation}
+        \begin{equation}
+            f_0 = \frac{1}{2\pi RC}
+        \label{eq:pasaaltos_fc}
+        \end{equation}
 
-\begin{figure}[H]
-\centering
-\shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
-\begin{circuitikz}[american]
-\draw
-(0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
-      to[C, l=$C$, *-*] (4,3)           
-      to[R, l=$R$] (4,0)                 
-      to[short, -*] (0,0);
+        \begin{figure}[H]
+        \centering
+        \shorthandoff{>} %Por babel spanish, el caracter > es un atajo para tildes... Para las flechas en circuitkz debo suar >. Apago momentaneamente babel.
+            \begin{circuitikz}[american]
+            \draw
+            (0,0) to[sV, l=$v_{\mathrm{in}}$] (0,3)
+                to[C, l=$C$, *-*] (4,3)           
+                to[R, l=$R$] (4,0)                 
+                to[short, -*] (0,0);
 
-% La salida
-\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
-\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+            % La salida
+            \draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+            \draw (4,0) to[short, -o] (5,0) node[right] {$-$};
 
-% La flecha
-\draw[->, >=stealth, thick] (5,0.5) -- (5,2.5) 
-    node[midway, right] {$v_{\mathrm{out}}$};
+            % La flecha
+            \draw[->, >=stealth, thick] (5,0.5) -- (5,2.5) 
+                node[midway, right] {$v_{\mathrm{out}}$};
 
-\end{circuitikz}
-\shorthandon{>}
-\caption{Circuito RC pasaaltos.}
-\end{figure}
+            \end{circuitikz}
+        \shorthandon{>}
+        \caption{Circuito RC pasaaltos.}
+        \end{figure}
 
-En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente de +20 dB/década hasta estabilizarse en 0 dB. La fase varía de 90° a 0°.
+        En este caso, la ganancia es muy baja a bajas frecuencias y crece con pendiente de +20 dB/década hasta estabilizarse en 0 dB. La fase varía de 90° a 0°.
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\begin{semilogxaxis}[
-    width=10cm,
-    height=5cm,
-    grid=both,
-    xlabel={Fo},
-    ylabel={Ganancia (dB)},
-]
-\addplot[thick] coordinates {
-    (0.01,-40) (0.1,-20) (1,-3) (10,-1) (100,0)
-};
-\end{semilogxaxis}
-\end{tikzpicture}
-\caption{Diagrama de modulo de Bode pasaaltos.}
-\end{figure}
+        \begin{figure}[H]
+        \centering
+            \begin{tikzpicture}
+                \begin{semilogxaxis}[
+                    width=10cm,
+                    height=5cm,
+                    grid=both,
+                    xlabel={Fo},
+                    ylabel={Ganancia (dB)},
+                ]
+                \addplot[thick] coordinates {
+                    (0.01,-40) (0.1,-20) (1,-3) (10,-1) (100,0)
+                };
+                \end{semilogxaxis}
+            \end{tikzpicture}
+        \caption{Diagrama de modulo de Bode pasaaltos.}
+        \end{figure}
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\begin{semilogxaxis}[
-    width=10cm,
-    height=5cm,
-    grid=both,
-    xlabel={Fo},
-    ylabel={Fase (°)},
-    ymin=-10, ymax=100,
-]
-\addplot[thick] coordinates {
-    (0.01,90) (0.1,85) (1,45) (10,5) (100,0)
-};
-\end{semilogxaxis}
-\end{tikzpicture}
-\caption{Diagrama de fase de Bode pasaaltos.}
-\end{figure}
+        \begin{figure}[H]
+        \centering
+            \begin{tikzpicture}
+                \begin{semilogxaxis}[
+                    width=10cm,
+                    height=5cm,
+                    grid=both,
+                    xlabel={Fo},
+                    ylabel={Fase (°)},
+                    ymin=-10, ymax=100,
+                ]
+                \addplot[thick] coordinates {
+                    (0.01,90) (0.1,85) (1,45) (10,5) (100,0)
+                };
+                \end{semilogxaxis}
+            \end{tikzpicture}
+        \caption{Diagrama de fase de Bode pasaaltos.}
+        \end{figure}
 
-\subsection{Osciloscopio digital y puntas de medición}
+    \subsection{Osciloscopio digital y puntas de medición}
 
-El osciloscopio digital puede modelarse de forma aproximada como una impedancia de entrada compuesta por una resistencia de 1 M$\Omega$ en paralelo con una capacitancia parásita del orden de algunos pF (típicamente alrededor de 12 pF). Esta capacitancia no suele ser relevante a bajas frecuencias, pero empieza a afectar las mediciones cuando se trabaja en frecuencia más alta.
+        El osciloscopio digital puede modelarse de forma aproximada como una impedancia de entrada compuesta por una resistencia de 1 M$\Omega$ en paralelo con una capacitancia parásita del orden de algunos pF (típicamente alrededor de 12 pF). Esta capacitancia no suele ser relevante a bajas frecuencias, pero empieza a afectar las mediciones cuando se trabaja en frecuencia más alta.
 
-Cuando se utiliza la punta en modo X1, la capacitancia total vista por el circuito aumenta bastante, llegando a valores del orden de 100 pF. Esto se debe principalmente al cable de la punta, que es coaxial, y por lo tanto se comporta como un capacitor distribuido (el conductor interno y la malla actúan como placas separadas por un dieléctrico). En este caso, el conjunto puede modelarse como una resistencia de 1 M$\Omega$ en paralelo con una capacitancia cercana a 100 pF, lo que puede modificar bastante la respuesta del circuito medido. %, como se muestra en la Fig.~\ref{fig:punta_x1}.
+        Cuando se utiliza la punta en modo X1, la capacitancia total vista por el circuito aumenta bastante, llegando a valores del orden de 100 pF. Esto se debe principalmente al cable de la punta, que es coaxial, y por lo tanto se comporta como un capacitor distribuido (el conductor interno y la malla actúan como placas separadas por un dieléctrico). En este caso, el conjunto puede modelarse como una resistencia de 1 M$\Omega$ en paralelo con una capacitancia cercana a 100 pF, lo que puede modificar bastante la respuesta del circuito medido. %, como se muestra en la Fig.~\ref{fig:punta_x1}.
 
-Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un divisor resistivo-capacitivo que compensa este efecto. Esto hace que la capacitancia equivalente vista por el circuito sea mucho menor (del orden de 10–15 pF) y que la resistencia de entrada efectiva aumente a aproximadamente 10 M$\Omega$. De esta forma, se reduce el efecto de carga sobre el circuito y se obtiene una medición más fiel. %, como se muestra en la Fig.~\ref{fig:punta_x10}.
+        Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un divisor resistivo-capacitivo que compensa este efecto. Esto hace que la capacitancia equivalente vista por el circuito sea mucho menor (del orden de 10–15 pF) y que la resistencia de entrada efectiva aumente a aproximadamente 10 M$\Omega$. De esta forma, se reduce el efecto de carga sobre el circuito y se obtiene una medición más fiel. %, como se muestra en la Fig.~\ref{fig:punta_x10}.
 
 
 
@@ -570,114 +570,329 @@ pues según el valor de los componentes dentro de cualquier circuito a estudiar,
 
 \section{Pasaaltos}
     \subsection{Parte teórica}
-        % a) Transferencia y frecuencia de corte
-        Para el análisis teórico se consideró el circuito RC pasaaltos incluyendo únicamente la resistencia interna del generador, modelada como una resistencia en serie de $R_{gen} = 50\,\Omega$.
+        \subsubsection{Transferencia y frecuencia de corte}
+            Para el análisis teórico se consideró el circuito RC pasaaltos incluyendo únicamente la resistencia interna del generador, modelada como una resistencia en serie de $R_{gen} = 50\,\Omega$.
 
-Se decidió despreciar el efecto del osciloscopio (tanto su resistencia de entrada de 1 M$\Omega$ como la capacitancia parásita asociada a la punta), ya que para el rango de frecuencias de interés (menores a 500 kHz) su influencia resulta despreciable frente a las impedancias del circuito.
+            Se decidió despreciar el efecto del osciloscopio (tanto su resistencia de entrada de 1 M$\Omega$ como la capacitancia parásita asociada a la punta), ya que para el rango de frecuencias de interés (menores a 500 kHz) su influencia resulta despreciable frente a las impedancias del circuito.
 
-Bajo estas condiciones, el circuito equivalente utilizado es el siguiente:
+            Bajo estas condiciones, el circuito equivalente utilizado es el siguiente:
 
-\begin{figure}[H]
-\centering
-\shorthandoff{>}
-\begin{circuitikz}[american]
-\draw
-(0,0) to[sV, l=$v_{in}$] (0,3)
-to[R, l=$50\,\Omega$] (2,3)
-to[C, l=$3.4\,\text{nF}$] (4,3)
-to[R, l_=$4.6\,\text{k}\Omega$] (4,0)
--- (0,0);
+            \begin{figure}[H]
+                \centering
+                \shorthandoff{>}
+                    \begin{circuitikz}[american]
+                    \draw
+                    (0,0) to[sV, l=$v_{in}$] (0,3)
+                    to[R, l=$50\,\Omega$] (2,3)
+                    to[C, l=$3.4\,\text{nF}$] (4,3)
+                    to[R, l_=$4.6\,\text{k}\Omega$] (4,0)
+                    -- (0,0);
 
-% salida
-\draw (4,3) to[short, -o] (5,3) node[right] {$+$};
-\draw (4,0) to[short, -o] (5,0) node[right] {$-$};
+                    % salida
+                    \draw (4,3) to[short, -o] (5,3) node[right] {$+$};
+                    \draw (4,0) to[short, -o] (5,0) node[right] {$-$};
 
-% flecha vout (corrida un poco a la derecha)
-\draw[->, >=stealth] (5.3,0.5) -- (5.3,2.5)
-node[midway,right] {$v_{out}$};
+                    % flecha vout (corrida un poco a la derecha)
+                    \draw[->, >=stealth] (5.3,0.5) -- (5.3,2.5)
+                    node[midway,right] {$v_{out}$};
 
-\end{circuitikz}
-\shorthandon{>}
-\caption{Circuito RC pasaaltos considerando la resistencia interna del generador}
-\label{fig:hp_rgen}
-\end{figure}
+                    \end{circuitikz}
+                \shorthandon{>}
+                \caption{Circuito RC pasaaltos considerando la resistencia interna del generador}
+                \label{fig:hp_rgen}
+            \end{figure}
 
-A partir del circuito de la Fig.~\ref{fig:hp_rgen}, la función de transferencia puede obtenerse aplicando divisor de impedancias. Considerando la impedancia del capacitor como:
+            A partir del circuito de la Fig.~\ref{fig:hp_rgen}, la función de transferencia puede obtenerse aplicando divisor de impedancias. Considerando la impedancia del capacitor como:
 
-\[
-Z_C = \frac{1}{sC}
-\]
+                \[
+                Z_C = \frac{1}{sC}
+                \]
 
-la salida se toma sobre la resistencia \(R\), por lo que:
+            la salida se toma sobre la resistencia \(R\), por lo que:
 
-\begin{equation}
-H(s) = \frac{V_{out}}{V_{in}} = \frac{R}{R + R_{gen} + \frac{1}{sC}}
-\end{equation}
+            \begin{equation}
+                H(s) = \frac{V_{out}}{V_{in}} = \frac{R}{R + R_{gen} + \frac{1}{sC}}
+            \end{equation}
 
-Multiplicando numerador y denominador por \(sC\), se obtiene una expresión más conveniente:
+            Multiplicando numerador y denominador por \(sC\), se obtiene una expresión más conveniente:
 
-\begin{equation}
-H(s) = \frac{sRC}{1 + sC(R + R_{gen})}
-\end{equation}
+            \begin{equation}
+                H(s) = \frac{sRC}{1 + sC(R + R_{gen})}
+            \label{eq: func. transf pasaaltos}
+            \end{equation}
 
-Reemplazando ahora \(s = j 2\pi f\) y los valores del circuito (\(R = 4.6\,\text{k}\Omega\), \(R_{gen} = 50\,\Omega\), \(C = 3.4\,\text{nF}\)), resulta:
+            Reemplazando ahora \(s = j 2\pi f\) y los valores del circuito (\(R = 4.6\,\text{k}\Omega\), \(R_{gen} = 50\,\Omega\), \(C = 3.4\,\text{nF}\)), resulta:
 
-\begin{equation}
-H(f) = \frac{j 2\pi f \cdot (4.6\times10^3)\cdot(3.4\times10^{-9})}{1 + j 2\pi f \cdot (3.4\times10^{-9}) \cdot (4.6\times10^3 + 50)}
-\end{equation}
+            \begin{equation}
+                H(f) = \frac{j 2\pi f \cdot (4.6\times10^3)\cdot(3.4\times10^{-9})}{1 + j 2\pi f \cdot (3.4\times10^{-9}) \cdot (4.6\times10^3 + 50)}
+            \end{equation}
 
-A partir de la función de transferencia obtenida, la frecuencia de corte puede determinarse de distintas maneras.
+            A partir de la función de transferencia obtenida, la frecuencia de corte puede determinarse de distintas maneras.
 
-Por un lado, en el dominio de la frecuencia, la frecuencia de corte se define como aquella para la cual el módulo de la función de transferencia cae 3 dB respecto del valor máximo. En este caso, el módulo de la transferencia es:
+            Por un lado, en el dominio de la frecuencia, la frecuencia de corte se define como aquella para la cual el módulo de la función de transferencia cae 3 dB respecto del valor máximo. En este caso, el módulo de la transferencia es:
 
-\[
-|H(j\omega)| = \left| \frac{j\omega RC}{1 + j\omega C(R + R_{gen})} \right|
-\]
+                \[
+                |H(j\omega)| = \left| \frac{j\omega RC}{1 + j\omega C(R + R_{gen})} \right|
+                \]
 
-Calculando su módulo:
+            Calculando su módulo:
 
-\[
-|H(j\omega)| = \frac{\omega RC}{\sqrt{1 + \left[\omega C(R + R_{gen})\right]^2}}
-\]
+                \begin{equation}
+                    |H(j\omega)| = \frac{\omega RC}{\sqrt{1 + \left[\omega C(R + R_{gen})\right]^2}}
+                \label{eq: modulo pasaaltos}
+                \end{equation}
 
-La frecuencia de corte se obtiene cuando:
+            La frecuencia de corte se obtiene cuando:
 
-\[
-20\log_{10}(|H(j\omega)|) = -3\,\text{dB}
-\]
+                \[
+                20\log_{10}(|H(j\omega)|) = -3\,\text{dB}
+                \]
 
-lo cual equivale a que:
+            lo cual equivale a que:
 
-\[
-|H(j\omega)| = \frac{1}{\sqrt{2}}
-\]
+                \[
+                |H(j\omega)| = \frac{1}{\sqrt{2}}
+                \]
 
-Por otro lado, en el dominio del tiempo, esto mismo implica que la amplitud de la señal de salida es igual a la de entrada dividida por \(\sqrt{2}\). En nuestro caso, al excitar el circuito con una señal senoidal de entrada de \(10\,\text{V}_{pp}\), se espera que en la frecuencia de corte la salida sea aproximadamente:
+            Por otro lado, en el dominio del tiempo, esto mismo implica que la amplitud de la señal de salida es igual a la de entrada dividida por \(\sqrt{2}\). En nuestro caso, al excitar el circuito con una señal senoidal de entrada de \(10\,\text{V}_{pp}\), se espera que en la frecuencia de corte la salida sea aproximadamente:
 
-\[
-V_{out} \approx \frac{10}{\sqrt{2}} \approx 7.07\,\text{V}_{pp}
-\]
+                \[
+                V_{out} \approx \frac{10}{\sqrt{2}} \approx 7.07\,\text{V}_{pp}
+                \]
 
-Finalmente, despejando de la expresión del módulo, se obtiene que la frecuencia de corte está dada por:
+            Finalmente, despejando de la expresión del módulo, se obtiene que la frecuencia de corte está dada por:
 
-\begin{equation}
-f_0 = \frac{1}{2\pi C(R + R_{gen})}
-\end{equation}
+            \begin{equation}
+            f_0 = \frac{1}{2\pi C(R + R_{gen})}
+            \end{equation}
 
-Reemplazando los valores del circuito (\(R = 4.6\,\text{k}\Omega\), \(R_{gen} = 50\,\Omega\), \(C = 3.4\,\text{nF}\)):
+            Reemplazando los valores del circuito (\(R = 4.6\,\text{k}\Omega\), \(R_{gen} = 50\,\Omega\), \(C = 3.4\,\text{nF}\)):
 
-\[
-f_0 = \frac{1}{2\pi \cdot 3.4\times10^{-9} \cdot (4.6\times10^3 + 50)}
-\]
+            \[
+            f_0 = \frac{1}{2\pi \cdot 3.4\times10^{-9} \cdot (4.6\times10^3 + 50)}
+            \]
 
-\[
-f_0 \approx 10.1\,\text{kHz}
-\]
+            \[
+            f_0 \approx 10.1\,\text{kHz}
+            \]
 
-        % b) Frecuencia nominal y error
-        % c) Diagrama de Bode con tolerancias
-        % d) Ganancia y fase (fo/10, fo, 10fo)
-        % e) Simulación con onda triangular
+        \subsubsection{Frecuencia nominal y error}
+            Considerando los valores nominales de los componentes, la frecuencia de corte del filtro pasaaltos puede aproximarse como:
+
+            \[
+            f_0 = \frac{1}{2\pi RC}
+            \]
+
+            Tomando \(R = 4.7\,k\Omega\) y \(C = 3.3\,nF\), se obtiene:
+
+            \[
+            f_0 \approx 10261 \, \text{Hz}
+            \]
+
+            Para estimar el error en la frecuencia de corte, se utiliza la expresión obtenida a partir de propagación de errores:
+
+            \begin{equation}
+            \Delta f = f_0 \sqrt{\left(\frac{\Delta R}{R}\right)^2 + \left(\frac{\Delta C}{C}\right)^2}
+            \end{equation}
+
+            Considerando una tolerancia del \(5\%\) en la resistencia y del \(10\%\) en el capacitor:
+
+            \[
+            \Delta f \approx 1147 \, \text{Hz}
+            \]
+
+            Por lo tanto, la frecuencia de corte nominal resulta:
+
+            \[
+            f_0 \approx (10.26 \pm 1.15)\, \text{kHz}
+            \]
+
+            Se denota que el error se ve dominado por la incertidumbre del capacitor.
+
+    \subsubsection{Diagrama de Bode con tolerancias}
+            \begin{figure}[H]
+            \centering
+                \begin{tikzpicture}
+                    \begin{semilogxaxis}[
+                        title={Diagrama de Bode (módulo)},
+                        xlabel={Frecuencia [Hz]},
+                        ylabel={Ganancia [dB]},
+                        grid=both,
+                        width=12cm,
+                        height=7cm,
+                        xmin=100, xmax=2e5,
+                        ymin=-40, ymax=5,
+                        legend pos=south east
+                    ]
+
+                    % Nominal
+                    \addplot[
+                        domain=100:2e5,
+                        samples=200,
+                        thick,
+                        blue
+                    ]
+                    {20*log10( (2*pi*x*4.7e3*3.3e-9) / sqrt(1+(2*pi*x*4.7e3*3.3e-9)^2) )};
+                    \addlegendentry{Nominal}
+
+                    % Mínimo
+                    \addplot[
+                        domain=100:2e5,
+                        samples=200,
+                        thick,
+                        red,
+                        dashed
+                    ]
+                    {20*log10( (2*pi*x*(4.7e3*1.05)*(3.3e-9*1.10)) / sqrt(1+(2*pi*x*(4.7e3*1.05)*(3.3e-9*1.10))^2) )};
+                    \addlegendentry{Mínimo}
+
+                    % Máximo
+                    \addplot[
+                        domain=100:2e5,
+                        samples=200,
+                        thick,
+                        green!60!black,
+                        dashed
+                    ]
+                    {20*log10( (2*pi*x*(4.7e3*0.95)*(3.3e-9*0.90)) / sqrt(1+(2*pi*x*(4.7e3*0.95)*(3.3e-9*0.90))^2) )};
+                    \addlegendentry{Máximo}
+
+                    % Líneas verticales en f0
+                    \addplot[dotted, thick] coordinates {(8884,-40) (8884,5)};
+                    \addplot[dotted, thick] coordinates {(10261,-40) (10261,5)};
+                    \addplot[dotted, thick] coordinates {(12000,-40) (12000,5)};
+
+                    \end{semilogxaxis}
+                \end{tikzpicture}
+            \caption{Diagrama de Bode del módulo del filtro pasaaltos con sus distintas variantes.}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+                \begin{tikzpicture}
+                    \begin{semilogxaxis}[
+                        title={Diagrama de Bode (fase)},
+                        xlabel={Frecuencia [Hz]},
+                        ylabel={Fase [°]},
+                        grid=both,
+                        width=12cm,
+                        height=7cm,
+                        xmin=100, xmax=2e5,
+                        ymin=0, ymax=100,
+                        legend pos=south west
+                    ]
+
+                    % Nominal
+                    \addplot[
+                        domain=100:2e5,
+                        samples=200,
+                        thick,
+                        blue
+                    ]
+                    {atan(1/(2*pi*x*4.7e3*3.3e-9))};
+                    \addlegendentry{Nominal}
+
+                    % Mínimo
+                    \addplot[
+                        domain=100:2e5,
+                        samples=200,
+                        thick,
+                        red,
+                        dashed
+                    ]
+                    {atan(1/(2*pi*x*(4.7e3*1.05)*(3.3e-9*1.10)))};
+                    \addlegendentry{Mínimo}
+
+                    % Máximo
+                    \addplot[
+                        domain=100:2e5,
+                        samples=200,
+                        thick,
+                        green!60!black,
+                        dashed
+                    ]
+                    {atan(1/(2*pi*x*(4.7e3*0.95)*(3.3e-9*0.90)))};
+                    \addlegendentry{Máximo}
+
+                    % Líneas verticales
+                    \addplot[dotted, thick] coordinates {(8884,0) (8884,100)};
+                    \addplot[dotted, thick] coordinates {(10261,0) (10261,100)};
+                    \addplot[dotted, thick] coordinates {(12000,0) (12000,100)};
+
+                    \end{semilogxaxis}
+                \end{tikzpicture}
+            \caption{Diagrama de fase del filtro pasaaltos con sus distintas variantes.}
+            \end{figure}
+
+    \subsubsection{Ganancia y fase en distintas frecuencias con una sinosoidal}
+            Para el circuito pasaaltos, tanto la funcion transferencia como su modulo se denotan en las ecuaciones \ref{eq: func. transf pasaaltos} y \ref{eq: modulo pasaaltos}.
+
+            Luego para la fase:
+
+            \begin{equation}
+                \angle H(j\omega)=\arctan\left(\frac{1}{\omega RC}\right)
+            \label{eq: fase de pasaaltos}
+            \end{equation}
+
+            Evaluando en las frecuencias solicitadas:
+
+            Para $f=\frac{f_0}{10}$:
+
+                \[
+                \omega RC = 0.1
+                \]
+
+                \[
+                |H| \approx 0.0995 \quad \Rightarrow \quad 20\log_{10}|H| \approx -20\,\text{dB}
+                \]
+
+                \[
+                \angle H \approx 84.3^\circ
+                \]
+
+            Para $f=f_0$:
+
+                \[
+                \omega RC = 1
+                \]
+
+                \[
+                |H|=\frac{1}{\sqrt{2}} \approx 0.707 \quad \Rightarrow \quad -3\,\text{dB}
+                \]
+
+                \[
+                \angle H = 45^\circ
+                \]
+
+            Para $f=10f_0$:
+
+                \[
+                \omega RC = 10
+                \]
+
+                \[
+                |H| \approx 0.995 \quad \Rightarrow \quad 0\,\text{dB}
+                \]
+
+                \[
+                \angle H \approx 5.7^\circ
+                \]
+
+    \subsubsection{Simulacion de una netrada de onda triangular}
+    %
+    %
+    %
+    %
+    %
+    %
+    %
+    %
+    %
+    %
+    %
+    %
+
+%
         
     \subsection{Parte práctica}
         \subsubsection*{a) Diagrama de Bode}
