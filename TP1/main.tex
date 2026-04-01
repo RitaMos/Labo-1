@@ -12,7 +12,7 @@
 \usepackage{hyperref}                % cargar después de babel
 \usepackage{float}
 \usepackage{circuitikz}
-\usepackage[left=3cm,right=3cm]{geometry} %para margenes
+\usepackage[left=1.6cm,right=1.6cm,top=1.8cm,bottom=1.8cm]{geometry}
 \usepackage{subfiles} 
 \usepackage{subcaption}
 \usepackage{pgfplots}
@@ -105,6 +105,7 @@ El objetivo de este trabajo práctico es utilizar circuitos RC de primer orden, 
         \item Medidor RLC UNI-T UT812
     \end{itemize}
 
+    \newpage
 \section{Pasa bajos}
     \subsection{Parte teórica}
         % a) Transferencia y frecuencia de corte
@@ -189,42 +190,28 @@ f) Para esta parte, se simularon los tres casos (Observar imagenes \ref{fig:20f0
 
 \begin{figure}[h!]
     \centering
-
-    %-------------------------
-    %   FIGURA 
-    %-------------------------
-    \begin{minipage}[b]{0.45\textwidth}
+    
+    \begin{minipage}{0.32\textwidth}
         \centering
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{1.1f(f0.20)}
-    \caption{Gráfico con $f=20 \cdot f_0$.}
-    \label{fig:20f0}
-\end{figure}
+        \includegraphics[width=\textwidth]{1.1f(f0sobre20)}
+        \caption{Gráfico con $f=\frac{f_0}{20}$.}
+        \label{fig:f0sobre20}
     \end{minipage}
     \hfill
-    %-------------------------
-    %   FIGURA 
-    %-------------------------
-    \begin{minipage}[b]{0.45\textwidth}
+    \begin{minipage}{0.32\textwidth}
         \centering
-        \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{1.1f(f0)}
-    \caption{Gráfico con $f=f_0$.}
-    \label{fig:f0}
-\end{figure}
-         \end{minipage}
-\end{figure}
-
-    %-------------------------
-    %   FIGURA 
-    %-------------------------
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.45\textwidth]{1.1f(f0sobre20)}
-    \caption{Gráfico con $f=\frac{f_0}{20}$.}
-    \label{fig:f0sobre20}
+        \includegraphics[width=\textwidth]{1.1f(f0)}
+        \caption{Gráfico con $f=f_0$.}
+        \label{fig:f0}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1.1f(f0.20)}
+        \caption{Gráfico con $f=20\,f_0$.}
+        \label{fig:20f0}
+    \end{minipage}
+    
 \end{figure}
 
 Al observar los gráficos se puede observar que $v_{out}$ se termina comportando como una respuesta transitoria RC. Al inicio de la señal el circuito se carga de forma exponencial, y luego se descarga en forma exponencial. \par
@@ -234,17 +221,10 @@ En el caso de $f=\frac{f_0}{20}$, el circuito tiene mucho tiempo prendido o apag
 De manera analitica:
 
 \begin{align*}
-    H(s) &= \frac{V_{out}}{V_{in}}\\
-    \implies V_{out}&= V_{in} \cdot \frac{1}{1+sCR}\\
-    Pero\ como &\ \frac{f}{f_0}>> 1\ ,desprecio +1\\
-    \implies V_{out}&= V_{in} \cdot \frac{1}{sCR}\\
-    Luego\ antitransfo&rmando\ y\ recordando\ la\ propiedad\\ y(t) &= h(t) * x(t)\\
-    y(t) &= \frac{1}{RC} \cdot \int_{}^{}x(t)\\
+    H(s) &= \frac{V_{out}}{V_{in}}      \qquad    \Rightarrow V_{out}=V_{in} \cdot \frac{1}{1+sCR}\\
+    Pero\ como &\ \frac{f}{f_0}>> 1\ ,desprecio +1       \qquad     \Rightarrow V_{out}=V_{in} \cdot \frac{1}{sCR}\\
+    Luego\ antitransfo&rmando\ y\ recordando\ la\ propiedad,         \qquad      y(t)=h(t) * x(t)       \qquad      \Rightarrow y(t)=\frac{1}{RC} \cdot \int_{}^{}x(t)\\
 \end{align*}
-
-
-
-
 
 
 
@@ -344,43 +324,42 @@ De manera analitica:
         
         Luego, se presenta el gráfico de la tensión $|v_r|$ en función de la frecuencia, utilizando una escala logarítmica para el eje de frecuencias.
         
-        \begin{figure}[H]
-            \centering
-            \begin{tikzpicture}
-                \begin{semilogxaxis}[
-                    width=11cm, height=5cm,
-                    title={Tensión en la resistencia ($|v_r|$) vs. Frecuencia},
-                    xlabel={Frecuencia [Hz]},
-                    ylabel={Tensión $|v_r|$ [V]},
-                    xmin=100, xmax=100000,
-                    ymin=0, ymax=5.5,
-                    ytick={0, 1, 2, 3, 4, 5},
-                    grid=both,
-                    grid style={line width=.1pt, draw=gray!30},
-                    major grid style={line width=.2pt,draw=gray!50},
-                    axis lines=left,
-                    % Estilos de línea
-                    every axis plot/.append style={thick}
-                ]
-                    % Puntos calculados a partir de la tabla (SÓLO PUNTOS)
-                    \addplot[
-                        color=blue,
-                        mark=*,
-                        mark size=2.4pt,
-                        only marks
-                    ] coordinates {
-                        (500, 0.71) (1000, 0.71) (2000, 1.00) (5000, 2.29) 
-                        (7000, 2.88) (10000, 3.59) (15000, 4.20) (20000, 4.52) 
-                        (25000, 4.68) (30000, 4.74) (35000, 4.81) (40000, 4.81) 
-                        (45000, 4.84) (50000, 4.90) (55000, 4.91) (60000, 4.92) 
-                        (65000, 4.93) (70000, 4.94) (75000, 5.00) (80000, 4.95) (100000, 5.02)
-                    };
-                    
-                \end{semilogxaxis}
-            \end{tikzpicture}
-            \caption{Puntos experimentales de la tensión sobre la resistencia en función de la frecuencia.}
-            \label{fig:vr_grafico_puntos}
-        \end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{semilogxaxis}[
+            width=7cm, height=3.5cm, % <-- tamaño reducido
+            title={Tensión en la resistencia ($|v_r|$) vs. Frecuencia},
+            xlabel={Frecuencia [Hz]},
+            ylabel={Tensión $|v_r|$ [V]},
+            xmin=100, xmax=100000,
+            ymin=0, ymax=5.5,
+            ytick={0, 1, 2, 3, 4, 5},
+            grid=both,
+            grid style={line width=.1pt, draw=gray!30},
+            major grid style={line width=.2pt,draw=gray!50},
+            axis lines=left,
+            every axis plot/.append style={thick}
+        ]
+
+            \addplot[
+                color=blue,
+                mark=*,
+                mark size=2.4pt,
+                only marks
+            ] coordinates {
+                (500, 0.71) (1000, 0.71) (2000, 1.00) (5000, 2.29) 
+                (7000, 2.88) (10000, 3.59) (15000, 4.20) (20000, 4.52) 
+                (25000, 4.68) (30000, 4.74) (35000, 4.81) (40000, 4.81) 
+                (45000, 4.84) (50000, 4.90) (55000, 4.91) (60000, 4.92) 
+                (65000, 4.93) (70000, 4.94) (75000, 5.00) (80000, 4.95) (100000, 5.02)
+            };
+
+        \end{semilogxaxis}
+    \end{tikzpicture}
+    \caption{Puntos experimentales de la tensión sobre la resistencia en función de la frecuencia.}
+    \label{fig:vr_grafico_puntos}
+\end{figure}
         A partir del gráfico y de los datos calculados, se ve que en la frecuencia de corte $f_c \approx 10\text{ 10 kHz}$, se observa que las tensiones $v_r$ y $v_c$ son prácticamente iguales ($3,59\text{ V}$ y $3,55\text{ V}$, respectivamente). Esto demuestra físicamente que, en este punto exacto, el módulo de la reactancia capacitiva ($X_C$) se iguala al valor de la resistencia ($R$).
         Además, se ve que al poner el foco en la caída de tensión de la resistencia, se evidencia que la mayor parte de la tensión de la fuente cae sobre ella únicamente cuando las frecuencias son altas. Por lo tanto, si se toma la salida sobre la resistencia en lugar del capacitor, el circuito se comporta como un filtro pasa-altos.
 
@@ -418,7 +397,8 @@ H(s)=\frac{sRC}{\frac{s}{\frac{1}{R \cdot C}}+1}
             Por tal motivo resulta quedando $f_0 = 10261 Hz \pm 1147 Hz$.
     \subsubsection{Diagrama de Bode con tolerancias}         
             %%%%%
-            \begin{figure}[H]
+
+\begin{figure}[H]
 \centering
 
 \begin{minipage}{0.48\textwidth}
@@ -551,89 +531,94 @@ H(s)=\frac{sRC}{\frac{s}{\frac{1}{R \cdot C}}+1}
     \subsubsection{Simulacion de una entrada de onda triangular}
     
     %%%%nuevo%%%%%
-    \begin{figure}[H]
-\centering
+\begin{figure}[H]
+    \centering
 
-% --- fila superior ---
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=\textwidth,
-    height=5cm,
-    grid=both,
-    xlabel={Tiempo [s]},
-    ylabel={Tensión [V]},
-    legend pos=north east,
-    no marks
-]
+    % ---------- fila superior ----------
+    \begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.9\textwidth,
+        height=3.8cm,
+        scale only axis,
+        grid=both,
+        xlabel={Tiempo [s]},
+        ylabel={Tensión [V]},
+        legend pos=north east,
+        no marks
+    ]
 
-\addplot table [x=time, y=V(n001), col sep=tab] {10fo.txt};
-\addlegendentry{Entrada}
+    \addplot table [x=time, y=V(n001), col sep=tab] {10fo.txt};
+    \addlegendentry{Entrada}
 
-\addplot table [x=time, y=V(a), col sep=tab] {10fo.txt};
-\addlegendentry{Salida}
+    \addplot table [x=time, y=V(a), col sep=tab] {10fo.txt};
+    \addlegendentry{Salida}
 
-\end{axis}
-\end{tikzpicture}
-\captionof{figure}{Respuesta del filtro pasa-altos para $f = 10 f_0$.}
-\label{fig:10f0}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=\textwidth,
-    height=5cm,
-    grid=both,
-    xlabel={Tiempo [s]},
-    ylabel={Tensión [V]},
-    legend pos=north east,
-    no marks
-]
+    \end{axis}
+    \end{tikzpicture}
+    \captionof{figure}{Filtro pasa-altos para $f = 10 f_0$.}
+    \label{fig:10f0}
+    \end{minipage}
+    \hfill
+    %
+    \begin{minipage}[t]{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.9\textwidth,
+        height=3.8cm,
+        scale only axis,
+        grid=both,
+        xlabel={Tiempo [s]},
+        ylabel={Tensión [V]},
+        legend pos=north east,
+        no marks
+    ]
 
-\addplot table [x=time, y=V(n001), col sep=tab] {fo.txt};
-\addlegendentry{Entrada}
+    \addplot table [x=time, y=V(n001), col sep=tab] {fo.txt};
+    \addlegendentry{Entrada}
 
-\addplot table [x=time, y=V(a), col sep=tab] {fo.txt};
-\addlegendentry{Salida}
+    \addplot table [x=time, y=V(a), col sep=tab] {fo.txt};
+    \addlegendentry{Salida}
 
-\end{axis}
-\end{tikzpicture}
-\captionof{figure}{Respuesta del filtro pasa-altos para $f = f_0$.}
-\label{fig:f0}
-\end{minipage}
+    \end{axis}
+    \end{tikzpicture}
+    \captionof{figure}{Filtro pasa-altos para $f = f_0$.}
+    \label{fig:f0}
+    \end{minipage}
 
-\vspace{0.5cm}
+    \vspace{0.35cm}
 
-% --- fila inferior (centrada) ---
-\begin{minipage}{0.6\textwidth}
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=\textwidth,
-    height=5cm,
-    grid=both,
-    xlabel={Tiempo [s]},
-    ylabel={Tensión [V]},
-    legend pos=north east,
-    no marks
-]
+    % ---------- fila inferior ----------
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.9\textwidth,
+        height=3.8cm,
+        scale only axis,
+        grid=both,
+        xlabel={Tiempo [s]},
+        ylabel={Tensión [V]},
+        legend pos=north east,
+        no marks
+    ]
 
-\addplot table [x=time, y=V(n001), col sep=tab] {fo_10.txt};
-\addlegendentry{Entrada}
+    \addplot table [x=time, y=V(n001), col sep=tab] {fo_10.txt};
+    \addlegendentry{Entrada}
 
-\addplot table [x=time, y=V(a), col sep=tab] {fo_10.txt};
-\addlegendentry{Salida}
+    \addplot table [x=time, y=V(a), col sep=tab] {fo_10.txt};
+    \addlegendentry{Salida}
 
-\end{axis}
-\end{tikzpicture}
-\captionof{figure}{Respuesta del filtro pasa-altos para $f = \frac{f_0}{10}$.}
-\label{fig:f0_10}
-\end{minipage}
+    \end{axis}
+    \end{tikzpicture}
+    \captionof{figure}{Filtro pasa-altos para $f = \frac{f_0}{10}$.}
+    \label{fig:f0_10}
+    \end{minipage}
 
 \end{figure}
+
     %%%%nuevo%%%%%
 
     \subsubsection{Análisis analítico para entrada triangular}
@@ -655,34 +640,16 @@ v_{in}(t) = k t \quad \Rightarrow \quad V_{in}(s) = \frac{k}{s^2}
 \]
 
 En el régimen en el cual el circuito se comporta como derivador (bajas frecuencias):
-
 \[
-H(s) \approx sRC
+H(s) \approx sRC \qquad \Rightarrow \qquad V_{out}(s) \approx (sRC)\frac{k}{s^2} = \frac{kRC}{s}
 \]
 
-Entonces:
+Aplicando transformada inversa: $ v_{out}(t) = kRC $
 
-\[
-V_{out}(s) \approx (sRC)\frac{k}{s^2} = \frac{kRC}{s}
-\]
+Homologamente para el tramo decreciente: $ v_{out}(t) = -kRC$
 
-Aplicando transformada inversa:
-
-\[
-v_{out}(t) = kRC
-\]
-
-Homologamente para el tramo decreciente:
-
-\[
-v_{out}(t) = -kRC
-\]
-
-Por lo tanto, la salida es una señal cuadrada, verificándose que:
-
-\[
-v_{out}(t) \approx RC \frac{d}{dt} v_{in}(t)
-\]
+Por lo tanto, la salida es una señal cuadrada, verificándose que: 
+$v_{out}(t) \approx RC \frac{d}{dt} v_{in}(t) $
 
 lo que demuestra el comportamiento derivador del filtro pasa-altos en este régimen.
         %%%nuevo%%%
@@ -794,39 +761,36 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
 \begin{figure}[H]
 \centering
 
-\begin{minipage}{0.48\textwidth}
+\begin{subfigure}{0.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{item2_triangular1k.png}
-    \caption*{f = 1 kHz}
-\end{minipage}\hfill
-\begin{minipage}{0.48\textwidth}
+    \caption{$f=1\,\text{kHz}$}
+\end{subfigure}
+\hspace{0.01\textwidth}
+\begin{subfigure}{0.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{item2_triangular10k.png}
-    \caption*{f = 10 kHz}
-\end{minipage}
+    \caption{$f=10\,\text{kHz}$}
+\end{subfigure}
 
-\caption{Respuesta del filtro pasa-altos ante una señal triangular (bajas frecuencias).}
-\label{fig:item2-triangular-bajo}
-\end{figure}
+\vspace{0.15cm}
 
-\begin{figure}[H]
-\centering
-
-\begin{minipage}{0.48\textwidth}
+\begin{subfigure}{0.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{item2_triangular50k.png}
-    \caption*{f = 50 kHz}
-\end{minipage}\hfill
-\begin{minipage}{0.48\textwidth}
+    \caption{$f=50\,\text{kHz}$}
+\end{subfigure}
+\hspace{0.01\textwidth}
+\begin{subfigure}{0.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{item2_triangular200k.png}
-    \caption*{f = 200 kHz}
-\end{minipage}
+    \caption{$f=200\,\text{kHz}$}
+\end{subfigure}
 
-\caption{Respuesta del filtro pasa-altos ante una señal triangular (altas frecuencias).}
-\label{fig:item2-triangular-alto}
+\caption{Respuesta del filtro pasa-altos ante una señal triangular para distintas frecuencias: 
+(a) 1 kHz, (b) 10 kHz, (c) 50 kHz y (d) 200 kHz.}
+\label{fig:item2-triangular}
 \end{figure}
-%%%%%nuevo%%%%%
 
 
 \section{Sincronización de instrumentos}
@@ -835,14 +799,14 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
 \begin{figure}[H]
 \centering
 
-\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \includegraphics[width=\textwidth]{item3_modoXY.png}
 \captionof{figure}{Barrido de la respuesta en frecuencia del filtro pasa-bajos en modo XY.}
 \label{fig:barridoModoXY}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \includegraphics[width=\textwidth]{item3_modoNormal.png}
 \captionof{figure}{Barrido de la respuesta en frecuencia del filtro pasa-bajos en modo normal.}
