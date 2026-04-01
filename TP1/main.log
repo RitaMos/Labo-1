@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  31 MAR 2026 23:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  31 MAR 2026 23:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -781,191 +781,191 @@ Package pdftex.def Info: Logo_ITBA.png  used on input line 57.
 (pdftex.def)             Requested size: 156.97534pt x 62.22144pt.
  [1
 
-{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Logo_ITBA.png>]
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.87 \newpage
-              [1] (main.toc
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Logo_ITBA.png>] (main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2] [3]
-<1.1d.png, id=147, 549.05125pt x 328.22626pt>
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.85 \newpage
+              [1] [2]
+<1.1d.png, id=143, 549.05125pt x 328.22626pt>
 File: 1.1d.png Graphic file (type png)
 <use 1.1d.png>
-Package pdftex.def Info: 1.1d.png  used on input line 166.
+Package pdftex.def Info: 1.1d.png  used on input line 161.
 (pdftex.def)             Requested size: 213.48392pt x 127.62207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
  []
 
-<1.1f(f0sobre20).png, id=152, 548.0475pt x 328.22626pt>
+<1.1f(f0sobre20).png, id=148, 548.0475pt x 328.22626pt>
 File: 1.1f(f0sobre20).png Graphic file (type png)
 <use 1.1f(f0sobre20).png>
-Package pdftex.def Info: 1.1f(f0sobre20).png  used on input line 196.
+Package pdftex.def Info: 1.1f(f0sobre20).png  used on input line 191.
 (pdftex.def)             Requested size: 167.44249pt x 100.28165pt.
-<1.1f(f0).png, id=153, 545.03625pt x 328.22626pt>
+<1.1f(f0).png, id=149, 545.03625pt x 328.22626pt>
 File: 1.1f(f0).png Graphic file (type png)
 <use 1.1f(f0).png>
-Package pdftex.def Info: 1.1f(f0).png  used on input line 203.
+Package pdftex.def Info: 1.1f(f0).png  used on input line 198.
 (pdftex.def)             Requested size: 167.44249pt x 100.83255pt.
-<1.1f(f0.20).png, id=154, 550.055pt x 329.23pt>
+<1.1f(f0.20).png, id=150, 550.055pt x 329.23pt>
 File: 1.1f(f0.20).png Graphic file (type png)
 <use 1.1f(f0.20).png>
-Package pdftex.def Info: 1.1f(f0.20).png  used on input line 210.
+Package pdftex.def Info: 1.1f(f0.20).png  used on input line 205.
 (pdftex.def)             Requested size: 167.44249pt x 100.22159pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./1.1d.png>]
+[3 <./1.1d.png>]
 
-LaTeX Warning: Command \guillemotright invalid in math mode on input line 227.
+LaTeX Warning: Command \guillemotright invalid in math mode on input line 222.
 
 
-LaTeX Warning: Command \guillemotright invalid in math mode on input line 227.
+LaTeX Warning: Command \guillemotright invalid in math mode on input line 222.
 
-[5 <./1.1f(f0sobre20).png> <./1.1f(f0).png> <./1.1f(f0.20).png>]
-Package pgfplots info on input line 343: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+[4 <./1.1f(f0sobre20).png> <./1.1f(f0).png> <./1.1f(f0.20).png>]
+Package pgfplots info on input line 338: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+ [5]
+Package pgfplots info on input line 411: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+Package pgfplots info on input line 466: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
  [6]
-Package pgfplots info on input line 416: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
-Package pgfplots info on input line 471: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
- [7]
 PGFPlots: reading {10fo.txt}
 PGFPlots: reading {10fo.txt}
 
-Overfull \hbox (13.15712pt too wide) in paragraph at lines 559--560
+Overfull \hbox (13.15712pt too wide) in paragraph at lines 554--555
  [][] 
  []
 
 PGFPlots: reading {fo.txt}
 PGFPlots: reading {fo.txt}
 
-Overfull \hbox (13.16078pt too wide) in paragraph at lines 586--587
+Overfull \hbox (13.16078pt too wide) in paragraph at lines 581--582
  [][] 
  []
 
 PGFPlots: reading {fo_10.txt}
 PGFPlots: reading {fo_10.txt}
 
-Overfull \hbox (10.54816pt too wide) in paragraph at lines 615--616
+Overfull \hbox (10.54816pt too wide) in paragraph at lines 610--611
  [][] 
  []
 
-[8]
-<item2_simulacion.png, id=209, 1428.08531pt x 685.05937pt>
+[7]
+<item2_simulacion.png, id=205, 1428.08531pt x 685.05937pt>
 File: item2_simulacion.png Graphic file (type png)
 <use item2_simulacion.png>
-Package pdftex.def Info: item2_simulacion.png  used on input line 704.
+Package pdftex.def Info: item2_simulacion.png  used on input line 699.
 (pdftex.def)             Requested size: 261.62291pt x 125.50052pt.
-<item2_bodeTeorico.png, id=213, 895.84688pt x 661.72218pt>
+<item2_bodeTeorico.png, id=209, 895.84688pt x 661.72218pt>
 File: item2_bodeTeorico.png Graphic file (type png)
 <use item2_bodeTeorico.png>
-Package pdftex.def Info: item2_bodeTeorico.png  used on input line 721.
+Package pdftex.def Info: item2_bodeTeorico.png  used on input line 716.
 (pdftex.def)             Requested size: 251.15576pt x 185.51317pt.
-<item2_bodeMedido.png, id=214, 803.0pt x 504.88625pt>
+<item2_bodeMedido.png, id=210, 803.0pt x 504.88625pt>
 File: item2_bodeMedido.png Graphic file (type png)
 <use item2_bodeMedido.png>
-Package pdftex.def Info: item2_bodeMedido.png  used on input line 728.
+Package pdftex.def Info: item2_bodeMedido.png  used on input line 723.
 (pdftex.def)             Requested size: 251.15576pt x 157.91522pt.
-<pasaaltosVSvr.png, id=218, 894.34125pt x 319.94531pt>
+<pasaaltosVSvr.png, id=214, 894.34125pt x 319.94531pt>
 File: pasaaltosVSvr.png Graphic file (type png)
 <use pasaaltosVSvr.png>
-Package pdftex.def Info: pasaaltosVSvr.png  used on input line 740.
+Package pdftex.def Info: pasaaltosVSvr.png  used on input line 735.
 (pdftex.def)             Requested size: 261.62291pt x 93.59216pt.
- [9 <./item2_simulacion.png> <./item2_bodeTeorico.png> <./item2_bodeMedido.png (PNG copy)>]
+ [8 <./item2_simulacion.png> <./item2_bodeTeorico.png> <./item2_bodeMedido.png (PNG copy)>]
 
-LaTeX Warning: Reference `fig:item2-triangular-bajo' on page 10 undefined on input line 747.
+LaTeX Warning: Reference `fig:item2-triangular-bajo' on page 9 undefined on input line 742.
 
 
-LaTeX Warning: Reference `fig:item2-triangular-alto' on page 10 undefined on input line 747.
+LaTeX Warning: Reference `fig:item2-triangular-alto' on page 9 undefined on input line 742.
 
-<item2_triangular1k.png, id=230, 803.0pt x 504.88625pt>
+<item2_triangular1k.png, id=226, 803.0pt x 504.88625pt>
 File: item2_triangular1k.png Graphic file (type png)
 <use item2_triangular1k.png>
-Package pdftex.def Info: item2_triangular1k.png  used on input line 766.
+Package pdftex.def Info: item2_triangular1k.png  used on input line 761.
 (pdftex.def)             Requested size: 156.97534pt x 98.69508pt.
-<item2_triangular10k.png, id=231, 803.0pt x 504.88625pt>
+<item2_triangular10k.png, id=227, 803.0pt x 504.88625pt>
 File: item2_triangular10k.png Graphic file (type png)
 <use item2_triangular10k.png>
-Package pdftex.def Info: item2_triangular10k.png  used on input line 772.
+Package pdftex.def Info: item2_triangular10k.png  used on input line 767.
 (pdftex.def)             Requested size: 156.97534pt x 98.69508pt.
-<item2_triangular50k.png, id=232, 803.0pt x 504.88625pt>
+<item2_triangular50k.png, id=228, 803.0pt x 504.88625pt>
 File: item2_triangular50k.png Graphic file (type png)
 <use item2_triangular50k.png>
-Package pdftex.def Info: item2_triangular50k.png  used on input line 780.
+Package pdftex.def Info: item2_triangular50k.png  used on input line 775.
 (pdftex.def)             Requested size: 156.97534pt x 98.69508pt.
-<item2_triangular200k.png, id=233, 803.0pt x 504.88625pt>
+<item2_triangular200k.png, id=229, 803.0pt x 504.88625pt>
 File: item2_triangular200k.png Graphic file (type png)
 <use item2_triangular200k.png>
-Package pdftex.def Info: item2_triangular200k.png  used on input line 786.
+Package pdftex.def Info: item2_triangular200k.png  used on input line 781.
 (pdftex.def)             Requested size: 156.97534pt x 98.69508pt.
-<item3_modoXY.png, id=234, 803.0pt x 504.88625pt>
+<item3_modoXY.png, id=230, 803.0pt x 504.88625pt>
 File: item3_modoXY.png Graphic file (type png)
 <use item3_modoXY.png>
-Package pdftex.def Info: item3_modoXY.png  used on input line 804.
+Package pdftex.def Info: item3_modoXY.png  used on input line 799.
 (pdftex.def)             Requested size: 156.97534pt x 98.69508pt.
-<item3_modoNormal.png, id=235, 803.0pt x 504.88625pt>
+<item3_modoNormal.png, id=231, 803.0pt x 504.88625pt>
 File: item3_modoNormal.png Graphic file (type png)
 <use item3_modoNormal.png>
-Package pdftex.def Info: item3_modoNormal.png  used on input line 811.
+Package pdftex.def Info: item3_modoNormal.png  used on input line 806.
 (pdftex.def)             Requested size: 156.97534pt x 98.69508pt.
-[10 <./pasaaltosVSvr.png> <./item2_triangular1k.png (PNG copy)> <./item2_triangular10k.png (PNG copy)> <./item2_triangular50k.png (PNG copy)> <./item2_triangular200k.png (PNG copy)>]
-<item4_pasabandas.png, id=247, 462.97969pt x 356.0803pt>
+[9 <./pasaaltosVSvr.png> <./item2_triangular1k.png (PNG copy)> <./item2_triangular10k.png (PNG copy)> <./item2_triangular50k.png (PNG copy)> <./item2_triangular200k.png (PNG copy)>]
+<item4_pasabandas.png, id=243, 462.97969pt x 356.0803pt>
 File: item4_pasabandas.png Graphic file (type png)
 <use item4_pasabandas.png>
-Package pdftex.def Info: item4_pasabandas.png  used on input line 849.
+Package pdftex.def Info: item4_pasabandas.png  used on input line 844.
 (pdftex.def)             Requested size: 261.62291pt x 201.21834pt.
- [11 <./item3_modoXY.png (PNG copy)> <./item3_modoNormal.png (PNG copy)>]
-<holdoff.png, id=255, 803.0pt x 504.88625pt>
+ [10 <./item3_modoXY.png (PNG copy)> <./item3_modoNormal.png (PNG copy)>]
+<holdoff.png, id=251, 803.0pt x 504.88625pt>
 File: holdoff.png Graphic file (type png)
 <use holdoff.png>
-Package pdftex.def Info: holdoff.png  used on input line 866.
+Package pdftex.def Info: holdoff.png  used on input line 861.
 (pdftex.def)             Requested size: 251.15576pt x 157.91522pt.
-<holdoff1.png, id=256, 803.0pt x 504.88625pt>
+<holdoff1.png, id=252, 803.0pt x 504.88625pt>
 File: holdoff1.png Graphic file (type png)
 <use holdoff1.png>
-Package pdftex.def Info: holdoff1.png  used on input line 873.
+Package pdftex.def Info: holdoff1.png  used on input line 868.
 (pdftex.def)             Requested size: 251.15576pt x 157.91522pt.
- [12 <./item4_pasabandas.png> <./holdoff.png (PNG copy)> <./holdoff1.png (PNG copy)>] [13] [14]
-<1.2d.png, id=272, 484.81125pt x 393.8715pt>
+ [11 <./item4_pasabandas.png> <./holdoff.png (PNG copy)> <./holdoff1.png (PNG copy)>] [12] [13]
+<1.2d.png, id=268, 484.81125pt x 393.8715pt>
 File: 1.2d.png Graphic file (type png)
 <use 1.2d.png>
-Package pdftex.def Info: 1.2d.png  used on input line 1035.
+Package pdftex.def Info: 1.2d.png  used on input line 1030.
 (pdftex.def)             Requested size: 313.95068pt x 255.06987pt.
- [15]
-Package pgfplots info on input line 1064: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
-Package pgfplots info on input line 1089: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
-<item1_cuadrada.png, id=277, 803.0pt x 504.88625pt>
+ [14]
+Package pgfplots info on input line 1059: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+Package pgfplots info on input line 1084: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+<item1_cuadrada.png, id=273, 803.0pt x 504.88625pt>
 File: item1_cuadrada.png Graphic file (type png)
 <use item1_cuadrada.png>
-Package pdftex.def Info: item1_cuadrada.png  used on input line 1111.
+Package pdftex.def Info: item1_cuadrada.png  used on input line 1106.
 (pdftex.def)             Requested size: 251.15576pt x 157.91522pt.
-<item1_cuadrada1.png, id=278, 803.0pt x 504.88625pt>
+<item1_cuadrada1.png, id=274, 803.0pt x 504.88625pt>
 File: item1_cuadrada1.png Graphic file (type png)
 <use item1_cuadrada1.png>
-Package pdftex.def Info: item1_cuadrada1.png  used on input line 1116.
+Package pdftex.def Info: item1_cuadrada1.png  used on input line 1111.
 (pdftex.def)             Requested size: 251.15576pt x 157.91522pt.
-<item1_cuadrada2.png, id=279, 803.0pt x 504.88625pt>
+<item1_cuadrada2.png, id=275, 803.0pt x 504.88625pt>
 File: item1_cuadrada2.png Graphic file (type png)
 <use item1_cuadrada2.png>
-Package pdftex.def Info: item1_cuadrada2.png  used on input line 1125.
+Package pdftex.def Info: item1_cuadrada2.png  used on input line 1120.
 (pdftex.def)             Requested size: 251.15576pt x 157.91522pt.
- [16 <./1.2d.png>] [17 <./item1_cuadrada.png (PNG copy)> <./item1_cuadrada1.png (PNG copy)> <./item1_cuadrada2.png (PNG copy)>] (main.aux
+ [15 <./1.2d.png>] [16 <./item1_cuadrada.png (PNG copy)> <./item1_cuadrada1.png (PNG copy)> <./item1_cuadrada2.png (PNG copy)>] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -981,17 +981,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 86E76A8FB69CC45C983CDC40C8C55A25;4422.
  ) 
 Here is how much of TeX's memory you used:
- 57470 strings out of 467867
- 1490758 string characters out of 5418334
- 2357128 words of memory out of 5000000
+ 57469 strings out of 467867
+ 1490751 string characters out of 5418334
+ 2357126 words of memory out of 5000000
  85694 multiletter control sequences out of 15000+600000
  637379 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,21n,118p,1046b,2261s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1440.pk> <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx2074.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (18 pages, 1450304 bytes).
+Output written on main.pdf (17 pages, 1449695 bytes).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
+ 387 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
  299 words of extra memory for PDF output out of 10000 (max. 10000000)
 

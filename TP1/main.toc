@@ -1,24 +1,24 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1.}Objetivos}{3}{section.1}%
-\contentsline {section}{\numberline {2.}Instrumentos y equipo}{3}{section.2}%
-\contentsline {section}{\numberline {3.}Pasa bajos}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Parte teórica}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Parte práctica}{5}{subsection.3.2}%
-\contentsline {section}{\numberline {4.}Pasa altos}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Parte teórica}{7}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {$a)$}Transferencia y frecuencia de corte}{7}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {$b)$}Frecuencia nominal y error}{7}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {$c)$}Diagrama de Bode con tolerancias}{7}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {$d)$}Ganancia y fase en distintas frecuencias con una sinosoidal}{7}{subsubsection.4.1.4}%
-\contentsline {subsubsection}{\numberline {$e)$}Simulacion de una entrada de onda triangular}{8}{subsubsection.4.1.5}%
-\contentsline {subsubsection}{\numberline {$f)$}Análisis analítico para entrada triangular}{8}{subsubsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.2}Parte práctica}{9}{subsection.4.2}%
-\contentsline {section}{\numberline {5.}Sincronización de instrumentos}{11}{section.5}%
-\contentsline {section}{\numberline {6.}Respuesta en frecuencia}{11}{section.6}%
-\contentsline {section}{\numberline {7.}Utilización del hold off}{12}{section.7}%
-\contentsline {section}{\numberline {8.}Anexo}{13}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Osciloscopio digital y puntas de medición}{13}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Deducción del los filtros}{13}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Deducción del error de la frecuencia}{13}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Deduccion desfase corriente y tensión del capacitor en el pasa bajos}{14}{subsection.8.4}%
+\contentsline {section}{\numberline {1.}Objetivos}{2}{section.1}%
+\contentsline {section}{\numberline {2.}Instrumentos y equipo}{2}{section.2}%
+\contentsline {section}{\numberline {3.}Pasa bajos}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Parte teórica}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Parte práctica}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4.}Pasa altos}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Parte teórica}{6}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {$a)$}Transferencia y frecuencia de corte}{6}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {$b)$}Frecuencia nominal y error}{6}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {$c)$}Diagrama de Bode con tolerancias}{6}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {$d)$}Ganancia y fase en distintas frecuencias con una sinosoidal}{6}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {$e)$}Simulacion de una entrada de onda triangular}{7}{subsubsection.4.1.5}%
+\contentsline {subsubsection}{\numberline {$f)$}Análisis analítico para entrada triangular}{7}{subsubsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.2}Parte práctica}{8}{subsection.4.2}%
+\contentsline {section}{\numberline {5.}Sincronización de instrumentos}{10}{section.5}%
+\contentsline {section}{\numberline {6.}Respuesta en frecuencia}{10}{section.6}%
+\contentsline {section}{\numberline {7.}Utilización del hold off}{11}{section.7}%
+\contentsline {section}{\numberline {8.}Anexo}{12}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Osciloscopio digital y puntas de medición}{12}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Deducción del los filtros}{12}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Deducción del error de la frecuencia}{12}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Deduccion desfase corriente y tensión del capacitor en el pasa bajos}{13}{subsection.8.4}%
 \contentsfinish 

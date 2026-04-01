@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1775011535.02785 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" "main.pdf" "main" 1775011542.79409 0
+["pdflatex"] 1775011851.21382 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" "main.pdf" "main" 1775011858.79533 0
   "1.1d.png" 1774918490 292360 c7b16019d74232d96edd3006c146a428 ""
   "1.1f(f0).png" 1774918490 227803 7c0df573bef812273f0e0997a893062a ""
   "1.1f(f0.20).png" 1774918490 467003 fc56a4d1b5fa5bb0c9cbcb067b3bff55 ""
@@ -250,7 +250,7 @@
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "Logo_ITBA.png" 1774918490 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" 1775011534 56512 f7ff03dfef6793e92a9fe866c163fc19 ""
+  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP1/main.tex" 1775011842 56446 328b4522b44adb410e2181b1ea176933 ""
   "fo.txt" 1774982369 5312 62d95b8702de6c62a8e85460acee5188 ""
   "fo_10.txt" 1774981968 2870 82d7e6b766d2883257a52b00b7d7eec4 ""
   "holdoff.png" 1775010870 25185 310de809e2aa77b90999bd7701b0b952 ""
@@ -268,10 +268,10 @@
   "item3_modoNormal.png" 1774918490 43836 dba4425d18010cdbda1f3462f03f7486 ""
   "item3_modoXY.png" 1774918490 22334 818d0fc1468f86dba1f3b601e98e3ecb ""
   "item4_pasabandas.png" 1774991585 65623 a074ea333b1b11fb1630ec0269f05617 ""
-  "main.aux" 1775011542 11693 0f4f5f0fdfc7995f0050749a5652484c "pdflatex"
-  "main.out" 1775011542 4422 86e76a8fb69cc45c983cdc40c8c55a25 "pdflatex"
-  "main.tex" 1775011534 56512 f7ff03dfef6793e92a9fe866c163fc19 ""
-  "main.toc" 1775011542 2095 f13562d44bf38d38cbec97b91c6233f9 "pdflatex"
+  "main.aux" 1775011858 11689 8980e8616d141305c83140d83cae1846 "pdflatex"
+  "main.out" 1775011858 4422 86e76a8fb69cc45c983cdc40c8c55a25 "pdflatex"
+  "main.tex" 1775011842 56446 328b4522b44adb410e2181b1ea176933 ""
+  "main.toc" 1775011858 2095 b6840ac24ead47161df09392d694e6d9 "pdflatex"
   "pasaaltosVSvr.png" 1774918490 40520 271a1404ac06af573d8f9ff930dd43ba ""
   (generated)
   "main.aux"
