@@ -12,13 +12,15 @@
 \contentsline {subsubsection}{\numberline {$d)$}Ganancia y fase en distintas frecuencias con una sinosoidal}{6}{subsubsection.4.1.4}%
 \contentsline {subsubsection}{\numberline {$e)$}Simulacion de una entrada de onda triangular}{7}{subsubsection.4.1.5}%
 \contentsline {subsubsection}{\numberline {$f)$}Análisis analítico para entrada triangular}{7}{subsubsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.2}Parte práctica}{8}{subsection.4.2}%
-\contentsline {section}{\numberline {5.}Sincronización de instrumentos}{10}{section.5}%
+\contentsline {subsection}{\numberline {4.2}Parte práctica}{7}{subsection.4.2}%
+\contentsline {section}{\numberline {5.}Sincronización de instrumentos}{9}{section.5}%
 \contentsline {section}{\numberline {6.}Respuesta en frecuencia}{10}{section.6}%
-\contentsline {section}{\numberline {7.}Utilización del hold off}{11}{section.7}%
-\contentsline {section}{\numberline {8.}Anexo}{12}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Osciloscopio digital y puntas de medición}{12}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Deducción del los filtros}{12}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Deducción del error de la frecuencia}{12}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Deduccion desfase corriente y tensión del capacitor en el pasa bajos}{13}{subsection.8.4}%
+\contentsline {section}{\numberline {7.}Utilización del hold off}{10}{section.7}%
+\contentsline {section}{\numberline {8.}Anexo}{11}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Osciloscopio digital y puntas de medición}{11}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Bode Simulado del filtro pasa-altos}{11}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Deducción del los filtros}{11}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Deducción del error de la frecuencia}{12}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Deduccion desfase corriente y tensión del capacitor en el pasa bajos}{12}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Oscilogramas utilizando la función Hold Off}{12}{subsection.8.6}%
 \contentsfinish 

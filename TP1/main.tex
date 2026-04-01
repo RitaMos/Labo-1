@@ -544,33 +544,6 @@ H(s)=\frac{sRC}{\frac{s}{\frac{1}{R \cdot C}}+1}
         no marks
     ]
 
-    \addplot table [x=time, y=V(n001), col sep=tab] {10fo.txt};
-    \addlegendentry{Entrada}
-
-    \addplot table [x=time, y=V(a), col sep=tab] {10fo.txt};
-    \addlegendentry{Salida}
-
-    \end{axis}
-    \end{tikzpicture}
-    \captionof{figure}{Filtro pasa-altos para $f = 10 f_0$.}
-    \label{fig:10f0}
-    \end{minipage}
-    \hfill
-    %
-    \begin{minipage}[t]{0.45\textwidth}
-    \centering
-    \begin{tikzpicture}
-    \begin{axis}[
-        width=0.9\textwidth,
-        height=3.8cm,
-        scale only axis,
-        grid=both,
-        xlabel={Tiempo [s]},
-        ylabel={Tensión [V]},
-        legend pos=north east,
-        no marks
-    ]
-
     \addplot table [x=time, y=V(n001), col sep=tab] {fo.txt};
     \addlegendentry{Entrada}
 
@@ -581,14 +554,14 @@ H(s)=\frac{sRC}{\frac{s}{\frac{1}{R \cdot C}}+1}
     \end{tikzpicture}
     \captionof{figure}{Filtro pasa-altos para $f = f_0$.}
     \label{fig:f0_r}
+
     \end{minipage}
-
-    \vspace{0.35cm}
-
-    % ---------- fila inferior ----------
-    \begin{minipage}{0.5\textwidth}
+    \hfill
+    %
+    \begin{minipage}[t]{0.45\textwidth}
     \centering
-    \begin{tikzpicture}
+
+        \begin{tikzpicture}
     \begin{axis}[
         width=0.9\textwidth,
         height=3.8cm,
@@ -610,6 +583,14 @@ H(s)=\frac{sRC}{\frac{s}{\frac{1}{R \cdot C}}+1}
     \end{tikzpicture}
     \captionof{figure}{Filtro pasa-altos para $f = \frac{f_0}{10}$.}
     \label{fig:f0_10}
+    \end{minipage}
+
+    \vspace{0.35cm}
+
+    % ---------- fila inferior ----------
+    \begin{minipage}{0.5\textwidth}
+    \centering
+
     \end{minipage}
 
 \end{figure}
@@ -665,7 +646,7 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
         
     \subsection{Parte práctica}
         \subsubsection*{a) Diagrama de Bode}
-            Una fuente de problemas común al momento de estudiar circuitos es la forma en que los instrumentos de medición afectan a las propias mediciones. En el caso del filtro pasaaltos, se pueden modelar las impedancias del osciloscopio y de las puntas en conjunto agregando en paralelo a la salida un capacitor de $ 100 pF $  y una resistencia de $1 M\Omega$, como se puede observar en la figura \ref{fig:pasaaltosSimulado}.
+            Una fuente de problemas común al momento de estudiar circuitos es la forma en que los instrumentos de medición afectan a las propias mediciones. En el caso del filtro pasaaltos, se pueden modelar las impedancias del osciloscopio y de las puntas en conjunto agregando en paralelo a la salida un capacitor de $ 100 pF $  y una resistencia de $1 M\Omega$, como se puede observar en la figura \ref{fig:pasaaltosSimulado} en anexos.
 
 
 %%%%imagen no usada, dejo por las dudas%%%%%
@@ -694,12 +675,7 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
 
             Sin embargo, en este circuito esas no-idealidades afectan poco al comportamiento en frecuencia del mismo. Para las resistencias, la resistencia de $1 M\Omega$ queda en paralelo a la de $4k7\Omega$, y se tiene que la resistencia equivalente vale $\approx 4,7k\Omega$ puesto que $4,7k \ll 1M$, por lo que la resistencia de $ 1 M\Omega$ resulta despreciable.
 
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.5\linewidth]{item2_simulacion.png}
-                \caption{Simulación del pasaaltos: ideal (izquierda) vs real(derecha)}
-                \label{fig:pasaaltosSimulado}
-            \end{figure}
+
 
             Luego, para los capacitores, las impedancias de ambos para $0,1f_0$, $f_0$ y $10f_0$ quedan como en la tabla \ref{table:impedanciasCapacivas} (observar anexo), sabiendo que $|Z_C|=\frac{1}{\omega C}$.
 
@@ -739,7 +715,7 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
 
         \subsubsection*{b) Alimentación con Señal Triangular}
 
-        Como se puede ver en la figura \ref{fig:item2-triangular-bajo} y \ref{fig:item2-triangular-alto}, para frecuencias mucho menores a la
+        Como se puede ver en la figura \ref{fig:item2-triangular}, para frecuencias mucho menores a la
         de corte (10k) el filtro pasa-altos se comporta como un derivador (observar deducción en la subsección \ref{subsec:deduccion analitica derivador}).
         
         Para la frecuencia de corte, el capacitor de 3,3 nF no llega a cargarse completamente, dado
@@ -852,30 +828,14 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
     El parámetro hold-off define un tiempo mínimo entre eventos de disparo consecutivos, evitando que el osciloscopio se sincronice con múltiples transiciones dentro de un mismo período. Esto resulta especialmente útil en señales no triviales con múltiples cruces de nivel.
 
     En este caso, se ajustó el nivel y tipo de trigger (flanco ascendente) y se incrementó progresivamente el hold-off hasta forzar al sistema a disparar siempre sobre el inicio del semiciclo triangular.
-    El resultado obtenido se muestra en la Figura~\ref{fig:holdoff_zoom}, donde se observa que la señal queda correctamente sincronizada, aislando el segmento triangular dentro del período.
+    El resultado obtenido se muestra en la Figura~\ref{fig:holdoff_zoom} (ver anexos), donde se observa que la señal queda correctamente sincronizada, aislando el segmento triangular dentro del período.
         
-    \begin{figure}[H]
-    \centering
-        \begin{minipage}{0.48\linewidth}
-            \centering
-            \includegraphics[width=\linewidth]{holdoff.png}
-            \caption{Señal compuesta completa.}
-            \label{fig:holdoff_full}
-        \end{minipage}
-        \hfill
-        \begin{minipage}{0.48\linewidth}
-            \centering
-            \includegraphics[width=\linewidth]{holdoff1.png}
-            \caption{Zoom temporal del semiciclo triangular.}
-            \label{fig:holdoff_zoom}
-        \end{minipage}
-    \end{figure}
-    
+ 
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     %				ANEXO 
-    
+    \newpage
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Anexo}
 
@@ -887,6 +847,13 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
 
         Por otro lado, al utilizar la punta en modo X10, la propia punta introduce un divisor resistivo-capacitivo que compensa este efecto. Esto hace que la capacitancia equivalente vista por el circuito sea mucho menor (del orden de 10–15 pF) y que la resistencia de entrada efectiva aumente a aproximadamente 10 M$\Omega$. De esta forma, se reduce el efecto de carga sobre el circuito y se obtiene una medición más fiel. %, como se muestra en la Fig.~\ref{fig:punta_x10}.
 
+\subsection{Bode Simulado del filtro pasa-altos}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.5\linewidth]{item2_simulacion.png}
+                \caption{Simulación del pasaaltos: ideal (izquierda) vs real(derecha)}
+                \label{fig:pasaaltosSimulado}
+            \end{figure}
 \subsection{Deducción del los filtros}
 \label{subsec:decuccion filtros}
 Los filtros se pueden deducir usando un divisor resistivo. \par
@@ -931,7 +898,24 @@ Primero es importante mencionar que como existe una malla, la corriente $I$ es l
  \angle V_c - \angle I &= -90^\circ
 \end{align*}
 
-
+\subsection{Oscilogramas utilizando la función Hold Off}
+   \begin{figure}[H]
+    \centering
+        \begin{minipage}{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{holdoff.png}
+            \caption{Señal compuesta completa.}
+            \label{fig:holdoff_full}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{holdoff1.png}
+            \caption{Zoom temporal del semiciclo triangular.}
+            \label{fig:holdoff_zoom}
+        \end{minipage}
+    \end{figure}
+    
 \subsection*{Tablas de datos}
 
 %%%%%%tabla 1%%%%%
