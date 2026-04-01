@@ -585,7 +585,7 @@ H(s)=\frac{sRC}{\frac{s}{\frac{1}{R \cdot C}}+1}
     \end{axis}
     \end{tikzpicture}
     \captionof{figure}{Filtro pasa-altos para $f = f_0$.}
-    \label{fig:f0}
+    \label{fig:f0_r}
     \end{minipage}
 
     \vspace{0.35cm}
@@ -839,12 +839,42 @@ lo que demuestra el comportamiento derivador del filtro pasa-altos en este régi
 
 
 \section{Respuesta en frecuencia}
-    % Medición con AC y BW limit vs datos del fabricante
+    Se midió la respuesta en frecuencia del osciloscopio utilizando acoplamiento en AC y con la opción de BW limit activada, con el objetivo de caracterizar la influencia del instrumento sobre las mediciones.
 
+    El modo AC introduce un capacitor en serie en la entrada, implementando un filtro pasa-altos que atenúa las componentes de baja frecuencia y elimina la continua. Por otro lado, el BW limit actúa como un filtro pasa-bajos, restringiendo la respuesta en altas frecuencias para reducir el ruido.
+
+    La combinación de ambos efectos resulta en una respuesta tipo pasabanda. Esto se verifica en la medición de autobode denotada en la Figura~\ref{fig:bode_ac_bw}
+    \begin{figure}[H]
+    \centering
+        \includegraphics[width=0.5\linewidth]{item4_pasabandas.png}
+        \caption{Respuesta en frecuencia del osciloscopio en modo AC con BW limit activado.}
+        \label{fig:bode_ac_bw}
+    \end{figure}
+    
 \section{Utilización del hold off}
-    % Señal compuesta y uso del hold off para ver parte triangular
-    
-    
+    Se generó una señal periódica compuesta por tres semiciclos consecutivos: uno senoidal, uno triangular y uno cuadrado, con un período total de $0.3\,\text{ms}$. El objetivo fue ajustar correctamente el disparo del osciloscopio para visualizar únicamente el tramo triangular.
+
+    El parámetro hold-off define un tiempo mínimo entre eventos de disparo consecutivos, evitando que el osciloscopio se sincronice con múltiples transiciones dentro de un mismo período. Esto resulta especialmente útil en señales no triviales con múltiples cruces de nivel.
+
+    En este caso, se ajustó el nivel y tipo de trigger (flanco ascendente) y se incrementó progresivamente el hold-off hasta forzar al sistema a disparar siempre sobre el inicio del semiciclo triangular.
+    El resultado obtenido se muestra en la Figura~\ref{fig:holdoff_zoom}, donde se observa que la señal queda correctamente sincronizada, aislando el segmento triangular dentro del período.
+        
+    \begin{figure}[H]
+    \centering
+        \begin{minipage}{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{holdoff.png}
+            \caption{Señal compuesta completa.}
+            \label{fig:holdoff_full}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{holdoff1.png}
+            \caption{Zoom temporal del semiciclo triangular.}
+            \label{fig:holdoff_zoom}
+        \end{minipage}
+    \end{figure}
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
