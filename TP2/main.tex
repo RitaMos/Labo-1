@@ -1,0 +1,215 @@
+\documentclass{article}
+
+%%%%%%%%%%%%%%% LIBRERIAS %%%%%%%%%%%%%%%%%%%%%
+\usepackage[thinc]{esdiff}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{physics}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{graphicx}
+\usepackage[spanish,es-tabla]{babel} % 'es-tabla' cambia Cuadro→Tabla
+\usepackage{hyperref}                % cargar después de babel
+\usepackage{float}
+\usepackage{circuitikz}
+\usepackage[left=3cm,right=3cm]{geometry} %para margenes
+\usepackage{subfiles} 
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs} % Para tablas con tematica de paper cientifico
+\usepackage{siunitx}  % Para alinear números en las tablas d:
+
+%%%%para graficar csv de una%%%%
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%% VARIABLES %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Facultad}{Instituto Tecnológico \\de\\ Buenos Aires} %constantes
+\newcommand{\TPn}{Trabajo Práctico N° 2}								%%%%%NOMBRE DEL TP%%%%%%%%
+\newcommand{\TPtema}{Osciloscopios - Analizador de Impedancias}
+\renewcommand{\thesection}{\arabic{section}}          % 2
+\renewcommand{\thesubsection}{\quad \alph{subsection}}   % a
+\renewcommand{\thesubsubsection}{\quad \thesubsection.~\roman{subsubsection}} % a. i
+\graphicspath{{imagenes/}} %para que acceda a las fotos en la carpeta directamente
+
+
+%%%%%%%%%%%%%%%%%% FORMATO TÍTULO Y NUMERACIÓN %%%%%%%%%%%%%%%%%%%
+% Numeración de secciones
+\renewcommand{\thesection}{\arabic{section}.}          
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}}       
+\renewcommand{\thesubsubsection}{$\alph{subsubsection})$}
+
+% Numerar hasta subsubsecciones
+\setcounter{secnumdepth}{3}
+
+% Formato de títulos
+\titleformat{\section}{\Huge\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\LARGE\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{0.5em}{}
+
+
+
+%%%%%%%%%%%%%%%%%%% ARCHIVO %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%CARATULA%%%
+\begin{titlepage} %creo portada
+
+        \begin{flushleft}
+            \centering
+            \includegraphics[width=0.3\textwidth]{Logo_ITBA.png}
+        \end{flushleft}
+
+        \centering
+            
+        {\scshape\LARGE \Facultad \par} %\par sirve para indicar un final de parrafo
+        \vspace{1cm}                    %esto hace un espacio entre lineas de 1cm
+
+
+        {\huge\bfseries \TPn \par}
+        \vspace{1.5cm}
+        {\Large Laboratorio de Electrónica\\ 25.13 \par}
+        \vspace{0.5cm}
+        {\Large \TPtema \par}
+        \vfill                      %sirve para rellenar el espacio y quede simétrico.
+        {\Large \bfseries Grupo N° 2 \par}
+        \vspace{1cm}
+        {\large Juan Bautista Correa Uranga \hfill Legajo: 65016 \par} 
+        {\large Juan Ignacio Caorsi \hfill Legajo: 65532  \par}
+        {\large Rita Moschini \hfill Legajo: 67026 \par} 
+        {\large Lucas Solar Grillo \hfill Legajo: 63322\par}
+        \vfill
+        {\large \today\par}
+        \vfill
+
+\end{titlepage}
+
+{\centering \LARGE \bfseries Resumen \par} 
+\par 
+
+\newpage
+
+\tableofcontents 
+\newpage
+
+%%%%%%%%%%%%%%%%%%% CUERPO DEL INFORME %%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Objetivos} 
+
+\section{Instrumentos y equipo}
+    \begin{itemize}
+        \item Protoboard de 830 puntos
+        \item Capacitor de 8,2 nF
+        \item Resistencia de 68 $\Omega$
+        \item Inductor de L 38,76uH
+        \item Osciloscopio digital Keysight DSOX1202G
+        \item Generador de señales Picotest G510
+        \item Generador de señales Keysight EDU33212A
+        \item Medidor RLC UNI-T UT812
+        \item Digilent 
+    \end{itemize}
+    
+    \section{Inductor}
+    
+    En la materia TME se calculó un transformador que cumplía ciertos criterios. Para este TP, solo se bobinó el primario. Para ello, este contó con los siguientes parametros:
+    \begin{itemize}
+\item Nucleo TDK RM10, material N30
+\item N1=10
+\item Se bobinaron 3 cables en paralelo de 0,45mm de diametro.
+\item $L_{gap}$ = 0,3 mm
+\end{itemize}
+
+	El valor del inductor medido 38,76 $\mu h$
+
+\section{Pasaaltos, Pasabandas y Rechazabandas}
+
+El primer filtro analizado fue el pasabandas (observar figura: \ref{fig:pasabandas}). \par
+
+Se dedujo su ecuación caracteristica $H(s)= \frac{sRC}{s^2LC+sCR+1}$ (observar deducción en anexo \ref{subsec:eqpasabandas}).
+
+\begin{figure}[h!]
+    \centering
+
+    %-------------------------
+    %   FIGURA 1
+    %-------------------------
+    \begin{minipage}[b]{0.45\textwidth}
+      \centering
+\begin{tikzpicture}[transform shape, american voltages]
+	% Paths, nodes and wires:
+	\draw (8, -9) to[american voltage source] (8, -11.75);
+	\node[buffer] at (9.5, -9){};
+	\draw (8.8, -9) -- (8, -9);
+	\draw (10.2, -9) to[american inductor, l={$L$}] (13, -9);
+	\draw (8, -11.75) -- (14, -11.75);
+	\draw (13, -9) to[capacitor, l={$C$}] (14, -9);
+	\draw (14, -9) to[american resistor, l={$R$}, label distance=-0.13cm] (14, -11.75);
+	\draw[-latex] (13.5, -11.25) -- (13.5, -9.75);
+	\node[shape=rectangle, minimum width=-0.035cm, minimum height=0.215cm](N1) at (13.25, -10.375){} node[anchor=center] at (N1.text){$v_0$} node[anchor=north west, align=left, text width=-0.423cm, inner sep=6pt] at (13.25, -10.25){};
+	\node[shape=rectangle, minimum width=-0.035cm, minimum height=0.215cm](N2) at (8, -8.875){} node[anchor=center] at (N2.text){$v_{in}$} node[anchor=north west, align=left, text width=-0.423cm, inner sep=6pt] at (8, -8.75){};
+\end{tikzpicture}
+
+        \caption{Filtro pasabandas}
+        \label{fig:pasabandas}
+    \end{minipage}
+    \hfill
+    %-------------------------
+    %   FIGURA 2
+    %-------------------------
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+\begin{semilogxaxis}[
+    width=9cm,
+    height=5cm,
+    grid=both,
+    xlabel={Frecuencia [Hz]},
+    ylabel={Magnitud [dB]}
+]
+
+\addplot[thick] table[
+    x=Var1,
+    y=mag_dB,
+    col sep=comma
+]{bodepasabandas.csv};
+
+\end{semilogxaxis}
+\end{tikzpicture}
+        \caption{Bode pasabandas}
+        \label{fig:grafpasabandas}
+    \end{minipage}
+
+\end{figure}
+
+\section{Anexo}
+
+\subsection{Deducciones matemáticas}
+\subsubsection{Filtro pasabandas}
+\label{subsec:eqpasabandas}
+Partiendo de la figura \ref{fig:pasabandas}, se planteo un divisor resistivo:
+
+\begin{align*}
+   H(s) &= \frac{R}{SL+\frac{1}{SC}+R}\\
+   H(s) &= \frac{sRC}{s^2LC+ sCR +1}
+\end{align*}
+
+De aca se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+
+\subsubsection{Filtro pasaaltos}
+\label{subsec:eqpasaaltos}
+Partiendo de la figura REFERENCIAR, se planteo un divisor resistivo:
+\begin{align*}
+   H(s) &= \frac{sL}{SL+\frac{1}{SC}+R}\\
+   H(s) &= \frac{s^2LC}{s^2LC+ sCR +1}
+\end{align*}
+
+De aca se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+
+\subsubsection{Filtro notch}
+\label{subsec:eqpasabandas}
+
+        
+\end{document}
