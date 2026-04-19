@@ -130,6 +130,64 @@ El primer filtro analizado fue el pasabandas (observar figura: \ref{fig:pasaband
 
 Se dedujo su ecuación caracteristica $H(s)= \frac{sRC}{s^2LC+sCR+1}$ (observar deducción en anexo \ref{subsec:eqpasabandas}).
 
+
+\begin{figure}[h!]
+    \centering
+
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{
+        \begin{tikzpicture}[transform shape]
+	\draw (-11, 4) to[american voltage source] (-11, 2);
+	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
+	\draw (-11, 4) -- (-10.5, 4);
+	\draw (-9.576, 4) to[american resistor, l={$R$}] (-7.988, 4);
+	\draw (-7.988, 4) to[capacitor, l={$C$}] (-6.5, 4);
+	\draw (-6.5, 4) to[american inductor, l={$L$}] (-6.5, 2);
+	\draw (-11, 2) -- (-6.5, 2);
+	\node at (-6.375, 4.125){$v_{out}$};
+	\node at (-11, 4.125){$v_{in}$};
+        \end{tikzpicture}}
+        \caption{pasaaltos}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{
+        \begin{tikzpicture}[transform shape]
+	\draw (-11, 4) to[american voltage source] (-11, 2);
+	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
+	\draw (-11, 4) -- (-10.5, 4);
+	\draw (-6.5, 4) to[american resistor, l={$R$}] (-6.5, 2);
+	\draw (-7.988, 4) to[capacitor, l={$C$}] (-6.5, 4);
+	\draw (-9.576, 4) to[american inductor, l={$L$}] (-8, 4);
+	\draw (-11, 2) -- (-6.5, 2);
+	\node at (-6.375, 4.125){$v_{out}$};
+	\node at (-11, 4.125){$v_{in}$};
+        \end{tikzpicture}}
+        \caption{pasabandas}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{
+        \begin{tikzpicture}[transform shape]
+	\draw (-11, 4) to[american voltage source] (-11, 2);
+	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
+	\draw (-11, 4) -- (-10.5, 4);
+	\draw (-9.576, 4) to[american resistor, l={$R$}] (-6.5, 4);
+	\draw (-6.5, 2.75) to[capacitor, l={$C$}] (-6.5, 2);
+	\draw (-6.5, 4) to[american inductor, l={$L$}] (-6.5, 2.75);
+	\draw (-11, 2) -- (-6.5, 2);
+	\node at (-6.375, 4.125){$v_{out}$};
+	\node at (-11, 4.125){$v_{in}$};
+        \end{tikzpicture}}
+        \caption{Notch}
+    \end{minipage}
+
+\end{figure}
+
+
 \begin{figure}[h!]
     \centering
 
@@ -187,6 +245,8 @@ Se dedujo su ecuación caracteristica $H(s)= \frac{sRC}{s^2LC+sCR+1}$ (observar 
 \section{Anexo}
 
 \subsection{Deducciones matemáticas}
+
+En la deducción de los filtros, se ignora el opamp. Esto se realiza ya que la idea del opamp es aislar el circuito de la resistencia interna del generador para tratar de conseguir el circuito que se deduce aproximación. \\
 \subsubsection{Filtro pasabandas}
 \label{subsec:eqpasabandas}
 Partiendo de la figura \ref{fig:pasabandas}, se planteo un divisor resistivo:
@@ -196,7 +256,7 @@ Partiendo de la figura \ref{fig:pasabandas}, se planteo un divisor resistivo:
    H(s) &= \frac{sRC}{s^2LC+ sCR +1}
 \end{align*}
 
-De aca se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+De aquí se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
 
 \subsubsection{Filtro pasaaltos}
 \label{subsec:eqpasaaltos}
@@ -206,10 +266,74 @@ Partiendo de la figura REFERENCIAR, se planteo un divisor resistivo:
    H(s) &= \frac{s^2LC}{s^2LC+ sCR +1}
 \end{align*}
 
-De aca se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+De aquí se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
 
 \subsubsection{Filtro notch}
 \label{subsec:eqpasabandas}
+Partiendo de la figura REFERENCIAR, se planteo un divisor resistivo:
+\begin{align*}
+   H(s) &= \frac{sL+\frac{1}{sC}}{SL+\frac{1}{SC}+R}\\
+   H(s) &= \frac{s^2LC+1}{s^2LC+ sCR +1}
+\end{align*}
 
+De aquí se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+
+%%%%TESTS%%%%%%
+\begin{figure}[h!]
+    \centering
+
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{
+        \begin{tikzpicture}[transform shape]
+	\draw (-11, 4) to[american voltage source] (-11, 2);
+	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
+	\draw (-11, 4) -- (-10.5, 4);
+	\draw (-9.576, 4) to[american resistor, l={$R$}] (-7.988, 4);
+	\draw (-7.988, 4) to[capacitor, l={$C$}] (-6.5, 4);
+	\draw (-6.5, 4) to[american inductor, l={$L$}] (-6.5, 2);
+	\draw (-11, 2) -- (-6.5, 2);
+	\node at (-6.375, 4.125){$v_{out}$};
+	\node at (-11, 4.125){$v_{in}$};
+        \end{tikzpicture}}
+        \caption{pasaaltos}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{
+        \begin{tikzpicture}[transform shape]
+	\draw (-11, 4) to[american voltage source] (-11, 2);
+	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
+	\draw (-11, 4) -- (-10.5, 4);
+	\draw (-6.5, 4) to[american resistor, l={$R$}] (-6.5, 2);
+	\draw (-7.988, 4) to[capacitor, l={$C$}] (-6.5, 4);
+	\draw (-9.576, 4) to[american inductor, l={$L$}] (-8, 4);
+	\draw (-11, 2) -- (-6.5, 2);
+	\node at (-6.375, 4.125){$v_{out}$};
+	\node at (-11, 4.125){$v_{in}$};
+        \end{tikzpicture}}
+        \caption{pasabandas}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \resizebox{\linewidth}{!}{
+        \begin{tikzpicture}[transform shape]
+	\draw (-11, 4) to[american voltage source] (-11, 2);
+	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
+	\draw (-11, 4) -- (-10.5, 4);
+	\draw (-9.576, 4) to[american resistor, l={$R$}] (-6.5, 4);
+	\draw (-6.5, 2.75) to[capacitor, l={$C$}] (-6.5, 2);
+	\draw (-6.5, 4) to[american inductor, l={$L$}] (-6.5, 2.75);
+	\draw (-11, 2) -- (-6.5, 2);
+	\node at (-6.375, 4.125){$v_{out}$};
+	\node at (-11, 4.125){$v_{in}$};
+        \end{tikzpicture}}
+        \caption{Notch}
+    \end{minipage}
+
+\end{figure}
+%%%%%%%%%%%%END TEST%%%%%%%
         
 \end{document}

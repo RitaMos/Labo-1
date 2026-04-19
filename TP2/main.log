@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.27)  17 APR 2026 20:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.27)  19 APR 2026 16:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -934,6 +934,10 @@ LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported on input line 11.
+
+
+LaTeX Warning: Label `subsec:eqpasabandas' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -959,8 +963,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count369
 \scratchdimen=\dimen350
@@ -1047,7 +1050,7 @@ nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
 or `spanish'. on input line 56.
-<Logo_ITBA.png, id=39, 557.08125pt x 220.825pt>
+<Logo_ITBA.png, id=43, 557.08125pt x 220.825pt>
 File: Logo_ITBA.png Graphic file (type png)
 <use Logo_ITBA.png>
 Package pdftex.def Info: Logo_ITBA.png  used on input line 63.
@@ -1070,27 +1073,36 @@ LaTeX Info: Redefining \% on input line 1.
 \openout5 = `main.toc'.
 
  [2]
-Overfull \hbox (12.03563pt too wide) in paragraph at lines 151--151
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (12.03563pt too wide) in paragraph at lines 209--209
 [][]  
  []
 
 
-Overfull \hbox (12.03563pt too wide) in paragraph at lines 152--152
+Overfull \hbox (12.03563pt too wide) in paragraph at lines 210--210
 [][]  
  []
 
-Package pgfplots info on input line 171: Using 'lua backend=false' for axis: xm
+Package pgfplots info on input line 229: Using 'lua backend=false' for axis: xm
 ode=log unsupported (yet).
 PGFPlots: reading {bodepasabandas.csv}
 
-Overfull \hbox (53.17458pt too wide) in paragraph at lines 180--181
+Overfull \hbox (53.17458pt too wide) in paragraph at lines 238--239
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3] [4] (./main.aux
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+[3] [4] [5] (./main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1100,25 +1112,19 @@ L3 programming layer <2025-11-14>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: B7A4EEBA1051C23685AF101854353F08;1088
-(rerunfilecheck)             After:  F3D3CD23DE755CD36FFA3F446C3E3FEA;1113.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2330A9EFF710ED73447F4CECECA21E13;1243.
  ) 
 Here is how much of TeX's memory you used:
- 57024 strings out of 467538
- 1476849 string characters out of 5419545
- 2533792 words of memory out of 5000000
- 85330 multiletter control sequences out of 15000+600000
+ 57673 strings out of 467538
+ 1500140 string characters out of 5419545
+ 2571838 words of memory out of 5000000
+ 85975 multiletter control sequences out of 15000+600000
  635907 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,118p,725b,2073s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,15n,118p,725b,2073s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -1133,10 +1139,10 @@ xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
 ve/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive
 /2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb>
-Output written on main.pdf (5 pages, 194243 bytes).
+Output written on main.pdf (6 pages, 201169 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 14 named destinations out of 1000 (max. 500000)
- 82 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 18 named destinations out of 1000 (max. 500000)
+ 90 words of extra memory for PDF output out of 10000 (max. 10000000)
 
