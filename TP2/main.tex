@@ -46,8 +46,8 @@
 \setcounter{secnumdepth}{3}
 
 % Formato de títulos
-\titleformat{\section}{\Huge\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\LARGE\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\section}{\LARGE\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.5em}{}
 \titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{0.5em}{}
 
 
@@ -98,7 +98,8 @@
 %%%%%%%%%%%%%%%%%%% CUERPO DEL INFORME %%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Objetivos} 
-
+El objetivo de este trabajo práctico es profundizar el entendimiento de circuitos de segundo orden, estudiando su naturaleza de filtro a partir de modificaciones hechas sobre un RLC convencional.
+Además, se analiza el desempeño del inductor y el capacitor en general.
 \section{Instrumentos y equipo}
     \begin{itemize}
         \item Protoboard de 830 puntos
@@ -123,6 +124,78 @@
 \end{itemize}
 
 	El valor del inductor medido 38,76 $\mu h$
+\section{Cálculo de RLC serie}
+A partir de los valores de inductor y capacitor, se calculó el valor 
+de la resistencia para que el circuito RLC serie tenga un coeficiente 
+de amortiguamiento $\xi=0.5$. Para esto, se utilizó la fórmula
+ $\xi = \frac{R}{2} \sqrt{\frac{C}{L}}$. De esta forma, se obtuvo un valor comercial cercano
+ de $R = 68 $ $\Omega$. Además, notar que la frecuencia de resonancia del circuito es $f_0 = \frac{1}{2\pi \sqrt{LC}} = 282,3$ kHz y que la función transferencia es la obtenida por divisor de impedancias: Cálculo de la función transferencia del circuito: \newline
+ \begin{equation}
+     H(s) = \frac{1/sC}{R + sL + 1/sC} \implies
+    H(s) = \frac{1}{LCs^2 + RCs + 1} 
+ \end{equation}
+   
+\section{Caracterización de componentes pasivos}
+\section{Pasabajos}
+A partir de la alimentación del circuito con una señal cuadrada de frecuencia 28,2 kHz ($\frac{f_0}{10}$), se obtuvo la siguiente salida en el capacitor:
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{4_0.png}
+        \caption{Verde: Salida de filtro pasabajos ($V_C$) a 28,2 kHz; Amarillo: señal de entrada ($V_{in}$) desde el OpAmp. Escala en tiempo: 10 $\mu s$/div; Escala en tensión: 500 mV/div.}
+        \label{fig:4_0.png}
+    \end{figure}
+\subsection{Respuesta al Escalón}
+En base a la medición realizada en la figura \ref{fig:4_0.png}, se obtuvo la siguiente respuesta al escalón: frecuencia de oscilación del transitorio: 238 kHz; tiempo de establecimiento del 5$\%$: $\approx 6,8 \mu$s; sobrepico de 1.38 V. 
+Luego, los valores teóricos con los que contrastar los obtenidos experimentalmente son: frecuencia de oscilación del transitorio: 244,5 kHz; tiempo de establecimiento del 5$\%$: $\approx PREGUNTAR BIEN \mu$s; sobrepico de 1.31 V. Llegamos a una diferencia de frecuencias de oscilación del transitorio del 2.6\%. La diferencia se puede deber a la tolerancia del capacitor, ya que es el componente de mayor tolerancia (20\%).
+
+\subsection{Salida con Barrido de Frecuencias}
+Variando la frecuencia de la señal de entrada, se obtuvieron las siguientes salidas:
+\begin{figure}[H]
+    \centering
+    % Primera fila
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_01.png}
+        \caption{Frecuencia: 28,2 kHz}
+        \label{fig:f28k}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_02.png}
+        \caption{Frecuencia: 65 kHz}
+        \label{fig:f65k}
+    \end{subfigure}
+
+    \vspace{0.5cm} % Espacio entre filas
+
+    % Segunda fila
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_04.png}
+        \caption{Frecuencia: 130 kHz}
+        \label{fig:f130k}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{4b_05.png}
+        \caption{Frecuencia: 200 kHz}
+        \label{fig:f200k}
+    \end{subfigure}
+
+    \caption{Comparación de la respuesta temporal del filtro para distintas frecuencias de entrada. Se observa la atenuación progresiva de la amplitud a medida que aumenta la frecuencia (comportamiento pasabajos). Escala en tiempo: 5$\mu$ s(a), 3,9 $\mu$ s(b), 1,84 $\mu$ s(c) y (d); Escala en tensión: 500 mV/div.}
+    \label{fig:comparativa_frecuencias}
+\end{figure}
+Vemos que a medida que aumenta la frecuencia de la señal de entrada, la amplitud de la salida disminuye, lo cual es consistente con el comportamiento esperado de un filtro pasabajos. Viendo la situación del punto de vista gráfico, se observa que a medida que aumenta la frecuencia, el tiempo de establecimiento disminuye, hasta tener una salida totalmente oscilante. 
+\subsection{Diagrama de Bode Teórico-Práctico}
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{4d_opam.png}
+        \caption{Verde: Salida de filtro pasabajos ($V_C$) a 28,2 kHz; Amarillo: señal de entrada ($V_{in}$) desde el OpAmp. Escala en tiempo: 10 $\mu s$/div; Escala en tensión: 500 mV/div.}
+        \label{fig:4d_opam.png}
+    \end{figure}
+
 
 \section{Pasaaltos, Pasabandas y Rechazabandas}
 
