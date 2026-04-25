@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  25 APR 2026 19:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  25 APR 2026 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -790,7 +790,7 @@ Package translations Info: loading dictionary `translations-basic-dictionary' fo
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-<Logo_ITBA.png, id=86, 557.08125pt x 220.825pt>
+<Logo_ITBA.png, id=98, 557.08125pt x 220.825pt>
 File: Logo_ITBA.png Graphic file (type png)
 <use Logo_ITBA.png>
 Package pdftex.def Info: Logo_ITBA.png  used on input line 14.
@@ -805,6 +805,11 @@ l.44 \newpage
               [1] (main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+
+Overfull \hbox (2.88878pt too wide) detected at line 20
+\OT1/cmr/bx/n/10 10.. 
+ []
+
 )
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -830,53 +835,57 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `tabla:inductancias' on page 4 undefined on input line 1.
 
 [4]
-<imagenes/3_moduloZL.png, id=152, 1117.17375pt x 660.96938pt>
+<imagenes/3_moduloZL.png, id=167, 1117.17375pt x 660.96938pt>
 File: imagenes/3_moduloZL.png Graphic file (type png)
 <use imagenes/3_moduloZL.png>
 Package pdftex.def Info: imagenes/3_moduloZL.png  used on input line 89.
 (pdftex.def)             Requested size: 354.86412pt x 209.95125pt.
-<imagenes/3_faseZL.png, id=153, 1116.42094pt x 663.22781pt>
+<imagenes/3_faseZL.png, id=168, 1116.42094pt x 663.22781pt>
 File: imagenes/3_faseZL.png Graphic file (type png)
 <use imagenes/3_faseZL.png>
 Package pdftex.def Info: imagenes/3_faseZL.png  used on input line 96.
 (pdftex.def)             Requested size: 354.86412pt x 210.8103pt.
  [5 <./imagenes/3_moduloZL.png>])
-<imagenes/4_0.png, id=161, 396.2805pt x 254.1495pt>
+<imagenes/4_0.png, id=176, 396.2805pt x 254.1495pt>
 File: imagenes/4_0.png Graphic file (type png)
 <use imagenes/4_0.png>
 Package pdftex.def Info: imagenes/4_0.png  used on input line 96.
 (pdftex.def)             Requested size: 221.78923pt x 142.24518pt.
  [6 <./imagenes/3_faseZL.png>]
-<imagenes/4b_01.png, id=170, 395.67825pt x 252.945pt>
+<imagenes/4b_01.png, id=185, 395.67825pt x 252.945pt>
 File: imagenes/4b_01.png Graphic file (type png)
 <use imagenes/4b_01.png>
 Package pdftex.def Info: imagenes/4b_01.png  used on input line 111.
 (pdftex.def)             Requested size: 212.91577pt x 136.10966pt.
-<imagenes/4b_02.png, id=171, 396.2805pt x 253.54726pt>
+<imagenes/4b_02.png, id=186, 396.2805pt x 253.54726pt>
 File: imagenes/4b_02.png Graphic file (type png)
 <use imagenes/4b_02.png>
 Package pdftex.def Info: imagenes/4b_02.png  used on input line 118.
 (pdftex.def)             Requested size: 212.91577pt x 136.22868pt.
-<imagenes/4b_04.png, id=172, 396.2805pt x 254.1495pt>
+<imagenes/4b_04.png, id=187, 396.2805pt x 254.1495pt>
 File: imagenes/4b_04.png Graphic file (type png)
 <use imagenes/4b_04.png>
 Package pdftex.def Info: imagenes/4b_04.png  used on input line 128.
 (pdftex.def)             Requested size: 212.91577pt x 136.55228pt.
-<imagenes/4b_05.png, id=173, 396.2805pt x 253.54726pt>
+<imagenes/4b_05.png, id=188, 396.2805pt x 253.54726pt>
 File: imagenes/4b_05.png Graphic file (type png)
 <use imagenes/4b_05.png>
 Package pdftex.def Info: imagenes/4b_05.png  used on input line 135.
 (pdftex.def)             Requested size: 212.91577pt x 136.22868pt.
  [7 <./imagenes/4_0.png>]
-<imagenes/4d_opam.png, id=180, 334.851pt x 174.05025pt>
+<imagenes/4d_opam.png, id=195, 334.851pt x 174.05025pt>
 File: imagenes/4d_opam.png Graphic file (type png)
 <use imagenes/4d_opam.png>
 Package pdftex.def Info: imagenes/4d_opam.png  used on input line 147.
 (pdftex.def)             Requested size: 310.50357pt x 161.39761pt.
- [8 <./imagenes/4b_01.png> <./imagenes/4b_02.png> <./imagenes/4b_04.png> <./imagenes/4b_05.png>] (Ejercicio5.tex
+ [8 <./imagenes/4b_01.png> <./imagenes/4b_02.png> <./imagenes/4b_04.png> <./imagenes/4b_05.png>] (Ejercicio4.tex
+
+LaTeX Warning: Reference `fig:circuito_pasabajos' on page 9 undefined on input line 7.
+
+[9 <./imagenes/4d_opam.png>]) (Ejercicio5.tex
 
 pdfTeX warning: pdflatex (file ./Graficos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Graficos.pdf, id=191, page=2, 346.29578pt x 183.92815pt>
+<Graficos.pdf, id=217, page=2, 346.29578pt x 183.92815pt>
 File: Graficos.pdf Graphic file (type pdf)
 <use Graficos.pdf, page 2>
 Package pdftex.def Info: Graficos.pdf , page2 used on input line 69.
@@ -884,7 +893,7 @@ Package pdftex.def Info: Graficos.pdf , page2 used on input line 69.
 
 
 pdfTeX warning: pdflatex (file ./Graficos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Graficos.pdf, id=192, page=3, 346.29578pt x 183.92313pt>
+<Graficos.pdf, id=218, page=3, 346.29578pt x 183.92313pt>
 File: Graficos.pdf Graphic file (type pdf)
 <use Graficos.pdf, page 3>
 Package pdftex.def Info: Graficos.pdf , page3 used on input line 76.
@@ -892,12 +901,12 @@ Package pdftex.def Info: Graficos.pdf , page3 used on input line 76.
 
 
 pdfTeX warning: pdflatex (file ./Graficos.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Graficos.pdf, id=193, page=1, 353.49065pt x 183.92413pt>
+<Graficos.pdf, id=219, page=1, 353.49065pt x 183.92413pt>
 File: Graficos.pdf Graphic file (type pdf)
 <use Graficos.pdf, page 1>
 Package pdftex.def Info: Graficos.pdf , page1 used on input line 83.
 (pdftex.def)             Requested size: 141.94835pt x 73.8574pt.
-) [9 <./imagenes/4d_opam.png> <./Graficos.pdf> <./Graficos.pdf> <./Graficos.pdf>] (Ejercicio6.tex [10]
+[10]) (Ejercicio6.tex [11 <./Graficos.pdf> <./Graficos.pdf> <./Graficos.pdf>]
 
 LaTeX Warning: Command \textdegree invalid in math mode on input line 69.
 
@@ -912,26 +921,47 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 72.
 LaTeX Warning: Command \textdegree invalid in math mode on input line 72.
 
 Missing character: There is no ° in font cmr10!
+<q_wo_6.png, id=273, 803.0pt x 481.8pt>
+File: q_wo_6.png Graphic file (type png)
+<use q_wo_6.png>
+Package pdftex.def Info: q_wo_6.png  used on input line 91.
+(pdftex.def)             Requested size: 354.86412pt x 212.91896pt.
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 94.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 94.
-
-Missing character: There is no ° in font cmr10!
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 94.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 96.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 94.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 96.
 
 Missing character: There is no ° in font cmr10!
-[11]) (Anexo.tex
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 96.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 96.
+
+Missing character: There is no ° in font cmr10!
+[12]
+<resonan_6.png, id=289, 803.0pt x 481.8pt>
+File: resonan_6.png Graphic file (type png)
+<use resonan_6.png>
+Package pdftex.def Info: resonan_6.png  used on input line 123.
+(pdftex.def)             Requested size: 354.86412pt x 212.91896pt.
+ [13 <./q_wo_6.png (PNG copy)>]
+<fcorte_6.png, id=302, 803.0pt x 481.8pt>
+File: fcorte_6.png Graphic file (type png)
+<use fcorte_6.png>
+Package pdftex.def Info: fcorte_6.png  used on input line 167.
+(pdftex.def)             Requested size: 354.86412pt x 212.91896pt.
+ [14 <./resonan_6.png (PNG copy)>]) (Anexo.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[12]) [13] (main.aux
+[15 <./fcorte_6.png (PNG copy)>])
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] [17] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -947,20 +977,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A867C2A7CC21153C56D703F28957FE69;3429.
+(rerunfilecheck)             Checksum: 94E3EDAEC6DA604786591AACE60B7C91;3996.
  ) 
 Here is how much of TeX's memory you used:
- 58627 strings out of 467867
- 1535794 string characters out of 5418334
- 2280171 words of memory out of 5000000
- 86817 multiletter control sequences out of 15000+600000
+ 58687 strings out of 467867
+ 1536750 string characters out of 5418334
+ 2283171 words of memory out of 5000000
+ 86858 multiletter control sequences out of 15000+600000
  636613 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,16n,121p,832b,1138s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,16n,121p,872b,1138s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1440.pk> <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx2074.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main.pdf (14 pages, 616252 bytes).
+Output written on main.pdf (18 pages, 793645 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 272 words of extra memory for PDF output out of 10000 (max. 10000000)
 

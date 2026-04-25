@@ -67,18 +67,18 @@ menor error y fue adoptado como método principal.
 Para localizar $f_0$ con mayor precisión previo a aplicar el Método B, se 
 utilizó la condición de fase: en $\omega_0$ la tensión en el capacitor se 
 encuentra desfasada exactamente $-90°$ respecto de $V_{in}$. Alimentando el 
-circuito con una señal sinusoidal de \SI{1}{V_{pp}}, se varió la frecuencia 
-hasta observar en el osciloscopio que ambas sinusoides presentaban un desfasaje 
-de aproximadamente $90°$, como se muestra en la figura~\ref{fig:desfasaje_f0}.
+circuito con una señal sinusoidal, se varió la frecuencia hasta observar en el 
+osciloscopio que ambas sinusoides presentaban un desfasaje de aproximadamente 
+$90°$, como se muestra en la figura~\ref{fig:desfasaje_f0}.
 
 \subsection{Resultados Experimentales}
 
 \subsubsection*{Determinación de \texorpdfstring{$f_0$}{f0}}
 
-Mediante el procedimiento de desfasaje descripto se obtuvo:
+Mediante el procedimiento de desfasaje descripto se identificó 
+$f_{0,\,\text{medido}} = \SI{273}{\kilo\hertz}$, mientras que el valor teórico resulta:
 
 \begin{equation}
-    f_{0,\,\text{medido}} = \SI{273}{\kilo\hertz} \qquad 
     f_{0,\,\text{teórico}} = \frac{1}{2\pi\sqrt{LC}} = \SI{282.7}{\kilo\hertz}
     \label{eq:f0_comparacion}
 \end{equation}
@@ -88,20 +88,23 @@ componentes, en particular el capacitor de poliéster con tolerancia del $20\%$.
 
 \begin{figure}[H]
     \centering
-    %\includegraphics[width=0.7\textwidth]{imagenes/desfasaje_f0.png}
-    \caption{Desfasaje de $\approx 90°$ entre $V_{in}$ (amarillo) y $V_{out}$ 
-             (verde) a $f_0 = \SI{273}{\kilo\hertz}$, confirmando la 
-             frecuencia de resonancia.}
+    \includegraphics[width=0.8\textwidth]{q_wo_6.png}
+    \caption{$V_{in}$ (amarillo) y $V_{out}$ (azul) a $f_0 = \SI{273}{\kilo\hertz}$.
+             El desfasaje de $90°$ entre ambas señales confirma la frecuencia 
+             natural del circuito. Se midieron las amplitudes 
+             $\left|V_{in}\right| = \SI{462.5}{\milli\volt}$ y 
+             $\left|V_{out}\right| = \SI{458.2}{\milli\volt}$.}
     \label{fig:desfasaje_f0}
 \end{figure}
 
 \subsubsection*{Método A}
 
-Buscando el máximo de amplitud de $V_{out}$ mediante barrido de frecuencia, 
-se halló la frecuencia del pico:
+Barriendo la frecuencia del generador y observando la amplitud de $V_{out}$, 
+se halló la frecuencia a la cual esta es máxima, mostrada en la 
+figura~\ref{fig:metodo_A}:
 
 \begin{equation}
-    f_{\text{pico}} \approx \SI{197}{\kilo\hertz}
+    f_{\text{pico}} = \SI{200}{\kilo\hertz}, \qquad V_{out,\,\text{max}} = \SI{606}{\milli\volt}
     \label{eq:f_pico_medido}
 \end{equation}
 
@@ -110,45 +113,68 @@ ecuaciones~\ref{eq:f0_comparacion} y~\ref{eq:f_pico_medido}:
 
 \begin{equation}
     Q_A = \frac{1}{\sqrt{2\left[1-\left(\dfrac{f_{\text{pico}}}{f_0}\right)^2\right]}} 
-        = \frac{1}{\sqrt{2\left[1-\left(\dfrac{197}{273}\right)^2\right]}} 
+        = \frac{1}{\sqrt{2\left[1-\left(\dfrac{200}{273}\right)^2\right]}} 
         = 0{,}995
     \label{eq:QA}
 \end{equation}
 
 \begin{figure}[H]
     \centering
-    %\includegraphics[width=0.7\textwidth]{imagenes/metodo_A_pico.png}
-    \caption{Medición de $f_{\text{pico}} \approx \SI{197}{\kilo\hertz}$ 
-             en el osciloscopio. Se observa la amplitud máxima de $V_{out}$ 
-             (canal 1, verde) respecto de $V_{in}$ (canal 2, amarillo).}
+    \includegraphics[width=0.8\textwidth]{resonan_6.png}
+    \caption{$V_{in}$ (amarillo) y $V_{out}$ (azul) a $f_{\text{pico}} = \SI{200}{\kilo\hertz}$.
+             La amplitud de $V_{out}$ alcanza su valor máximo de \SI{606}{\milli\volt}.}
     \label{fig:metodo_A}
 \end{figure}
 
 \subsubsection*{Método B}
 
-Se midieron las amplitudes pico a pico de $V_{out}$ y $V_{in}$ en $f_0$ 
-con los cursores del osciloscopio, tal como se ilustra en la 
-figura~\ref{fig:metodo_B}. Aplicando la ecuación~\ref{eq:Q_metodo_B}:
+En $f_0 = \SI{273}{\kilo\hertz}$ se midieron las amplitudes de ambas señales 
+con los cursores del osciloscopio a partir de la figura~\ref{fig:desfasaje_f0}, 
+obteniendo $\left|V_{in}\right| = \SI{462.5}{\milli\volt}$ y 
+$\left|V_{out}\right| = \SI{458.2}{\milli\volt}$.
+Aplicando la ecuación~\ref{eq:Q_metodo_B}:
 
 \begin{equation}
-    Q_B = \frac{\left|V_{out}(f_0)\right|}{\left|V_{in}(f_0)\right|} = 1{,}05
+    Q_B = \frac{\left|V_{out}(f_0)\right|}{\left|V_{in}(f_0)\right|} 
+        = \frac{458{,}2}{462{,}5} \approx 0{,}991
     \label{eq:QB}
 \end{equation}
 
+Nótese que la figura~\ref{fig:desfasaje_f0} sirve simultáneamente para 
+identificar $f_0$ por el desfasaje y para extraer las amplitudes del Método B, 
+lo que ilustra la ventaja práctica de este método al concentrar ambas 
+mediciones en una única captura.
+
+\subsubsection*{Frecuencia de corte}
+
+Como verificación adicional, se midió la frecuencia a la cual la amplitud de 
+$V_{out}$ cae a $V_{out,\,\text{max}}/\sqrt{2}$, es decir la frecuencia de 
+corte a $-3\,\text{dB}$:
+
+\begin{equation}
+    \frac{V_{out,\,\text{max}}}{\sqrt{2}} = \frac{\SI{606}{\milli\volt}}{\sqrt{2}} 
+    \approx \SI{428.5}{\milli\volt}
+    \label{eq:v_corte}
+\end{equation}
+
+Se halló dicha amplitud a $f_{\text{corte}} = \SI{280}{\kilo\hertz}$, donde el 
+osciloscopio registró $\left|V_{out}\right| = \SI{437.5}{\milli\volt}$, valor 
+que se aproxima satisfactoriamente al calculado en la 
+ecuación~\ref{eq:v_corte}. Esto se observa en la figura~\ref{fig:fcorte}.
+
 \begin{figure}[H]
     \centering
-    %\includegraphics[width=0.7\textwidth]{imagenes/metodo_B_amplitudes.png}
-    \caption{Medición de amplitudes en $f_0 = \SI{273}{\kilo\hertz}$ 
-             mediante cursores. Canal 1 (verde): $V_{out}$; 
-             Canal 2 (amarillo): $V_{in}$.
-             El cociente de amplitudes da $Q_B = 1{,}05$.}
-    \label{fig:metodo_B}
+    \includegraphics[width=0.8\textwidth]{fcorte_6.png}
+    \caption{$V_{in}$ (amarillo) y $V_{out}$ (azul) a 
+             $f_{\text{corte}} = \SI{280}{\kilo\hertz}$, donde la amplitud 
+             de $V_{out}$ cae a \SI{437.5}{\milli\volt}, 
+             próximo al valor teórico de $V_{out,\,\text{max}}/\sqrt{2} \approx \SI{428.5}{\milli\volt}$.}
+    \label{fig:fcorte}
 \end{figure}
 
 \subsection{Comparación y Análisis}
 
-En la tabla~\ref{tab:Q_comparacion} se resumen los valores obtenidos 
-por cada método.
+En la tabla~\ref{tab:Q_comparacion} se resumen todos los valores obtenidos.
 
 \begin{table}[H]
     \centering
@@ -158,13 +184,14 @@ por cada método.
         \toprule
         Método & $Q$ \\
         \midrule
-        Nominal (valores de catálogo)       & $1{,}00$ \\
+        Nominal (valores de catálogo)       & $1{,}00$  \\
         Teórico (componentes medidos)       & $1{,}022$ \\
         Método A (frecuencia del pico)      & $0{,}995$ \\
-        Método B (razón de amplitudes)      & $1{,}05$  \\
+        Método B (razón de amplitudes)      & $0{,}991$ \\
         \bottomrule
     \end{tabular}
 \end{table}
+
 
 Ambos métodos arrojan resultados dentro del $4\%$ del valor teórico calculado 
 con los componentes medidos, lo cual es aceptable ya que el inductor presenta una resistencia 

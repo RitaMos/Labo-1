@@ -1,0 +1,98 @@
+%ITEM C%
+\section{Pasabajos}
+
+
+\subsection{Cálculo de la Función Transferencia}
+
+A partir del circuito de la figura~\ref{fig:circuito_pasabajos}, la función 
+transferencia se obtiene mediante un divisor de impedancias, tomando como 
+salida la tensión en el capacitor:
+
+\begin{equation}
+    H(s) = \frac{V_o(s)}{V_i(s)} = \frac{Z_C}{Z_L + Z_R + Z_C} 
+         = \frac{\dfrac{1}{sC}}{sL + R + \dfrac{1}{sC}}
+    \label{eq:H_divisor}
+\end{equation}
+
+Multiplicando numerador y denominador por $sC$:
+
+\begin{equation}
+    H(s) = \frac{1}{s^2LC + sRC + 1}
+    \label{eq:H_s}
+\end{equation}
+
+Reescribiendo en forma canónica de segundo orden, con frecuencia natural 
+$\omega_0 = \frac{1}{\sqrt{LC}}$ y coeficiente de amortiguamiento 
+$\xi = \frac{R}{2}\sqrt{\frac{C}{L}}$:
+
+\begin{equation}
+    H(s) = \frac{\omega_0^2}{s^2 + 2\xi\omega_0\, s + \omega_0^2}
+    \label{eq:H_canonica}
+\end{equation}
+
+Con los valores de los componentes: ($L = \SI{38.3}{\micro\henry}$, 
+$C = \SI{8.58}{\nano\farad}$, $R = \SI{68}{\ohm}$), los parámetros resultan:
+
+\begin{equation}
+    f_0 = \frac{1}{2\pi\sqrt{LC}} 
+        = \frac{1}{2\pi\sqrt{38{,}3\times10^{-6}\cdot 8{,}58\times10^{-9}}} 
+        \approx \SI{277.8}{\kilo\hertz}
+    \label{eq:f0_pasabajos}
+\end{equation}
+
+\begin{equation}
+    \xi = \frac{R}{2}\sqrt{\frac{C}{L}} 
+        = \frac{68}{2}\sqrt{\frac{8{,}58\times10^{-9}}{38{,}3\times10^{-6}}} 
+        \approx 0{,}508
+    \label{eq:xi_pasabajos}
+\end{equation}
+
+Dado que $\xi < \frac{1}{\sqrt{2}}$, el sistema es subamortiguado y presenta 
+sobrepico tanto en la respuesta al escalón como en la respuesta en frecuencia.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   ESTO NO SE SI HACE FALTA              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Respuesta a la Señal Cuadrada}
+
+se uso una señal cuadrada de $f = f_0/10 \approx \SI{27.8}{\kilo\hertz}$ y amplitud 
+de $v_{o,\,\text{max}} = \SI{2}{V_{pp}}$. como el periodo de la entrada ($T = \SI{36}{\micro\second}$) es 
+diez veces el de oscilacion propia ($T_0 = \SI{3.6}{\micro\second}$), el transitorio llega a terminar en 
+cada semiciclo antes de que venga el proximo flanco. por esto, en la salida $v_o(t)$ se ve bien la respuesta
+ al escalon y el comportamiento subamortiguado en cada transicion.
+
+
+Ante un escalón de amplitud $A$, la respuesta temporal de un sistema de segundo 
+orden subamortiguado es:
+
+\begin{equation}
+    v_o(t) = A\left[1 - \frac{e^{-\xi\omega_0 t}}{\sqrt{1-\xi^2}}
+             \sin\!\left(\omega_d t + \phi\right)\right], 
+             \quad \phi = \arccos(\xi)
+    \label{eq:respuesta_escalon}
+\end{equation}
+
+donde la frecuencia de oscilación del transitorio es:
+
+\begin{equation}
+    \omega_d = \omega_0\sqrt{1-\xi^2} \implies 
+    f_d = f_0\sqrt{1-\xi^2} 
+        = \SI{277.8}{\kilo\hertz}\cdot\sqrt{1-0{,}508^2} 
+        \approx \SI{240.8}{\kilo\hertz}
+    \label{eq:fd}
+\end{equation}
+
+El sobrepico máximo, que ocurre en $t_p = \pi/\omega_d$, vale:
+
+\begin{equation}
+    M_P = e^{-\pi\xi/\sqrt{1-\xi^2}} 
+        = e^{-\pi \cdot 0{,}508/\sqrt{1-0{,}508^2}} 
+        \approx 0{,}163
+    \label{eq:MP}
+\end{equation}
+
+Es decir, la salida supera el valor final en un $16{,}3\%$ del escalón aplicado.
