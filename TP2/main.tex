@@ -1,55 +1,6 @@
 \documentclass{article}
 
-%%%%%%%%%%%%%%% LIBRERIAS %%%%%%%%%%%%%%%%%%%%%
-\usepackage[thinc]{esdiff}
-\usepackage{amsmath}
-\usepackage{caption}
-\usepackage{physics}
-\usepackage{titlesec}
-\usepackage{titletoc}
-\usepackage{graphicx}
-\usepackage[spanish,es-tabla]{babel} % 'es-tabla' cambia Cuadro→Tabla
-\usepackage{hyperref}                % cargar después de babel
-\usepackage{float}
-\usepackage{circuitikz}
-\usepackage[left=3cm,right=3cm]{geometry} %para margenes
-\usepackage{subfiles} 
-\usepackage{subcaption}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepackage{booktabs} % Para tablas con tematica de paper cientifico
-\usepackage{siunitx}  % Para alinear números en las tablas d:
-
-%%%%para graficar csv de una%%%%
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-
-%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%% VARIABLES %%%%%%%%%%%%%%%%%%%%
-\newcommand{\Facultad}{Instituto Tecnológico \\de\\ Buenos Aires} %constantes
-\newcommand{\TPn}{Trabajo Práctico N° 2}								%%%%%NOMBRE DEL TP%%%%%%%%
-\newcommand{\TPtema}{Osciloscopios - Analizador de Impedancias}
-\renewcommand{\thesection}{\arabic{section}}          % 2
-\renewcommand{\thesubsection}{\quad \alph{subsection}}   % a
-\renewcommand{\thesubsubsection}{\quad \thesubsection.~\roman{subsubsection}} % a. i
-\graphicspath{{imagenes/}} %para que acceda a las fotos en la carpeta directamente
-
-
-%%%%%%%%%%%%%%%%%% FORMATO TÍTULO Y NUMERACIÓN %%%%%%%%%%%%%%%%%%%
-% Numeración de secciones
-\renewcommand{\thesection}{\arabic{section}.}          
-\renewcommand{\thesubsection}{\thesection\arabic{subsection}}       
-\renewcommand{\thesubsubsection}{$\alph{subsubsection})$}
-
-% Numerar hasta subsubsecciones
-\setcounter{secnumdepth}{3}
-
-% Formato de títulos
-\titleformat{\section}{\LARGE\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.5em}{}
-\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{0.5em}{}
-
+\input{Librerias.tex}
 
 
 %%%%%%%%%%%%%%%%%%% ARCHIVO %%%%%%%%%%%%%%%%%%%%%%%%
