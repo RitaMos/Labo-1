@@ -1,0 +1,106 @@
+Utilizando el osciloscopio y el analizador de impedancias de Digilent, se realizó un barrido de frecuencias tanto del inductor como del capacitor, obteniendo los datos visibles en las tablas \ref{tabla:inductancias} y \ref{tabla:inductancias}.
+
+\begin{figure}[H]
+    \begin{centering}
+        %\begin{tabular}{lcccc}
+        %\toprule
+        %f (Hz) & L (H) & Q & $ R_s (\Omega)$ & $ \theta (^\circ) $ \\
+        %\midrule
+        %10, 50, 200, 1k, 10k, 20k, 50k, 100k, 200k, 400k, 600k, 1M
+        %\bottomrule
+        %\end{tabular}
+        \label{tabla:inductancias}
+        \caption{Tabla de las inductancias del bobinado y sus valores parásitos a distintas frecuencias.}
+    \end{centering}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{centering}
+        %\begin{tabular}{lcccc}
+        %\toprule
+        %f (Hz) & C (H) & D $ (\cdot 10^{-3}) $ & $ R_p k(\Omega)$ & $ \theta (^\circ) $ \\
+        %\midrule
+        %\bottomrule
+        %\end{tabular}
+        \label{tabla:capacitancias}
+        \caption{Tabla de las capacitancias del capacitor y sus valores parásitos a distintas frecuencias.}
+    \end{centering}
+\end{figure}
+
+Con el fin de comparar la impedancia medida y la teórica de cada componente, también se midió y graficó el módulo y la fase de la misma
+
+\begin{figure}[H]
+    \begin{centering}
+        \begin{tabular}{lccc}
+        \toprule
+        f (Hz) & $|Z_L|$ & $fase(Z_L)$ \\
+        \midrule
+        10   & 0.0146 & 10.844 \\
+        50   & 0.0188 & 43.809 \\
+        200  & 0.054 & 75.409 \\
+        1k   & 0.272  & 86.749 \\
+        10k  & 2.199   & 89.322 \\
+        20k  & 5.615   & 89.49 \\
+        50k  & 11.329   & 89.615 \\
+        100k & 22.893   & 89.637 \\
+        200k & 46.299   & 89.474 \\
+        400k & 93.929   & 88.926 \\
+        600k & 150.856   & 88.49 \\
+        1M   & 244.121   & 87.52 \\
+        \bottomrule
+        \end{tabular}
+        \label{tabla:impedanciaInductiva}
+        \caption{Tabla de las inductancias del bobinado y sus valores parásitos a distintas frecuencias.}
+    \end{centering}
+\end{figure}
+
+Existen múltiples modelos teóricos para un inductor, pero el más simple de todos consiste en un inductor con una resistencia en serie, representando la resistividad del cable de cobre que lo conforma. Acorde a lo estudiado en la materia Tecnología de los Materiales Electrónicos, se obtuvo el valor de la misma mediante la ecuación
+\begin{equation*}
+    R = \rho \frac{l}{A}
+\end{equation*}
+donde  l es la longitud del cable que conforma al inductor, A es su área transversal, y $\rho$ su resistividad a determinada temperatura. De esta manera obtuvo el modelo de la figura \ref{modeloTeoricoL}
+
+\begin{figure}[H]
+    \begin{tikzpicture}[transform shape]
+        % Paths, nodes and wires:
+        \draw (1.5, 4) to[sinusoidal voltage source] (1.5, 2);
+        \draw (2.5, 4) to[american resistor] (5.25, 4);
+        \draw (6.25, 4) to[american inductor] (6.25, 2);
+        \draw (6.25, 2) -- (1.5, 2);
+        \node[ground] at (1.5, 2){};
+        \node[circ] at (2.5, 4){};
+        \node[shape=rectangle, minimum width=0.965cm, minimum height=0.215cm] at (2.5, 4.375){} node[anchor=north west, align=left, text width=0.577cm, inner sep=6pt] at (2, 4.5){out};
+        \draw (1.5, 4) -- (2.5, 4);
+        \draw (5.25, 4) -- (6.25, 4);
+        \node[shape=rectangle, minimum width=1.465cm, minimum height=0.465cm] at (4.5, 4.75){};
+        \node[shape=rectangle, draw, line width=1pt, minimum width=-0.035cm, minimum height=-0.035cm] at (0, -0){};
+        \node[shape=rectangle, minimum width=1.465cm, minimum height=0.465cm] at (4.25, 4.5){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (3.5, 4.75){19.1e-3};
+        \node[shape=rectangle, minimum width=1.465cm, minimum height=0.465cm] at (7.25, 3){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (6.5, 3.25){39.26e-6};
+    \end{tikzpicture}
+    \caption{Modelo teórico del inductor.}
+    \label{modeloTeoricoL}
+\end{figure}
+
+Utilizando dicho modelo, se obtuvo una curva teórica semejante a la medida, como se puede observar en las figuras \ref{fig:moduloZL} y \ref{fig:faseZL}, graficadas a partir de puntos tomados de los archivos .csv del osciloscopio y .txt exportado de ltspice.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3_moduloZL.png}
+    \caption{Módulo de la impedancia $|Z_L|$ en función de la frecuencia.}
+    \label{fig:moduloZL}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3_faseZL.png}
+    \caption{Fase de la impedancia $|Z_L|$ en función de la frecuencia.}
+    \label{fig:faseZL}
+\end{figure}
+
+Dada la semejanza entre las curvas teóricas y las medidas, se consideró innecesario complejizar el modelo con la adición de capacitores u otras resistencias. 
+
+Luego, para modelar el capacitor se partió del modelo más simple posible con la resistencia en serie ESR, obtenida mediante
+\begin{equation*}
+    D=\frac{ESR}{X_C}=\frac{ESR}{\frac{1}{\omega C}} = ESR \cdot 2 \pi f C      \qquad \Rightarrow \qquad       ESR=\frac{D}{2\pi fC}
+\end{equation*}
