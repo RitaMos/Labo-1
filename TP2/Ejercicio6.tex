@@ -1,0 +1,180 @@
+\section{Medición del Factor de Calidad}
+
+\subsection{Cálculo Analítico}
+
+El factor de calidad $Q$ para un circuito RLC serie se define como:
+
+\begin{equation}
+    Q = \frac{1}{R}\sqrt{\frac{L}{C}} = \frac{\omega_0 L}{R}
+    \label{eq:Q_def}
+\end{equation}
+
+Utilizando los valores nominales de los componentes 
+($L = \SI{38.76}{\micro\henry}$, $C = \SI{8.2}{\nano\farad}$, $R = \SI{68}{\ohm}$):
+
+\begin{equation}
+    Q_{\text{nominal}} = \frac{1}{68}\sqrt{\frac{38{,}76 \times 10^{-6}}{8{,}2 \times 10^{-9}}} = 1{,}00
+    \label{eq:Q_nominal}
+\end{equation}
+
+Utilizando los valores medidos experimentalmente 
+($L = \SI{38.3}{\micro\henry}$ a $f = \SI{200}{\kilo\hertz}$, $C = \SI{8.58}{\nano\farad}$):
+
+\begin{equation}
+    Q_{\text{teórico}} = \frac{1}{68}\sqrt{\frac{38{,}3 \times 10^{-6}}{8{,}58 \times 10^{-9}}} = 1{,}022
+    \label{eq:Q_teo}
+\end{equation}
+
+\subsection{Métodos Empíricos y Selección del de Menor Error}
+
+Se analizaron dos métodos para medir $Q$ experimentalmente con el osciloscopio 
+y el generador de señales.
+
+\subsubsection*{Método A — Frecuencia del pico de amplitud}
+
+En la configuración pasabajos (salida en el capacitor), la ganancia presenta un 
+máximo no en $f_0$ sino en una frecuencia ligeramente inferior, dada por:
+
+\begin{equation}
+    f_{\text{pico}} = f_0 \sqrt{1 - \frac{1}{2Q^2}}
+    \label{eq:f_pico}
+\end{equation}
+
+Midiendo experimentalmente $f_{\text{pico}}$ y conociendo $f_0$, se puede 
+despejar $Q$ de la ecuación~\ref{eq:f_pico}. La ventaja de este método es que 
+$f_{\text{pico}}$ es localizable ajustando la frecuencia del generador hasta 
+maximizar la amplitud de $V_{out}$. Sin embargo, cualquier imprecisión en la 
+determinación de $f_0$ se propaga directamente al cálculo de $Q$, siendo este 
+su principal fuente de error.
+
+\subsubsection*{Método B — Razón de amplitudes en resonancia}
+
+En la frecuencia de resonancia $f_0$, la función de transferencia del capacitor 
+tiene módulo igual a $Q$:
+
+\begin{equation}
+    \left|H(j\omega_0)\right| = Q \implies Q = \frac{\left|V_{out}(f_0)\right|}{\left|V_{in}(f_0)\right|}
+    \label{eq:Q_metodo_B}
+\end{equation}
+
+Este método requiere únicamente medir las amplitudes de $V_{in}$ y $V_{out}$ 
+simultáneamente en $f_0$ con los dos canales del osciloscopio. Al tratarse de 
+un cociente de amplitudes en un único punto de frecuencia, el error queda 
+limitado a la resolución vertical del instrumento, sin depender de un barrido 
+fino de frecuencias. Por lo anterior, el Método B es el que introduce 
+menor error y fue adoptado como método principal.
+
+Para localizar $f_0$ con mayor precisión previo a aplicar el Método B, se 
+utilizó la condición de fase: en $\omega_0$ la tensión en el capacitor se 
+encuentra desfasada exactamente $-90°$ respecto de $V_{in}$. Alimentando el 
+circuito con una señal sinusoidal de \SI{1}{V_{pp}}, se varió la frecuencia 
+hasta observar en el osciloscopio que ambas sinusoides presentaban un desfasaje 
+de aproximadamente $90°$, como se muestra en la figura~\ref{fig:desfasaje_f0}.
+
+\subsection{Resultados Experimentales}
+
+\subsubsection*{Determinación de \texorpdfstring{$f_0$}{f0}}
+
+Mediante el procedimiento de desfasaje descripto se obtuvo:
+
+\begin{equation}
+    f_{0,\,\text{medido}} = \SI{273}{\kilo\hertz} \qquad 
+    f_{0,\,\text{teórico}} = \frac{1}{2\pi\sqrt{LC}} = \SI{282.7}{\kilo\hertz}
+    \label{eq:f0_comparacion}
+\end{equation}
+
+La diferencia del $3{,}4\%$ es consistente con las tolerancias de los 
+componentes, en particular el capacitor de poliéster con tolerancia del $20\%$.
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.7\textwidth]{imagenes/desfasaje_f0.png}
+    \caption{Desfasaje de $\approx 90°$ entre $V_{in}$ (amarillo) y $V_{out}$ 
+             (verde) a $f_0 = \SI{273}{\kilo\hertz}$, confirmando la 
+             frecuencia de resonancia.}
+    \label{fig:desfasaje_f0}
+\end{figure}
+
+\subsubsection*{Método A}
+
+Buscando el máximo de amplitud de $V_{out}$ mediante barrido de frecuencia, 
+se halló la frecuencia del pico:
+
+\begin{equation}
+    f_{\text{pico}} \approx \SI{197}{\kilo\hertz}
+    \label{eq:f_pico_medido}
+\end{equation}
+
+Despejando $Q$ de la ecuación~\ref{eq:f_pico} con los valores de las 
+ecuaciones~\ref{eq:f0_comparacion} y~\ref{eq:f_pico_medido}:
+
+\begin{equation}
+    Q_A = \frac{1}{\sqrt{2\left[1-\left(\dfrac{f_{\text{pico}}}{f_0}\right)^2\right]}} 
+        = \frac{1}{\sqrt{2\left[1-\left(\dfrac{197}{273}\right)^2\right]}} 
+        = 0{,}995
+    \label{eq:QA}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.7\textwidth]{imagenes/metodo_A_pico.png}
+    \caption{Medición de $f_{\text{pico}} \approx \SI{197}{\kilo\hertz}$ 
+             en el osciloscopio. Se observa la amplitud máxima de $V_{out}$ 
+             (canal 1, verde) respecto de $V_{in}$ (canal 2, amarillo).}
+    \label{fig:metodo_A}
+\end{figure}
+
+\subsubsection*{Método B}
+
+Se midieron las amplitudes pico a pico de $V_{out}$ y $V_{in}$ en $f_0$ 
+con los cursores del osciloscopio, tal como se ilustra en la 
+figura~\ref{fig:metodo_B}. Aplicando la ecuación~\ref{eq:Q_metodo_B}:
+
+\begin{equation}
+    Q_B = \frac{\left|V_{out}(f_0)\right|}{\left|V_{in}(f_0)\right|} = 1{,}05
+    \label{eq:QB}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=0.7\textwidth]{imagenes/metodo_B_amplitudes.png}
+    \caption{Medición de amplitudes en $f_0 = \SI{273}{\kilo\hertz}$ 
+             mediante cursores. Canal 1 (verde): $V_{out}$; 
+             Canal 2 (amarillo): $V_{in}$.
+             El cociente de amplitudes da $Q_B = 1{,}05$.}
+    \label{fig:metodo_B}
+\end{figure}
+
+\subsection{Comparación y Análisis}
+
+En la tabla~\ref{tab:Q_comparacion} se resumen los valores obtenidos 
+por cada método.
+
+\begin{table}[H]
+    \centering
+    \caption{Comparación de valores del factor de calidad $Q$.}
+    \label{tab:Q_comparacion}
+    \begin{tabular}{lc}
+        \toprule
+        Método & $Q$ \\
+        \midrule
+        Nominal (valores de catálogo)       & $1{,}00$ \\
+        Teórico (componentes medidos)       & $1{,}022$ \\
+        Método A (frecuencia del pico)      & $0{,}995$ \\
+        Método B (razón de amplitudes)      & $1{,}05$  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Ambos métodos arrojan resultados dentro del $4\%$ del valor teórico calculado 
+con los componentes medidos, lo cual es aceptable ya que el inductor presenta una resistencia 
+serie parásita $r_L$ que incrementa el $R$ efectivo del circuito, reduciendo el 
+$Q$ real respecto del nominal.
+
+
+El método B es el más práctico y repetible debido a que introduce menor error. En particular, en este
+escenario solo basta con hacer el cociente de las amplitudes en el entorno cercano a la fracuencia natural
+del sistema. Por otra parte, el método A induce mayor error debido a que es más sensible respecto a la 
+variable del $f?0$. Esto se denota en la expresión~\ref{eq:f_pico}, la cual involucra una diferencia de
+cuadrados de frecuencias relativamente cercanas.
+
