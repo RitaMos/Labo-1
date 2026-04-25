@@ -1,0 +1,35 @@
+\section{Anexo}
+
+\subsection{Deducciones matemáticas}
+
+En la deducción de los filtros, se ignora el opamp. Esto se realiza ya que la idea del opamp es aislar el circuito de la resistencia interna del generador para tratar de conseguir el circuito que se deduce aproximación. \\
+\subsubsection{Filtro pasabandas}
+\label{subsec:eqpasabandas}
+Partiendo de la figura \ref{fig:pasabandas}, se planteo un divisor resistivo:
+
+\begin{align*}
+   H(s) &= \frac{R}{SL+\frac{1}{SC}+R}\\
+   H(s) &= \frac{sRC}{s^2LC+ sCR +1}
+\end{align*}
+
+De aquí se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+
+\subsubsection{Filtro pasaaltos}
+\label{subsec:eqpasaaltos}
+Partiendo de la figura \ref{fig:pasaaltos}, se planteo un divisor resistivo:
+\begin{align*}
+   H(s) &= \frac{sL}{SL+\frac{1}{SC}+R}\\
+   H(s) &= \frac{s^2LC}{s^2LC+ sCR +1}
+\end{align*}
+
+De aquí se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+
+\subsubsection{Filtro notch}
+\label{subsec:eqpasabandas}
+Partiendo de la figura \ref{fig:notch}, se planteo un divisor resistivo:
+\begin{align*}
+   H(s) &= \frac{sL+\frac{1}{sC}}{SL+\frac{1}{SC}+R}\\
+   H(s) &= \frac{s^2LC+1}{s^2LC+ sCR +1}
+\end{align*}
+
+De aquí se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$

@@ -9,9 +9,9 @@
 \contentsline {subsection}{\numberline {6.2}Salida con Barrido de Frecuencias}{4}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Diagrama de Bode Teórico-Práctico}{6}{subsection.6.3}%
 \contentsline {section}{\numberline {7.}Pasaaltos, Pasabandas y Rechazabandas}{6}{section.7}%
-\contentsline {section}{\numberline {8.}Anexo}{6}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Deducciones matemáticas}{6}{subsection.8.1}%
+\contentsline {section}{\numberline {8.}Anexo}{7}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Deducciones matemáticas}{7}{subsection.8.1}%
 \contentsline {subsubsection}{\numberline {$a)$}Filtro pasabandas}{7}{subsubsection.8.1.1}%
 \contentsline {subsubsection}{\numberline {$b)$}Filtro pasaaltos}{7}{subsubsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {$c)$}Filtro notch}{7}{subsubsection.8.1.3}%
+\contentsline {subsubsection}{\numberline {$c)$}Filtro notch}{8}{subsubsection.8.1.3}%
 \contentsfinish 
