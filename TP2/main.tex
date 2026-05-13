@@ -105,62 +105,6 @@ de amortiguamiento $\xi=0.5$. Para esto, se utilizó la fórmula
 
 \input{Anexo.tex}
 
-%%%%TESTS%%%%%%
-\begin{figure}[h!]
-    \centering
 
-    \begin{minipage}[b]{0.32\textwidth}
-        \centering
-        \resizebox{\linewidth}{!}{
-        \begin{tikzpicture}[transform shape]
-	\draw (-11, 4) to[american voltage source] (-11, 2);
-	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
-	\draw (-11, 4) -- (-10.5, 4);
-	\draw (-9.576, 4) to[american resistor, l={$R$}] (-7.988, 4);
-	\draw (-7.988, 4) to[capacitor, l={$C$}] (-6.5, 4);
-	\draw (-6.5, 4) to[american inductor, l={$L$}] (-6.5, 2);
-	\draw (-11, 2) -- (-6.5, 2);
-	\node at (-6.375, 4.125){$v_{out}$};
-	\node at (-11, 4.125){$v_{in}$};
-        \end{tikzpicture}}
-        \caption{pasaaltos}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \centering
-        \resizebox{\linewidth}{!}{
-        \begin{tikzpicture}[transform shape]
-	\draw (-11, 4) to[american voltage source] (-11, 2);
-	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
-	\draw (-11, 4) -- (-10.5, 4);
-	\draw (-6.5, 4) to[american resistor, l={$R$}] (-6.5, 2);
-	\draw (-7.988, 4) to[capacitor, l={$C$}] (-6.5, 4);
-	\draw (-9.576, 4) to[american inductor, l={$L$}] (-8, 4);
-	\draw (-11, 2) -- (-6.5, 2);
-	\node at (-6.375, 4.125){$v_{out}$};
-	\node at (-11, 4.125){$v_{in}$};
-        \end{tikzpicture}}
-        \caption{pasabandas}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \centering
-        \resizebox{\linewidth}{!}{
-        \begin{tikzpicture}[transform shape]
-	\draw (-11, 4) to[american voltage source] (-11, 2);
-	\node[buffer, xscale=0.66, yscale=0.66] at (-10.038, 4){};
-	\draw (-11, 4) -- (-10.5, 4);
-	\draw (-9.576, 4) to[american resistor, l={$R$}] (-6.5, 4);
-	\draw (-6.5, 2.75) to[capacitor, l={$C$}] (-6.5, 2);
-	\draw (-6.5, 4) to[american inductor, l={$L$}] (-6.5, 2.75);
-	\draw (-11, 2) -- (-6.5, 2);
-	\node at (-6.375, 4.125){$v_{out}$};
-	\node at (-11, 4.125){$v_{in}$};
-        \end{tikzpicture}}
-        \caption{Notch}
-    \end{minipage}
-
-\end{figure}
-%%%%%%%%%%%%END TEST%%%%%%%
         
 \end{document}

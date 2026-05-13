@@ -1,7 +1,7 @@
 \section{Anexo}
 
 \subsection{Deducciones matemáticas}
-
+\label{subsec:Deduccionesmat}
 En la deducción de los filtros, se ignora el opamp. Esto se realiza ya que la idea del opamp es aislar el circuito de la resistencia interna del generador para tratar de conseguir el circuito que se deduce aproximación. \\
 \subsubsection{Filtro pasabandas}
 \label{subsec:eqpasabandas}
@@ -33,3 +33,15 @@ Partiendo de la figura \ref{fig:notch}, se planteo un divisor resistivo:
 \end{align*}
 
 De aquí se deduce que su frecuencia de corte es $f_0 = \frac{1}{2\pi \sqrt{LC}}$
+
+\subsection{Polo de medicion}
+\label{subsec:eqpolo}
+Al observar la figura \ref{fig:pasabandas}, si uno conecta una punta de osciloscopio sobre la salida, estas introducen una capacitancia parasita que introduce un polo. Esto se puede demostrar analíticamente de la siguiente forma:
+
+\begin{align*}
+H(s) &= \frac{R//C_2}{sL + \frac{1}{sC_1} + R//C_2}\\
+H(s) &= \frac{\frac{R}{1+sRC_2}}{sL + \frac{1}{sC_1} + \frac{R}{1+sRC_2}}
+\end{align*}
+
+Con $C_1$ la capacidad del capacitor del circuito y $C_2$ la capacitancia del capacitor de las puntas del osciloscopio.\par
+

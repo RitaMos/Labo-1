@@ -1,6 +1,12 @@
 \section{Pasaaltos, Pasabandas y Rechazabandas}
 
-Es importante mencionar antes de iniciar el análisis que puesto a que los tres filtros tienen los mismo componentes y viendo las ecuaciones deducidas en el anexo (de las cuales se hablará más adelante), todos los circuitos poseen la misma frecuencia de corte. 
+
+Primero se deducieron las respuestas en frecuencia (Observar deducciones en el anexo \ref{subsec:Deduccionesmat}).
+
+Pasbandas $H(s) = \frac{sRC}{s^2LC+ sCR +1}$\par
+Pasaaltos $H(s) = \frac{s^2LC}{s^2LC+ sCR +1}$\par
+Notch $H(s) = \frac{s^2LC+1}{s^2LC+ sCR +1}$\par 
+Es importante mencionar antes de iniciar el análisis que puesto a que los tres filtros tienen los mismo componentes y viendo las ecuaciones deducidas, todos los circuitos poseen la misma frecuencia de corte. 
 \begin{figure}[h!]
     \centering
 
@@ -66,24 +72,107 @@ Primero analizaremos la respuesta de cada filtro en función del tiempo.
 
     \begin{minipage}[b]{0.32\textwidth}
         \centering
-        \includegraphics[page=2, width=\linewidth]{Graficos.pdf}
+        \includegraphics[page=2, width=\linewidth]{graficos/Graficosseñal.pdf}
         \caption{Pasaaltos}
         \label{fig:pasaaltostiempo}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.32\textwidth}
         \centering
-        \includegraphics[page=3, width=\linewidth]{Graficos.pdf}
+        \includegraphics[page=3, width=\linewidth]{graficos/Graficosseñal.pdf}
         \caption{Pasabandas}
         \label{fig:pasabandastiempo}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.32\textwidth}
         \centering
-        \includegraphics[page=1, width=\linewidth]{Graficos.pdf}
+        \includegraphics[page=1, width=\linewidth]{graficos/Graficosseñal.pdf}
         \caption{Notch}
         \label{fig:notchtiempo}
     \end{minipage}
 
 \end{figure}
-Al observar la gráfica de todas las señales, se puede observar que hay una gran correlación en la gráfica obtenida mediante el osciloscopio y la simulada en el ltspice. Una de las principales diferencias que se pueden observar en las tres señales es el desfase en el tiempo. La explicación de esto se debe a la existencia de un buffer a la entrada del circuito el cual añade un efecto de slew-rate. Esto es que el buffer limita la maxima pendiente de subida que la señal puede tener, limitando la velocidad de carga del circuito. Esto termina desenbocando en un desfase en el tiempo del circuito que se puede observar en las tres graficas \ref{fig:pasaaltostiempo}, \ref{fig:pasabandastiempo} y \ref{fig:notchtiempo}
+Al observar la gráfica de todas las señales, se puede observar que hay una gran correlación en la gráfica obtenida mediante el osciloscopio y la teórica simulada en el ltspice considerando un buffer. Se incluyó en el gráfico \ref{fig:pasabandastiempo} y \ref{fig:pasaaltostiempo} la simulación de ltspice considerando el circuito sin el buffer en la entrada (lo que implicaría la adición de la resistencia de 50 ohms del generador) y con el buffer en la entrada. La principal diferencia que se puede ver es una atenuación de la salida debido a la mayor impedancia en serie, pero al mismo tiempo se puede observar un desplazamiento de la respuesta en el tiempo. Esto se debe a una limitación introducida por el buffer, el cual no puede brindar toda la energía que el sistema requiere al instante, lo que desemboca en una menor pendiente de crecimiento que termina desplazando la señal en el tiempo. \par
+
+Por otra parte se puede observar que en el gráfico del pasaaltos y pasabandas la señal se establece en 0 luego del transitorio a diferencia del notch. Esto se debe a que en estacionario en el gráfico \ref{fig:pasaaltostiempo} el inductor funciona como un corto con tierra y en el gráfico \ref{fig:pasabandastiempo} el capacitor genera un abierto, por lo que no existe caida de tension sobre la resistencia debido a $i = 0$. En cambio en el notch, en el estacionario el sistema queda con la tensión del capacitor la cual es de $ 1 V$.
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[page=2, width=\linewidth]{graficos/Graficosbode.pdf}
+        \caption{Bode pasaaltos}
+        \label{fig:bodepasaaltos}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[page=3, width=\linewidth]{graficos/Graficosbode.pdf}
+        \caption{Bode pasabandas con buffer}
+        \label{fig:bodepasabandas}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[page=1, width=\linewidth]{graficos/Graficosbode.pdf}
+        \caption{Bode notch con buffer}
+        \label{fig:bodenotch}
+    \end{minipage}
+
+\end{figure}
+
+Otro aspecto que se analizó fue el bode de los tres circuitos. Se añadió como referencia en el gráfico \ref{fig:bodepasaaltos} las curvas sin buffer y con buffer ademas del bode del la salida del buffer. Una de las principales observaciones que se hicieron fue ver que en los tres gráficos existe un polo a muy altas frecuencias. No obstante esto se puede explicar debido a que el mismo amplificador operacional posee polos que afectan la medición, algo que puede ser observado en el grafico \ref{fig:bodepasaaltos} en la curva simulacion bode buffer.\par
+
+En el gráfico del notch y el pasaaltos se puede observar que la frecuencia de corte coincide con la calculada teoricamente usando los valores reales de los componentes usados de 272 kH. No obstante en el gráfico del pasabandas se puede observar que la frecuencia de corte esta desplazada. Esto se puede explicar debido a efectos añadidos por el buffer. Al observar la gráfica simulada sin el buffer de entrada, el pico de la curva coincide con la calculada teoricamente, no obstante al sumar el opamp, la frecuencia de corte se desplaza. Esto se puede ver sumando la curva azul del gráfico \ref{fig:bodepasabandas} y la curva negra del gráfico \ref{fig:bodepasaaltos}.
+
+Finalmente se estudiaron los parametros de las respuestas en el tiempo. Los datos fueron calculados usando los cursores del osciloscopio y los cursores del ltspice. Al mismo tiempo en ambos casos se usó una cuadrada de $1V$ ($2Vpp$). \par
+Luego es importante recordar que $\zeta = 0,5 $ y que la formula del sobrepico biene dada por $M_p=e^{-\frac{\pi\zeta}{\sqrt{1-\zeta^2}}}$ y para la señal usada $M_p = 100 \cdot \frac{V_{sobrepico}}{2 V} $. Por lo que se esperaría un sobre pico de $\approx$ 16 \%, tomando los valores de los componentes reales ( $\zeta = 0,51$). Otra formula importante es la frecuencia de oscilacion viene dada por la siguiente formula $f_d = f_0 \cdot \sqrt{1-\zeta^2}$ por lo que el valor sería de 235,55 kH. Finalmente, se usó el criterio de tiempo de transitorio del 2\%. Este viene aproximado por la formula $\tau = \frac{4}{2\pi f_0 \zeta} = 5,4 \mu s$.
+
+\begin{figure}[H]
+    \centering
+    % Usamos minipage para mantenerlas lado a lado dentro de un entorno de figura
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{lccc}
+            \toprule
+            & Pasaaltos & Pasabandas & Notch \\
+            \midrule
+            $f_t$  & 243 kHz & 239 kHz & 238 kHz \\
+            $\tau$ & 5,57 $\mu s$ & 6 $\mu s$ & 6,25 $\mu s$ \\
+            $M_p$  & 68\% & 52\% & 53\% \\
+            \bottomrule
+        \end{tabular}
+        \caption*{ (a) Resultados teóricos (LTspice)}
+        \label{fig:teoricos}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \begin{tabular}{lccc}
+            \toprule
+            & Pasaaltos & Pasabandas & Notch \\
+            \midrule
+            $f_t$  & 251 kHz & 210 kHz & 218 kHz \\
+            $\tau$ & 6,25 $\mu s$ & 6 $\mu s$ & 6,25 $\mu s$ \\
+            $M_p$  & 62\% & 47,5\% & 57,5\% \\
+            \bottomrule
+        \end{tabular}
+        \caption*{ (b) Resultados experimentales}
+        \label{fig:experimentales}
+    \end{minipage}
+    
+    \vspace{1em}
+    \caption{Comparación de parámetros de filtros.}
+    \label{fig:comparacion_filtros}
+\end{figure}
+
+Lo primero que se analizó fueron las frecuencias de amortiguación medidas. En cuanto a las teóricas, se puede ver que el error relativo es de 3,16\% en el pero caso, lo que implica una gran correlación. Luego en la parte medida experimentalmente, se puede observar un error mucho mas grande de 6,55\%, 10,85\% y 7,45\% respectivamente. Estos errores se pueden atribuir a pequeñas incertezas a la hora de medir con el osciloscopio gracias a las escalas y divisiones. \par
+
+En cuanto al tiempo de transitorio, se puede observar una mayor diferencia entre lo calculado teóricamente, lo simulado y medido. El mayor fue midiendo $\tau = 6,25 \mu s$, dando un $E_r = 16 \%$. Esta gran diferencia se debe a la dificultad de poder obtener el punto exacto en el cual el sistema llega a 2\% del valor final para calcular el periodo tiempo que transcurre. Esto debido a la oscilación que el circuito posee a lo largo del tiempo, la cual aveces sus máximos no coincidían con la envolvente (la cual indica $\tau$).
+
+Finalmente, el punto donde se puede observar mayor discrepancia fue en la medición del sobre pico. Al observar la figura \ref{fig:comparacion_filtros}, se puede observar que los sobre picos dieron alrededor del 55\% a diferencia del 17\% teórico. Esta gran diferencia se puede observar gracias a que la ecuación mencionada anteriormente, es una ecuación valida para sistemas con dos polos y sin ceros.\par
+
+En este caso al observar las ecuaciones deducidas, se puede observar que todos los filtros poseen ceros, los cuales generan una salida más abrupta del sistema. De hecho, existe una gran correlación con los datos medidos. En particular, el pasaaltos, al tener un cero doble desde $f = 0$, este tiene una subida mucho más rápida que los anteriores. Por  tal motivo, se observa un sobre pico mucho mayor que en el resto. \par
+
+Finalmente, como los errores relativos entre los simulados y los medidos están por debajo del 10\%, se pueden explicar gracias a los errores asociados a las medición con cursores a la hora de medir los valores máximos.

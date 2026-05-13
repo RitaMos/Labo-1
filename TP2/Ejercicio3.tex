@@ -2,57 +2,66 @@
 
 Utilizando el osciloscopio y el analizador de impedancias de Digilent, se realizó un barrido de frecuencias tanto del inductor como del capacitor, obteniendo los datos visibles en las tablas \ref{tabla:inductancias} y \ref{tabla:capacitancias}.
 
+
+%%%%%%CAMBIADO PARA MAYOR ESPACIO%%%%%%
+
 \begin{figure}[H]
-    \begin{centering}
+    \centering
+    % Reducimos el espacio entre columnas para que quepan ambas tablas
+    \setlength{\tabcolsep}{3pt} 
+    
+    % --- TABLA DE INDUCTANCIAS ---
+    \begin{minipage}{0.49\textwidth}
+        \centering
         \begin{tabular}{ccccc}
-        \toprule
-        f (Hz) & L (H) & Q & $ R_s (\Omega)$ & $ \theta (^\circ) $ \\
-        \midrule
-        10     & 5.18E-05 & 0.13524 & 0.01569 & 7.70 \\
-        50     & 4.07E-05 & 0.85695 & 0.01530 & 40.60 \\
-        200    & 3.97E-05 & 3.23555 & 0.01560 & 72.50 \\
-        1k     & 3.96E-05 & 13.96869 & 0.01719 & 85.90 \\
-        10k    & 3.87E-05 & 72.69255 & 0.03238 & 89.29276 \\
-        20k    & 3.86E-05 & 82.14472 & 0.05552 & 89.40380 \\
-        50k    & 3.85E-05 & 128.06711 & 0.09140 & 89.59361 \\
-        100k   & 3.84E-05 & 136.65801 & 0.15713 & 89.60535 \\
-        200k   & 3.84E-05 & 86.41285 & 0.50271 & 89.44597 \\
-        400k   & 3.85E-05 & 52.41517 & 1.97347 & 88.86427 \\
-        600k   & 3.88E-05 & 36.80551 & 3.85138 & 88.65695 \\
-        1M     & 3.90E-05 & 22.48344 & 11.47266 & 87.66475 \\
-        \bottomrule
+            \toprule
+            f (Hz) & L (H) & Q & $ R_s (\Omega)$ & $ \theta (^\circ) $ \\
+            \midrule
+            10    & 5.18E-05 & 0.13524 & 0.01569 & 7.70 \\
+            50    & 4.07E-05 & 0.85695 & 0.01530 & 40.60 \\
+            200   & 3.97E-05 & 3.23555 & 0.01560 & 72.50 \\
+            1k    & 3.96E-05 & 13.96869 & 0.01719 & 85.90 \\
+            10k   & 3.87E-05 & 72.69255 & 0.03238 & 89.29276 \\
+            20k   & 3.86E-05 & 82.14472 & 0.05552 & 89.40380 \\
+            50k   & 3.85E-05 & 128.06711 & 0.09140 & 89.59361 \\
+            100k  & 3.84E-05 & 136.65801 & 0.15713 & 89.60535 \\
+            200k  & 3.84E-05 & 86.41285 & 0.50271 & 89.44597 \\
+            400k  & 3.85E-05 & 52.41517 & 1.97347 & 88.86427 \\
+            600k  & 3.88E-05 & 36.80551 & 3.85138 & 88.65695 \\
+            1M    & 3.90E-05 & 22.48344 & 11.47266 & 87.66475 \\
+            \bottomrule
         \end{tabular}
-        \caption{Tabla de las inductancias del bobinado y sus valores parásitos a distintas frecuencias.}
+        \captionof{figure}{Inductancias y valores parásitos.}
         \label{tabla:inductancias}
-    \end{centering}
-\end{figure}
-
-
-\begin{figure}[H]
-    \begin{centering}
+    \end{minipage}
+    \hfill
+    % --- TABLA DE CAPACITANCIAS ---
+    \begin{minipage}{0.49\textwidth}
+        \centering
         \begin{tabular}{ccccc}
-        \toprule
-        f (Hz) & C (F) & D $ (\cdot 10^{-3}) $ & $ R_p (k\Omega)$ & $ \theta (^\circ) $ \\
-        \midrule
-        10     & 8.88E-09 & 1.503 & 1.1908E+06 & -89.9139 \\
-        50     & 8.88E-09 & 1.432 & 2.5354E+05 & -89.9180 \\
-        200    & 8.86E-09 & 1.439 & 6.1717E+04 & -89.9175 \\
-        1k     & 8.84E-09 & 2.569 & 7.0157E+03 & -89.8528 \\
-        10k    & 8.78E-09 & 7.122 & 2.5435E+02 & -89.6053 \\
-        20k    & 8.76E-09 & 9.449 & 9.9702E+01 & -89.4004 \\
-        50k    & 8.70E-09 & 11.869 & 2.8430E+01 & -89.5936 \\
-        100k   & 8.65E-09 & 13.560 & 1.4235E+01 & -89.6451 \\
-        200k   & 8.58E-09 & 16.624 & 5.5086E+00 & -89.4460 \\
-        400k   & 8.54E-09 & 20.681 & 2.3122E+00 & -89.1628 \\
-        600k   & 8.52E-09 & 21.463 & 1.3936E+00 & -88.4342 \\
-        1M     & 8.54E-09 & 28.017 & 6.6623E-01 & -87.6648 \\
-        \bottomrule
+            \toprule
+            f (Hz) & C (F) & D $ (\cdot 10^{-3}) $ & $ R_p (k\Omega)$ & $ \theta (^\circ) $ \\
+            \midrule
+            10    & 8.88E-09 & 1.503 & 1.1908E+06 & -89.9139 \\
+            50    & 8.88E-09 & 1.432 & 2.5354E+05 & -89.9180 \\
+            200   & 8.86E-09 & 1.439 & 6.1717E+04 & -89.9175 \\
+            1k    & 8.84E-09 & 2.569 & 7.0157E+03 & -89.8528 \\
+            10k   & 8.78E-09 & 7.122 & 2.5435E+02 & -89.6053 \\
+            20k   & 8.76E-09 & 9.449 & 9.9702E+01 & -89.4004 \\
+            50k   & 8.70E-09 & 11.869 & 2.8430E+01 & -89.5936 \\
+            100k  & 8.65E-09 & 13.560 & 1.4235E+01 & -89.6451 \\
+            200k  & 8.58E-09 & 16.624 & 5.5086E+00 & -89.4460 \\
+            400k  & 8.54E-09 & 20.681 & 2.3122E+00 & -89.1628 \\
+            600k  & 8.52E-09 & 21.463 & 1.3936E+00 & -88.4342 \\
+            1M    & 8.54E-09 & 28.017 & 6.6623E-01 & -87.6648 \\
+            \bottomrule
         \end{tabular}
+        \captionof{figure}{Capacitancias y valores parásitos.}
         \label{tabla:capacitancias}
-        \caption{Tabla de las capacitancias del capacitor y sus valores parásitos a distintas frecuencias.}
-    \end{centering}
+    \end{minipage}
 \end{figure}
 
+%%%%%%CAMBIADO PARA MAYOR ESPACIO%%%%%%
 Con el fin de comparar la impedancia medida y la teórica de cada componente, también se midió y graficó el módulo y la fase de la misma
 
 \begin{figure}[H]
