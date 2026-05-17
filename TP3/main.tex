@@ -44,21 +44,84 @@
 
 \section*{Objetivos} 
 
-NO SE SI PONER OBJETIVOS, EL TRABAJO ES MUY CORTO. AL MISMO TIEMPO ME PARACE REDUNDANTE HABLAR DEL INDUCTOR. A LO SUMO MENCIONAR QUE LA INDUCTANCIA ES DE 1mH EN EL ULTIMO APARTADO CUANDO PIDE CALCULARLA CON LOS DATOS MEDIDOS.
+El objetivo de este trabajo práctico es analizar el comportamiento de un convertidor Boost en función de la frecuencia de conmutación y el ciclo de trabajo, en adición al impacto de los componentes reales (ESR, ESL, resistencia serie del inductor) sobre la tensión de salida y el ripple del convertidor
 \section{Inductor}
-    
-    En la materia TME se calculó un transformador que cumplía ciertos criterios. Para este TP, solo se bobinó el primario. Para ello, este contó con los siguientes parametros:
-    \begin{itemize}
-\item Nucleo TDK RM10, material N30
-\item N1=10
-\item Se bobinaron 3 cables en paralelo de 0,45mm de diametro.
-\item $L_{gap}$ = 0,3 mm
+
+Se construyó un inductor con las siguientes características:
+\begin{itemize}
+    \item Núcleo TDK RM10, material N30.
+    \item 54 espiras de cable de $d = 0,3$ mm.
+    \item $L_{gap} = 0,3$ mm
+    \item $L = 1,02$ mH
+    \item $R = 0,9$ $\Omega$
 \end{itemize}
 
-	El valor del inductor medido 38,76 $\mu H$
-\section{Ejercicio 2}
+\subsection{Corriente máxima admisible}
+
+La corriente máxima admisible del inductor está limitada por dos fenómenos: la saturación del núcleo y el límite térmico del hilo de cobre.
+
+\subsubsection{Límite por saturación del núcleo}
+
+El campo magnético en el núcleo tiene una componente DC ($B_{DC}$) debida a la corriente media del inductor, y una componente de ripple ($\Delta B$) debida a la conmutación. La condición límite es:
+
+\begin{equation}
+    B_{DC} + \frac{\Delta B}{2} \leq B_{max}
+    \label{eq:blimite}
+\end{equation}
+
+donde $B_{max} = 130$ mT es el límite adoptado a $100°C$ para la ferrita N30.
+
+Luego ripple de campo magnético originado por una cuadrada simétrica durante $t_{on} = D/f = 100\,\mu$s:
+
+\begin{equation}
+    \Delta B = \frac{V_d \cdot t_{on}}{N \cdot A_{e,min}} = \frac{3,3 \cdot 100\times10^{-6}}{54 \cdot 90\times10^{-6}} \approx 67,9\text{ mT}
+    \label{eq:deltaB}
+\end{equation}
+
+Despejando la componente DC máxima admisible de la ecuación (\ref{eq:blimite}):
+
+\begin{equation}
+    B_{DC,max} = B_{max} - \frac{\Delta B}{2} = 130 - 34 = 96\text{ mT}
+    \label{eq:bdcmax}
+\end{equation}
+
+La corriente media máxima antes de saturar se obtiene de la relación entre campo y corriente en el inductor:
+
+\begin{equation}
+    I_{medio,max} = \frac{B_{DC,max} \cdot N \cdot A_{e,min}}{L} = \frac{0,096 \cdot 54 \cdot 90\times10^{-6}}{1,02\times10^{-3}} \approx 457\text{ mA}
+    \label{eq:imediomaxsat}
+\end{equation}
+
+Finalmente, la corriente pico máxima admisible es la corriente media más la mitad del ripple de corriente:
+
+\begin{equation}
+    \Delta I_L = \frac{V_d \cdot D}{L \cdot f} = \frac{3,3 \cdot 0,5}{1,02\times10^{-3} \cdot 5000} \approx 323\text{ mA}
+    \label{eq:deltaIL}
+\end{equation}
+
+\begin{equation}
+    I_{pico,sat} = I_{medio,max} + \frac{\Delta I_L}{2} = 457 + 161 \approx 618\text{ mA}
+    \label{eq:ipicosat}
+\end{equation}
+
+\subsubsection{Límite térmico del hilo de cobre}
+
+La sección transversal del hilo de $d = 0,3$ mm es:
+\begin{equation}
+    A_{Cu} = \pi \left(\frac{d}{2}\right)^2 = \pi \cdot (0,15)^2 \approx 0,071 \text{ mm}^2
+    \label{eq:seccion}
+\end{equation}
+
+De los previos TPs, se toma $J_{max} = 3$ A/mm$^2$:
+\begin{equation}
+    I_{max} = J_{max} \cdot A_{Cu} = 3 \cdot 0,071 \approx 213 \text{ mA}
+    \label{eq:itermico}
+\end{equation}
+
+Por ende, domina el efecto Joule y con ello la corriente máxima admisible es de 213\text{ mA}.
 
  %%%%%%%% PARTE A Y B %%%%%%%%%%
+
 
 \input{Ejercicioa_b.tex}
 
