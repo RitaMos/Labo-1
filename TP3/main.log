@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  17 MAY 2026 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  18 MAY 2026 12:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -793,51 +793,51 @@ Package pdftex.def Info: Logo_ITBA.png  used on input line 14.
 (pdftex.def)             Requested size: 133.07489pt x 52.74973pt.
 [1
 
-{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Logo_ITBA.png>]
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 72.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 72.
-
-Missing character: There is no ° in font cmr10!
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.97 \begin{equation}
-                      [1] (Ejercicioa_b.tex
-<imagenes/tp3_a1k.png, id=58, 803.0pt x 504.88625pt>
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Logo_ITBA.png>] (inductor.tex) (Ejercicioa_b.tex
+<imagenes/tp3_a1k.png, id=44, 803.0pt x 504.88625pt>
 File: imagenes/tp3_a1k.png Graphic file (type png)
 <use imagenes/tp3_a1k.png>
 Package pdftex.def Info: imagenes/tp3_a1k.png  used on input line 10.
 (pdftex.def)             Requested size: 137.50824pt x 86.45354pt.
-<imagenes/tp3_a25k.png, id=59, 803.0pt x 504.88625pt>
+<imagenes/tp3_a25k.png, id=45, 803.0pt x 504.88625pt>
 File: imagenes/tp3_a25k.png Graphic file (type png)
 <use imagenes/tp3_a25k.png>
 Package pdftex.def Info: imagenes/tp3_a25k.png  used on input line 17.
 (pdftex.def)             Requested size: 137.50824pt x 86.45354pt.
-<imagenes/tp3_a75k.png, id=60, 803.0pt x 504.88625pt>
+<imagenes/tp3_a75k.png, id=46, 803.0pt x 504.88625pt>
 File: imagenes/tp3_a75k.png Graphic file (type png)
 <use imagenes/tp3_a75k.png>
 Package pdftex.def Info: imagenes/tp3_a75k.png  used on input line 24.
 (pdftex.def)             Requested size: 137.50824pt x 86.45354pt.
-<imagenes/tp3_a100k.png, id=61, 803.0pt x 504.88625pt>
+<imagenes/tp3_a100k.png, id=47, 803.0pt x 504.88625pt>
 File: imagenes/tp3_a100k.png Graphic file (type png)
 <use imagenes/tp3_a100k.png>
 Package pdftex.def Info: imagenes/tp3_a100k.png  used on input line 34.
 (pdftex.def)             Requested size: 137.50824pt x 86.45354pt.
-<imagenes/tp3_b_d40.png, id=62, 803.0pt x 504.88625pt>
+<imagenes/tp3_b_d40.png, id=48, 803.0pt x 504.88625pt>
 File: imagenes/tp3_b_d40.png Graphic file (type png)
 <use imagenes/tp3_b_d40.png>
 Package pdftex.def Info: imagenes/tp3_b_d40.png  used on input line 40.
 (pdftex.def)             Requested size: 137.50824pt x 86.45354pt.
-<imagenes/tp3_b_d80.png, id=63, 803.0pt x 504.88625pt>
+<imagenes/tp3_b_d80.png, id=49, 803.0pt x 504.88625pt>
 File: imagenes/tp3_b_d80.png Graphic file (type png)
 <use imagenes/tp3_b_d80.png>
 Package pdftex.def Info: imagenes/tp3_b_d80.png  used on input line 46.
 (pdftex.def)             Requested size: 137.50824pt x 86.45354pt.
- [2 <./imagenes/tp3_a1k.png (PNG copy)> <./imagenes/tp3_a25k.png (PNG copy)> <./imagenes/tp3_a75k.png (PNG copy)> <./imagenes/tp3_a100k.png (PNG copy)> <./imagenes/tp3_b_d40.png (PNG copy)> <./imagenes/tp3_b_d80.png (PNG copy)>]) [3] (main.aux
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.55 ...bridando mayores corrientes de salida.\par
+                                                   [1]) (apendice.tex [2 <./imagenes/tp3_a1k.png (PNG copy)> <./imagenes/tp3_a25k.png (PNG copy)> <./imagenes/tp3_a75k.png (PNG copy)> <./imagenes/tp3_a100k.png (PNG copy)> <./imagenes/tp3_b_d40.png (PNG copy)> <./imagenes/tp3_b_d80.png (PNG copy)>]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 13.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 13.
+
+Missing character: There is no ° in font cmr10!
+) [3] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -846,20 +846,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 771EF5DA2218FF0AD33EE28C629FD145;947.
+(rerunfilecheck)             Checksum: 81E1B08DE6952879C12A2C993FA3804F;973.
  ) 
 Here is how much of TeX's memory you used:
- 57316 strings out of 467867
- 1495933 string characters out of 5418334
- 2261171 words of memory out of 5000000
- 85563 multiletter control sequences out of 15000+600000
+ 57333 strings out of 467867
+ 1496273 string characters out of 5418334
+ 2262171 words of memory out of 5000000
+ 85574 multiletter control sequences out of 15000+600000
  636465 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,8n,121p,798b,1089s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1440.pk> <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx2074.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (4 pages, 421549 bytes).
+Output written on main.pdf (4 pages, 422495 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
+ 170 PDF objects out of 1000 (max. 8388607)
  19 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

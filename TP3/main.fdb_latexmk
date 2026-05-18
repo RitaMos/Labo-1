@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1779047664.16889 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP3/main.tex" "main.pdf" "main" 1779047667.09828 0
+["pdflatex"] 1779119627.33202 "c:/Users/lucas/Desktop/informes latex/Labo-1/TP3/main.tex" "main.pdf" "main" 1779119629.73033 0
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1777155325 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1774318566 18748 7fe1025cfd8bec36139decdf052442d7 ""
   "C:/Users/lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx2074.pk" 1774318567 28420 b197038010d7daa30dae45e7ba13a58b ""
@@ -248,16 +248,18 @@
   "Ejercicioa_b.tex" 1779031791 4484 df400707bd48049f3cd70d959fb3f7cd ""
   "Librerias.tex" 1779031791 2155 449e7961fbf4a2e766b6571769245ab0 ""
   "Logo_ITBA.png" 1779031791 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP3/main.tex" 1779047663 4648 28f82a21e545d07081ceb961f4f4217c ""
+  "apendice.tex" 1779119626 1717 9912b3819d281dfa81612b321d3f92b7 ""
+  "c:/Users/lucas/Desktop/informes latex/Labo-1/TP3/main.tex" 1779119269 1964 d5f9f873c8e167201c652259bd383dde ""
   "imagenes/tp3_a100k.png" 1779031791 33579 6cd28310abb7079b1159433327eb3f88 ""
   "imagenes/tp3_a1k.png" 1779031792 36926 c8cca6857d35eade5829b2d0f2d0e431 ""
   "imagenes/tp3_a25k.png" 1779031792 28442 55063c2c5748f0868724184a86389c00 ""
   "imagenes/tp3_a75k.png" 1779031792 30745 23983e5c963ae5bac5dd2e02ffc435ce ""
   "imagenes/tp3_b_d40.png" 1779031792 28704 16ee4144e82a61e12dc3614079bea5a9 ""
   "imagenes/tp3_b_d80.png" 1779031792 31211 c879b5207e30c1ddee59519ebf2a9899 ""
-  "main.aux" 1779047666 3159 4b772dc64cc2fd902941c08af8def693 "pdflatex"
-  "main.out" 1779047666 947 771ef5da2218ff0ad33ee28c629fd145 "pdflatex"
-  "main.tex" 1779047663 4648 28f82a21e545d07081ceb961f4f4217c ""
+  "inductor.tex" 1779119545 1304 ec673165f74108cd45112e304fe90023 ""
+  "main.aux" 1779119629 3305 98b3216999ba8be01857f76105f0a968 "pdflatex"
+  "main.out" 1779119629 973 81e1b08de6952879c12a2c993fa3804f "pdflatex"
+  "main.tex" 1779119269 1964 d5f9f873c8e167201c652259bd383dde ""
   (generated)
   "main.aux"
   "main.log"
