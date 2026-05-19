@@ -455,6 +455,16 @@ INPUT .\imagenes\tp3_b_d80.png
 INPUT .\imagenes\tp3_b_d80.png
 INPUT .\imagenes\tp3_b_d80.png
 INPUT .\imagenes\tp3_b_d80.png
+INPUT .\Ej2_c.tex
+INPUT .\Ej2_c.tex
+INPUT Ej2_c.tex
+INPUT .\imagenes\tp3_c.png
+INPUT .\imagenes\tp3_c.png
+INPUT .\imagenes\tp3_c.png
+INPUT .\imagenes\tp3_c.png
+INPUT .\imagenes\tp3_c.png
+INPUT .\imagenes\tp3_c.png
+INPUT .\imagenes\tp3_c.png
 INPUT .\apendice.tex
 INPUT .\apendice.tex
 INPUT apendice.tex
@@ -482,6 +492,8 @@ INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi9.pfb
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi9.pfb
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
