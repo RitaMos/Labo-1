@@ -122,8 +122,271 @@ sobrepico tanto en la respuesta al escalón como en la respuesta en frecuencia.
     \end{figure}
 
 
-\subsubsection{R = 0 \texorpdfstring{$\Omega$}{pi} }
 
+    % ********* ITEM E *********
+\subsection{Respuesta al escalón para distintos valores de R}
+
+En cada subitem, con el fin de calcular la frecuencia de oscilación del transitorio se empleó la ecuación:
+\begin{equation} \label{frecuenciaTeorica}
+    f_d = \frac{\sqrt{\omega_0^2 - \alpha^2}}{2 \pi}
+\end{equation}
+donde $ \omega_0 = \frac{1}{\sqrt{LC}} $ y $ \alpha = \frac{R}{2L} $
+
+Para medir esta frecuencia, se miden los instantes en que la señal cruza la tensión a la que se establece la señal por segunda y tercera vez, y se toma la diferencia temporal entre esos dos instantes como el semiciclo del transitorio, de manera que para los valores $t_1$ y $t_2$ medidos como en el gráfico \ref{frecuenciaOscilacion}:
+\begin{figure}[H]
+    \begin{centering}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=12cm, height=5cm,
+            axis lines=left,
+            xmin=0, xmax=10,
+            ymin=-0.6, ymax=1.3,
+            xtick=\empty,
+            ytick=\empty,
+            axis line style={-stealth},
+            xlabel={},
+            ylabel={},
+            clip=false,
+        ]
+        % Línea horizontal V0
+        \draw[blue, thick] (axis cs:0,0.95) -- (axis cs:10,0.95)
+            node[left, pos=0, xshift=-5pt] {\large $V_0$};
+        % Señal: sube, tiene un pico positivo, baja, pico negativo pequeño, se estabiliza
+        \addplot[black, thick, smooth, samples=200, domain=0:10] 
+            {0.95 + 1.1*exp(-0.8*x)*sin(deg(2.5*x - 0.3))};
+        % Marcas t1 y t2
+        \draw[magenta, thick] (axis cs:1.4, 0.8) -- (axis cs:1.4, 1.15)
+            node[above] {$t_1$};
+        \draw[magenta, thick] (axis cs:2.65, 0.85) -- (axis cs:2.65, 1.15)
+            node[above] {$t_2$};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Método de medición de la frecuencia de oscilación del transitorio.}
+    \label{frecuenciaOscilacion}
+\end{centering}
+\end{figure}
+
+\begin{equation} \label{frecuenciaPractica}
+    f_d = \frac{1}{T} = \frac{1}{2(t_2 - t_1)}
+\end{equation}
+
+\vspace{0.2cm}
+
+\par Por  otro lado, una de las formas de obtener de forma teórica el tiempo de establecimiento 5\% es definirlo como el instante t para el cual la envolvente $v_i \left(1+e^{-\alpha t} \right)$ alcanza el valor de la tensión de establecimiento más su 5\%, de manera que
+\begin{equation*}
+    v_i \left(1+e^{-\alpha t^\ast} \right) = vi \cdot 1,05 \qquad \Rightarrow
+    e^{-\alpha t^\ast} = 0,05 \qquad \Rightarrow
+    t^\ast = \frac{ln(0,05)}{-\alpha}
+\end{equation*}
+y el tiempo de establecimiento teórico resulta ser $ t^\ast = \frac{ln(0,05)}{-\alpha} $.
+\par Al momento de medirlo, se toma que el tiempo de establecimiento del circuito es el instante en que la señal cruza por última vez el valor de la tensión de establecimiento de la señal $\pm$ 5\%, como se ilustra en el gráfico \ref{tiempoEstablecimiento}.
+\begin{figure}[H]
+    \begin{centering}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=14cm, height=6cm,
+            axis lines=left,
+            xmin=0, xmax=12,
+            ymin=-1.8, ymax=1.8,
+            xtick=\empty,
+            ytick=\empty,
+            axis line style={-stealth},
+            clip=false,
+        ]
+        % Línea central (referencia)
+        \draw[blue, thick, -stealth] (axis cs:0, 0) -- (axis cs:12, 0);
+        % Banda superior +5%
+        \draw[blue, thick, -stealth] (axis cs:0, 0.7) -- (axis cs:12, 0.7)
+            node[right] {$+5\%$};
+        % Banda inferior -5%
+        \draw[blue, thick, -stealth] (axis cs:0, -0.7) -- (axis cs:12, -0.7)
+            node[right] {$-5\%$};
+        % Señal oscilatoria amortiguada
+        \addplot[black, thick, smooth, samples=300, domain=0:12] 
+            {1.6*exp(-0.45*x)*sin(deg(3.0*x))};
+        % Marca t0
+        \draw[thick] (axis cs:1.7, -0.9) -- (axis cs:1.7, -0.5)
+            node[below, yshift=-11pt] {$t_0$};;
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Método de medición del tiempo de establecimiento 5\%}
+    \label{tiempoEstablecimiento}
+    \end{centering}
+\end{figure}
+
+Finalmente, para obtener el máximo sobrepico se midió la diferencia entre el valor máximo de la salida y la tensión de establecimiento.
+\par Para buscar el valor teórico del valor máximo de la salida se buscó el primer valor de t para el cual la derivada de la salida (es decir, la tensión del capacitor) se anulaba, es decir $ t^\ast $ tal que $\frac{dv_c}{dt}(t^\ast) = 0$. Para esto, se obtuvo que la respuesta del capacitor al escalón es
+\begin{equation*}
+    v_c(t)= v_i \left[    1 - e^{-\alpha t} \left( cos(\omega_d t)+\frac{\alpha}{\omega_d} sen(\omega_d t)  \right)  \right]
+\end{equation*}
+de manera que su derivada resulta
+\begin{equation*}
+    \frac{dv_c}{dt} = v_i \cdot e^{-\alpha t} \cdot \frac{w_o^2}{w_d} \cdot sen(w_d t)
+\end{equation*}
+El menor valor de t para el cual la derivada se anula resulta ser $ \quad w_d t^\ast = \pi \quad \Rightarrow \quad t^\ast = \frac{\pi}{w_d} $
+De esta manera, el valor máximo que toma la tensión en el capacitor es 
+\begin{equation*}
+    v_c(t^\ast)=v_i \left(  1 + e^{-\alpha \pi / w_d} \right)
+\end{equation*}
+Así, el sobrepico es decir la diferencia entre $ v_c(t^\ast) $ y la tensión de establecimiento del capacitor resulta ser
+\begin{equation*}
+    M_p = v_c(t^\ast) - v_i = v_i \cdot e^{-\alpha \pi / w_d}
+\end{equation*}
+
+Adicionalmente, consideramos pertinente aclarar que para realizar los cálculos teóricos fueron tenidas en cuenta las resistencias internas del capacitor y del inductor presentadas anteriormente en la sección \ref{seccion3} (al estar en serie ambas con sus respectivos componentes, la resistencia total utilizada para los cálculos teóricos es simplemente la suma de las resistencias internas y la externa).
+Las mediciones a continuación fueron realizadas con el buffer, como se  presenta en la figura \ref{pasabajosConBuffer}.
+\begin{figure}[H]
+    \begin{centering}
+    \begin{tikzpicture}[transform shape]
+        % Paths, nodes and wires:
+            \draw (1.5, 4) to[sinusoidal voltage source] (1.5, 2);
+            \node[ground] at (1.5, 2){};
+            \node[buffer] at (3.45, 4){};
+            \draw (4.15, 4) to[american inductor] (6.4, 4);
+            \draw (6.4, 4) to[american resistor] (9, 4);
+            \draw (1.5, 4) -- (2.75, 4);
+            \draw (9, 4) to[capacitor] (9, 2);
+            \draw (9, 2) -| (1.5, 2.25);
+            \node[plain crossing] at (9.808, 3.5){};
+            \node[plain crossing] at (2.25, 3.5){};
+            \draw (9.675, 2.5) |- (9.925, 2.5);
+            \draw (2.145, 2.564) -- (2.395, 2.564);
+            \node[shape=rectangle, minimum width=1.465cm, minimum height=0.465cm] at (2.645, 3.128){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (1.895, 3.378){$v_i$};
+            \node[shape=rectangle, minimum width=1.465cm, minimum height=0.465cm] at (10.192, 3.082){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (9.442, 3.332){$v_0$};
+    \end{tikzpicture}
+    \caption{Circuito pasa-bajos con buffer.}
+    \label{pasabajosConBuffer}
+    \end{centering}
+\end{figure}
+
+\subsubsection{R tal que $M_p=0,07v_i$}
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.45\textwidth}
+    \textbf{Mediciones}
+    \begin{itemize}
+        \item $R = 105 \, \Omega$
+        \item $t_2 - t_1 = 1,32 \, \mu s$
+        \item Tiempo de establecimiento: \\ $t_{MEDIDO} = 4,22 \, \mu s$
+        \item $M_{p_{MEDIDO}} = 315 \, mV$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \textbf{Resultados}
+    \begin{itemize}
+        \item $f_{d_{TEORICO}} = 173,316 \, kHz$
+        \item $f_{d_{MEDIDO}} = 378,787 \, kHz$
+        \item Tiempo de establecimiento: \\ $t_{TEORICO} = 2,187 \, \mu s$
+        \item $M_{p_{TEORICO}} = 109,63 \, mV$
+    \end{itemize}
+\end{minipage}
+\end{figure}
+Dado que tanto la frecuencia como el sobrepico teórico son menores a los medidos, esto indicaría que el sistema está menos amortiguado de lo esperado. Si fuera al revés, que está más amortiguado de lo esperado, esta diferencia se podría atribuir a que los valores teóricos subestiman la impedancia del TL082; al no ser el caso, es más probable que la causa de la diferencia sea un error de medición.
+
+\subsubsection{R = 0$\Omega$ }
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.45\textwidth}
+    \textbf{Mediciones}
+    \begin{itemize}
+        \item $t_2 - t_1 = 2,42 \,\mu s$
+        \item Tiempo de establecimiento: \\ $t_{MEDIDO} =  150,54 \,\mu s$
+        \item $M_{p_{MEDIDO}} = 2,9 \,mV$ % REVISAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \textbf{Resultados}
+    \begin{itemize}
+        \item $f_{d_{TEORICO}} = 282,28 \,kHz$
+        \item $f_{d_{MEDIDO}} = 206,6 \,kHz$
+        \item Tiempo de establecimiento: \\ $t_{TEORICO} = 190,5 \,\mu s$
+        \item $M_{p_{TEORICO}} = 972,53 \,mV$
+    \end{itemize}
+\end{minipage}
+\end{figure}
+En este caso, tanto la frecuencia teórica como el sobrepico teóricos son mayores a los medidos, indicando que el circuito tiene mayor impedancia a la esperada.
+
+\subsubsection{R tal que el circuito fuera Críticamente Amortiguado}
+Dado que el circuito está críticamente amortiguado, no tiene sentido hablar de frecuencia de transitorio ni sobrepico.
+\par Al no haber oscilación, en este caso se define el tiempo de establecimiento como el tiempo que tarda en llegar por primera vez la salida al 90\% de la tensión de establecimiento. Para obtener el valor teórico, estudio al RLC como dos sistemas independientes. Para ambos sistemas resulta $ \quad v(t) = v_i \left( 1- e^{-t/\tau} \right)$ con $\tau = \frac{1}{\alpha}$ individualmente. Si igualo ese valor a $0,9v_i$ para $t=t^\ast$ (el tiempo de establecimiento), llego a que $t^\ast$ resulta ser $t=2\tau \cdot ln(10) = \frac{2\cdot ln(10)}{\alpha}$.
+\par La resistencia que cumple lo pedido es de $R=138 \Omega$, por ende el tiempo de establecimiento teórico resulta: $t_{TEORICO}=2,56 \mu s$. Por otro lado, el tiempo de establecimiento medido es $t_{MEDIDO}=3,38 \mu s$.
+
+\vspace{6mm}
+A continuación se presentan mediciones realizadas sin el buffer, como se  presenta en la figura \ref{pasabajosSinBuffer}.
+\begin{figure}[H]
+    \begin{centering}
+    \begin{tikzpicture}[transform shape]
+        % Paths, nodes and wires:
+        \draw (1.5, 4) to[sinusoidal voltage source] (1.5, 2);
+        \node[ground] at (1.5, 2){};
+        \draw (2.75, 4) to[american inductor] (5, 4);
+        \draw (5, 4) to[american resistor] (7.6, 4);
+        \draw (1.5, 4) -- (2.75, 4);
+        \draw (7.6, 4) to[capacitor] (7.6, 2);
+        \draw (7.6, 2) -| (1.5, 2.25);
+        \node[plain crossing] at (8.408, 3.5){};
+        \node[plain crossing] at (2.25, 3.5){};
+        \draw (8.275, 2.5) |- (8.525, 2.5);
+        \draw (2.145, 2.564) -- (2.395, 2.564);
+        \node[shape=rectangle, minimum width=1.465cm, minimum height=0.465cm] at (2.645, 3.128){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (1.895, 3.378){$v_i$};
+        \node[shape=rectangle, minimum width=1.465cm, minimum height=0.465cm] at (8.792, 3.082){} node[anchor=north west, align=left, text width=1.077cm, inner sep=6pt] at (8.042, 3.332){$v_0$};
+    \end{tikzpicture}
+    \caption{Circuito pasa-bajos sin buffer.}
+    \label{pasabajosSinBuffer}
+    \end{centering}
+\end{figure}
+
+\subsubsection{R tal que $M_p=0,07v_i$}
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.45\textwidth}
+    \textbf{Mediciones}
+    \begin{itemize}
+        \item $R=32 \, \Omega$
+        \item $t_2 - t_1 = 2,48 \, \mu s $
+        \item Tiempo de establecimiento: \\ $t_{MEDIDO} =  3,32 \,\mu s$
+        \item $M_{p_{MEDIDO}} = 143,525 \,mV$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \textbf{Resultados}
+    \begin{itemize}
+        \item $f_{d_{TEORICO}} = 273,94 \,kHz$
+        \item $f_{d_{MEDIDO}} = 201,6 \,kHz$
+        \item Tiempo de establecimiento: \\ $t_{TEORICO} = 7 \,\mu s$
+        \item $M_{p_{TEORICO}} = 429,3 \,mV$
+    \end{itemize}
+\end{minipage}
+\end{figure}
+En este caso, tanto la frecuencia teórica como el sobrepico teóricos son mayores a los medidos, indicando que el circuito tiene mayor impedancia a la esperada.
+
+\subsubsection{R = 0$\Omega$ }
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.45\textwidth}
+    \textbf{Mediciones}
+    \begin{itemize}
+        \item $t_2 - t_1 = 1,9 \, \mu s $
+        \item Tiempo de establecimiento: \\ $t_{MEDIDO} =  4,84 \,\mu s$
+        \item $M_{p_{MEDIDO}} = 548,75 \,mV$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \textbf{Resultados}
+    \begin{itemize}
+        \item $f_{d_{TEORICO}} = 282,38 \,kHz$
+        \item $f_{d_{MEDIDO}} = 103,3 \,kHz$
+        \item Tiempo de establecimiento: \\ $t_{TEORICO} = 190,49 \,\mu s$
+        \item $M_{p_{TEORICO}} = 976,187 \,mV$
+    \end{itemize}
+\end{minipage}
+\end{figure}
+En este caso, tanto la frecuencia teórica como el sobrepico teóricos son mayores a los medidos, indicando que el circuito tiene mayor impedancia a la esperada.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
