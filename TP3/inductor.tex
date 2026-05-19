@@ -1,0 +1,30 @@
+\section{Inductor}
+
+Se construyó un inductor con las siguientes características:
+\begin{itemize}
+    \item Núcleo TDK RM10, material N30.
+    \item 54 espiras de cable de $d = 0,3$ mm.
+    \item $L_{gap} = 0,3$ mm
+    \item $L = 1,02$ mH
+    \item $R = 0,9$ $\Omega$
+\end{itemize}
+
+\subsection{Corriente máxima admisible}
+
+La corriente máxima admisible del inductor está limitada por dos fenómenos: la saturación del núcleo y el límite térmico del hilo de cobre. La corriente máxima por saturación magnética resulta $I_{pico,sat} \approx 618$ mA (ver Apéndice \ref{ap:saturacion}). A continuación se calcula el límite térmico.
+
+\subsubsection{Límite térmico del hilo de cobre}
+
+La sección transversal del hilo de $d = 0,3$ mm es:
+\begin{equation}
+    A_{Cu} = \pi \left(\frac{d}{2}\right)^2 = \pi \cdot (0,15)^2 \approx 0,071 \text{ mm}^2
+    \label{eq:seccion}
+\end{equation}
+
+Adoptando $J_{max} = 3$ A/mm$^2$:
+\begin{equation}
+    I_{max,termico} = J_{max} \cdot A_{Cu} = 3 \cdot 0,071 \approx 213 \text{ mA}
+    \label{eq:itermico}
+\end{equation}
+
+Dado que $I_{max,termico} < I_{pico,sat}$, el límite más restrictivo es el térmico, resultando en una corriente máxima admisible de $213$ mA. La fuente se limitó a $150$ mA como medida de seguridad.
