@@ -8,21 +8,21 @@ Se midieron las salidas de una entrada cuadrada $D = 0,5$. Se obtuvieron los sig
         \begin{subfigure}[b]{0.31\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imagenes/tp3_a1k.png}
-        \caption{Ripple y $V_{medio}$ medido a $f = 1kH$.}
+        \caption{Ripple y $V_{medio}$ medido a $f = 1kHz$.}
          \label{fig:a_1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.31\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imagenes/tp3_a25k.png}
-        \caption{Ripple y $V_{medio}$ medido a $f = 25kH$. En ltspice $V_{medio} = 6,05V$}
+        \caption{Ripple y $V_{medio}$ medido a $f = 25kHz$. En ltspice $V_{medio} = 6,05V$}
         \label{fig:a_25}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.31\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imagenes/tp3_a75k.png}
-        \caption{Ripple y $V_{medio}$ medido a $f = 75kH$. En ltspice $V_{medio} = 6,69V$}
+        \caption{Ripple y $V_{medio}$ medido a $f = 75kHz$. En ltspice $V_{medio} = 6,69V$}
          \label{fig:a_75}
     \end{subfigure}
 
@@ -32,7 +32,7 @@ Se midieron las salidas de una entrada cuadrada $D = 0,5$. Se obtuvieron los sig
     \begin{subfigure}[b]{0.31\textwidth}
         \centering
         \includegraphics[width=\textwidth]{imagenes/tp3_a100k.png}
-        \caption{Ripple y $V_{medio}$ medido a $f = 100kH$. En ltspice $V_{medio} = 7,05V$}
+        \caption{Ripple y $V_{medio}$ medido a $f = 100kHz$. En ltspice $V_{medio} = 7,05V$}
          \label{fig:a_100}
     \end{subfigure}
         \begin{subfigure}[b]{0.31\textwidth}
@@ -52,7 +52,7 @@ Se midieron las salidas de una entrada cuadrada $D = 0,5$. Se obtuvieron los sig
 \end{figure}
 
 Se midieron los valores de 25k a 100k. Observando las figuras \ref{fig:a_25}, \ref{fig:a_75} y \ref{fig:a_100}, se observó que la salida del sistema, mantuvo el nivel de ripple estable, mientras que la tensión media de salida del mismo iba en aumento. No obstante, al medir una frecuencia de 1kH, figura \ref{fig:a_1}, se observó una diferencia en el nivel de ripple de salida. Esto se explica ya que al reducir el tiempo de carga del capacitor, este posee menos energía para mantener la tensión, aumentando el ripple. \par
-Otra diferencia observada, fue que a una $f = 1kH$ no se cumplió la tendencia del valor medio de tensión de salida. En este caso se observó una salida mucho mayor, a las vistas a altas frecuencias. Esto se puede explicar debido a que al tener mayor tiempo de carga, el núcleo se puede saturar bridando mayores corrientes de salida.\par
+Otra diferencia observada, fue que a una $f = 1kHz$ no se cumplió la tendencia del valor medio de tensión de salida. En este caso se observó una salida mucho mayor, a las vistas a altas frecuencias. Esto se puede explicar debido a que al tener mayor tiempo de carga, el núcleo se puede saturar bridando mayores corrientes de salida.\par
 
 Finalmente contrastando estos resultados con los simulados en el LTspice se observó una diferencia en la tensión media de la salida. Se observó que la salida en LTsipce es mayor a la vista en el osciloscopio. Esto se atribuye a que la simulación no considera algunos efectos no menores como las perdidas en el núcleo del inductor.
 
