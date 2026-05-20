@@ -3,9 +3,9 @@
 \contentsline {section}{\numberline {2.}Cálculo de RLC serie}{3}{section.2}%
 \contentsline {section}{\numberline {3.}Caracterización de componentes pasivos}{3}{section.3}%
 \contentsline {section}{\numberline {4.}Pasabajos}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Respuesta al Escalón}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Salida con Barrido de Frecuencias}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Cálculo de la Función Transferencia}{6}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.1}Respuesta al escalón}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Salida con barrido de frecuencias}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Cálculo de la función transferencia}{6}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Diagrama de Bode Teórico-Práctico}{8}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Respuesta al escalón para distintos valores de R}{8}{subsection.4.5}%
 \contentsline {subsubsection}{\numberline {$a)$}R tal que $M_p=0,07v_i$}{9}{subsubsection.4.5.1}%
@@ -14,10 +14,10 @@
 \contentsline {subsubsection}{\numberline {$d)$}R tal que $M_p=0,07v_i$}{11}{subsubsection.4.5.4}%
 \contentsline {subsubsection}{\numberline {$e)$}R = 0$\Omega $ }{12}{subsubsection.4.5.5}%
 \contentsline {section}{\numberline {5.}Pasaaltos, Pasabandas y Rechazabandas}{12}{section.5}%
-\contentsline {section}{\numberline {6.}Medición del Factor de Calidad}{15}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Cálculo Analítico}{15}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Métodos Empíricos y Selección del de Menor Error}{15}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Resultados Experimentales}{16}{subsection.6.3}%
+\contentsline {section}{\numberline {6.}Medición del factor de calidad}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Cálculo analítico}{15}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Métodos empíricos y selección del de menor error}{15}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Resultados experimentales}{16}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Comparación y Análisis}{18}{subsection.6.4}%
 \contentsline {section}{\numberline {7.}Anexo}{18}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Deducciones matemáticas}{18}{subsection.7.1}%

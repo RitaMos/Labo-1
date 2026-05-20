@@ -1,6 +1,6 @@
-\section{Medición del Factor de Calidad}
+\section{Medición del factor de calidad}
 
-\subsection{Cálculo Analítico}
+\subsection{Cálculo analítico}
 
 El factor de calidad $Q$ para un circuito RLC serie se define como:
 
@@ -25,7 +25,7 @@ Utilizando los valores medidos experimentalmente
     \label{eq:Q_teo}
 \end{equation}
 
-\subsection{Métodos Empíricos y Selección del de Menor Error}
+\subsection{Métodos empíricos y selección del de menor error}
 
 Se analizaron dos métodos para medir $Q$ experimentalmente con el osciloscopio 
 y el generador de señales.
@@ -60,8 +60,7 @@ tiene módulo igual a $Q$:
 Este método requiere únicamente medir las amplitudes de $V_{in}$ y $V_{out}$ 
 simultáneamente en $f_0$ con los dos canales del osciloscopio. Al tratarse de 
 un cociente de amplitudes en un único punto de frecuencia, el error queda 
-limitado a la resolución vertical del instrumento, sin depender de un barrido 
-fino de frecuencias. Por lo anterior, el Método B es el que introduce 
+limitado a la resolución vertical del instrumento. Por ende, el Método B es el que introduce 
 menor error y fue adoptado como método principal.
 
 Para localizar $f_0$ con mayor precisión previo a aplicar el Método B, se 
@@ -71,7 +70,7 @@ circuito con una señal sinusoidal, se varió la frecuencia hasta observar en el
 osciloscopio que ambas sinusoides presentaban un desfasaje de aproximadamente 
 $90°$, como se muestra en la figura~\ref{fig:desfasaje_f0}.
 
-\subsection{Resultados Experimentales}
+\subsection{Resultados experimentales}
 
 \subsubsection*{Determinación de \texorpdfstring{$f_0$}{f0}}
 
@@ -140,10 +139,9 @@ Aplicando la ecuación~\ref{eq:Q_metodo_B}:
     \label{eq:QB}
 \end{equation}
 
-Nótese que la figura~\ref{fig:desfasaje_f0} sirve simultáneamente para 
-identificar $f_0$ por el desfasaje y para extraer las amplitudes del Método B, 
-lo que ilustra la ventaja práctica de este método al concentrar ambas 
-mediciones en una única captura.
+Se denota que la figura~\ref{fig:desfasaje_f0} sirve simultáneamente para 
+identificar $f_0$ por el desfasaje y para extraer las amplitudes del Método B. 
+Esto justifica la ventaja del mismo método.
 
 \subsubsection*{Frecuencia de corte}
 
@@ -178,7 +176,6 @@ En la tabla~\ref{tab:Q_comparacion} se resumen todos los valores obtenidos.
 
 \begin{table}[H]
     \centering
-    \caption{Comparación de valores del factor de calidad $Q$.}
     \label{tab:Q_comparacion}
     \begin{tabular}{lc}
         \toprule
@@ -190,6 +187,7 @@ En la tabla~\ref{tab:Q_comparacion} se resumen todos los valores obtenidos.
         Método B (razón de amplitudes)      & $0{,}991$ \\
         \bottomrule
     \end{tabular}
+    \caption{Comparación de valores del factor de calidad $Q$.}
 \end{table}
 
 
@@ -202,6 +200,6 @@ $Q$ real respecto del nominal.
 El método B es el más práctico y repetible debido a que introduce menor error. En particular, en este
 escenario solo basta con hacer el cociente de las amplitudes en el entorno cercano a la fracuencia natural
 del sistema. Por otra parte, el método A induce mayor error debido a que es más sensible respecto a la 
-variable del $f?0$. Esto se denota en la expresión~\ref{eq:f_pico}, la cual involucra una diferencia de
+variable del $f_0$. Esto se denota en la expresión~\ref{eq:f_pico}, la cual involucra una diferencia de
 cuadrados de frecuencias relativamente cercanas.
 
