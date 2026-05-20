@@ -1,3 +1,19 @@
 \subsection{Ripple de salida de la fuente}
-\subsubsection{Con capacitor}
-\subsubsection{Sin capacitor}
+
+Al ser electrolítico, es notorio en la figura \ref{d_sincap} que el carácter capacitivo de $C_e$ se ve reducido a altas frecuencias (como lo es para el armónico alto responsable de la pendiente brusca). En cambio, la capacitancia del conjunto $C_m$, $C_e$ no se ve afectada de esta manera, puesto que las frecuencias de corte típicas de los capacitores cerámicos son más elevadas, haciendo que se comporten capacitores ideales a frecuencias más altas.
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/tp3_d_concap.png}
+        \caption{Ripple del circuito con ambos capacitores.}
+        \label{d_concap}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/tp3_d_sincap.png}
+        \caption{Ripple del circuito sin el capacitor $C_m$.}
+        \label{d_sincap}
+    \end{minipage}
+\end{figure}

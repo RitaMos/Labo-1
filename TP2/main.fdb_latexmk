@@ -1,5 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1779212581.47982 "c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo1/Labo-1/TP2/main.tex" "main.pdf" "main" 1779212589.08292 0
+["pdflatex"] 1779240763.70197 "c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo1/Labo-1/TP2/main.tex" "main.pdf" "main" 1779240768.75888 0
+  "4e1.png" 1779226357 80373 b23524bfeb2062d3b14e18890ef51535 ""
+  "4e2.png" 1779227614 479973 2592764ab7a7c11246cbba16a7861af1 ""
   "Anexo.tex" 1779212373 1922 527023ceb3bd79d9fb796832a6d83d89 ""
   "C:/Users/ritam/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779156771 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/ritam/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1755438494 18748 2822502a5d65f882009fdd7f32795fd1 ""
@@ -253,10 +255,10 @@
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Ejercicio3.tex" 1779212463 8260 93a547abdee3331b380a36e28dc7d167 ""
-  "Ejercicio4.tex" 1779212571 19660 301f2c87f775f193a1b0e57a2998f5cc ""
-  "Ejercicio5.tex" 1779212373 11205 3fef399eb83c7d94a40677cb930b47c9 ""
-  "Ejercicio6.tex" 1779212373 8599 91fed823a2e22f96757f0666083c77f1 ""
+  "Ejercicio3.tex" 1779240691 8262 d9c191226715719d13ded4c99a7517fa ""
+  "Ejercicio4.tex" 1779240762 20051 59ce6ded724a7928450237da839ee531 ""
+  "Ejercicio5.tex" 1779229793 11285 1266678763e77e1571ba64006ccd0cef ""
+  "Ejercicio6.tex" 1779229899 8599 7453e9d96ceccd842e52d18190873294 ""
   "Librerias.tex" 1779212373 2155 449e7961fbf4a2e766b6571769245ab0 ""
   "Logo_ITBA.png" 1779212373 34082 18565f2ade26fe38705e2ad93c029b27 ""
   "c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo1/Labo-1/TP2/main.tex" 1779212373 3305 cecd5ed8af83e6ee789265db1b77e97d ""
@@ -273,10 +275,10 @@
   "imagenes/4b_04.png" 1779212373 10273 45db1e18dc8903bb80667f7537d055ca ""
   "imagenes/4b_05.png" 1779212373 11647 50f2e1c24a1a1df1dc24d25e9a9138e9 ""
   "imagenes/4d_opam.png" 1779212373 7445 bbf0c7837f31aa02acc8d5616793a752 ""
-  "main.aux" 1779212588 16387 4063f73b32882d4f1bfad67f916a82ee "pdflatex"
-  "main.out" 1779212588 5030 3f0b973b60f1865ead209078da649688 "pdflatex"
+  "main.aux" 1779240768 16764 6bee8cdf4852ce98536ffa874ebecda0 "pdflatex"
+  "main.out" 1779240768 4812 261b5e31eae71713ba7bb100d80fc3d7 "pdflatex"
   "main.tex" 1779212373 3305 cecd5ed8af83e6ee789265db1b77e97d ""
-  "main.toc" 1779212588 2544 14b62df65158a8f06d912cc34f483b4d "pdflatex"
+  "main.toc" 1779240768 2446 d483383434c7a73f48cb40edb619f5f7 "pdflatex"
   "q_wo_6.png" 1779212373 53994 97d3bb218d9664f2187313d32c24cc92 ""
   "resonan_6.png" 1779212373 50874 f8632817687b3df189abf68f653f7834 ""
   (generated)

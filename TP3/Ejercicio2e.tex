@@ -1,0 +1,31 @@
+\subsection{Medición de $L$}
+
+Se colocó una resistencia $R_s = 470\,\text{m}\Omega$ en serie con el inductor. La corriente
+se obtuvo como $i_L = v_{R_s}/R_s$ y la tensión sobre la bobina con el canal diferencial
+del osciloscopio ($\text{MATH} = \text{Ch4} - \text{Ch3}$).
+
+En la fase ON la tensión es aproximadamente constante e igual a $V_d$, por lo que
+\begin{equation}
+    L = \frac{\overline{v_L}|_{\text{ON}}}{di_L/dt},
+\end{equation}
+donde $di_L/dt$ se obtuvo ajustando una recta a $i_L(t)$ en cada flanco ascendente
+($T_{\text{on}} \approx 100{,}5\,\mu\text{s}$, $f = 5\,\text{kHz}$, $D = 0{,}5$).
+
+\begin{table}[h!]
+\centering
+\caption{Parámetros medidos para la estimación de $L$.}
+\label{tab:inductor_medicion}
+\begin{tabular}{lcc}
+\hline
+\textbf{Magnitud} & \textbf{Símbolo} & \textbf{Valor} \\
+\hline
+Tensión media (fase ON)            & $\overline{v_L}|_{\text{ON}}$ & $3{,}04\,\text{V}$                  \\
+Pendiente de corriente             & $di_L/dt$                     & $2{,}96 \times 10^3\,\text{A/s}$   \\
+Inductancia medida                 & $L_{\text{med}}$              & $1{,}03\,\text{mH}$                 \\
+Inductancia nominal                & $L_{\text{nom}}$              & $1{,}02\,\text{mH}$                 \\
+Error relativo                     & $\epsilon$                    & $\approx 1\%$                       \\
+\hline
+\end{tabular}
+\end{table}
+
+El valor obtenido concuerda con el nominal con un error de $\approx 1\%$.
