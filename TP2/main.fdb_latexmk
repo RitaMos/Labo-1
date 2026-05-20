@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1779241740.67506 "d:/itba/3Ero/Labo1/informes/Labo-1/TP2/main.tex" "main.pdf" "main" 1779241745.37281 0
+["pdflatex"] 1779243547.91577 "d:/itba/3Ero/Labo1/informes/Labo-1/TP2/main.tex" "main.pdf" "main" 1779243552.50372 0
   "4e1.png" 1779240913 80373 b23524bfeb2062d3b14e18890ef51535 ""
   "4e2.png" 1779240913 479973 2592764ab7a7c11246cbba16a7861af1 ""
   "Anexo.tex" 1778946874 1922 527023ceb3bd79d9fb796832a6d83d89 ""
@@ -258,10 +258,10 @@
   "Ejercicio3.tex" 1779241171 8262 d9c191226715719d13ded4c99a7517fa ""
   "Ejercicio4.tex" 1779241735 20051 b8db8a6537013466e2bccea9164221ea ""
   "Ejercicio5.tex" 1779240913 11285 1266678763e77e1571ba64006ccd0cef ""
-  "Ejercicio6.tex" 1779241658 8481 dc8ce17472d25199c6a7cc57ed33e62c ""
+  "Ejercicio6.tex" 1779243542 8480 9f17582cc9754317c09ac4b00224472e ""
   "Librerias.tex" 1778946874 2155 449e7961fbf4a2e766b6571769245ab0 ""
   "Logo_ITBA.png" 1778946874 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "d:/itba/3Ero/Labo1/informes/Labo-1/TP2/main.tex" 1778946874 3305 cecd5ed8af83e6ee789265db1b77e97d ""
+  "d:/itba/3Ero/Labo1/informes/Labo-1/TP2/main.tex" 1779243121 3712 6c0445fc27a04c6f8c52e6ed0308ac93 ""
   "fcorte_6.png" 1778946874 56023 fe2502094820b5c5bdc596bcc1017018 ""
   "graficos/Graficosbode.pdf" 1778946874 51605 8eed106bd3ceac99ea9adef1781552e3 ""
   "graficos/Graficossenal.pdf" 1779224058 207855 500d3fc6ace2ae7c547ed7adf6076654 ""
@@ -275,10 +275,10 @@
   "imagenes/4b_04.png" 1778946874 10273 45db1e18dc8903bb80667f7537d055ca ""
   "imagenes/4b_05.png" 1778946874 11647 50f2e1c24a1a1df1dc24d25e9a9138e9 ""
   "imagenes/4d_opam.png" 1778946874 7445 bbf0c7837f31aa02acc8d5616793a752 ""
-  "main.aux" 1779241745 16791 84cd5a8fe65abc6d7ee820c3b59913ac "pdflatex"
-  "main.out" 1779241745 4812 15fec975178c5f845df3ada52843a19b "pdflatex"
-  "main.tex" 1778946874 3305 cecd5ed8af83e6ee789265db1b77e97d ""
-  "main.toc" 1779241745 2446 81c5d20ba2e8f6bcdec360db2e7955ce "pdflatex"
+  "main.aux" 1779243552 16880 5c9015bc9e5e7b5dbb6c7c3c214fbd7c "pdflatex"
+  "main.out" 1779243552 4967 39dce34a0a8f936e9254afc04fbcd1cc "pdflatex"
+  "main.tex" 1779243121 3712 6c0445fc27a04c6f8c52e6ed0308ac93 ""
+  "main.toc" 1779243552 2523 1af32a54d2bf91fae1328f9212535b62 "pdflatex"
   "q_wo_6.png" 1778946874 53994 97d3bb218d9664f2187313d32c24cc92 ""
   "resonan_6.png" 1778946874 50874 f8632817687b3df189abf68f653f7834 ""
   (generated)

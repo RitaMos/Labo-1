@@ -46,22 +46,29 @@
 \section*{Objetivos} 
 El objetivo de este trabajo práctico es profundizar el entendimiento de circuitos de segundo orden, estudiando su naturaleza de filtro a partir de modificaciones hechas sobre un RLC convencional.
 Además, se analiza el desempeño del inductor y el capacitor en general.
-\section*{Instrumentos y equipo}
+\section{Instrumentos y equipo}
+
+\begin{minipage}[t]{0.48\textwidth}
     \begin{itemize}
+        \setlength{\itemsep}{2pt} % Ajusta el espacio vertical si querés compactarlo más
         \item Protoboard de 830 puntos
         \item Capacitor de 8,2 nF
         \item Resistencia de 68 $\Omega$
         \item Inductor de L 38,76uH
         \item Osciloscopio digital Keysight DSOX1202G
+    \end{itemize}
+\end{minipage}% <-- Este porcentaje es clave para evitar que la siguiente minipage salte de línea
+\hfill % Rellena el espacio horizontal entre las dos columnas
+\begin{minipage}[t]{0.48\textwidth}
+    \begin{itemize}
+        \setlength{\itemsep}{2pt}
         \item Generador de señales Picotest G510
         \item Generador de señales Keysight EDU33212A
         \item Medidor RLC UNI-T UT812
         \item Digilent 
     \end{itemize}
+\end{minipage}
     
-
-
-\newpage
 \section{Inductor}
     
     En la materia TME se calculó un transformador que cumplía ciertos criterios. Para este TP, solo se bobinó el primario. Para ello, este contó con los siguientes parametros:
