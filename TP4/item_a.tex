@@ -15,30 +15,31 @@ amperímetro.
     \mathrm{CTR} = \frac{I_C}{I_F}.
 \end{equation}
  
-% ---- Circuito con circuitikz ----
+% ---- circuito d:
 \begin{figure}[H]
     \centering
-    \begin{circuitikz}[american, scale=0.8]
+    \begin{circuitikz}[american, scale=0.6] %No bajar scale de 0.6, ya en 0.5 se deforma y queda mal.
         
-        % --- Lado entrada (LED) ---
+        % La entrada :0
         \draw (0,4) to[V, l=$V_{cc}$] (0,0)
-                   (0,4) to[R, l=$R_s{=}\SI{50}{\ohm}$] (2.5,4)
-                    to[R, l=$R{=}\SI{28}{\ohm}$] (5,4)
+                   (0,4) to[R, l=$R_t{=}\SI{78}{\ohm}$] (5,4)
                     to[ammeter, l=$A_{I_F}$] (5,2)
-                    to[leD, l=LED] (5,0) -- (0,0);
+                    to[leD, l=LED] (5,0) -- (0,0)
+                    (0,0) node [ground]{};
 
-        % --- Lado salida (fototransistor) ---
-        \draw (10.5,2) node[npn, anchor=C](Q){};
-        \draw (Q.E) -- (10.5,0) node[ground]{};
+        % La exit space -.-
+        \draw (13.5,2) node[npn, anchor=C](Q){};
+        \draw (Q.E) -- (13.5,0) node[ground]{};
         \draw (Q.B) node[left, xshift=-0.2cm]{Base (nc)}; % Agregado un pequeño shift para asegurar distancia
 
-        % Vceo y Rc en serie hacia el colector 
-        \draw (10.5,4) node[above]{$+V_{ceo}{=}\SI{20}{V}$}
-                    to[R, l_=$R_C{=}\SI{980}{\ohm}$] (Q.C);
+        % Vceo y Rc en serie hacia el colectornigga
+        \draw (13.5,5) node[above]{$+V_{ceo}{=}\SI{20}{V}$}
+        (13.5,5) -- (13.5,4)
+            to[R, l_=$R_C{=}\SI{980}{\ohm}$] (Q.C);
 
-        % Voltímetro en paralelo a Rc 
-        \draw (10.5,4) -- (12,4)
-              to[voltmeter, l=$V_{R_C}$] (12,2) -- (10.5,2);
+        % Voltímetro en paralelo a Rc-chan
+        \draw (13.5,4) -- (15,4)
+              to[voltmeter, l=$V_{R_C}$] (15,2) -- (13.5,2);
 
     \end{circuitikz}
     \caption{Circuito para medición de CTR (sin $R_{BE}$)}

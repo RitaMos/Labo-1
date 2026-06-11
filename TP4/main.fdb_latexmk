@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1781182049.01667 "d:/itba/3Ero/Labo1/informes/Labo-1/TP4/main.tex" "main.pdf" "main" 1781182051.55513 0
+["pdflatex"] 1781184253.35272 "d:/itba/3Ero/Labo1/informes/Labo-1/TP4/main.tex" "main.pdf" "main" 1781184256.24852 0
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779224251 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1779224254 18748 0946f587e2ec84a2496f13dc9cc1fea5 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx2074.pk" 1779224255 28420 5c5cbdb000a08711c11a5e209d92c7b1 ""
@@ -256,16 +256,19 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "Librerias.tex" 1781130788 2153 59eb1be1b05ffe7815e422bee1e9695a ""
-  "apendice.tex" 1781098625 13 f20f4cadf6802df0055139455c4dd64c ""
+  "apendice.tex" 1781183369 1042 200917449459fdcf6e391bd5a7f52a3b ""
   "d:/itba/3Ero/Labo1/informes/Labo-1/TP4/main.tex" 1781140806 1929 e929934d4a86e504740c76c552788661 ""
   "img/Logo_ITBA.png" 1779224058 34082 18565f2ade26fe38705e2ad93c029b27 ""
   "img/Trise_R985.png" 1781140699 24256 4cdafd18949dfedc9850e025df50e5b0 ""
+  "img/data_1.png" 1781183181 96808 2e24cfdcbabad8699f963efa0444d6c7 ""
+  "img/data_2.png" 1781183143 113344 6c84832ce2f01572bd078959a21eb446 ""
+  "img/data_3.png" 1781183118 75851 20a70741b59303d316d0c1e6067188c3 ""
   "img/trise_conRBE.png" 1781140944 22289 8b05d61aff094e5b5fe5ea661a3476c3 ""
   "img/trise_sinRBE.png" 1781141068 21968 2c16ae063550ff8268e068ed8bce5028 ""
-  "item_a.tex" 1781180679 8309 44a7170500f2016234de458f1f892f08 ""
-  "item_b.tex" 1781182048 4186 ad7094c1c0077d491658efc27f39439d ""
-  "main.aux" 1781182051 3218 3c07c6660b8ca32deb5d4c5b5f0bca0f "pdflatex"
-  "main.out" 1781182051 1914 f5a85e06b6e95141bd4b8e42df38f73a "pdflatex"
+  "item_a.tex" 1781184252 8333 4894b8cb26a63a9594bbb5fa6316b966 ""
+  "item_b.tex" 1781183586 4338 b5c69e8287742d2db5de3f52b41503e5 ""
+  "main.aux" 1781184255 4072 470452f65d0f93e0a84cecceed9243e7 "pdflatex"
+  "main.out" 1781184255 1914 f5a85e06b6e95141bd4b8e42df38f73a "pdflatex"
   "main.tex" 1781140806 1929 e929934d4a86e504740c76c552788661 ""
   (generated)
   "main.aux"

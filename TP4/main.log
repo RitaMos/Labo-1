@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.18)  11 JUN 2026 09:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.18)  11 JUN 2026 10:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -865,12 +865,12 @@ Package pdftex.def Info: img/Logo_ITBA.png  used on input line 14.
 [1
 
 {C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/Logo_ITBA.png>] (item_a.tex
-Package pgfplots info on input line 114: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+Package pgfplots info on input line 115: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.170 
+l.171 
        [1]) (item_b.tex
 <img/Trise_R985.png, id=62, 803.0pt x 504.88625pt>
 File: img/Trise_R985.png Graphic file (type png)
@@ -905,7 +905,24 @@ File: img/trise_conRBE.png Graphic file (type png)
 <use img/trise_conRBE.png>
 Package pdftex.def Info: img/trise_conRBE.png  used on input line 77.
 (pdftex.def)             Requested size: 240.23016pt x 151.04332pt.
-[3 <./img/Trise_R985.png (PNG copy)>]) [4 <./img/trise_sinRBE.png (PNG copy)> <./img/trise_conRBE.png (PNG copy)>] (apendice.tex) (main.aux
+[3 <./img/Trise_R985.png (PNG copy)>]) [4 <./img/trise_sinRBE.png (PNG copy)> <./img/trise_conRBE.png (PNG copy)>] (apendice.tex
+<img/data_1.png, id=90, 502.87875pt x 572.1375pt>
+File: img/data_1.png Graphic file (type png)
+<use img/data_1.png>
+Package pdftex.def Info: img/data_1.png  used on input line 13.
+(pdftex.def)             Requested size: 375.36299pt x 427.05922pt.
+<img/data_2.png, id=91, 542.77782pt x 638.385pt>
+File: img/data_2.png Graphic file (type png)
+<use img/data_2.png>
+Package pdftex.def Info: img/data_2.png  used on input line 20.
+(pdftex.def)             Requested size: 375.36299pt x 441.49918pt.
+ [5 <./img/data_1.png>]
+<img/data_3.png, id=98, 512.66531pt x 622.57594pt>
+File: img/data_3.png Graphic file (type png)
+<use img/data_3.png>
+Package pdftex.def Info: img/data_3.png  used on input line 27.
+(pdftex.def)             Requested size: 375.36299pt x 455.83511pt.
+) [6 <./img/data_2.png>] [7 <./img/data_3.png>] (main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -917,17 +934,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F5A85E06B6E95141BD4B8E42DF38F73A;1914.
  ) 
 Here is how much of TeX's memory you used:
- 58676 strings out of 467870
- 1534237 string characters out of 5418355
- 2306245 words of memory out of 5000000
- 86907 multiletter control sequences out of 15000+600000
+ 58674 strings out of 467870
+ 1533748 string characters out of 5418355
+ 2305504 words of memory out of 5000000
+ 86899 multiletter control sequences out of 15000+600000
  638636 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,21n,121p,786b,2367s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1440.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx2074.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (5 pages, 347181 bytes).
+Output written on main.pdf (8 pages, 586510 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 213 PDF objects out of 1000 (max. 8388607)
+ 24 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -14,28 +14,28 @@ $I_F=\SI{10}{mA}$.
     % Minipage para la Imagen (oh shit)
     \begin{minipage}[c]{0.48\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{img/Trise_R985.png}
-        \caption{La señal amarilla es la salida para $R_L=\SI{985}{\ohm}$ y la verde la entrada cuadrada.}
-        \label{fig:osc_985}
+            \includegraphics[width=\linewidth]{img/Trise_R985.png}
+            \caption{La señal amarilla es la salida para $R_L=\SI{985}{\ohm}$ y la verde la entrada cuadrada.}
+            \label{fig:osc_985}
     \end{minipage}
     \hfill %   El espacio es una nigga-variable asi se ajusta a distintos tamaños d:
     % Minipage para la Tablita-chan (Video kill the radio star- in my mind and in my heart)
     \begin{minipage}[c]{0.48\textwidth}
         \centering
         \label{tab:retardos} % El label en su rincón otaku secreto
-        \begin{tabular}{
-            S[table-format=6.0]
-            S[table-format=3.1]
-            S[table-format=4.1]
-        }
-            \toprule
-            {$R_L$ (\si{\ohm})} & {$t_{PHL}$ (\si{\micro s})} & {$t_{PLH}$ (\si{\micro s})} \\
-            \midrule
-            985    & 39.9  & 2.2 \\
-            9700   & 168   & 1.56 \\
-            98000  & 1668  & 1.52 \\
-            \bottomrule
-        \end{tabular}
+            \begin{tabular}{
+                S[table-format=6.0]
+                S[table-format=3.1]
+                S[table-format=4.1]
+            }
+                \toprule
+                {$R_L$ (\si{\ohm})} & {$t_{PHL}$ (\si{\micro s})} & {$t_{PLH}$ (\si{\micro s})} \\
+                \midrule
+                985    & 39.9  & 2.2 \\
+                9700   & 168   & 1.56 \\
+                98000  & 1668  & 1.52 \\
+                \bottomrule
+            \end{tabular}
         \captionof{table}{Retardos de propagación.} % El caption que se cree independiente pero vive con la figura (sad)
     \end{minipage}
 \end{figure}
@@ -61,27 +61,26 @@ Se conectó una resistencia $R_{BE}$ entre la base y el emisor del fototransisto
 Esta resistencia provee un camino de descarga continuo para los portadores
 acumulados en la base, reduciendo el tiempo de saturación y por lo tanto $t_{PLH}$.
 El efecto sobre el CTR es equivalente a reducir la ganancia efectiva del transistor:
-\begin{equation}
-    I_{C,\text{ef}} = \beta_{\text{ef}}\, I_{foto}, \qquad
-    \beta_{\text{ef}} < \beta \text{ (sin } R_{BE}).
-\end{equation}
+    \begin{equation}
+        I_{C,\text{ef}} = \beta_{\text{ef}}\, I_{foto}, \qquad
+        \beta_{\text{ef}} < \beta \text{ (sin } R_{BE}).
+    \end{equation}
  
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\linewidth}
-        \includegraphics[width=\linewidth]{img/trise_sinRBE.png}
-        \caption{Sin $R_{BE}$.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\linewidth}
-        \includegraphics[width=\linewidth]{img/trise_conRBE.png}
-        \caption{Con $R_{BE}$.}
-    \end{subfigure}
-    \caption{Comparación de $t_{PLH}$ con y sin $R_{BE}$ (misma $R_L$).}
-    \label{fig:rbe_comp}
-\end{figure}
- 
-\noindent Al agregar $R_{BE}$ el tiempo de subida $t_{PLH}$ disminuye apreciablemente
-porque la carga almacenada en la base se evacua más rápido.  El precio es una caída del
-CTR (menor corriente de colector para igual $I_F$), lo cual equivale a operar con una
+    \begin{figure}[H]
+        \centering
+            \begin{subfigure}[b]{0.48\linewidth}
+                \includegraphics[width=\linewidth]{img/trise_sinRBE.png}
+                \caption{Sin $R_{BE}$.}
+            \end{subfigure}
+        \hfill
+            \begin{subfigure}[b]{0.48\linewidth}
+                \includegraphics[width=\linewidth]{img/trise_conRBE.png}
+                \caption{Con $R_{BE}$.}
+            \end{subfigure}
+        \caption{Comparación de $t_{PLH}$ con y sin $R_{BE}$ (misma $R_L$).}
+        \label{fig:rbe_comp}
+    \end{figure}
+    
+\noindent Al agregar $R_{BE}$ el tiempo de subida $t_{PLH}$ disminuye porque la carga almacenada en la base se descarga más rápido 
+. A cambio, disminuye el CTR (menor corriente de colector para igual $I_F$), lo cual equivale a operar con una
 ganancia menor, como refleja la curva normalizada del datasheet.
