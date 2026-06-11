@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1781180679.70862 "d:/itba/3Ero/Labo1/informes/Labo-1/TP4/main.tex" "main.pdf" "main" 1781180682.4103 0
+["pdflatex"] 1781182049.01667 "d:/itba/3Ero/Labo1/informes/Labo-1/TP4/main.tex" "main.pdf" "main" 1781182051.55513 0
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1779224251 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1779224254 18748 0946f587e2ec84a2496f13dc9cc1fea5 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx2074.pk" 1779224255 28420 5c5cbdb000a08711c11a5e209d92c7b1 ""
@@ -263,9 +263,9 @@
   "img/trise_conRBE.png" 1781140944 22289 8b05d61aff094e5b5fe5ea661a3476c3 ""
   "img/trise_sinRBE.png" 1781141068 21968 2c16ae063550ff8268e068ed8bce5028 ""
   "item_a.tex" 1781180679 8309 44a7170500f2016234de458f1f892f08 ""
-  "item_b.tex" 1781180679 3959 bb53ec08d82a5c1e8aa7f42c9e4c8bd2 ""
-  "main.aux" 1781180682 3170 713cad42189146b1f68b8698c9076668 "pdflatex"
-  "main.out" 1781180682 1914 f5a85e06b6e95141bd4b8e42df38f73a "pdflatex"
+  "item_b.tex" 1781182048 4186 ad7094c1c0077d491658efc27f39439d ""
+  "main.aux" 1781182051 3218 3c07c6660b8ca32deb5d4c5b5f0bca0f "pdflatex"
+  "main.out" 1781182051 1914 f5a85e06b6e95141bd4b8e42df38f73a "pdflatex"
   "main.tex" 1781140806 1929 e929934d4a86e504740c76c552788661 ""
   (generated)
   "main.aux"

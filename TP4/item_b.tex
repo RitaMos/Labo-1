@@ -8,32 +8,37 @@ de \textit{pull-up}: $R_L = \SI{985}{\ohm}$, $\SI{9.7}{k\ohm}$ y $\SI{98}{k\ohm}
 La señal de entrada fue una onda cuadrada de \SI{10}{kHz}, 50\% DC, con
 $I_F=\SI{10}{mA}$.
  
-% ---- Imagen representativa (985 ohms) ----
+% ---- Imagen-chan y tablita UwU
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{img/Trise_R985.png}
-    \caption{La señal amarrilla es la salida para $R_L=\SI{985}{\ohm}$ y la verde la entrada cuadrada.}
-    \label{fig:osc_985}
+    % Minipage para la Imagen (oh shit)
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/Trise_R985.png}
+        \caption{La señal amarilla es la salida para $R_L=\SI{985}{\ohm}$ y la verde la entrada cuadrada.}
+        \label{fig:osc_985}
+    \end{minipage}
+    \hfill %   El espacio es una nigga-variable asi se ajusta a distintos tamaños d:
+    % Minipage para la Tablita-chan (Video kill the radio star- in my mind and in my heart)
+    \begin{minipage}[c]{0.48\textwidth}
+        \centering
+        \label{tab:retardos} % El label en su rincón otaku secreto
+        \begin{tabular}{
+            S[table-format=6.0]
+            S[table-format=3.1]
+            S[table-format=4.1]
+        }
+            \toprule
+            {$R_L$ (\si{\ohm})} & {$t_{PHL}$ (\si{\micro s})} & {$t_{PLH}$ (\si{\micro s})} \\
+            \midrule
+            985    & 39.9  & 2.2 \\
+            9700   & 168   & 1.56 \\
+            98000  & 1668  & 1.52 \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{Retardos de propagación.} % El caption que se cree independiente pero vive con la figura (sad)
+    \end{minipage}
 \end{figure}
- 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{
-        S[table-format=6.0]
-        S[table-format=3.1]
-        S[table-format=4.1]
-    }
-        \toprule
-        {$R_L$ (\si{\ohm})} & {$t_{PHL}$ (\si{\micro s})} & {$t_{PLH}$ (\si{\micro s})} \\
-        \midrule
-        985    &39.9 &2.2 \\
-        9700   &168 &1.56 \\
-        98000  &1668 &1.52 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Retardos de propagación.}
-    \label{tab:retardos}
-\end{table}
  
 \noindent\textbf{Análisis:}
 El retardo $t_{PLH}$ (salida subiendo de LOW a HIGH) aumenta con $R_L$ porque la
@@ -46,14 +51,9 @@ logarítmica con $R_L$.
  
 \subsection{Efecto de conectar la sonda en la base del optoacoplador}
  
-Al conectar un canal del osciloscopio al terminal de base (pin~6) del 4N25, se introduce
-la capacidad de entrada de la punta ($C_{sonda}\approx\SI{10}{pF}$ a \SI{1}{M\ohm}).  Esta
-capacidad se suma a la capacitancia base-emisor del fototransistor interno, aumentando la
-constante de tiempo de apagado y, en consecuencia, incrementando $t_{PLH}$.
-Adicionalmente, la punta cierra un camino de descarga para la carga almacenada en la
-base, lo que puede \emph{reducir} $t_{PHL}$ si provee una ruta de extracción de
-portadores.  En la práctica se observa que $t_{PLH}$ aumenta notoriamente al colocar la
-punta, mientras que $t_{PHL}$ cambia en menor medida.
+Al conectar una punta del osciloscopio a la base del 4N25, la misma aumenta la capacitancia base-emisor incrementando el tiempo de apagado del 
+fototransistor $t_{PLH}$. A su vez, la sonda puede facilitar la descarga de la carga almacenada en la base, 
+provocando una pequeña disminución de $t_{PHL}$. Experimentalmente, el cambio más notable se observa en $t_{PLH}$.
  
 \subsection{Efecto de la resistencia $R_{BE}$ — diferente ganancia}
  
