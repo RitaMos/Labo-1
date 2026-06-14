@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\input{Librerias.tex}
+
+
+%%%%%%%%%%%%%%%%%%% ARCHIVO %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%CARATULA%%%
+\begin{titlepage} %creo portada
+
+        \begin{flushleft}
+            \centering
+            \includegraphics[width=0.3\textwidth]{Logo_ITBA.png}
+        \end{flushleft}
+
+        \centering
+            
+        {\scshape\LARGE \Facultad \par} %\par sirve para indicar un final de parrafo
+        \vspace{1cm}                    %esto hace un espacio entre lineas de 1cm
+
+
+        {\huge\bfseries \TPn \par}
+        \vspace{1.5cm}
+        {\Large Laboratorio de Electrónica\\ 25.13 \par}
+        \vspace{0.5cm}
+        {\Large \TPtema \par}
+        \vfill                      %sirve para rellenar el espacio y quede simétrico.
+        {\Large \bfseries Grupo N° 2 \par}
+        \vspace{1cm}
+        {\large Juan Bautista Correa Uranga \hfill Legajo: 65016 \par} 
+        {\large Juan Ignacio Caorsi \hfill Legajo: 65532  \par}
+        {\large Rita Moschini \hfill Legajo: 67026 \par} 
+        {\large Lucas Solar Grillo \hfill Legajo: 63322\par}
+        \vfill
+        {\large \today\par}
+        \vfill
+
+\end{titlepage}
+
+
+
+%%%%%%%%%%%%%%%%%%% CUERPO DEL INFORME %%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Objetivos} 
+
+El objetivo de este trabajo práctico es analizar el comportamiento de un convertidor Boost en función de la frecuencia de conmutación y el ciclo de trabajo, en adición al impacto de los componentes reales (ESR, ESL, resistencia serie del inductor) sobre la tensión de salida y el ripple del convertidor
+
+%%%%%%%%%%PARTE 5%%%%%%%%%%%
+
+\input{parte5.tex}
+
+
+
+%%%%%%%%%%% Apendice %%%%%%%%%%%
+\newpage
+\input{apendice.tex}
+
+
+        
+\end{document}
