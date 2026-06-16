@@ -132,7 +132,7 @@ En el gráfico del notch y el pasaaltos se puede observar que la frecuencia de c
 Finalmente se estudiaron los parametros de las respuestas en el tiempo. Los datos fueron calculados usando los cursores del osciloscopio y los cursores del ltspice. Al mismo tiempo en ambos casos se usó una cuadrada de $1V$ ($2Vpp$). \par
 Luego es importante recordar que $\zeta = 0,5 $ y que la formula del sobrepico biene dada por $M_p=e^{-\frac{\pi\zeta}{\sqrt{1-\zeta^2}}}$ y para la señal usada $M_p = 100 \cdot \frac{V_{sobrepico}}{2 V} $. Por lo que se esperaría un sobre pico de $\approx$ 16 \%, tomando los valores de los componentes reales ( $\zeta = 0,51$). Otra formula importante es la frecuencia de oscilacion viene dada por la siguiente formula $f_d = f_0 \cdot \sqrt{1-\zeta^2}$ por lo que el valor sería de 235,55 kH. Finalmente, se usó el criterio de tiempo de transitorio del 2\%. Este viene aproximado por la formula $\tau = \frac{4}{2\pi f_0 \zeta} = 5,4 \mu s$.
 
-\begin{figure}[H]
+\begin{table}[H]
     \centering
     % Usamos minipage para mantenerlas lado a lado dentro de un entorno de figura
     \begin{minipage}{0.48\textwidth}
@@ -168,13 +168,13 @@ Luego es importante recordar que $\zeta = 0,5 $ y que la formula del sobrepico b
     \vspace{1em}
     \caption{Comparación de parámetros de filtros.}
     \label{fig:comparacion_filtros}
-\end{figure}
+\end{table}
 
 Lo primero que se analizó fueron las frecuencias de amortiguación medidas. En cuanto a las teóricas, se puede ver que el error relativo es de 3,16\% en el pero caso, lo que implica una gran correlación. Luego en la parte medida experimentalmente, se puede observar un error mucho mas grande de 6,55\%, 10,85\% y 7,45\% respectivamente. Estos errores se pueden atribuir a pequeñas incertezas a la hora de medir con el osciloscopio gracias a las escalas y divisiones. \par
 
 En cuanto al tiempo de transitorio, se puede observar una mayor diferencia entre lo calculado teóricamente, lo simulado y medido. El mayor fue midiendo $\tau = 6,25 \mu s$, dando un $E_r = 16 \%$. Esta gran diferencia se debe a la dificultad de poder obtener el punto exacto en el cual el sistema llega a 2\% del valor final para calcular el periodo tiempo que transcurre. Esto debido a la oscilación que el circuito posee a lo largo del tiempo, la cual aveces sus máximos no coincidían con la envolvente (la cual indica $\tau$).
 
-Finalmente, el punto donde se puede observar mayor discrepancia fue en la medición del sobre pico. Al observar la figura \ref{fig:comparacion_filtros}, se puede observar que los sobre picos dieron alrededor del 55\% a diferencia del 17\% teórico. Esta gran diferencia se puede observar gracias a que la ecuación mencionada anteriormente, es una ecuación valida para sistemas con dos polos y sin ceros.\par
+Finalmente, el punto donde se puede observar mayor discrepancia fue en la medición del sobre pico. Al observar la tabla \ref{fig:comparacion_filtros}, se puede observar que los sobre picos dieron alrededor del 55\% a diferencia del 17\% teórico. Esta gran diferencia se puede observar gracias a que la ecuación mencionada anteriormente, es una ecuación valida para sistemas con dos polos y sin ceros.\par
 
 En este caso al observar las ecuaciones deducidas, se puede observar que todos los filtros poseen ceros, los cuales generan una salida más abrupta del sistema. De hecho, existe una gran correlación con los datos medidos. En particular, el pasaaltos, al tener un cero doble desde $f = 0$, este tiene una subida mucho más rápida que los anteriores. Por  tal motivo, se observa un sobre pico mucho mayor que en el resto. \par
 
