@@ -47,38 +47,9 @@
 
 %%%%%%%%%%%%%%%%%%% CUERPO DEL INFORME %%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Objetivos} 
-El objetivo de este trabajo práctico es diseñar, analizar la sensibilidad e implementar puentes de medición en corriente alterna. Se estudiará el puente de comparación de capacidad para la determinación de componentes reactivos con pérdidas asociadas, y el puente de Wien para la medición y análisis de frecuencias de resonancia.
-
-\section*{Datos de Diseño Asignados}
-De acuerdo con las especificaciones de la Tabla 1 de la consigna, las mediciones y diseños se realizarán bajo los siguientes parámetros límite:
-\begin{itemize}
-    \item \textbf{Rango de capacidad:} $C_{min} = 2\text{ nF}$ hasta $C_{max} = 20\text{ nF}$
-    \item \textbf{Factor de pérdidas:} $D_{min} = 0.1$ hasta $D_{max} = 0.4$
-    \item \textbf{Rango de frecuencias:} $f_{min} = 2\text{ kHz}$ hasta $f_{max} = 80\text{ kHz}$
-\end{itemize}
-
-\section*{Instrumentos y equipo VER BIEN}
-    \begin{itemize}
-        \item Protoboard
-        \item Osciloscopio digital Keysight DSOX1202G
-        \item Generador de señales Picotest G510 / Keysight EDU33212A
-        \item Medidor RLC UNI-T UT812 (para validación de componentes)
-        \item Resistencias fijas y variables (potenciómetros/décadas)
-        \item Capacitores de precisión y patrones de pérdida
-    \end{itemize}
-    
-\newpage
-
-\section{Puente para comparación de capacidad}
-
-\subsection{Diseño del Puente y Análisis de Sensibilidad}
-% RELLENAR AQUÍ (Punto a):
-% - Circuito esquemático elegido (ej. puente con brazos resistivos y reactivos).
-% - Ecuaciones de equilibrio para hallar Cx y Dx.
-% - Análisis matemático de la sensibilidad en TODO el rango de medición solicitado.
-
-------------------------------
+\section{Introducción}
+En este trabajo se diseñarán y analizarán dos puentes de medición: un puente de capacitancia para caracterizar capacitores reales con pérdidas, y un puente de Wien para la selección y medición de frecuencias. Se abordarán aspectos teóricos, de diseño, análisis de sensibilidad, convergencia y validación experimental.
+\section{Puente de Capacitancia}
 \subsection{Diseño del Puente y Análisis de Sensibilidad}
 
 Se optó por un \textbf{Puente de Capacitancia en Serie} (Puente C Serie), esta topología es ideal para medir capacitores reales con bajas pérdidas.
@@ -147,36 +118,21 @@ Sustituyendo las expresiones balanceadas de $C_x$ y $R_x$:
     D_x = 2\pi f \left( C_1 \frac{R_3}{R_4} \right) \left( \frac{R_1 R_4}{R_3} \right) \implies D_x = 2\pi f C_1 R_1
 \end{equation}
 
-\subsubsection{Análisis Matemático de Sensibilidad}
-El análisis matemático modela cómo varía el voltaje diferencial desbalanceado $v_d$ ante pequeñas desviaciones en los elementos de ajuste ($\Delta R_1$ y $\Delta R_3$). A partir de las mallas del circuito, la transferencia general del desbalance es:
+\subsubsection{Análisis Gráfico de Sensibilidad}
+En un principio se realizó un programa en MATLAB capaz de graficar la sensibilidad del puente ante cambios de cuartos de vuelta de $R_1$ y $R_3$, fijando parámetros de diseño como la frecuencia de alimentación, el valor de $C_1$ y $R_4$. 
+Esto se logró a partir de la transferencia general del desbalance, obtenida mediante la diferencia de divisores de impedancias:
 \begin{equation}
     v_d = V_{in} \left| \frac{R_3}{Z_1 + R_3} - \frac{R_4}{Z_x + R_4} \right|
 \end{equation}
 
-Asumiendo que se usan potenciómetros multivuelta (ej. de 20 vueltas), un diferencial de un cuarto de vuelta introduce perturbaciones controladas $\Delta R_1$ y $\Delta R_3$. La respuesta en tensión obtenida mediante la simulación muestra que la sensibilidad ante variaciones de la resistencia variable no es uniforme en todo el plano $[C_x, R_x]$, sino que alcanza sus valores máximos de tensión detectable en las cercanías de los extremos superiores de impedancia. Esto exige un detector con umbral estricto para las regiones de baja capacidad y disipación.
+Asumiendo que se usan resistencias variables multivuelta (ej. de 20 vueltas como un preset)
+y que un diferencial de un cuarto de vuelta introduce $\Delta R_1$ y $\Delta R_3$,
+ se obtuvo distintos graficos de sensibilidad para comparar. Se ve el puente elegido en la fig... , obtenido luego de iterar con distintos valores de los parámetros de diseño ya mencionados (ver en anexos casos descartados). VER AGREGADO DE GRAFICOS Y VERIFICAR QUE EL TERMINO DELTA R VA O NO
 
 
 \subsection{Análisis de Convergencia}
 
-Un aspecto crítico en los puentes de corriente alterna es que el ajuste de un componente variable no altere o desbalancee el ajuste del otro (convergencia ortogonal). 
 
-\subsubsection{Demostración de la Independencia de Ajuste}
-Observando las ecuaciones de la topología elegida, analizamos el acoplamiento de las variables seleccionadas para lograr el balance:
-\begin{enumerate}
-    \item La ecuación de pérdidas depende exclusivamente de los parámetros de la primera rama y la frecuencia de la señal de excitación:
-    \begin{equation}
-        D_x = 2\pi f C_1 R_1
-    \end{equation}
-    Como $f$ y $C_1$ son constantes del ensayo, \textbf{$D_x$ se sintoniza única y linealmente variando el potenciómetro $R_1$}. Modificar el valor de la resistencia de la rama adyacente $R_3$ no altera en absoluto el balance del factor de disipación.
-    
-    \item Por otro lado, la ecuación de capacidad del puente resulta:
-    \begin{equation}
-        C_x = C_1 \frac{R_3}{R_4}
-    \end{equation}
-    Se observa que \textbf{$C_x$ se controla de forma directa mediante la variación de $R_3$} y es matemáticamente independiente del valor óhmico que adopte $R_1$.
-\end{enumerate}
-
-Por lo tanto, la elección de las variables de ajuste $R_1$ y $R_3$ garantiza una \textbf{convergencia directa, ortogonal y en un único paso} (balance en cuadratura), eliminando el problema del arrastre sistemático común en otras topologías de puentes de alterna.
 
 \subsubsection{Evaluación en Puntos Singulares del Rango}
 Para verificar el comportamiento analítico en el laboratorio bajo las nuevas condiciones de diseño fijadas ($f=4\text{ kHz}$, $R_4=5\text{ k}\Omega$, $C_1=20\text{ nF}$), se plantean tres condiciones operativas dentro del rango solicitado para el Grupo 2:
@@ -201,6 +157,7 @@ En cualquiera de los tres puntos indicados, el procedimiento en el laboratorio c
 % RELLENAR AQUÍ (Punto b):
 % - Demostración matemática o cualitativa de la convergencia del ajuste.
 % - Evaluar en 3 puntos: Mínimo (2 nF, D=0.1), Medio, y Máximo (20 nF, D=0.4).
+y acá qué se supone que se hace??
 
 \subsection{Mediciones y Validación Experimental}
 % RELLENAR AQUÍ (Punto c):
@@ -216,7 +173,7 @@ En cualquiera de los tres puntos indicados, el procedimiento en el laboratorio c
 % - Propagación del error considerando el 1% de tolerancia en las resistencias del puente.
 
 
-\newpage
+
 \section{Puente de Wien}
 
 \subsection{Diseño del Circuito y Sensibilidad}

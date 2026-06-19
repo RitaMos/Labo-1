@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1781616960.20331 "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP5/main.tex" "main.pdf" "main" 1781616964.43798 0
+["pdflatex"] 1781831987.03946 "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP5/main.tex" "main.pdf" "main" 1781831989.17941 0
   "C:/Users/caorsi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780367073 83645 d2c45fd52a842b79ad882c8494eefff3 ""
   "C:/Users/caorsi/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1755787232 18748 faf8ce1ff2bbf2571d449f4bcf9cc49f ""
   "C:/Users/caorsi/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx2074.pk" 1755787235 28420 b088c4556d4ba2557f8f41b00bbbda39 ""
@@ -242,11 +242,11 @@
   "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "Librerias.tex" 1781569783 2155 10c2df1ad07770d3769d91b6998d9df6 ""
   "Logo_ITBA.png" 1776964168 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP5/main.tex" 1781616958 11927 48dc0b73d111e5e5c46c4a8f1462c133 ""
-  "main.aux" 1781616963 3492 ef1c46f4d3da6d105d18ec9b83f3ec0a "pdflatex"
-  "main.out" 1781616963 3776 f3741ad0c58e4c22bfc399aec0c8b4ef "pdflatex"
-  "main.tex" 1781616958 11927 48dc0b73d111e5e5c46c4a8f1462c133 ""
-  "main.toc" 1781616963 1606 53b5e27c9b14d9745906f27c55ffacd4 "pdflatex"
+  "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP5/main.tex" 1781831983 9142 df5214ef58716fc189f7ebeb9e95f77c ""
+  "main.aux" 1781831988 3273 8d62363a8de044ccf3fd779c4990e22c "pdflatex"
+  "main.out" 1781831988 3191 007840d3a0cab7d46732fcafc11f5761 "pdflatex"
+  "main.tex" 1781831983 9142 df5214ef58716fc189f7ebeb9e95f77c ""
+  "main.toc" 1781831988 1428 35fd1531078f314da84305f5e367685f "pdflatex"
   (generated)
   "main.aux"
   "main.log"
