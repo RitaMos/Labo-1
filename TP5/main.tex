@@ -127,37 +127,71 @@ Esto se logró a partir de la transferencia general del desbalance, obtenida med
 
 Asumiendo que se usan resistencias variables multivuelta (ej. de 20 vueltas como un preset)
 y que un diferencial de un cuarto de vuelta introduce $\Delta R_1$ y $\Delta R_3$,
- se obtuvo distintos graficos de sensibilidad para comparar. Se ve el puente elegido en la fig... , obtenido luego de iterar con distintos valores de los parámetros de diseño ya mencionados (ver en anexos casos descartados). VER AGREGADO DE GRAFICOS Y VERIFICAR QUE EL TERMINO DELTA R VA O NO
-
-
-\subsection{Análisis de Convergencia}
-
-
-
-\subsubsection{Evaluación en Puntos Singulares del Rango}
-Para verificar el comportamiento analítico en el laboratorio bajo las nuevas condiciones de diseño fijadas ($f=4\text{ kHz}$, $R_4=5\text{ k}\Omega$, $C_1=20\text{ nF}$), se plantean tres condiciones operativas dentro del rango solicitado para el Grupo 2:
-
-\begin{table}[H]
+ se obtuvo distintos gráficos de sensibilidad para comparar. Se ve el puente elegido en la figura \ref{fig:sensibilidades_vd}, obtenido luego de iterar con distintos valores de los parámetros de diseño ya mencionados hasta lograr un módulo de sensibilidad alto y una semejanza significativa entre ambas superficies.
+ \begin{figure}[htbp]
     \centering
-    \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    \textbf{Punto de Evaluación} & \textbf{$C_x$ solicitado} & \textbf{$D_x$ solicitado} & \textbf{$R_3$ Teórico ($\Omega$)} & \textbf{$R_1$ Teórico ($\Omega$)} \\ \hline
-    \textbf{1. Extremo Mínimo}   & $2\text{ nF}$             & $0.1$                     & $500$                             & $198,94$                          \\ \hline
-    \textbf{2. Valor Medio}      & $11\text{ nF}$            & $0.25$                    & $2750$                            & $497,36$                          \\ \hline
-    \textbf{3. Extremo Máximo}   & $20\text{ nF}$            & $0.4$                     & $5000$                            & $795,77$                          \\ \hline
-    \end{tabular}
-    \caption{Valores teóricos recalculados de los elementos de sintonía para la verificación de convergencia ($f = 4\text{ kHz}$, $R_4 = 5\text{ k}\Omega$, $C_1 = 20\text{ nF}$).}
-    \label{tab:convergencia_puntos}
-\end{table}
-
-En cualquiera de los tres puntos indicados, el procedimiento en el laboratorio consistirá en aproximar primero el equilibrio de capacidad mediante $R_3$ (buscando el mínimo de tensión en el osciloscopio) y luego alcanzar el cero absoluto ajustando $R_1$ para equilibrar las pérdidas, logrando un balance óptimo sin interacciones cruzadas.
- JUANI:   TENGO QUE REVISAR LO DE ARRIBA DE ESTO------------------------------
-
+    % Primera imagen: Izquierda
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/Sensi_superpuesto_izquierda.png}
+        \caption{Vista izquierda.}
+        \label{fig:sensi_izq}
+    \end{subfigure}
+    \hfill
+    % Segunda imagen: Frente
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/Sensi_superpuesto_frente.png}
+        \caption{Vista de frente.}
+        \label{fig:sensi_frente}
+    \end{subfigure}
+    \hfill
+    % Tercera imagen: Derecha
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/Sensi_superpuesto_derecha.png}
+        \caption{Vista derecha.}
+        \label{fig:sensi_der}
+    \end{subfigure}
+    
+    % Caption general
+    \caption{Vistas izquierda, frente y derecha de las sensibilidades de $V_d$. Se destaca que la curva de mayor sensibilidad a valores bajos de $C_x$ es la vinculada con la sensibilidad al cambio de $R_3$, mientras que la que presenta mayor valor a bajos $R_x$ es la vinculada con el cambio de $R_1$.}
+    \label{fig:sensibilidades_vd}
+\end{figure}
 \subsection{Análisis de Convergencia}
-% RELLENAR AQUÍ (Punto b):
-% - Demostración matemática o cualitativa de la convergencia del ajuste.
-% - Evaluar en 3 puntos: Mínimo (2 nF, D=0.1), Medio, y Máximo (20 nF, D=0.4).
-y acá qué se supone que se hace??
+
+Se seleccionaron tres puntos de análisis para evaluar la convergencia al punto de equilibrio adecuado y no a un punto mínimo local confundible con el equilibrio. Los puntos seleccionados fueron: 20nF, D=0,1; 10nF, D=0,25; y 2nF, D=0,4. Se realizaron simulaciones en MATLAB de $v_d$ para cada uno de estos puntos, variando los valores de $R_1$ y $R_3$.
+Gráficos obtenidos de la simulación se muestran en la figura \ref{fig:convergencia}.
+\begin{figure}[h!]
+    \centering
+    % Primera imagen: 2nF, D=0.4
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/Cv_2n-0.4.png}
+        \caption{$2\text{ nF}$, $D=0,4$.}
+        \label{fig:conv_2n}
+    \end{subfigure}
+    \hfill
+    % Segunda imagen: 10nF, D=0.25
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/Cv_10n-0.25.png}
+        \caption{$10\text{ nF}$, $D=0,25$.}
+        \label{fig:conv_10n}
+    \end{subfigure}
+    \hfill
+    % Tercera imagen: 20nF, D=0.1
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{imagenes/Cv_20n-0.1.png}
+        \caption{$20\text{ nF}$, $D=0,1$.}
+        \label{fig:conv_20n}
+    \end{subfigure}
+    
+    % Caption general con las coordenadas de los mínimos
+    \caption{Gráficos de simulación obtenidos para evaluar la convergencia. Los puntos mínimos visibles en cada gráfica poseen las siguientes coordenadas: para el caso de $2\text{ nF, } D=0,4$ se tiene $V_d = 0.015\text{ V}$ con $R_3 = 500\ \Omega$ y $R_1 = 830\ \Omega$; para $10\text{ nF, } D=0,25$ se registra $V_d = 0.016\text{ V}$ con $R_3 = 506\ \Omega$ y $R_1 = 2520\ \Omega$; finalmente, para $20\text{ nF, } D=0,1$ el mínimo se ubica en $V_d = 0.014\text{ V}$ con $R_3 = 5\text{ k}\Omega$ y $R_1 = 182\ \Omega$.}
+    \label{fig:convergencia}
+\end{figure}
 
 \subsection{Mediciones y Validación Experimental}
 % RELLENAR AQUÍ (Punto c):
