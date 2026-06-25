@@ -127,7 +127,8 @@ Esto se logró a partir de la transferencia general del desbalance, obtenida med
 
 Asumiendo que se usan resistencias variables multivuelta (ej. de 20 vueltas como un preset)
 y que un diferencial de un cuarto de vuelta introduce $\Delta R_1$ y $\Delta R_3$,
- se obtuvo distintos gráficos de sensibilidad para comparar. Se ve el puente elegido en la figura \ref{fig:sensibilidades_vd}, obtenido luego de iterar con distintos valores de los parámetros de diseño ya mencionados hasta lograr un módulo de sensibilidad alto y una semejanza significativa entre ambas superficies.
+ se obtuvo distintos gráficos de sensibilidad para comparar. El puente seleccionado cuenta con $R1$ que va desde 19,9 $\Omega$ hasta 7,96 $k\Omega$, $R_3$ que va desde 500 $\Omega$ hasta 5 $k\Omega$,
+  $R_4 = 5,04 k\Omega$ y $C_1 = 20 nF$. Se ve el puente elegido en la figura \ref{fig:sensibilidades_vd}, obtenido luego de iterar con distintos valores de los parámetros de diseño ya mencionados hasta lograr un módulo de sensibilidad alto y una semejanza significativa entre ambas superficies.
  \begin{figure}[htbp]
     \centering
     % Primera imagen: Izquierda
@@ -197,14 +198,32 @@ Gráficos obtenidos de la simulación se muestran en la figura \ref{fig:converge
 % RELLENAR AQUÍ (Punto c):
 % - Presentar la tabla con al menos 5 valores de capacidad armados (con R serie/paralelo para simular pérdidas).
 % - Comparar valor calculado vs. medido en el puente.
-
+\begin{table}[htbp]
+\centering
+\caption{Comparación de valores medidos mediante el puente de alterna versus el analizador de impedancias y cálculo de errores relativos. Los valores de $R_{x\text{ óhmetro}}$ son los valores de las resistencias serie netas en el componente a medir, una pequeña parte de ella es la ESR de los capacitores (medida con un Analog Discovery) y el resto es la resistencia agregada que aumenta el valor de D (medida con óhmetro).}
+\label{tab:mediciones_errores}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{$C_{x\text{ puente}}$ [nF]} & \textbf{$C_{x\text{ analizador}}$ [nF]} & \textbf{$e_{\text{rel}} (C_x) [\%]$} & \textbf{$R_{x\text{ puente}} \ [\Omega]$} & \textbf{$R_{x\text{ óhmetro}} \ [\Omega]$} & \textbf{$e_{\text{rel}} (R_x) [\%]$} & \textbf{$D_{x}$} \\ \hline
+4,48 & 4,67  & 4,07 & 2753,05 & 2735,00 & 0,66 & $0,32$ \\ \hline
+12,06 & 12,36 & 2,43 & 728,08  & 743,00  & 2,01 & $0,23$ \\ \hline
+3,23 & 3,34  & 3,29 & 4167,97 & 4148,20 & 0,48 & $0,35$ \\ \hline
+6,63 & 6,83  & 2,93 & 751,05  & 733,00  & 2,45 & $0,12$ \\ \hline
+5,43 & 5,58  & 2,74 & 1559,01 & 1515,37 & 2,88 & $0,21$ \\ \hline
+\end{tabular}
+\end{table}
+Se considera que se alcanza el equilibrio al medir que la amplitud de la tensión $v_d$ en torno a 80 $mV$, no se pudo obtener una tensión de amplitud menor.
 \subsection{Análisis de Precisión por Umbral de Detección}
 % RELLENAR AQUÍ (Punto d):
 % - Análisis del error considerando que tensiones inferiores a 20 mV en el detector se toman como "equilibrio".
-
-\subsection{Análisis de Precisión Extendido (Error en Componentes)}
-% RELLENAR AQUÍ (Punto e):
-% - Propagación del error considerando el 1% de tolerancia en las resistencias del puente.
+Se considera que la medición de mayor error se da para capacitores de alta capacidad y pérdida, por lo que se analiza el caso de un capacitor de 20 nF
+ y $R_x=7\text{ k}\Omega$. Para este caso, vemos que el error en $R_1$ es de +-365 $\Omega$ y el error en $R_3$ es de +-250 $\Omega$. Esto me da un error
+  relativo maximo: de Cx del 4.8\%; de Rx del 11\%. Se añade el procedimiento: primero se buscan los puntos 
+  extremos para R1 y R3 (medibles) al graficar $v_d$ y el plano de 20 mV para simular el área considerada como "equilibrio". Se obtienen dos valores extremos,
+   y se calculan los valores de Rx y Cx que se obtendrían al utilizar ambos extremos. Luego, se toma como referencia al valor más alejado al valor que
+    realmente se debería medir (de Rx y Cx), y se obtiene el error relativo correspondiente.
+Ahora, si se considera el 1 \% de tolerancia de las resistencias del puente, se suma el valor del error relativo de la medicion de las resistencias 
+incluidas en el cálculo de Cx y Rx, obteniendo un error relativo neto de 6.8\% para Cx y 14\% para Rx. (Se le suman 2\% y 3\% respectivamente, ya que se utilizan dos resistencias en el cálculo de Cx y tres en el de Rx).
 
 
 
