@@ -146,13 +146,13 @@ $f$ (kHz) & $G$ (dBV) & $V$ (V) \\
 
 
 
-Para acotar el error, debido a que los mismos decrecen en gran medida, asumo que $P_n \propto \frac{1}{n}$ por lo que $p_n = \frac{k}{n^2}$. Esta K se puede calcular usando un valor conocido como P2, por lo que $K=4P^2$. Luego con eso el error viene dado por :$\Delta THD=
+Para acotar el error, debido a que los mismos decrecen en gran medida, asumo que $P_n \propto \frac{1}{n}$ por lo que $p_n = \frac{k}{n^2}$. Esta K se puede calcular usando un valor conocido como $P_2$, por lo que $K=4P_2$. Luego con eso el error viene dado por :$\Delta THD=
 \sqrt{
 \frac{4P_2}{P_1}
 \sum_{n=N+1}^{\infty}\frac{1}{n^2}
 }$.\par
 
-Luego con los valores de la tabla se calcularon las distorciones armonicas para la FFT y el analizador de espectro. Al mismo tiempo se calculó el error asociado a la medición del analizador de espectro. Finalmente se llegó a:
+Luego con los valores de la tabla se calcularon las distorsiones armónicas para la FFT y el analizador de espectro. Al mismo tiempo se calculó el error asociado a la medición del analizador de espectro. Finalmente se llegó a:
 
 
 \begin{itemize}
@@ -162,7 +162,7 @@ Luego con los valores de la tabla se calcularon las distorciones armonicas para 
 \end{itemize}
 \par
 Al observar las mediciones, se aprecia una diferencia significativa entre los valores obtenidos mediante la FFT y el analizador de espectro. Sin embargo, al considerar el error asociado al cálculo de la THD con el analizador de espectro, así como los márgenes de error introducidos por el uso de una cantidad limitada de armónicos, se observa que dichos márgenes incluyen los valores obtenidos mediante la FFT.\par
-En particular, las mediciones de la FFT son mediciones mucho menos precisas que las hechas por el analizador de espectro. Esto se debe a que la FFT es una herramienta matemática, que permite calcular la transformada de fourier discreta rápida de una señal. Por tal motivo, esta tiene mayores limitaciones e imprecisiones que el analizador de espectro. Dentro de esto, se pueden mencionar la cantidad de puntos tomados para el cálculo y el efecto ventana. \par
+En particular, las mediciones de la FFT son mediciones mucho menos precisas que las hechas por el analizador de espectro. Esto se debe a que la FFT es una herramienta matemática, que permite calcular la transformada de fourier discreta rápida de una señal. Por tal motivo, esta tiene mayores limitaciones e imprecisiones que el analizador de espectro. Dentro de esto, se pueden mencionar la cantidad de puntos tomados para el cálculo y el factor de ventana. \par
 Luego, con esto en mente, se puede observar lo siguiente. Al usar el analizador de espectro, se puede concluir que el generador del osciloscopio DSOX 1202G posee menos distorsión armónica, seguido por el de PICOTEST y finalmente el EDU33212A. Aun así, considerando los márgenes del error y las diferencias entre las THD calculadas, no se puede concluir con certeza que el DSOX sea el instrumento con menor distorsión armónica. \par
 
 Al observar lo obtenido mediante la FFT, se puede observar esto último. En este caso el orden de los generadores de mejor a peor fue, PICOTEST, EDU33212A y DSOX 1202G. Por lo mismo, esto no es concluyente debido a los errores ya mencionados. 

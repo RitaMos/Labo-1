@@ -53,9 +53,17 @@ X(f)=\sum_{k=-\infty}^{\infty}
 
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{FOTOS_TP6/PARTE 5/pulso/p1/pulso.jpeg}
+    \caption{Pulso utilizado}
+    \label{fig:pulso}
+\end{figure}
+
+
 En primer lugar, se simuló un tren de deltas con pulso with de $40ns$ y edge time de $8,4ns$ con frecuencia de $250kHz$. De esta manera se consigue un pulso con un D= 1\%. Al observar la figuras \ref{fig:matlabTFpulso} y \ref{fig:analizadorpulso}, se observó que los dos primeros ceros de la función coincidían en $25MHz$.\par
 
-Por otra parte, en la Figura \ref{fig:analizadorpulso} puede observarse que la señal introducida al analizador de espectro mediante un tren de pulsos no se comporta idealmente como una suma de deltas. Esto se evidencia al observar la presencia de transitorios al final de la señal, los cuales introducen componentes adicionales e interferencias externas. No obstante, a pesar de estas limitaciones experimentales, se aprecia que la representación teórica del espectro de un tren de pulsos aproxima adecuadamente el comportamiento observado en el analizador de espectro.\par
+Por otra parte, en la Figura \ref{fig:pulso} puede observarse que la señal introducida al analizador de espectro mediante un tren de pulsos no se comporta idealmente como una suma de deltas. Esto se evidencia al observar la presencia de transitorios al final de la señal, los cuales introducen componentes adicionales e interferencias externas. No obstante, a pesar de estas limitaciones experimentales, se aprecia que la representación teórica del espectro de un tren de pulsos aproxima adecuadamente el comportamiento observado en el analizador de espectro.\par
 
 
 En segundo lugar se simuló el caso de la señal compuesta por un tren de sinc. En este caso, hay que observar que existe una frecuencia $f_s$ que es la frecuencia interna del sinc y luego $f$ que es la frecuencia a la que los sinc se repiten. Para este análisis se configuró $f =250kH$ y luego se midió con el osciloscopio $f_s = 5MHz$, la cual venía predeterminada por el generador DIGILENT 33220A.\par
