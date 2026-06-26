@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.27)  22 JUN 2026 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.27)  26 JUN 2026 20:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1042,6 +1042,10 @@ LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported on input line 11.
+
+
+LaTeX Warning: Label `eq:coeficientrectangular' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1067,8 +1071,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count383
 \scratchdimen=\dimen359
@@ -1156,7 +1159,7 @@ or `spanish'. on input line 7.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-<Logo_ITBA.png, id=11, 557.08125pt x 220.825pt>
+<Logo_ITBA.png, id=15, 557.08125pt x 220.825pt>
 File: Logo_ITBA.png Graphic file (type png)
 <use Logo_ITBA.png>
 Package pdftex.def Info: Logo_ITBA.png  used on input line 14.
@@ -1165,7 +1168,7 @@ Package pdftex.def Info: Logo_ITBA.png  used on input line 14.
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./Logo_I
-TBA.png>] (./Parte 2.tex
+TBA.png>] (./Parte 1.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1176,45 +1179,53 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<FOTOS_TP6/simulaciones/TFcuadrada.png, id=27, 602.25pt x 403.2666pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.164 ...os valores obtenidos mediante la FFT.\par
+                                                   [1]) (./Parte 2.tex [2]
+<FOTOS_TP6/simulaciones/TFcuadrada.png, id=51, 602.25pt x 403.2666pt>
 File: FOTOS_TP6/simulaciones/TFcuadrada.png Graphic file (type png)
 <use FOTOS_TP6/simulaciones/TFcuadrada.png>
 Package pdftex.def Info: FOTOS_TP6/simulaciones/TFcuadrada.png  used on input l
 ine 41.
 (pdftex.def)             Requested size: 159.68776pt x 106.92667pt.
-<FOTOS_TP6/PARTE 2/CUADRADA/IMG_8319.jpeg, id=28, 971.3088pt x 728.4816pt>
+<FOTOS_TP6/PARTE 2/CUADRADA/IMG_8319.jpeg, id=52, 971.3088pt x 728.4816pt>
 File: FOTOS_TP6/PARTE 2/CUADRADA/IMG_8319.jpeg Graphic file (type jpg)
 <use FOTOS_TP6/PARTE 2/CUADRADA/IMG_8319.jpeg>
 Package pdftex.def Info: FOTOS_TP6/PARTE 2/CUADRADA/IMG_8319.jpeg  used on inpu
 t line 52.
 (pdftex.def)             Requested size: 159.68776pt x 119.76076pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.80 \end{equation}
-                    [1 <./FOTOS_TP6/simulaciones/TFcuadrada.png (PNG copy)> <./
-FOTOS_TP6/PARTE 2/CUADRADA/IMG_8319.jpeg>]
-<FOTOS_TP6/simulaciones/TFcuadDuty33.png, id=48, 623.4492pt x 403.2666pt>
+[3 <./FOTOS_TP6/simulaciones/TFcuadrada.png (PNG copy)> <./FOTOS_TP6/PARTE 2/CU
+ADRADA/IMG_8319.jpeg>]
+<FOTOS_TP6/simulaciones/TFcuadDuty33.png, id=66, 623.4492pt x 403.2666pt>
 File: FOTOS_TP6/simulaciones/TFcuadDuty33.png Graphic file (type png)
 <use FOTOS_TP6/simulaciones/TFcuadDuty33.png>
 Package pdftex.def Info: FOTOS_TP6/simulaciones/TFcuadDuty33.png  used on input
  line 93.
 (pdftex.def)             Requested size: 159.68776pt x 103.29004pt.
-<FOTOS_TP6/PARTE 2/CUADRADA/IMG_8321.jpeg, id=49, 971.3088pt x 728.4816pt>
+<FOTOS_TP6/PARTE 2/CUADRADA/IMG_8321.jpeg, id=67, 971.3088pt x 728.4816pt>
 File: FOTOS_TP6/PARTE 2/CUADRADA/IMG_8321.jpeg Graphic file (type jpg)
 <use FOTOS_TP6/PARTE 2/CUADRADA/IMG_8321.jpeg>
 Package pdftex.def Info: FOTOS_TP6/PARTE 2/CUADRADA/IMG_8321.jpeg  used on inpu
 t line 104.
 (pdftex.def)             Requested size: 159.68776pt x 119.76076pt.
-<FOTOS_TP6/simulaciones/TFtriangular.png, id=54, 609.477pt x 410.9754pt>
+<FOTOS_TP6/simulaciones/TFtriangular.png, id=72, 609.477pt x 410.9754pt>
 File: FOTOS_TP6/simulaciones/TFtriangular.png Graphic file (type png)
 <use FOTOS_TP6/simulaciones/TFtriangular.png>
 Package pdftex.def Info: FOTOS_TP6/simulaciones/TFtriangular.png  used on input
  line 146.
 (pdftex.def)             Requested size: 159.68776pt x 107.67885pt.
-<FOTOS_TP6/PARTE 2/TRIANGULA/IMG_8323.jpeg, id=55, 971.3088pt x 728.4816pt>
+<FOTOS_TP6/PARTE 2/TRIANGULA/IMG_8323.jpeg, id=73, 971.3088pt x 728.4816pt>
 File: FOTOS_TP6/PARTE 2/TRIANGULA/IMG_8323.jpeg Graphic file (type jpg)
 <use FOTOS_TP6/PARTE 2/TRIANGULA/IMG_8323.jpeg>
 Package pdftex.def Info: FOTOS_TP6/PARTE 2/TRIANGULA/IMG_8323.jpeg  used on inp
@@ -1224,42 +1235,65 @@ ut line 157.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./parte5.tex [2 <./FOTOS_TP6/simulaciones/TFcuadDuty33.png (PNG copy)> <./FO
+) (./parte3.tex [4 <./FOTOS_TP6/simulaciones/TFcuadDuty33.png (PNG copy)> <./FO
 TOS_TP6/PARTE 2/CUADRADA/IMG_8321.jpeg>]
-<FOTOS_TP6/simulaciones/TFpulso.png, id=64, 919.2744pt x 485.1726pt>
+<FOTOS_TP6/PARTE 3/parte a/IMG_8326.jpeg, id=82, 718.1229pt x 634.0488pt>
+File: FOTOS_TP6/PARTE 3/parte a/IMG_8326.jpeg Graphic file (type jpg)
+<use FOTOS_TP6/PARTE 3/parte a/IMG_8326.jpeg>
+Package pdftex.def Info: FOTOS_TP6/PARTE 3/parte a/IMG_8326.jpeg  used on input
+ line 26.
+(pdftex.def)             Requested size: 159.68776pt x 140.99075pt.
+<FOTOS_TP6/PARTE 3/parte b/IMG_8328.jpeg, id=83, 726.3135pt x 609.7179pt>
+File: FOTOS_TP6/PARTE 3/parte b/IMG_8328.jpeg Graphic file (type jpg)
+<use FOTOS_TP6/PARTE 3/parte b/IMG_8328.jpeg>
+Package pdftex.def Info: FOTOS_TP6/PARTE 3/parte b/IMG_8328.jpeg  used on input
+ line 38.
+(pdftex.def)             Requested size: 159.68776pt x 134.05461pt.
+<FOTOS_TP6/PARTE 3/parte c/IMG_8332.jpeg, id=86, 714.9912pt x 666.3294pt>
+File: FOTOS_TP6/PARTE 3/parte c/IMG_8332.jpeg Graphic file (type jpg)
+<use FOTOS_TP6/PARTE 3/parte c/IMG_8332.jpeg>
+Package pdftex.def Info: FOTOS_TP6/PARTE 3/parte c/IMG_8332.jpeg  used on input
+ line 58.
+(pdftex.def)             Requested size: 159.68776pt x 148.81956pt.
+<FOTOS_TP6/PARTE 3/parte d/IMG_8330.jpeg, id=87, 728.4816pt x 631.3989pt>
+File: FOTOS_TP6/PARTE 3/parte d/IMG_8330.jpeg Graphic file (type jpg)
+<use FOTOS_TP6/PARTE 3/parte d/IMG_8330.jpeg>
+Package pdftex.def Info: FOTOS_TP6/PARTE 3/parte d/IMG_8330.jpeg  used on input
+ line 70.
+(pdftex.def)             Requested size: 159.68776pt x 138.4072pt.
+ [5 <./FOTOS_TP6/simulaciones/TFtriangular.png (PNG copy)> <./FOTOS_TP6/PARTE 2
+/TRIANGULA/IMG_8323.jpeg> <./FOTOS_TP6/PARTE 3/parte a/IMG_8326.jpeg> <./FOTOS_
+TP6/PARTE 3/parte b/IMG_8328.jpeg>])
+(./parte5.tex [6 <./FOTOS_TP6/PARTE 3/parte c/IMG_8332.jpeg> <./FOTOS_TP6/PARTE
+ 3/parte d/IMG_8330.jpeg>]
+<FOTOS_TP6/simulaciones/TFpulso.png, id=101, 919.2744pt x 485.1726pt>
 File: FOTOS_TP6/simulaciones/TFpulso.png Graphic file (type png)
 <use FOTOS_TP6/simulaciones/TFpulso.png>
 Package pdftex.def Info: FOTOS_TP6/simulaciones/TFpulso.png  used on input line
  41.
 (pdftex.def)             Requested size: 199.60895pt x 105.34651pt.
-<FOTOS_TP6/PARTE 5/pulso/p1/IMG_8334.jpeg, id=65, 725.5908pt x 813.7602pt>
+<FOTOS_TP6/PARTE 5/pulso/p1/IMG_8334.jpeg, id=102, 725.5908pt x 813.7602pt>
 File: FOTOS_TP6/PARTE 5/pulso/p1/IMG_8334.jpeg Graphic file (type jpg)
 <use FOTOS_TP6/PARTE 5/pulso/p1/IMG_8334.jpeg>
 Package pdftex.def Info: FOTOS_TP6/PARTE 5/pulso/p1/IMG_8334.jpeg  used on inpu
 t line 49.
 (pdftex.def)             Requested size: 149.70671pt x 167.88977pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3 <./FOTOS_TP6/simulaciones/TFtriangular.png (PNG copy)> <./FOTOS_TP6/PARTE 2/
-TRIANGULA/IMG_8323.jpeg>]
-<FOTOS_TP6/simulaciones/TFsinc.png, id=77, 916.8654pt x 484.209pt>
+ [7 <./FOTOS_TP6/simulaciones/TFpulso.png (PNG copy)> <./FOTOS_TP6/PARTE 5/puls
+o/p1/IMG_8334.jpeg>]
+<FOTOS_TP6/simulaciones/TFsinc.png, id=114, 916.8654pt x 484.209pt>
 File: FOTOS_TP6/simulaciones/TFsinc.png Graphic file (type png)
 <use FOTOS_TP6/simulaciones/TFsinc.png>
 Package pdftex.def Info: FOTOS_TP6/simulaciones/TFsinc.png  used on input line 
 73.
 (pdftex.def)             Requested size: 199.60895pt x 105.41064pt.
-<FOTOS_TP6/PARTE 5/sinc/IMG_8356.jpeg, id=78, 678.6153pt x 574.3056pt>
+<FOTOS_TP6/PARTE 5/sinc/IMG_8356.jpeg, id=115, 678.6153pt x 574.3056pt>
 File: FOTOS_TP6/PARTE 5/sinc/IMG_8356.jpeg Graphic file (type jpg)
 <use FOTOS_TP6/PARTE 5/sinc/IMG_8356.jpeg>
 Package pdftex.def Info: FOTOS_TP6/PARTE 5/sinc/IMG_8356.jpeg  used on input li
 ne 81.
 (pdftex.def)             Requested size: 149.70671pt x 126.68938pt.
-) [4 <./FOTOS_TP6/simulaciones/TFpulso.png (PNG copy)> <./FOTOS_TP6/PARTE 5/pul
-so/p1/IMG_8334.jpeg> <./FOTOS_TP6/simulaciones/TFsinc.png (PNG copy)> <./FOTOS_
-TP6/PARTE 5/sinc/IMG_8356.jpeg>] (./apendice.tex)
-(./main.aux
+) [8 <./FOTOS_TP6/simulaciones/TFsinc.png (PNG copy)> <./FOTOS_TP6/PARTE 5/sinc
+/IMG_8356.jpeg>] (./apendice.tex) (./main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1267,35 +1301,41 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-14>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C744CB99231BF57DBA2C7E9636A0C332;81.
+(rerunfilecheck)             Checksum: 5A32AF2BEC4E268C37E4FBDE340DCDE1;162.
  ) 
 Here is how much of TeX's memory you used:
- 57605 strings out of 467538
- 1489972 string characters out of 5419545
- 2254064 words of memory out of 5000000
- 85868 multiletter control sequences out of 15000+600000
- 632819 words of font info for 59 fonts, out of 8000000 for 9000
+ 57681 strings out of 467538
+ 1491951 string characters out of 5419545
+ 2262064 words of memory out of 5000000
+ 85926 multiletter control sequences out of 15000+600000
+ 633127 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,15n,121p,778b,1089s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
-ive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/t
-exlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/tex
-live/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb>
-Output written on main.pdf (5 pages, 11133405 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
+r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
+ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texl
+ive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texliv
+e/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb>
+Output written on main.pdf (9 pages, 18381564 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
- 16 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

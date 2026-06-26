@@ -1,0 +1,169 @@
+\section{Parte 1}
+
+En esta sección se midieron las señales generadas por 3 generadores distintos del laboratorio. Los generadores usados fueron Agilent 33220A, el Keysight dsox y el Picotest G5100A.\par
+
+Lo primero que se realizó fue medir la distorsión armónica. La distorsión armónica es una medida usada para ver que tan buena, en este caso, es una senoidal. Una onda senoidal ideal posee solo dos armónicos, el de $f_0$ (frecuencia fundamental) y el de $-f_0$. No obstante, en la vida real, lo generadores no suelen tener senoidales ideales, sino que están formadas por una sumatoria de múltiplos de la frecuencia fundamental. Luego, una manera de medir que tan bueno es un generador es mediante la distorsión armónica:
+
+\begin{equation*}
+\begin{aligned}
+THD (\%) = 100 \cdot \sqrt{\frac{P_2+P_3+....+P_n}{P_1}} 
+\qquad\qquad
+THD (\%) = 100 \cdot \sqrt{\frac{V_2^2+V_3^2+....+V_n^2}{V_1^2}} 
+\end{aligned}
+\label{eq:distorsionarmonica}
+\end{equation*}
+Donde $V_1$ y $P_1$ son de la frecuencia fundamental y el resto son los armónicos múltiplos.\par
+
+
+Primero se midieron usando la FFT del osciloscopio. Es importante mencionar que la FFT del osciloscopio daba las mediciones en dBV definida como $dBV = 20log(\frac{V_{in}}{1V})$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PICOTEST G5100A
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h!]
+\centering
+
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ (kHz) & $G$ (dBm) & $P$ (mW) \\
+\midrule
+246 & -2.6  & $5.495408739\times10^{-1}$ \\
+496 & -42.4 & $5.754399373\times10^{-5}$ \\
+745 & -67.8 & $1.659586907\times10^{-7}$ \\
+\bottomrule
+\end{tabular}
+\caption{Mediciones PICOTEST con analizador de espectros.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ (kHz) & $G$ (dBV) & $V$ (V) \\
+\midrule
+250  & -10.87 & $2.860882361\times10^{-1}$ \\
+1250 & -72    & $2.511886432\times10^{-4}$ \\
+1750 & -70    & $3.162277660\times10^{-4}$ \\
+2250 & -77    & $1.412537545\times10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\caption{Mediciones PICOTEST con FFT del osciloscopio .}
+\end{minipage}
+
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GENERADOR DEL OSCILOSCOPIO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[h!]
+\centering
+
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ (kHz) & $G$ (dBm) & $P$ (mW) \\
+\midrule
+248  & -2.6  & $5.495408739\times10^{-1}$ \\
+498  & -43.4 & $4.570881896\times10^{-5}$ \\
+749  & -67.2 & $1.905460718\times10^{-7}$ \\
+998  & -63.0 & $5.011872336\times10^{-7}$ \\
+1237 & -75.2 & $3.019951720\times10^{-8}$ \\
+1486 & -64.0 & $3.981071706\times10^{-7}$ \\
+1739 & -73.0 & $5.011872336\times10^{-8}$ \\
+1988 & -71.8 & $6.606934480\times10^{-8}$ \\
+2245 & -79.0 & $1.258925412\times10^{-8}$ \\
+2462 & -72.8 & $5.248074602\times10^{-8}$ \\
+\bottomrule
+\end{tabular}
+\caption{Mediciones DSOX1202G con analizador de espectros.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ (kHz) & $G$ (dBV) & $V$ (V) \\
+\midrule
+250  & -9.74 & $3.258367010\times10^{-1}$ \\
+450  & -65   & $5.623413252\times10^{-4}$ \\
+1000 & -69   & $3.548133892\times10^{-4}$ \\
+1250 & -71   & $2.818382931\times10^{-4}$ \\
+1500 & -71   & $2.818382931\times10^{-4}$ \\
+1750 & -68   & $3.981071706\times10^{-4}$ \\
+2250 & -75   & $1.778279410\times10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\caption{Mediciones DSOX1202G con FFT del osciloscopio.}
+\end{minipage}
+
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KEYSIGHT EDU33212A
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[h!]
+\centering
+
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ (kHz) & $G$ (dBm) & $P$ (mW) \\
+\midrule
+249 & -2.6  & $5.495408739\times10^{-1}$ \\
+499 & -42.4 & $5.754399373\times10^{-5}$ \\
+746 & -67.0 & $1.995262315\times10^{-7}$ \\
+\bottomrule
+\end{tabular}
+\caption{Mediciones EDU33212A con analizador de espectros.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
+\centering
+\begin{tabular}{ccc}
+\toprule
+$f$ (kHz) & $G$ (dBV) & $V$ (V) \\
+\midrule
+250  & -9.77 & $3.247132422\times10^{-1}$ \\
+1250 & -71   & $2.818382931\times10^{-4}$ \\
+1748 & -69   & $3.548133892\times10^{-4}$ \\
+2250 & -75   & $1.778279410\times10^{-4}$ \\
+3250 & -79   & $1.122018454\times10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\caption{Mediciones EDU33212A con FFT del osciloscopio.}
+\end{minipage}
+
+\end{table}
+
+
+
+Para acotar el error, debido a que los mismos decrecen en gran medida, asumo que $P_n \propto \frac{1}{n}$ por lo que $p_n = \frac{k}{n^2}$. Esta K se puede calcular usando un valor conocido como P2, por lo que $K=4P^2$. Luego con eso el error viene dado por :$\Delta THD=
+\sqrt{
+\frac{4P_2}{P_1}
+\sum_{n=N+1}^{\infty}\frac{1}{n^2}
+}$.\par
+
+Luego con los valores de la tabla se calcularon las distorciones armonicas para la FFT y el analizador de espectro. Al mismo tiempo se calculó el error asociado a la medición del analizador de espectro. Finalmente se llegó a:
+
+
+\begin{itemize}
+\item \textbf{PICOTEST} $THD_{FFT} (\%)= 0,15\%$ y $THD_{A.Esp} (\%)= 1,02\% \pm 0,96 \%$
+\item \textbf{DSOX 1202G} $THD_{FFT} (\%)= 0,27\%$ y $THD_{A.Esp} (\%)= 0,92\% \pm 0,56\%$
+\item \textbf{EDU33212A} $THD_{FFT} (\%)= 0,16\%$ y $THD_{A.Esp} (\%)= 1,025 \% \pm 1,09$
+\end{itemize}
+\par
+Al observar las mediciones, se aprecia una diferencia significativa entre los valores obtenidos mediante la FFT y el analizador de espectro. Sin embargo, al considerar el error asociado al cálculo de la THD con el analizador de espectro, así como los márgenes de error introducidos por el uso de una cantidad limitada de armónicos, se observa que dichos márgenes incluyen los valores obtenidos mediante la FFT.\par
+En particular, las mediciones de la FFT son mediciones mucho menos precisas que las hechas por el analizador de espectro. Esto se debe a que la FFT es una herramienta matemática, que permite calcular la transformada de fourier discreta rápida de una señal. Por tal motivo, esta tiene mayores limitaciones e imprecisiones que el analizador de espectro. Dentro de esto, se pueden mencionar la cantidad de puntos tomados para el cálculo y el efecto ventana. \par
+Luego, con esto en mente, se puede observar lo siguiente. Al usar el analizador de espectro, se puede concluir que el generador del osciloscopio DSOX 1202G posee menos distorsión armónica, seguido por el de PICOTEST y finalmente el EDU33212A. Aun así, considerando los márgenes del error y las diferencias entre las THD calculadas, no se puede concluir con certeza que el DSOX sea el instrumento con menor distorsión armónica. \par
+
+Al observar lo obtenido mediante la FFT, se puede observar esto último. En este caso el orden de los generadores de mejor a peor fue, PICOTEST, EDU33212A y DSOX 1202G. Por lo mismo, esto no es concluyente debido a los errores ya mencionados. 
+
