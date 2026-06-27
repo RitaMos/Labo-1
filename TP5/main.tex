@@ -42,10 +42,13 @@
 
 \end{titlepage}
 
+\pagenumbering{gobble}
 \tableofcontents 
 \newpage
 
 %%%%%%%%%%%%%%%%%%% CUERPO DEL INFORME %%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \section{Introducción}
 En este trabajo se diseñarán y analizarán dos puentes de medición: un puente de capacitancia para caracterizar capacitores reales con pérdidas, y un puente de Wien para la selección y medición de frecuencias. Se abordarán aspectos teóricos, de diseño, análisis de sensibilidad, convergencia y validación experimental.
@@ -229,15 +232,67 @@ incluidas en el cálculo de Cx y Rx, obteniendo un error relativo neto de 6.8\% 
 
 \section{Puente de Wien}
 
-\subsection{Diseño del Circuito y Sensibilidad}
-% RELLENAR AQUÍ (Punto 2):
-% - Esquema del puente de Wien.
-% - Deducción de las ecuaciones de frecuencia.
-% - Análisis de sensibilidad en el rango de frecuencias asignado (2 kHz a 80 kHz).
+Reemplazando las impedancias correspondientes en la ecuación $Z_1 \cdot Z_4 = Z_2 \cdot Z_3$ se obtienen las condiciones de equilibrio:
+\begin{equation}
+        f = \frac{1}{2\pi\sqrt{C_1C_3R_1R_3}} \qquad \qquad 1+\frac{R_1}{R_3} = \frac{R_2}{R_4}.
+\end{equation}
+Si $C_1=C_3=C$ y $R_4=R_2$,
+\begin{equation}
+        f = \frac{1}{2\sqrt{2}\pi C R_1} \qquad \qquad R_3=2R_1
+\end{equation} \label{eceq}
+A sabiendas de que se utilizaría una placa microperforada para la obtención de las mediciones, en lugar de ser realizadas en una protoboard, se eligieron capacitores de 680pF. Se eligió un valor en el orden de los pico faradios o que no superara a 1nF porque a partir de 10nF, si se despeja R1 de la ecuación \ref{eceq} y se reemplazan la frecuencia superior del rango dado por la consigna se obtenía $R_1=140\,\Omega$, lo cual es demasiado cercano a los $50\,\Omega$ del generador como para que esta sea despreciable.
+Para $R_2$ y $R_4$ se eligieron valores de $1k\Omega$ y $2k\Omega$ respectivamente.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{EsquemapuenteWien.png}
+        \caption{Esquema del puente de Wien}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FotoPuenteWien.png}
+        \caption{Foto del puente de Wien armado}
+    \end{minipage}
+\end{figure}
+
+\subsection{Análisis de Sensibilidad}
+Se pueden ver en la figura \ref{sensibilidadesWien} las sensibilidades de $v_d$ para pequeñas perturbaciones de $R_1$ y de $R_3$ en el rango de frecuencias estudiado.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{sensibilidadesWien.png}
+    \caption{Sensibilidades del puente de Wien en función de $R_1$ y de $R_3$ en el rango de frecuencias estudiado.}
+\end{figure} \label{sensibilidadesWien}
+Si bien las curvas exhiben una aparente disparidad, sus sensibilidades son del mismo orden de magnitud. Esto implica que una variación relativa de $R_1$ o de $R_3$ genera cambios comparables en la tensión diferencial $V_d$, lo cual favorece un diseño balanceado del puente.
 
 \subsection{Mediciones y Análisis de Frecuencia}
-% RELLENAR AQUÍ (Punto 2 - Continuación):
-% - Presentar al menos 5 frecuencias diferentes diseñadas y medidas dentro del rango.
-% - Conclusiones sobre la precisión del puente como selector/medidor de frecuencia.
+Para cada par $R_1$, $R_3$ se puede obtener una "frecuencia medida" mediante la ecuación $f_{medida}=\frac{1}{2\pi C\sqrt{R_1 R_3}}$. Dado que el puente se diseñó para medir frecuencias, el error se presenta en función de las mismas como se puede ver en la figura \ref{frecuenciasWien}:
+
+\begin{table}[ht]
+\centering
+\caption{Resultados experimentales obtenidos para el puente de Wien.}
+\label{tab:resultadosWien}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Frecuencia (Hz) & $\left|V_d\right|$ (mV) & $R_1$ ($\Omega$) & $R_3$ ($\Omega$) & $\frac{R_3}{R_1}$ & Frecuencia medida (Hz) & Error (\%) \\
+\hline
+3k3 & 8  & 16k  & 40k  & 2,5 & 9k25 & 180,3 \\ \hline
+21k & 12 & 14k9 & 32k3 & 2,17 & 10k67 & 49,19 \\ \hline
+40k & 12 & 10k7 & 23k2 & 2,16 & 14k85 & 62,88 \\ \hline
+60k & 8  & 5k7  & 13k3 & 2,3 & 26k88 & 55,2 \\ \hline
+72k & 20 & 5k7  & 13k3 & 2,3 & 26k88 & 62,67 \\ \hline
+\end{tabular}
+\end{table}
+
+Se observa que la relación $R_3 = 2\cdot R_1$ se cumple en el equilibrio, sin embargo el error porcentual en la frecuencia medida respecto a la del generador es elevada.
+
+\section{Conclusión}
+En este trabajo se diseñaron, simularon y ensayaron dos puentes de comparación.
+
+En el caso del puente C serie, se obtuvo un error porcentual reducido dentro del rango de medición propuesto, lo que demuestra la adecuada elección de los componentes y valida el procedimiento de diseño empleado.
+
+En el caso del puente de Wien, el montaje permitió corroborar experimentalmente las condiciones de equilibrio derivadas del análisis teórico. Sin embargo, dado el elevado error porcentual en la medición de la frecuencia, se considera que el diseño presentado falla en la determinación experimental de la frecuencia del generador.
 
 \end{document}
