@@ -1,0 +1,8 @@
+# Copias de seguridad y temporales de KiCad
+*-bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl
+*.kicad_user
+_autosave-*
+fp-info-cache

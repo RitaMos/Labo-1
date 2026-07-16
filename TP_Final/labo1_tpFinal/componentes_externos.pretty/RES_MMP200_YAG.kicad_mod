@@ -1,0 +1,233 @@
+(footprint "RES_MMP200_YAG"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(tags "MMP200JR-100R ")
+	(property "Reference" "REF**"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "98c4ddfc-08ee-4e2e-bc5d-e50cf72b1c9b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RES_MMP200_YAG"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1abc431d-3a26-4740-80f5-bbab85ff768e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "76b3dda4-0c4f-4892-8eda-70a67d33b99a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7a2bf3db-d00b-4ae2-9fb5-d6f73b007db7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -3.429651 1.8288)
+		(end 3.429651 1.8288)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "aef7df16-5d31-4ca9-b182-8c5e9222d3c4")
+	)
+	(fp_line
+		(start 3.429651 -1.8288)
+		(end -3.429651 -1.8288)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "74b193f3-6c1b-44f4-9721-8e4bfc8d7ac2")
+	)
+	(fp_line
+		(start -5.0165 -1.9812)
+		(end 5.0165 -1.9812)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9bcf6a92-e396-4ba8-b4e3-eb08de645513")
+	)
+	(fp_line
+		(start -5.0165 1.9812)
+		(end -5.0165 -1.9812)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2567a769-260f-4005-911b-3aafb4369455")
+	)
+	(fp_line
+		(start 5.0165 -1.9812)
+		(end 5.0165 1.9812)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "56befd65-3817-4f02-8487-499ec3a6e51b")
+	)
+	(fp_line
+		(start 5.0165 1.9812)
+		(end -5.0165 1.9812)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "16a1d9a5-81de-4b03-a42d-e52d856c8ade")
+	)
+	(fp_line
+		(start -4.3561 -1.7018)
+		(end -4.3561 1.7018)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "bb64bed5-c7cb-47ef-be28-95d22ac22baa")
+	)
+	(fp_line
+		(start -4.3561 -0.8509)
+		(end -3.5052 -1.7018)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b5c53508-bf89-480d-a1df-586679d1cb20")
+	)
+	(fp_line
+		(start -4.3561 0.8509)
+		(end -3.5052 1.7018)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c701a82f-93de-4e56-8a7c-62d17ac36d75")
+	)
+	(fp_line
+		(start -4.3561 1.7018)
+		(end 4.3561 1.7018)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "fc8b808f-bd7b-4ebb-a31a-e0bc26b64ec0")
+	)
+	(fp_line
+		(start 4.3561 -1.7018)
+		(end -4.3561 -1.7018)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "29cad32d-3b01-458c-b504-2cdc0f0c1cda")
+	)
+	(fp_line
+		(start 4.3561 1.7018)
+		(end 4.3561 -1.7018)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3cd3c217-4efb-42f5-9586-e8b7c4d00dd8")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "67288dbb-337f-471b-9172-3a3fed035893")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -4.2545 0)
+		(size 1.016 3.4544)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "798f8b5f-e103-4944-9132-8e963f7ae21e")
+	)
+	(pad "2" smd rect
+		(at 4.2545 0)
+		(size 1.016 3.4544)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "afc75586-4205-4d9d-ade0-22597b891760")
+	)
+	(zone
+		(net 0)
+		(net_name "")
+		(layer "F.Cu")
+		(uuid "b42a4e98-1e0c-4242-a4fe-ed9bed9a261d")
+		(hatch full 0.508)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.254)
+		(filled_areas_thickness no)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.508)
+			(thermal_bridge_width 0.508)
+		)
+		(polygon
+			(pts
+				(xy -3.6957 -1.6764) (xy 3.6957 -1.6764) (xy 3.6957 1.6764) (xy -3.6957 1.6764)
+			)
+		)
+	)
+	(embedded_fonts no)
+)
