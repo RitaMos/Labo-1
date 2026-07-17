@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.10)  17 JUL 2026 18:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.10)  17 JUL 2026 19:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,25 +778,25 @@ Package pdftex.def Info: Logo_ITBA.png  used on input line 57.
 [1
 
 {C:/Users/caorsi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Logo_ITBA.png>]
-<imagenes/Escalon_Vout+.png, id=37, 1250.928pt x 273.312pt>
+<imagenes/Escalon_Vout+.png, id=38, 1250.928pt x 273.312pt>
 File: imagenes/Escalon_Vout+.png Graphic file (type png)
 <use imagenes/Escalon_Vout+.png>
-Package pdftex.def Info: imagenes/Escalon_Vout+.png  used on input line 85.
+Package pdftex.def Info: imagenes/Escalon_Vout+.png  used on input line 91.
 (pdftex.def)             Requested size: 523.24583pt x 114.32317pt.
-<imagenes/Escalon_Vout-.png, id=38, 1250.928pt x 270.027pt>
+<imagenes/Escalon_Vout-.png, id=39, 1250.928pt x 270.027pt>
 File: imagenes/Escalon_Vout-.png Graphic file (type png)
 <use imagenes/Escalon_Vout-.png>
-Package pdftex.def Info: imagenes/Escalon_Vout-.png  used on input line 93.
+Package pdftex.def Info: imagenes/Escalon_Vout-.png  used on input line 99.
 (pdftex.def)             Requested size: 523.24583pt x 112.94908pt.
-<imagenes/escalones.png, id=39, 1249.614pt x 275.283pt>
+<imagenes/escalones.png, id=40, 1249.614pt x 275.283pt>
 File: imagenes/escalones.png Graphic file (type png)
 <use imagenes/escalones.png>
-Package pdftex.def Info: imagenes/escalones.png  used on input line 101.
+Package pdftex.def Info: imagenes/escalones.png  used on input line 107.
 (pdftex.def)             Requested size: 523.24583pt x 115.26942pt.
-<imagenes/esquematico.png, id=40, 599.23875pt x 352.31625pt>
+<imagenes/esquematico.png, id=41, 599.23875pt x 352.31625pt>
 File: imagenes/esquematico.png Graphic file (type png)
 <use imagenes/esquematico.png>
-Package pdftex.def Info: imagenes/esquematico.png  used on input line 113.
+Package pdftex.def Info: imagenes/esquematico.png  used on input line 119.
 (pdftex.def)             Requested size: 523.24583pt x 307.65773pt.
 
 
@@ -804,28 +804,28 @@ Package pdftex.def Info: imagenes/esquematico.png  used on input line 113.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.117 
+l.123 
        [1 <./imagenes/Escalon_Vout+.png> <./imagenes/Escalon_Vout-.png> <./imagenes/escalones.png>]
-<imagenes/pcb_completo.png, id=52, 329.73187pt x 423.5825pt>
+<imagenes/pcb_completo.png, id=53, 329.73187pt x 423.5825pt>
 File: imagenes/pcb_completo.png Graphic file (type png)
 <use imagenes/pcb_completo.png>
-Package pdftex.def Info: imagenes/pcb_completo.png  used on input line 121.
+Package pdftex.def Info: imagenes/pcb_completo.png  used on input line 127.
 (pdftex.def)             Requested size: 313.95068pt x 403.3189pt.
 
 
 [2 <./imagenes/esquematico.png>]
-<imagenes/pcb_frontLayer.png, id=59, 327.2225pt x 420.57124pt>
+<imagenes/pcb_frontLayer.png, id=60, 327.2225pt x 420.57124pt>
 File: imagenes/pcb_frontLayer.png Graphic file (type png)
 <use imagenes/pcb_frontLayer.png>
-Package pdftex.def Info: imagenes/pcb_frontLayer.png  used on input line 129.
+Package pdftex.def Info: imagenes/pcb_frontLayer.png  used on input line 135.
 (pdftex.def)             Requested size: 313.95068pt x 403.51279pt.
 
 
 [3 <./imagenes/pcb_completo.png>]
-<imagenes/pcb_bottomLayer.png, id=66, 329.73187pt x 418.56375pt>
+<imagenes/pcb_bottomLayer.png, id=67, 329.73187pt x 418.56375pt>
 File: imagenes/pcb_bottomLayer.png Graphic file (type png)
 <use imagenes/pcb_bottomLayer.png>
-Package pdftex.def Info: imagenes/pcb_bottomLayer.png  used on input line 137.
+Package pdftex.def Info: imagenes/pcb_bottomLayer.png  used on input line 143.
 (pdftex.def)             Requested size: 313.95068pt x 398.5402pt.
 
 
@@ -843,17 +843,17 @@ Package rerunfilecheck Info: File `Final_Grupo2_1Q2026.out' has not changed.
 (rerunfilecheck)             Checksum: 4DAEA52C5793DD0FF8ACAABDA6914C12;607.
  ) 
 Here is how much of TeX's memory you used:
- 55916 strings out of 473522
- 1452363 string characters out of 5714125
+ 55922 strings out of 473522
+ 1452451 string characters out of 5714125
  2149583 words of memory out of 5000000
- 78547 multiletter control sequences out of 15000+600000
- 562029 words of font info for 47 fonts, out of 8000000 for 9000
+ 78552 multiletter control sequences out of 15000+600000
+ 562370 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,6n,105p,799b,1073s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Final_Grupo2_1Q2026.pdf (6 pages, 501409 bytes).
+ <C:\Users\caorsi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1440.pk><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Final_Grupo2_1Q2026.pdf (6 pages, 504336 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 111 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

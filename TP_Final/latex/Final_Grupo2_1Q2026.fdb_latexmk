@@ -1,7 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1784323712.3993 "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" "Final_Grupo2_1Q2026.pdf" "Final_Grupo2_1Q2026" 1784323715.32632 0
+["pdflatex"] 1784326269.87435 "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" "Final_Grupo2_1Q2026.pdf" "Final_Grupo2_1Q2026" 1784326273.64265 0
   "C:/Users/caorsi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780367073 83645 d2c45fd52a842b79ad882c8494eefff3 ""
+  "C:/Users/caorsi/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1755787232 18748 faf8ce1ff2bbf2571d449f4bcf9cc49f ""
   "C:/Users/caorsi/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1744297199 12036614 b933ce3efc9a72cef6acbcbef4d58cab ""
+  "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcbx1440.tfm" 993062480 1460 bb7e49f2ecbf94593fc07fcf6213d765 ""
   "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmcsc10.tfm" 1136765053 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
@@ -213,11 +215,11 @@
   "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/caorsi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Final_Grupo2_1Q2026.aux" 1784323714 3385 0d6a1b1d30f39d9b3ee0c519096accee "pdflatex"
-  "Final_Grupo2_1Q2026.out" 1784323715 607 4daea52c5793dd0ff8acaabda6914c12 "pdflatex"
-  "Final_Grupo2_1Q2026.tex" 1784323711 5049 eae785361a903dcfcefadae97c365cbc ""
+  "Final_Grupo2_1Q2026.aux" 1784326273 3385 0d6a1b1d30f39d9b3ee0c519096accee "pdflatex"
+  "Final_Grupo2_1Q2026.out" 1784326273 607 4daea52c5793dd0ff8acaabda6914c12 "pdflatex"
+  "Final_Grupo2_1Q2026.tex" 1784326268 5350 2ebd35c30ab6b3d5f8da0e181fa3cce4 ""
   "Logo_ITBA.png" 1784321334 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" 1784323711 5049 eae785361a903dcfcefadae97c365cbc ""
+  "c:/Users/caorsi/source/repos/Jcaorsi/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" 1784326268 5350 2ebd35c30ab6b3d5f8da0e181fa3cce4 ""
   "imagenes/Escalon_Vout+.png" 1784303374 29852 9c2dc608ae2261a5aea27298b9a990cf ""
   "imagenes/Escalon_Vout-.png" 1784303490 29590 2a71e33f348331b03737a2e7bbca7cd5 ""
   "imagenes/escalones.png" 1784303742 29674 b2f77a6b03b6c82825af5f01cd1a211e ""

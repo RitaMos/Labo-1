@@ -369,6 +369,8 @@ INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tf
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcbx1440.tfm
+INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\caorsi\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
@@ -394,7 +396,6 @@ INPUT .\imagenes\escalones.png
 INPUT .\imagenes\escalones.png
 INPUT .\imagenes\escalones.png
 INPUT .\imagenes\escalones.png
-INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\imagenes\esquematico.png
 INPUT .\imagenes\esquematico.png
@@ -427,6 +428,8 @@ INPUT .\imagenes\pcb_bottomLayer.png
 INPUT Final_Grupo2_1Q2026.aux
 INPUT .\Final_Grupo2_1Q2026.out
 INPUT .\Final_Grupo2_1Q2026.out
+INPUT C:\Users\caorsi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1440.pk
+INPUT C:\Users\caorsi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcbx1440.pk
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\caorsi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
