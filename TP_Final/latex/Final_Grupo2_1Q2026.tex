@@ -40,8 +40,8 @@
 \setcounter{secnumdepth}{3}
 
 % Formato de títulos
-\titleformat{\section}{\Huge\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\LARGE\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\section}{\LARGE\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.5em}{}
 \titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{0.5em}{}
 
 
@@ -80,7 +80,29 @@ En este documento se muestra el diseño y la simulación de una fuente de alimen
 
 
 \section{Simulación}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{imagenes/Escalon_Vout+.png}
+        \caption{Variación de tensión en la salida, teniendo una corriente de salida tipo escalón en la
+fuente positiva y con 100mA en la negativa}
+        \label{fig:simulacionVout+}
+    \end{figure}
 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{imagenes/Escalon_Vout-.png}
+        \caption{Variación de tensión en la salida, teniendo una corriente de salida tipo escalón en la
+fuente negativa y con 100mA en la positiva}
+        \label{fig:simulacionVout-}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{imagenes/escalones.png}
+        \caption{Variación de tensión en la salida, teniendo una corriente de salida tipo escalón tanto en la
+fuente negativa y como en la positiva}
+        \label{fig:simulacionVout-_Vout}
+    \end{figure}
 
 
 \section{Desarrollo del PCB}
