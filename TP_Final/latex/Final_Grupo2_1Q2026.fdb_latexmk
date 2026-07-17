@@ -1,9 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1784248252.39575 "c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo1/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" "Final_Grupo2_1Q2026.pdf" "Final_Grupo2_1Q2026" 1784248255.63717 0
+["pdflatex"] 1784299133.25104 "c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo1/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" "Final_Grupo2_1Q2026.pdf" "Final_Grupo2_1Q2026" 1784299136.47903 0
   "C:/Users/ritam/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781742112 82507 a9eef8696c92627b87e9975edea03b2a ""
-  "C:/Users/ritam/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1440.pk" 1755438494 18748 2822502a5d65f882009fdd7f32795fd1 ""
   "C:/Users/ritam/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1755436629 13257295 34bf6d9ec550cc1317f44bd43fcd6a60 ""
-  "C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcbx1440.tfm" 993062480 1460 bb7e49f2ecbf94593fc07fcf6213d765 ""
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmcsc10.tfm" 1136765053 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
@@ -211,11 +209,15 @@
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/ritam/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Final_Grupo2_1Q2026.aux" 1784248255 957 46cb3d7dd839ce789b776af021db7535 "pdflatex"
-  "Final_Grupo2_1Q2026.out" 1784248255 607 4daea52c5793dd0ff8acaabda6914c12 "pdflatex"
-  "Final_Grupo2_1Q2026.tex" 1784248251 3433 c46001fd5ca7b9dbdcf1fe27f370573d ""
+  "Final_Grupo2_1Q2026.aux" 1784299135 2046 df4565b33515e49121eafb1f60bcc205 "pdflatex"
+  "Final_Grupo2_1Q2026.out" 1784299135 607 4daea52c5793dd0ff8acaabda6914c12 "pdflatex"
+  "Final_Grupo2_1Q2026.tex" 1784299129 4072 326b217de09c267b275c8c05942a8c65 ""
   "Logo_ITBA.png" 1779212373 34082 18565f2ade26fe38705e2ad93c029b27 ""
-  "c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo1/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" 1784248251 3433 c46001fd5ca7b9dbdcf1fe27f370573d ""
+  "c:/Users/ritam/OneDrive/Documentos/ITBA/2026-1C/Labo1/Labo-1/TP_Final/latex/Final_Grupo2_1Q2026.tex" 1784299129 4072 326b217de09c267b275c8c05942a8c65 ""
+  "imagenes/esquematico.png" 1784298251 36418 6062c2af81dd406114050319a1db399d ""
+  "imagenes/pcb_bottomLayer.png" 1784298853 156739 86b1d1ff35ef955f8a737622fc716d85 ""
+  "imagenes/pcb_completo.png" 1784298663 178662 24d37070a357b715b50c4b02667583bf ""
+  "imagenes/pcb_frontLayer.png" 1784298746 166105 7d2e9d066a08238628759781ae745e25 ""
   (generated)
   "Final_Grupo2_1Q2026.aux"
   "Final_Grupo2_1Q2026.log"

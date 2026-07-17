@@ -69,20 +69,15 @@
         \vspace{0.5cm}
         {\Large \TPtema \par}
         \vfill                      %sirve para rellenar el espacio y quede simétrico.
-        {\Large \bfseries Grupo N° 2 \par}
-        \vspace{1cm}
-        {\large Juan Bautista Correa Uranga \hfill Legajo: 65016 \par} 
-        {\large Juan Ignacio Caorsi \hfill Legajo: 65532  \par}
-        {\large Rita Moschini \hfill Legajo: 67026 \par} 
-        {\large Lucas Solar Grillo \hfill Legajo: 63322\par}
-        \vfill
-        {\large \today\par}
-        \vfill
+        {\Large \bfseries Rita Moschini 67026 \par}
+        \vspace{12cm}
+        
 
 \end{titlepage}
 
 \section{Introducción}
 En este documento se muestra el diseño y la simulación de una fuente de alimentación variable regulada mediante un potenciómetro, la cual se alimenta externamente con un transformador de 15VAC, a su vez conectado a la red eléctrica mediante un conector de tipo \texttt{CONIN VAC}.
+
 
 \section{Simulación}
 
@@ -91,7 +86,40 @@ En este documento se muestra el diseño y la simulación de una fuente de alimen
 \section{Desarrollo del PCB}
 
 \subsection{Esquemático}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{imagenes/esquematico.png}
+        \caption{Esquemático}
+        \label{fig:esquematico}
+    \end{figure}
 
 \subsection{Diseño del Layout}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{imagenes/pcb_completo.png}
+        \caption{PCB con todas las capas visibles.}
+        \label{fig:pcb_completo}
+    \end{figure}
+
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{imagenes/pcb_frontLayer.png}
+        \caption{PCB con todas las capas visibles excepto la Bottom Layer.}
+        \label{fig:pcb_frontLayer}
+    \end{figure}
+
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{imagenes/pcb_bottomLayer.png}
+        \caption{PCB con todas las capas visibles excepto la Front Layer.}
+        \label{fig:pcb_bottomLayer}
+    \end{figure}
+
+
+
+
+
 
 \end{document}

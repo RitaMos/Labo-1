@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.17)  16 JUL 2026 21:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.17)  17 JUL 2026 11:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1132,14 +1132,43 @@ Package pdftex.def Info: Logo_ITBA.png  used on input line 57.
 
 {C:/Users/ritam/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Logo_ITBA.
 png>]
+<imagenes/esquematico.png, id=37, 599.23875pt x 352.31625pt>
+File: imagenes/esquematico.png Graphic file (type png)
+<use imagenes/esquematico.png>
+Package pdftex.def Info: imagenes/esquematico.png  used on input line 91.
+(pdftex.def)             Requested size: 523.24583pt x 307.65773pt.
+<imagenes/pcb_completo.png, id=38, 329.73187pt x 423.5825pt>
+File: imagenes/pcb_completo.png Graphic file (type png)
+<use imagenes/pcb_completo.png>
+Package pdftex.def Info: imagenes/pcb_completo.png  used on input line 99.
+(pdftex.def)             Requested size: 313.95068pt x 403.3189pt.
+
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.97 \end{document}
-                    [1] (Final_Grupo2_1Q2026.aux
+l.103 
+       [1 <./imagenes/esquematico.png>]
+<imagenes/pcb_frontLayer.png, id=46, 327.2225pt x 420.57124pt>
+File: imagenes/pcb_frontLayer.png Graphic file (type png)
+<use imagenes/pcb_frontLayer.png>
+Package pdftex.def Info: imagenes/pcb_frontLayer.png  used on input line 107.
+(pdftex.def)             Requested size: 313.95068pt x 403.51279pt.
+
+
+[2 <./imagenes/pcb_completo.png>]
+<imagenes/pcb_bottomLayer.png, id=53, 329.73187pt x 418.56375pt>
+File: imagenes/pcb_bottomLayer.png Graphic file (type png)
+<use imagenes/pcb_bottomLayer.png>
+Package pdftex.def Info: imagenes/pcb_bottomLayer.png  used on input line 115.
+(pdftex.def)             Requested size: 313.95068pt x 398.5402pt.
+
+
+[3 <./imagenes/pcb_frontLayer.png>]
+
+[4 <./imagenes/pcb_bottomLayer.png>] (Final_Grupo2_1Q2026.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1151,23 +1180,22 @@ Package rerunfilecheck Info: File `Final_Grupo2_1Q2026.out' has not changed.
 (rerunfilecheck)             Checksum: 4DAEA52C5793DD0FF8ACAABDA6914C12;607.
  ) 
 Here is how much of TeX's memory you used:
- 55815 strings out of 468134
- 1448715 string characters out of 5430740
+ 55856 strings out of 468134
+ 1449867 string characters out of 5430740
  2156995 words of memory out of 5000000
- 83849 multiletter control sequences out of 15000+600000
- 630657 words of font info for 53 fonts, out of 8000000 for 9000
+ 83884 multiletter control sequences out of 15000+600000
+ 630018 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,5n,105p,816b,1085s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\ritam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx
-1440.pk><C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb><C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmcsc10.pfb><C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ritam/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ritam/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Final_Grupo2_1Q2026.pdf (2 pages, 97846 bytes).
+ 99i,6n,105p,816b,1085s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb><C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmcsc10.pfb><C:/Users/ritam/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><C:/Users/ritam/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ritam/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Final_Grupo2_1Q2026.pdf (5 pages, 438904 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 14 named destinations out of 1000 (max. 500000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
